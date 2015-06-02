@@ -1,0 +1,207 @@
+﻿Version=4.3
+IconFile=
+NumberOfModules=6
+Module1=CoffeeTheme
+Module2=Card
+Module3=CoffeeStamp
+Module4=QRScanner
+Module5=ThemeCalc
+Module6=Scan
+Build1=Default,b4a.example
+DoNotOverwriteManifest=False
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~~\n~'End of default text.~\n~
+NumberOfFiles=5
+File1=coffee_stamp.png
+File2=customerthemes.sqlite
+File3=freecoffee.bal
+File4=logoSample.png
+File5=main.bal
+NumberOfLibraries=3
+Library1=core
+Library2=sql
+Library3=jhsicezxing1
+@EndOfDesignText@
+'Coffee Card App
+'By the Vision College Software Development Class of 2015
+'Daniel
+#Region  Project Attributes 
+	#ApplicationLabel: Coff E Card
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+Dim myColors As Cursor
+Dim myLogo As Cursor
+Dim myCoName As Cursor
+Dim myStamp As Cursor
+Dim Card As Card
+Dim CoffeeCount As Int
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	'These variables can only be accessed from this module.
+
+'Design members generated for the Coffee Theme Layout (Stamp images, Logo Image, Company Name label, Scan button)
+	Dim Card As Card 
+	Private btnScan As Button
+	Private imgLogo As ImageView
+	Private imgStamp1, imgStamp2, imgStamp3, imgStamp4, imgStamp5, imgStamp6 As ImageView
+	Private lblCompanyName As Label
+	Private pnlBG As Panel
+	Private pnlStamp1, pnlStamp2, pnlStamp3, pnlStamp4, pnlStamp5, pnlStamp6 As Panel
+	
+	Dim myTheme As CoffeeTheme
+	
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	'Do not forget to load the layout file created with the visual designer. For example:
+	Activity.LoadLayout("main")
+
+	myTheme.Initialize ' initialise theme database on load
+'	loadDBcolours
+	loadDBlogo
+	loadDBname
+	loadStamp
+	
+End Sub
+
+Sub loadDBcolours 'Load background colours from database
+	myColors = myTheme.loadColours
+	For i = 0 To myLogo.RowCount - 1 '
+		myColors.Position = i 
+		Dim bgGradient As GradientDrawable
+		Dim colours(2) As Int
+		colours(0) = Colors.RGB(myColors.GetInt("BG1Red"),myColors.GetInt("BG1Blue"),myColors.GetInt("BG1Green"))
+		colours(1) = Colors.RGB(myColors.GetInt("BG2Red"),myColors.GetInt("BG2Blue"),myColors.GetInt("BG2Green"))
+		bgGradient.Initialize("TR_BL", colours)
+		pnlBG.Background=bgGradient
+	Next
+End Sub
+
+Sub loadDBlogo 'Load Logo as string from database
+	myLogo=myTheme.loadLogo
+	For i = 0 To myLogo.RowCount - 1
+		myLogo.Position=i
+		Dim image As Bitmap
+		image.Initialize(File.DirAssets, myLogo.GetString("Logo"))
+		imgLogo.Bitmap=image
+	Next
+End Sub
+
+Sub loadDBname 'Load company name from database
+	myCoName=myTheme.loadCompanyName
+	For i = 0 To myCoName.RowCount - 1
+		myCoName.Position=i	
+		lblCompanyName.Text  =myCoName.GetString("CompanyName")
+	Next
+End Sub
+
+Sub loadStamp 'load stamp from database
+	myStamp=myTheme.loadStampIcon
+	For i = 0 To myStamp.RowCount - 1
+		myStamp.Position=i
+		Dim image As Bitmap
+		image.Initialize(File.DirAssets, myLogo.GetString("StampIcon"))
+		imgStamp1.Bitmap=image
+	Next
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+	
+End Sub
+Sub btnScan_Click 'in order to bring information about free coffee just press once 
+	If CoffeeCount = 6 Then 
+	ToastMessageShow(" You Have Earned A free Coffee", True)
+	Activity.LoadLayout("freecoffee") 'will load 2 layout for coffee app
+	imgStamp1.Visible = True
+	imgStamp2.Visible = True
+	imgStamp3.Visible = True
+	imgStamp4.Visible = True
+	imgStamp5.Visible = True
+	imgStamp6.Visible = True
+    End If 
+	
+	If CoffeeCount = 5 Then 'from 5 to 1 will show how many more coffess you will need to get a free coffee
+	ToastMessageShow (" You still need 1 more stamp in order to get a free coffee", False)
+	imgStamp1.Visible = True
+	imgStamp2.Visible = True
+	imgStamp3.Visible = True
+	imgStamp4.Visible = True
+	imgStamp5.Visible = True
+	imgStamp6.Visible = False
+	End If 
+	
+	If CoffeeCount = 4 Then 
+	ToastMessageShow (" You still need 2 more stamp in order to get a free coffee", False)
+	imgStamp1.Visible = True
+	imgStamp2.Visible = True
+	imgStamp3.Visible = True
+	imgStamp4.Visible = True
+	imgStamp5.Visible = False
+	imgStamp6.Visible = False
+	End If  
+	If CoffeeCount = 3 Then 
+	ToastMessageShow (" You still need 3 more stamp in order to get a free coffee", False)
+	imgStamp1.Visible = True
+	imgStamp2.Visible = True
+	imgStamp3.Visible = True
+	imgStamp4.Visible = False
+	imgStamp5.Visible = False
+	imgStamp6.Visible = False
+	End If 
+	If CoffeeCount = 2 Then 
+	ToastMessageShow (" you still need 4  more stamp in order to get a free coffee", False)
+	imgStamp1.Visible = True
+	imgStamp2.Visible = True
+	imgStamp3.Visible = False
+	imgStamp4.Visible = False
+	imgStamp5.Visible = False
+	imgStamp6.Visible = False
+	End If  
+	If CoffeeCount = 1 Then
+	ToastMessageShow (" You still need 5  more stamp in order to get a free coffee", False)
+	imgStamp1.Visible = True
+	imgStamp2.Visible = False
+	imgStamp3.Visible = False
+	imgStamp4.Visible = False
+	imgStamp5.Visible = False
+	imgStamp6.Visible = False
+	End If 
+	
+	If CoffeeCount = 0 Then 
+	ToastMessageShow (" Don't Forget to use your Coffe-E-Card when you buying  a coffee", False)
+	imgStamp1.Visible = False
+	imgStamp2.Visible = False
+	imgStamp3.Visible = False
+	imgStamp4.Visible = False
+	imgStamp5.Visible = False
+	imgStamp6.Visible = False
+	End If 
+	
+End Sub
+Sub yes_Click 'to redeem your free coffee press Yes 
+	
+	
+End Sub
+Sub No_Click ' you can also save and redeem later press No
+	activity.LoadLayout("main") 'will return to main layout
+End Sub
+Sub btnScan_LongClick ' in order to scan the barcode or bring the barcode scanner long press btnScan
+End Sub
