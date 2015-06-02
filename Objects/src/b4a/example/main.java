@@ -364,6 +364,168 @@ public anywheresoftware.b4a.objects.PanelWrapper _pnlstamp6 = null;
 public b4a.example.coffeetheme _mytheme = null;
 public b4a.example.scan _scanner = null;
 public b4a.example.themecalc _themecalc = null;
+public static String  _activity_create(boolean _firsttime) throws Exception{
+RDebugUtils.currentModule="main";
+RDebugUtils.currentLine=131072;
+ //BA.debugLineNum = 131072;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=131074;
+ //BA.debugLineNum = 131074;BA.debugLine="Activity.LoadLayout(\"main\")";
+mostCurrent._activity.LoadLayout("main",mostCurrent.activityBA);
+RDebugUtils.currentLine=131076;
+ //BA.debugLineNum = 131076;BA.debugLine="myTheme.Initialize ' initialise theme database on";
+mostCurrent._mytheme._initialize(null,processBA);
+RDebugUtils.currentLine=131077;
+ //BA.debugLineNum = 131077;BA.debugLine="loadDBcolours";
+_loaddbcolours();
+RDebugUtils.currentLine=131078;
+ //BA.debugLineNum = 131078;BA.debugLine="loadDBlogo";
+_loaddblogo();
+RDebugUtils.currentLine=131079;
+ //BA.debugLineNum = 131079;BA.debugLine="loadDBname";
+_loaddbname();
+RDebugUtils.currentLine=131080;
+ //BA.debugLineNum = 131080;BA.debugLine="loadStamp";
+_loadstamp();
+RDebugUtils.currentLine=131082;
+ //BA.debugLineNum = 131082;BA.debugLine="End Sub";
+return "";
+}
+public static String  _loaddbcolours() throws Exception{
+RDebugUtils.currentModule="main";
+int _i = 0;
+anywheresoftware.b4a.objects.drawable.GradientDrawable _bggradient = null;
+int[] _colours = null;
+RDebugUtils.currentLine=196608;
+ //BA.debugLineNum = 196608;BA.debugLine="Sub loadDBcolours 'Load background colours from da";
+RDebugUtils.currentLine=196609;
+ //BA.debugLineNum = 196609;BA.debugLine="myColors = myTheme.loadColours";
+_mycolors = mostCurrent._mytheme._loadcolours(null);
+RDebugUtils.currentLine=196610;
+ //BA.debugLineNum = 196610;BA.debugLine="For i = 0 To myLogo.RowCount - 1 '";
+{
+final int step29 = 1;
+final int limit29 = (int) (_mylogo.getRowCount()-1);
+for (_i = (int) (0); (step29 > 0 && _i <= limit29) || (step29 < 0 && _i >= limit29); _i = ((int)(0 + _i + step29))) {
+RDebugUtils.currentLine=196611;
+ //BA.debugLineNum = 196611;BA.debugLine="myColors.Position = i";
+_mycolors.setPosition(_i);
+RDebugUtils.currentLine=196612;
+ //BA.debugLineNum = 196612;BA.debugLine="Dim bgGradient As GradientDrawable";
+_bggradient = new anywheresoftware.b4a.objects.drawable.GradientDrawable();
+RDebugUtils.currentLine=196613;
+ //BA.debugLineNum = 196613;BA.debugLine="Dim colours(2) As Int";
+_colours = new int[(int) (2)];
+;
+RDebugUtils.currentLine=196614;
+ //BA.debugLineNum = 196614;BA.debugLine="colours(0) = Colors.RGB(myColors.GetInt(\"BG1Red\"";
+_colours[(int) (0)] = anywheresoftware.b4a.keywords.Common.Colors.RGB(_mycolors.GetInt("BG1Red"),_mycolors.GetInt("BG1Blue"),_mycolors.GetInt("BG1Green"));
+RDebugUtils.currentLine=196615;
+ //BA.debugLineNum = 196615;BA.debugLine="colours(1) = Colors.RGB(myColors.GetInt(\"BG2Red\"";
+_colours[(int) (1)] = anywheresoftware.b4a.keywords.Common.Colors.RGB(_mycolors.GetInt("BG2Red"),_mycolors.GetInt("BG2Blue"),_mycolors.GetInt("BG2Green"));
+RDebugUtils.currentLine=196616;
+ //BA.debugLineNum = 196616;BA.debugLine="bgGradient.Initialize(\"TR_BL\", colours)";
+_bggradient.Initialize(BA.getEnumFromString(android.graphics.drawable.GradientDrawable.Orientation.class,"TR_BL"),_colours);
+RDebugUtils.currentLine=196617;
+ //BA.debugLineNum = 196617;BA.debugLine="pnlBG.Background=bgGradient";
+mostCurrent._pnlbg.setBackground((android.graphics.drawable.Drawable)(_bggradient.getObject()));
+ }
+};
+RDebugUtils.currentLine=196619;
+ //BA.debugLineNum = 196619;BA.debugLine="End Sub";
+return "";
+}
+public static String  _loaddblogo() throws Exception{
+RDebugUtils.currentModule="main";
+int _i = 0;
+anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper _image = null;
+RDebugUtils.currentLine=262144;
+ //BA.debugLineNum = 262144;BA.debugLine="Sub loadDBlogo 'Load Logo as string from database";
+RDebugUtils.currentLine=262145;
+ //BA.debugLineNum = 262145;BA.debugLine="myLogo=myTheme.loadLogo";
+_mylogo = mostCurrent._mytheme._loadlogo(null);
+RDebugUtils.currentLine=262146;
+ //BA.debugLineNum = 262146;BA.debugLine="For i = 0 To myLogo.RowCount - 1";
+{
+final int step41 = 1;
+final int limit41 = (int) (_mylogo.getRowCount()-1);
+for (_i = (int) (0); (step41 > 0 && _i <= limit41) || (step41 < 0 && _i >= limit41); _i = ((int)(0 + _i + step41))) {
+RDebugUtils.currentLine=262147;
+ //BA.debugLineNum = 262147;BA.debugLine="myLogo.Position=i";
+_mylogo.setPosition(_i);
+RDebugUtils.currentLine=262148;
+ //BA.debugLineNum = 262148;BA.debugLine="Dim image As Bitmap";
+_image = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper();
+RDebugUtils.currentLine=262149;
+ //BA.debugLineNum = 262149;BA.debugLine="image.Initialize(File.DirAssets, myLogo.GetStrin";
+_image.Initialize(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),_mylogo.GetString("Logo"));
+RDebugUtils.currentLine=262150;
+ //BA.debugLineNum = 262150;BA.debugLine="imgLogo.Bitmap=image";
+mostCurrent._imglogo.setBitmap((android.graphics.Bitmap)(_image.getObject()));
+ }
+};
+RDebugUtils.currentLine=262152;
+ //BA.debugLineNum = 262152;BA.debugLine="End Sub";
+return "";
+}
+public static String  _loaddbname() throws Exception{
+RDebugUtils.currentModule="main";
+int _i = 0;
+RDebugUtils.currentLine=327680;
+ //BA.debugLineNum = 327680;BA.debugLine="Sub loadDBname 'Load company name from database";
+RDebugUtils.currentLine=327681;
+ //BA.debugLineNum = 327681;BA.debugLine="myCoName=myTheme.loadCompanyName";
+_myconame = mostCurrent._mytheme._loadcompanyname(null);
+RDebugUtils.currentLine=327682;
+ //BA.debugLineNum = 327682;BA.debugLine="For i = 0 To myCoName.RowCount - 1";
+{
+final int step50 = 1;
+final int limit50 = (int) (_myconame.getRowCount()-1);
+for (_i = (int) (0); (step50 > 0 && _i <= limit50) || (step50 < 0 && _i >= limit50); _i = ((int)(0 + _i + step50))) {
+RDebugUtils.currentLine=327683;
+ //BA.debugLineNum = 327683;BA.debugLine="myCoName.Position=i";
+_myconame.setPosition(_i);
+RDebugUtils.currentLine=327684;
+ //BA.debugLineNum = 327684;BA.debugLine="lblCompanyName.Text  =myCoName.GetString(\"Compan";
+mostCurrent._lblcompanyname.setText((Object)(_myconame.GetString("CompanyName")));
+ }
+};
+RDebugUtils.currentLine=327686;
+ //BA.debugLineNum = 327686;BA.debugLine="End Sub";
+return "";
+}
+public static String  _loadstamp() throws Exception{
+RDebugUtils.currentModule="main";
+int _i = 0;
+anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper _image = null;
+RDebugUtils.currentLine=393216;
+ //BA.debugLineNum = 393216;BA.debugLine="Sub loadStamp 'load stamp from database";
+RDebugUtils.currentLine=393217;
+ //BA.debugLineNum = 393217;BA.debugLine="myStamp=myTheme.loadStampIcon";
+_mystamp = mostCurrent._mytheme._loadstampicon(null);
+RDebugUtils.currentLine=393218;
+ //BA.debugLineNum = 393218;BA.debugLine="For i = 0 To myStamp.RowCount - 1";
+{
+final int step57 = 1;
+final int limit57 = (int) (_mystamp.getRowCount()-1);
+for (_i = (int) (0); (step57 > 0 && _i <= limit57) || (step57 < 0 && _i >= limit57); _i = ((int)(0 + _i + step57))) {
+RDebugUtils.currentLine=393219;
+ //BA.debugLineNum = 393219;BA.debugLine="myStamp.Position=i";
+_mystamp.setPosition(_i);
+RDebugUtils.currentLine=393220;
+ //BA.debugLineNum = 393220;BA.debugLine="Dim image As Bitmap";
+_image = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper();
+RDebugUtils.currentLine=393221;
+ //BA.debugLineNum = 393221;BA.debugLine="image.Initialize(File.DirAssets, myLogo.GetStrin";
+_image.Initialize(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),_mylogo.GetString("StampIcon"));
+RDebugUtils.currentLine=393222;
+ //BA.debugLineNum = 393222;BA.debugLine="imgStamp1.Bitmap=image";
+mostCurrent._imgstamp1.setBitmap((android.graphics.Bitmap)(_image.getObject()));
+ }
+};
+RDebugUtils.currentLine=393224;
+ //BA.debugLineNum = 393224;BA.debugLine="End Sub";
+return "";
+}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="main";
 RDebugUtils.currentLine=524288;
