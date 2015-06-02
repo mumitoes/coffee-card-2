@@ -64,6 +64,7 @@ Sub Globals
 	Private pnlStamp1, pnlStamp2, pnlStamp3, pnlStamp4, pnlStamp5, pnlStamp6 As Panel
 	
 	Dim myTheme As CoffeeTheme
+	Dim Scanner As Scan
 	
 End Sub
 
@@ -72,7 +73,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("main")
 
 	myTheme.Initialize ' initialise theme database on load
-'	loadDBcolours
+	loadDBcolours
 	loadDBlogo
 	loadDBname
 	loadStamp
@@ -205,4 +206,5 @@ Sub No_Click ' you can also save and redeem later press No
 	activity.LoadLayout("main") 'will return to main layout
 End Sub
 Sub btnScan_LongClick ' in order to scan the barcode or bring the barcode scanner long press btnScan
+Scanner.Scanqr()
 End Sub
