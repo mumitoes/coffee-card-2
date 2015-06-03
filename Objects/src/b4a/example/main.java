@@ -345,7 +345,6 @@ public static anywheresoftware.b4a.sql.SQL.CursorWrapper _myconame = null;
 public static anywheresoftware.b4a.sql.SQL.CursorWrapper _mystamp = null;
 public b4a.example.card _card = null;
 public static int _coffeecount = 0;
-public static String _mresult = "";
 public anywheresoftware.b4a.objects.ButtonWrapper _btnscan = null;
 public anywheresoftware.b4a.objects.ImageViewWrapper _imglogo = null;
 public anywheresoftware.b4a.objects.ImageViewWrapper _imgstamp1 = null;
@@ -365,8 +364,6 @@ public anywheresoftware.b4a.objects.PanelWrapper _pnlstamp6 = null;
 public b4a.example.coffeetheme _mytheme = null;
 public static boolean _scansuccess = false;
 public ice.zxing.b4aZXingLib _qrscanner = null;
-public com.AB.ABZxing.ABZxing _myabbarcode = null;
-public anywheresoftware.b4a.objects.LabelWrapper _label1 = null;
 public b4a.example.themecalc _themecalc = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="main";
@@ -407,9 +404,9 @@ _mycolors = mostCurrent._mytheme._loadcolours(null);
 RDebugUtils.currentLine=196610;
  //BA.debugLineNum = 196610;BA.debugLine="For i = 0 To myColors.RowCount - 1 '";
 {
-final int step33 = 1;
-final int limit33 = (int) (_mycolors.getRowCount()-1);
-for (_i = (int) (0); (step33 > 0 && _i <= limit33) || (step33 < 0 && _i >= limit33); _i = ((int)(0 + _i + step33))) {
+final int step30 = 1;
+final int limit30 = (int) (_mycolors.getRowCount()-1);
+for (_i = (int) (0); (step30 > 0 && _i <= limit30) || (step30 < 0 && _i >= limit30); _i = ((int)(0 + _i + step30))) {
 RDebugUtils.currentLine=196611;
  //BA.debugLineNum = 196611;BA.debugLine="myColors.Position = i";
 _mycolors.setPosition(_i);
@@ -450,9 +447,9 @@ _mylogo = mostCurrent._mytheme._loadlogo(null);
 RDebugUtils.currentLine=262146;
  //BA.debugLineNum = 262146;BA.debugLine="For i = 0 To myLogo.RowCount - 1";
 {
-final int step45 = 1;
-final int limit45 = (int) (_mylogo.getRowCount()-1);
-for (_i = (int) (0); (step45 > 0 && _i <= limit45) || (step45 < 0 && _i >= limit45); _i = ((int)(0 + _i + step45))) {
+final int step42 = 1;
+final int limit42 = (int) (_mylogo.getRowCount()-1);
+for (_i = (int) (0); (step42 > 0 && _i <= limit42) || (step42 < 0 && _i >= limit42); _i = ((int)(0 + _i + step42))) {
 RDebugUtils.currentLine=262147;
  //BA.debugLineNum = 262147;BA.debugLine="myLogo.Position=i";
 _mylogo.setPosition(_i);
@@ -482,9 +479,9 @@ _myconame = mostCurrent._mytheme._loadcompanyname(null);
 RDebugUtils.currentLine=327682;
  //BA.debugLineNum = 327682;BA.debugLine="For i = 0 To myCoName.RowCount - 1";
 {
-final int step54 = 1;
-final int limit54 = (int) (_myconame.getRowCount()-1);
-for (_i = (int) (0); (step54 > 0 && _i <= limit54) || (step54 < 0 && _i >= limit54); _i = ((int)(0 + _i + step54))) {
+final int step51 = 1;
+final int limit51 = (int) (_myconame.getRowCount()-1);
+for (_i = (int) (0); (step51 > 0 && _i <= limit51) || (step51 < 0 && _i >= limit51); _i = ((int)(0 + _i + step51))) {
 RDebugUtils.currentLine=327683;
  //BA.debugLineNum = 327683;BA.debugLine="myCoName.Position=i";
 _myconame.setPosition(_i);
@@ -509,9 +506,9 @@ _mystamp = mostCurrent._mytheme._loadstampicon(null);
 RDebugUtils.currentLine=393218;
  //BA.debugLineNum = 393218;BA.debugLine="For i = 0 To myStamp.RowCount - 1";
 {
-final int step61 = 1;
-final int limit61 = (int) (_mystamp.getRowCount()-1);
-for (_i = (int) (0); (step61 > 0 && _i <= limit61) || (step61 < 0 && _i >= limit61); _i = ((int)(0 + _i + step61))) {
+final int step58 = 1;
+final int limit58 = (int) (_mystamp.getRowCount()-1);
+for (_i = (int) (0); (step58 > 0 && _i <= limit58) || (step58 < 0 && _i >= limit58); _i = ((int)(0 + _i + step58))) {
 RDebugUtils.currentLine=393219;
  //BA.debugLineNum = 393219;BA.debugLine="myStamp.Position=i";
 _mystamp.setPosition(_i);
@@ -544,6 +541,35 @@ RDebugUtils.currentLine=458752;
  //BA.debugLineNum = 458752;BA.debugLine="Sub Activity_Resume";
 RDebugUtils.currentLine=458754;
  //BA.debugLineNum = 458754;BA.debugLine="End Sub";
+return "";
+}
+public static String  _btnno_click() throws Exception{
+RDebugUtils.currentModule="main";
+RDebugUtils.currentLine=2490368;
+ //BA.debugLineNum = 2490368;BA.debugLine="Sub btnNo_Click ' you can also save and redeem lat";
+RDebugUtils.currentLine=2490369;
+ //BA.debugLineNum = 2490369;BA.debugLine="Activity.LoadLayout(\"main\")'will return to main l";
+mostCurrent._activity.LoadLayout("main",mostCurrent.activityBA);
+RDebugUtils.currentLine=2490370;
+ //BA.debugLineNum = 2490370;BA.debugLine="myTheme.Initialize ' initialise theme database on";
+mostCurrent._mytheme._initialize(null,processBA);
+RDebugUtils.currentLine=2490371;
+ //BA.debugLineNum = 2490371;BA.debugLine="loadDBcolours";
+_loaddbcolours();
+RDebugUtils.currentLine=2490372;
+ //BA.debugLineNum = 2490372;BA.debugLine="loadDBlogo";
+_loaddblogo();
+RDebugUtils.currentLine=2490373;
+ //BA.debugLineNum = 2490373;BA.debugLine="loadDBname";
+_loaddbname();
+RDebugUtils.currentLine=2490374;
+ //BA.debugLineNum = 2490374;BA.debugLine="Card.CoffeeCount = 6";
+mostCurrent._card._coffeecount = (int) (6);
+RDebugUtils.currentLine=2490375;
+ //BA.debugLineNum = 2490375;BA.debugLine="loadStamp";
+_loadstamp();
+RDebugUtils.currentLine=2490376;
+ //BA.debugLineNum = 2490376;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnscan_click() throws Exception{
@@ -796,18 +822,33 @@ RDebugUtils.currentLine=851992;
  //BA.debugLineNum = 851992;BA.debugLine="End Sub";
 return "";
 }
-public static String  _myabbarcode_barcodefound(String _barcode,String _formatname) throws Exception{
+public static String  _btnyes_click() throws Exception{
 RDebugUtils.currentModule="main";
-RDebugUtils.currentLine=2228224;
- //BA.debugLineNum = 2228224;BA.debugLine="Sub myABBarcode_BarcodeFound (barCode As String, f";
-RDebugUtils.currentLine=2228225;
- //BA.debugLineNum = 2228225;BA.debugLine="Label1.Text = barCode";
-mostCurrent._label1.setText((Object)(_barcode));
-RDebugUtils.currentLine=2228226;
- //BA.debugLineNum = 2228226;BA.debugLine="mResult = barCode";
-_mresult = _barcode;
-RDebugUtils.currentLine=2228227;
- //BA.debugLineNum = 2228227;BA.debugLine="End Sub";
+RDebugUtils.currentLine=2359296;
+ //BA.debugLineNum = 2359296;BA.debugLine="Sub btnyes_Click 'to redeem your free coffee press";
+RDebugUtils.currentLine=2359297;
+ //BA.debugLineNum = 2359297;BA.debugLine="Activity.LoadLayout(\"main\")'will return to main l";
+mostCurrent._activity.LoadLayout("main",mostCurrent.activityBA);
+RDebugUtils.currentLine=2359298;
+ //BA.debugLineNum = 2359298;BA.debugLine="myTheme.Initialize ' initialise theme database on";
+mostCurrent._mytheme._initialize(null,processBA);
+RDebugUtils.currentLine=2359299;
+ //BA.debugLineNum = 2359299;BA.debugLine="loadDBcolours";
+_loaddbcolours();
+RDebugUtils.currentLine=2359300;
+ //BA.debugLineNum = 2359300;BA.debugLine="loadDBlogo";
+_loaddblogo();
+RDebugUtils.currentLine=2359301;
+ //BA.debugLineNum = 2359301;BA.debugLine="loadDBname";
+_loaddbname();
+RDebugUtils.currentLine=2359302;
+ //BA.debugLineNum = 2359302;BA.debugLine="Card.CoffeeCount = 0";
+mostCurrent._card._coffeecount = (int) (0);
+RDebugUtils.currentLine=2359303;
+ //BA.debugLineNum = 2359303;BA.debugLine="loadStamp";
+_loadstamp();
+RDebugUtils.currentLine=2359305;
+ //BA.debugLineNum = 2359305;BA.debugLine="End Sub";
 return "";
 }
 public static String  _scanner_noscan(String _atype,String _values) throws Exception{
@@ -845,23 +886,6 @@ RDebugUtils.currentLine=917508;
 _updatestamps();
 RDebugUtils.currentLine=917509;
  //BA.debugLineNum = 917509;BA.debugLine="End Sub";
-return "";
-}
-public static String  _yes_click() throws Exception{
-RDebugUtils.currentModule="main";
-RDebugUtils.currentLine=720896;
- //BA.debugLineNum = 720896;BA.debugLine="Sub yes_Click 'to redeem your free coffee press Ye";
-RDebugUtils.currentLine=720897;
- //BA.debugLineNum = 720897;BA.debugLine="Activity.LoadLayout(\"ABBarcodeTest\")";
-mostCurrent._activity.LoadLayout("ABBarcodeTest",mostCurrent.activityBA);
-RDebugUtils.currentLine=720898;
- //BA.debugLineNum = 720898;BA.debugLine="Label1.Text = mResult";
-mostCurrent._label1.setText((Object)(_mresult));
-RDebugUtils.currentLine=720899;
- //BA.debugLineNum = 720899;BA.debugLine="myABBarcode.ABGetBarcode(\"myabbarcode\", \"\")";
-mostCurrent._myabbarcode.ABGetBarcode(mostCurrent.activityBA,"myabbarcode","");
-RDebugUtils.currentLine=720901;
- //BA.debugLineNum = 720901;BA.debugLine="End Sub";
 return "";
 }
 }

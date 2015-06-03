@@ -47,7 +47,6 @@ Dim myCoName As Cursor
 Dim myStamp As Cursor
 Dim Card As Card
 Dim CoffeeCount As Int
-Dim mResult As String
 
 End Sub
 
@@ -67,8 +66,6 @@ Sub Globals
 	Dim myTheme As CoffeeTheme
 	Dim scanSuccess As Boolean
 	Dim qrscanner As JhsIceZxing1
-	Dim myABBarcode As ABZxing
-	Dim Label1 As Label
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -204,14 +201,24 @@ End Sub
 Sub btnScan_Click 'in order to bring information about free coffee just press once 
 	updateStamps	
 End Sub
-Sub yes_Click 'to redeem your free coffee press Yes 
-Activity.LoadLayout("ABBarcodeTest")		
-	Label1.Text = mResult 	 	 	
-	myABBarcode.ABGetBarcode("myabbarcode", "")
+Sub btnyes_Click 'to redeem your free coffee press Yes
+	Activity.LoadLayout("main")'will return to main layout
+	myTheme.Initialize ' initialise theme database on load
+	loadDBcolours
+	loadDBlogo
+	loadDBname
+	Card.CoffeeCount = 0
+	loadStamp
 	
 End Sub
-Sub No_Click ' you can also save and redeem later press No
-	Activity.LoadLayout("main") 'will return to main layout
+Sub btnNo_Click ' you can also save and redeem later press No
+	Activity.LoadLayout("main")'will return to main layout
+	myTheme.Initialize ' initialise theme database on load
+	loadDBcolours
+	loadDBlogo
+	loadDBname
+	Card.CoffeeCount = 6
+	loadStamp
 End Sub
 
 Sub btnScan_LongClick ' in order to scan the barcode or bring the barcode scanner long press btnScan
@@ -252,8 +259,4 @@ Sub scanner_noscan(atype As String,Values As String)
 	Log("type:" & atype &  "Values:" & Values)
 	Msgbox(Values,"Scan Failed")
 
-End Sub
-Sub myABBarcode_BarcodeFound (barCode As String, formatName As String)
-	Label1.Text = barCode
-	mResult = barCode
 End Sub

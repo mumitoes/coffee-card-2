@@ -1,72 +1,68 @@
 b4a.example
-main,activity_create,1,0,51,61
+main,activity_create,1,0,48,58
 ,btnscan,,imglogo,,imgstamp1,,imgstamp2,,imgstamp3,,imgstamp4,,imgstamp5,,imgstamp6,,lblcompanyname,,pnlbg,,pnlstamp1,,pnlstamp2,,pnlstamp3,,pnlstamp4,,pnlstamp5,,pnlstamp6,,mytheme,,mycolors,,mylogo,,myconame,,mystamp
 ,btnscan,,imglogo,,imgstamp1,,imgstamp2,,imgstamp3,,imgstamp4,,imgstamp5,,imgstamp6,,lblcompanyname,,pnlbg,,pnlstamp1,,pnlstamp2,,pnlstamp3,,pnlstamp4,,pnlstamp5,,pnlstamp6,,mycolors,,mylogo,,myconame,,mystamp
 coffeetheme,initialize,,loaddbcolours,,loaddblogo,,loaddbname,,loadstamp,coffeetheme,loadcolours,coffeetheme,loadlogo,coffeetheme,loadcompanyname,coffeetheme,loadstampicon
-main,loaddbcolours,0,0,63,74
+main,loaddbcolours,0,0,60,71
 ,mycolors,,mytheme,,pnlbg
 ,mycolors
 coffeetheme,loadcolours
-main,loaddblogo,0,0,76,84
+main,loaddblogo,0,0,73,81
 ,mylogo,,mytheme,,imglogo
 ,mylogo
 coffeetheme,loadlogo
-main,loaddbname,0,0,86,92
+main,loaddbname,0,0,83,89
 ,myconame,,mytheme,,lblcompanyname
 ,myconame
 coffeetheme,loadcompanyname
-main,loadstamp,0,0,94,102
+main,loadstamp,0,0,91,99
 ,mystamp,,mytheme,,mylogo,,imgstamp1
 ,mystamp
 coffeetheme,loadstampicon
-main,activity_pause,0,0,108,110
+main,activity_pause,0,0,105,107
 
 
 
-main,activity_resume,0,0,104,106
+main,activity_resume,0,0,101,103
 
 
 
-main,btnscan_click,1,0,181,183
+main,btnno_click,1,0,191,199
+,btnscan,,imglogo,,imgstamp1,,imgstamp2,,imgstamp3,,imgstamp4,,imgstamp5,,imgstamp6,,lblcompanyname,,pnlbg,,pnlstamp1,,pnlstamp2,,pnlstamp3,,pnlstamp4,,pnlstamp5,,pnlstamp6,,mytheme,,card,,mycolors,,mylogo,,myconame,,mystamp
+,btnscan,,imglogo,,imgstamp1,,imgstamp2,,imgstamp3,,imgstamp4,,imgstamp5,,imgstamp6,,lblcompanyname,,pnlbg,,pnlstamp1,,pnlstamp2,,pnlstamp3,,pnlstamp4,,pnlstamp5,,pnlstamp6,,mycolors,,mylogo,,myconame,,mystamp
+coffeetheme,initialize,,loaddbcolours,,loaddblogo,,loaddbname,,loadstamp,coffeetheme,loadcolours,coffeetheme,loadlogo,coffeetheme,loadcompanyname,coffeetheme,loadstampicon
+main,btnscan_click,1,0,178,180
 ,coffeecount,,imgstamp1,,imgstamp2,,imgstamp3,,imgstamp4,,imgstamp5,,imgstamp6
 
 ,updatestamps
-main,updatestamps,1,0,112,180
+main,updatestamps,1,0,109,177
 ,coffeecount,,imgstamp1,,imgstamp2,,imgstamp3,,imgstamp4,,imgstamp5,,imgstamp6
 
 
-main,btnscan_longclick,0,0,194,218
+main,btnscan_longclick,0,0,201,225
 ,qrscanner
 
 
-main,globals,0,1,31,49
+main,btnyes_click,1,0,181,190
+,btnscan,,imglogo,,imgstamp1,,imgstamp2,,imgstamp3,,imgstamp4,,imgstamp5,,imgstamp6,,lblcompanyname,,pnlbg,,pnlstamp1,,pnlstamp2,,pnlstamp3,,pnlstamp4,,pnlstamp5,,pnlstamp6,,mytheme,,card,,mycolors,,mylogo,,myconame,,mystamp
+,btnscan,,imglogo,,imgstamp1,,imgstamp2,,imgstamp3,,imgstamp4,,imgstamp5,,imgstamp6,,lblcompanyname,,pnlbg,,pnlstamp1,,pnlstamp2,,pnlstamp3,,pnlstamp4,,pnlstamp5,,pnlstamp6,,mycolors,,mylogo,,myconame,,mystamp
+coffeetheme,initialize,,loaddbcolours,,loaddblogo,,loaddbname,,loadstamp,coffeetheme,loadcolours,coffeetheme,loadlogo,coffeetheme,loadcompanyname,coffeetheme,loadstampicon
+main,globals,0,1,30,46
 
 
 
-main,myabbarcode_barcodefound,0,0,233,236
-,label1,,mresult
-,mresult
-
-main,no_click,1,1,190,192
-,btnscan,,imglogo,,imgstamp1,,imgstamp2,,imgstamp3,,imgstamp4,,imgstamp5,,imgstamp6,,lblcompanyname,,pnlbg,,pnlstamp1,,pnlstamp2,,pnlstamp3,,pnlstamp4,,pnlstamp5,,pnlstamp6
-,btnscan,,imglogo,,imgstamp1,,imgstamp2,,imgstamp3,,imgstamp4,,imgstamp5,,imgstamp6,,lblcompanyname,,pnlbg,,pnlstamp1,,pnlstamp2,,pnlstamp3,,pnlstamp4,,pnlstamp5,,pnlstamp6
-
-main,process_globals,0,1,18,29
+main,process_globals,0,1,18,28
 
 
 
-main,scanner_noscan,1,0,227,232
+main,scanner_noscan,1,0,234,239
 ,scansuccess
 ,scansuccess
 
-main,scanner_result,1,0,220,225
+main,scanner_result,1,0,227,232
 ,scansuccess,,coffeecount,,imgstamp1,,imgstamp2,,imgstamp3,,imgstamp4,,imgstamp5,,imgstamp6
 ,scansuccess,,coffeecount
 ,updatestamps
-main,yes_click,1,0,184,189
-,label1,,mresult,,myabbarcode
-
-
 coffeetheme,initialize,1,0,12,21
 
 

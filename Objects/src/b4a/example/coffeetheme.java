@@ -40,64 +40,49 @@ public String  _initialize(b4a.example.coffeetheme __ref,anywheresoftware.b4a.BA
 __ref = this;
 innerInitialize(_ba);
 RDebugUtils.currentModule="coffeetheme";
-RDebugUtils.currentLine=1114112;
- //BA.debugLineNum = 1114112;BA.debugLine="Public Sub Initialize";
-RDebugUtils.currentLine=1114113;
- //BA.debugLineNum = 1114113;BA.debugLine="If File.Exists(File.DirInternal, \"customerthemes.";
+RDebugUtils.currentLine=1179648;
+ //BA.debugLineNum = 1179648;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=1179649;
+ //BA.debugLineNum = 1179649;BA.debugLine="If File.Exists(File.DirInternal, \"customerthemes.";
 if (__c.File.Exists(__c.File.getDirInternal(),"customerthemes.sqlite")==__c.False) { 
-RDebugUtils.currentLine=1114114;
- //BA.debugLineNum = 1114114;BA.debugLine="File.Copy(File.DirAssets, \"customerthemes.sqlite\"";
+RDebugUtils.currentLine=1179650;
+ //BA.debugLineNum = 1179650;BA.debugLine="File.Copy(File.DirAssets, \"customerthemes.sqlite\"";
 __c.File.Copy(__c.File.getDirAssets(),"customerthemes.sqlite",__c.File.getDirInternal(),"customerthemes.sqlite");
  };
-RDebugUtils.currentLine=1114118;
- //BA.debugLineNum = 1114118;BA.debugLine="If SQL1.IsInitialized=False Then";
+RDebugUtils.currentLine=1179654;
+ //BA.debugLineNum = 1179654;BA.debugLine="If SQL1.IsInitialized=False Then";
 if (__ref._sql1.IsInitialized()==__c.False) { 
-RDebugUtils.currentLine=1114119;
- //BA.debugLineNum = 1114119;BA.debugLine="SQL1.Initialize(File.DirInternal, \"customerthemes";
+RDebugUtils.currentLine=1179655;
+ //BA.debugLineNum = 1179655;BA.debugLine="SQL1.Initialize(File.DirInternal, \"customerthemes";
 __ref._sql1.Initialize(__c.File.getDirInternal(),"customerthemes.sqlite",__c.False);
  };
-RDebugUtils.currentLine=1114121;
- //BA.debugLineNum = 1114121;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1179657;
+ //BA.debugLineNum = 1179657;BA.debugLine="End Sub";
 return "";
 }
 public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadcolours(b4a.example.coffeetheme __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="coffeetheme";
-RDebugUtils.currentLine=1179648;
- //BA.debugLineNum = 1179648;BA.debugLine="Sub loadColours As Cursor";
-RDebugUtils.currentLine=1179649;
- //BA.debugLineNum = 1179649;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT BG1Red, BG1Blue, BG";
+RDebugUtils.currentLine=1245184;
+ //BA.debugLineNum = 1245184;BA.debugLine="Sub loadColours As Cursor";
+RDebugUtils.currentLine=1245185;
+ //BA.debugLineNum = 1245185;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT BG1Red, BG1Blue, BG";
 __ref._cursor1.setObject((android.database.Cursor)(__ref._sql1.ExecQuery("SELECT BG1Red, BG1Blue, BG1Green, BG2Red, BG2Blue, BG2Green FROM themes")));
-RDebugUtils.currentLine=1179651;
- //BA.debugLineNum = 1179651;BA.debugLine="Return cursor1";
+RDebugUtils.currentLine=1245187;
+ //BA.debugLineNum = 1245187;BA.debugLine="Return cursor1";
 if (true) return __ref._cursor1;
-RDebugUtils.currentLine=1179652;
- //BA.debugLineNum = 1179652;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1245188;
+ //BA.debugLineNum = 1245188;BA.debugLine="End Sub";
 return null;
 }
 public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadlogo(b4a.example.coffeetheme __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="coffeetheme";
-RDebugUtils.currentLine=1245184;
- //BA.debugLineNum = 1245184;BA.debugLine="Sub loadLogo As Cursor";
-RDebugUtils.currentLine=1245185;
- //BA.debugLineNum = 1245185;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT Logo FROM themes\")";
-__ref._cursor1.setObject((android.database.Cursor)(__ref._sql1.ExecQuery("SELECT Logo FROM themes")));
-RDebugUtils.currentLine=1245186;
- //BA.debugLineNum = 1245186;BA.debugLine="Return cursor1";
-if (true) return __ref._cursor1;
-RDebugUtils.currentLine=1245187;
- //BA.debugLineNum = 1245187;BA.debugLine="End Sub";
-return null;
-}
-public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadcompanyname(b4a.example.coffeetheme __ref) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="coffeetheme";
 RDebugUtils.currentLine=1310720;
- //BA.debugLineNum = 1310720;BA.debugLine="Sub loadCompanyName As Cursor";
+ //BA.debugLineNum = 1310720;BA.debugLine="Sub loadLogo As Cursor";
 RDebugUtils.currentLine=1310721;
- //BA.debugLineNum = 1310721;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT CompanyName FROM th";
-__ref._cursor1.setObject((android.database.Cursor)(__ref._sql1.ExecQuery("SELECT CompanyName FROM themes")));
+ //BA.debugLineNum = 1310721;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT Logo FROM themes\")";
+__ref._cursor1.setObject((android.database.Cursor)(__ref._sql1.ExecQuery("SELECT Logo FROM themes")));
 RDebugUtils.currentLine=1310722;
  //BA.debugLineNum = 1310722;BA.debugLine="Return cursor1";
 if (true) return __ref._cursor1;
@@ -105,19 +90,34 @@ RDebugUtils.currentLine=1310723;
  //BA.debugLineNum = 1310723;BA.debugLine="End Sub";
 return null;
 }
-public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadstampicon(b4a.example.coffeetheme __ref) throws Exception{
+public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadcompanyname(b4a.example.coffeetheme __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="coffeetheme";
 RDebugUtils.currentLine=1376256;
- //BA.debugLineNum = 1376256;BA.debugLine="Sub loadStampIcon As Cursor";
+ //BA.debugLineNum = 1376256;BA.debugLine="Sub loadCompanyName As Cursor";
 RDebugUtils.currentLine=1376257;
- //BA.debugLineNum = 1376257;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT StampIcon FROM them";
-__ref._cursor1.setObject((android.database.Cursor)(__ref._sql1.ExecQuery("SELECT StampIcon FROM themes")));
+ //BA.debugLineNum = 1376257;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT CompanyName FROM th";
+__ref._cursor1.setObject((android.database.Cursor)(__ref._sql1.ExecQuery("SELECT CompanyName FROM themes")));
 RDebugUtils.currentLine=1376258;
  //BA.debugLineNum = 1376258;BA.debugLine="Return cursor1";
 if (true) return __ref._cursor1;
 RDebugUtils.currentLine=1376259;
  //BA.debugLineNum = 1376259;BA.debugLine="End Sub";
+return null;
+}
+public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadstampicon(b4a.example.coffeetheme __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="coffeetheme";
+RDebugUtils.currentLine=1441792;
+ //BA.debugLineNum = 1441792;BA.debugLine="Sub loadStampIcon As Cursor";
+RDebugUtils.currentLine=1441793;
+ //BA.debugLineNum = 1441793;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT StampIcon FROM them";
+__ref._cursor1.setObject((android.database.Cursor)(__ref._sql1.ExecQuery("SELECT StampIcon FROM themes")));
+RDebugUtils.currentLine=1441794;
+ //BA.debugLineNum = 1441794;BA.debugLine="Return cursor1";
+if (true) return __ref._cursor1;
+RDebugUtils.currentLine=1441795;
+ //BA.debugLineNum = 1441795;BA.debugLine="End Sub";
 return null;
 }
 }
