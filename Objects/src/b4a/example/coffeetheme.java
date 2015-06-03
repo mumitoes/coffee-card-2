@@ -60,21 +60,6 @@ RDebugUtils.currentLine=917513;
  //BA.debugLineNum = 917513;BA.debugLine="End Sub";
 return "";
 }
-public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadcolours(b4a.example.coffeetheme __ref) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="coffeetheme";
-RDebugUtils.currentLine=983040;
- //BA.debugLineNum = 983040;BA.debugLine="Sub loadColours As Cursor";
-RDebugUtils.currentLine=983041;
- //BA.debugLineNum = 983041;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT BG1Red, BG1Blue, BG";
-__ref._cursor1.setObject((android.database.Cursor)(__ref._sql1.ExecQuery("SELECT BG1Red, BG1Blue, BG1Green, BG2Red, BG2Blue, BG2Green FROM themes")));
-RDebugUtils.currentLine=983043;
- //BA.debugLineNum = 983043;BA.debugLine="Return cursor1";
-if (true) return __ref._cursor1;
-RDebugUtils.currentLine=983044;
- //BA.debugLineNum = 983044;BA.debugLine="End Sub";
-return null;
-}
 public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadlogo(b4a.example.coffeetheme __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="coffeetheme";
@@ -118,6 +103,21 @@ RDebugUtils.currentLine=1179650;
 if (true) return __ref._cursor1;
 RDebugUtils.currentLine=1179651;
  //BA.debugLineNum = 1179651;BA.debugLine="End Sub";
+return null;
+}
+public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadcolours(b4a.example.coffeetheme __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="coffeetheme";
+RDebugUtils.currentLine=983040;
+ //BA.debugLineNum = 983040;BA.debugLine="Sub loadColours As Cursor";
+RDebugUtils.currentLine=983041;
+ //BA.debugLineNum = 983041;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT BG1Red, BG1Blue, BG";
+__ref._cursor1.setObject((android.database.Cursor)(__ref._sql1.ExecQuery("SELECT BG1Red, BG1Blue, BG1Green, BG2Red, BG2Blue, BG2Green FROM themes")));
+RDebugUtils.currentLine=983043;
+ //BA.debugLineNum = 983043;BA.debugLine="Return cursor1";
+if (true) return __ref._cursor1;
+RDebugUtils.currentLine=983044;
+ //BA.debugLineNum = 983044;BA.debugLine="End Sub";
 return null;
 }
 }
