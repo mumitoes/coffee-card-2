@@ -1,24 +1,28 @@
 ﻿Version=4.3
 IconFile=
-NumberOfModules=5
+NumberOfModules=8
 Module1=CoffeeTheme
 Module2=Card
 Module3=CoffeeStamp
-Module4=ThemeCalc
-Module5=Data
+Module4=QRScanner
+Module5=ThemeCalc
+Module6=Scan
+Module7=Data
+Module8=QRGenerator
 Build1=Default,b4a.example
 DoNotOverwriteManifest=False
-ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~AddApplicationText(~\n~<activity android:name="ice.zxing.CaptureActivity"~\n~					android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"~\n~					android:theme="@android:style/Theme.NoTitleBar.Fullscreen"~\n~					android:windowSoftInputMode="stateAlwaysHidden">~\n~				</activity>)~\n~'End of default text.~\n~
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~~\n~'End of default text.~\n~
 NumberOfFiles=5
 File1=coffee_stamp.png
 File2=customerthemes.sqlite
 File3=freecoffee.bal
 File4=logoSample.png
 File5=main.bal
-NumberOfLibraries=3
+NumberOfLibraries=4
 Library1=core
 Library2=sql
 Library3=jhsicezxing1
+Library4=abzxing
 @EndOfDesignText@
 'Coffee Card App
 'By the Vision College Software Development Class of 2015
@@ -28,7 +32,7 @@ Library3=jhsicezxing1
 	#VersionCode: 1
 	#VersionName: 
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
-	#SupportedOrientations: portrait
+	#SupportedOrientations: unspecified
 	#CanInstallToExternalStorage: False
 #End Region
 
@@ -46,7 +50,7 @@ Dim myCoName As Cursor
 Dim myStamp As Cursor
 Dim Card As Card
 Dim CoffeeCount As Int
-
+Dim mResult As String
 End Sub
 
 Sub Globals
@@ -63,34 +67,35 @@ Sub Globals
 	Private pnlStamp1, pnlStamp2, pnlStamp3, pnlStamp4, pnlStamp5, pnlStamp6 As Panel
 	
 	Dim myTheme As CoffeeTheme
-	Dim scanSuccess As Boolean
-	Dim qrscanner As JhsIceZxing1
+	Dim Scanner As Scan
+	Dim myABBarcode As ABZxing
+	Dim Label1 As Label
+	
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("main")
-
 	myTheme.Initialize ' initialise theme database on load
-	loadDBcolours
+'	loadDBcolours
 	loadDBlogo
 	loadDBname
 	loadStamp
 	
 End Sub
 
-Sub loadDBcolours 'Load background colours from database
-	myColors = myTheme.loadColours
-	For i = 0 To myColors.RowCount - 1 '
-		myColors.Position = i 
-		Dim bgGradient As GradientDrawable
-		Dim colours(2) As Int
-		colours(0) = Colors.RGB(myColors.GetInt("BG1Red"),myColors.GetInt("BG1Blue"),myColors.GetInt("BG1Green"))
-		colours(1) = Colors.RGB(myColors.GetInt("BG2Red"),myColors.GetInt("BG2Blue"),myColors.GetInt("BG2Green"))
-		bgGradient.Initialize("TR_BL", colours)
-		pnlBG.Background=bgGradient
-	Next
-End Sub
+'Sub loadDBcolours 'Load background colours from database
+'	myColors = myTheme.loadColours
+'	For i = 0 To myLogo.RowCount - 1 '
+'		myColors.Position = i 
+'		Dim bgGradient As GradientDrawable
+'		Dim colours(2) As Int
+'		colours(0) = Colors.RGB(myColors.GetInt("BG1Red"),myColors.GetInt("BG1Blue"),myColors.GetInt("BG1Green"))
+'		colours(1) = Colors.RGB(myColors.GetInt("BG2Red"),myColors.GetInt("BG2Blue"),myColors.GetInt("BG2Green"))
+'		bgGradient.Initialize("TR_BL", colours)
+'		pnlBG.Background=bgGradient
+'	Next
+'End Sub
 
 Sub loadDBlogo 'Load Logo as string from database
 	myLogo=myTheme.loadLogo
@@ -127,9 +132,8 @@ End Sub
 Sub Activity_Pause (UserClosed As Boolean)
 	
 End Sub
-
-Private Sub updateStamps
-If CoffeeCount = 6 Then 
+Sub btnScan_Click 'in order to bring information about free coffee just press once 
+	If CoffeeCount = 6 Then 
 	ToastMessageShow(" You Have Earned A free Coffee", True)
 	Activity.LoadLayout("freecoffee") 'will load 2 layout for coffee app
 	imgStamp1.Visible = True
@@ -196,54 +200,21 @@ If CoffeeCount = 6 Then
 	imgStamp5.Visible = False
 	imgStamp6.Visible = False
 	End If 
-End Sub
-Sub btnScan_Click 'in order to bring information about free coffee just press once 
-	updateStamps	
+	
 End Sub
 Sub yes_Click 'to redeem your free coffee press Yes 
-	
+	Activity.LoadLayout("ABBarcodeTest")		
+	Label1.Text = mResult 	 	 	
+	myABBarcode.ABGetBarcode("myabbarcode", "")
 	
 End Sub
 Sub No_Click ' you can also save and redeem later press No
 	activity.LoadLayout("main") 'will return to main layout
 End Sub
-
 Sub btnScan_LongClick ' in order to scan the barcode or bring the barcode scanner long press btnScan
-	qrscanner.isportrait = True
-	qrscanner.useFrontCam = False
-	'set the timeoutDuration to a very high value (such as 2000000000) if you dont want it to time out
-	'2000000000 = 63 years
-	qrscanner.timeoutDuration = 30
-	
-	'change these factors between 0 and 1 to change the size of the viewfinder rectangle
-	'the library will limit the minimum size to 240 x 240 pixels and the maximum to (screen width) x (screen height pixels)
-    qrscanner.theViewFinderXfactor = 0.7
-	qrscanner.theViewFinderYfactor = 0.5
-	
-	qrscanner.theFrameColor = Colors.LightGray
-	qrscanner.theLaserColor = Colors.Red
-	qrscanner.theMaskColor = Colors.argb(95, 0, 0, 255)
-	qrscanner.theResultColor = Colors.Green
-	qrscanner.theResultPointColor = Colors.Red
-	
-	qrscanner.theBottomPromptMessage = "Scan Your Coffee Stamp."
-	qrscanner.theBottomPromptTextSize = 5%y                         'text size in pixels
-	qrscanner.bottomPromptColor = Colors.Black
-	qrscanner.bottomPromptDistanceFromBottom = 5%y                  'pixel distance from top
-	
-	qrscanner.BeginScan("scanner")	
+Scanner.Scanqr()
 End Sub
-
-Sub scanner_result(atype As String,Values As String)
-	scanSuccess = True
-	CoffeeCount = CoffeeCount + 1
-	Log("type:" & atype &  "Values:" & Values)
-	updateStamps
-End Sub
-
-Sub scanner_noscan(atype As String,Values As String)
-	scanSuccess = False
-	Log("type:" & atype &  "Values:" & Values)
-	Msgbox(Values,"Scan Failed")
-
+Sub myABBarcode_BarcodeFound (barCode As String, formatName As String)
+	Label1.Text = barCode
+	mResult = barCode
 End Sub
