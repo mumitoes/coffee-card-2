@@ -211,7 +211,7 @@ Activity.LoadLayout("ABBarcodeTest")
 	
 End Sub
 Sub No_Click ' you can also save and redeem later press No
-	activity.LoadLayout("main") 'will return to main layout
+	Activity.LoadLayout("main") 'will return to main layout
 End Sub
 
 Sub btnScan_LongClick ' in order to scan the barcode or bring the barcode scanner long press btnScan

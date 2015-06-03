@@ -47,7 +47,7 @@ main,myabbarcode_barcodefound,0,0,233,236
 ,label1,,mresult
 ,mresult
 
-main,no_click,1,0,190,192
+main,no_click,1,1,190,192
 ,btnscan,,imglogo,,imgstamp1,,imgstamp2,,imgstamp3,,imgstamp4,,imgstamp5,,imgstamp6,,lblcompanyname,,pnlbg,,pnlstamp1,,pnlstamp2,,pnlstamp3,,pnlstamp4,,pnlstamp5,,pnlstamp6
 ,btnscan,,imglogo,,imgstamp1,,imgstamp2,,imgstamp3,,imgstamp4,,imgstamp5,,imgstamp6,,lblcompanyname,,pnlbg,,pnlstamp1,,pnlstamp2,,pnlstamp3,,pnlstamp4,,pnlstamp5,,pnlstamp6
 

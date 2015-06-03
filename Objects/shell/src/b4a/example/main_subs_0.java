@@ -427,7 +427,7 @@ try {
 if (RapidSub.canDelegate("no_click")) return main.remoteMe.runUserSub(false, "main","no_click");
  BA.debugLineNum = 190;BA.debugLine="Sub No_Click ' you can also save and redeem later";
 Debug.ShouldStop(536870912);
- BA.debugLineNum = 191;BA.debugLine="activity.LoadLayout(\"main\") 'will return to main";
+ BA.debugLineNum = 191;BA.debugLine="Activity.LoadLayout(\"main\") 'will return to main";
 Debug.ShouldStop(1073741824);
 main.mostCurrent._activity.runMethodAndSync(false,"LoadLayout",(Object)(RemoteObject.createImmutable("main")),main.mostCurrent.activityBA);
  BA.debugLineNum = 192;BA.debugLine="End Sub";

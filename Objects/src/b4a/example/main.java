@@ -810,17 +810,6 @@ RDebugUtils.currentLine=2228227;
  //BA.debugLineNum = 2228227;BA.debugLine="End Sub";
 return "";
 }
-public static String  _no_click() throws Exception{
-RDebugUtils.currentModule="main";
-RDebugUtils.currentLine=786432;
- //BA.debugLineNum = 786432;BA.debugLine="Sub No_Click ' you can also save and redeem later";
-RDebugUtils.currentLine=786433;
- //BA.debugLineNum = 786433;BA.debugLine="activity.LoadLayout(\"main\") 'will return to main";
-mostCurrent._activity.LoadLayout("main",mostCurrent.activityBA);
-RDebugUtils.currentLine=786434;
- //BA.debugLineNum = 786434;BA.debugLine="End Sub";
-return "";
-}
 public static String  _scanner_noscan(String _atype,String _values) throws Exception{
 RDebugUtils.currentModule="main";
 RDebugUtils.currentLine=983040;
