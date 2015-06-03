@@ -41,10 +41,10 @@ public String  _initialize(b4a.example.coffeestamp __ref,anywheresoftware.b4a.BA
 __ref = this;
 innerInitialize(_ba);
 RDebugUtils.currentModule="coffeestamp";
-RDebugUtils.currentLine=1572864;
- //BA.debugLineNum = 1572864;BA.debugLine="Public Sub Initialize";
-RDebugUtils.currentLine=1572866;
- //BA.debugLineNum = 1572866;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1769472;
+ //BA.debugLineNum = 1769472;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=1769474;
+ //BA.debugLineNum = 1769474;BA.debugLine="End Sub";
 return "";
 }
 }
