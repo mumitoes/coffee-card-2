@@ -1,5 +1,5 @@
 ﻿VisibleModules=1,2,3,4,5
-ModuleClosedNodes0=
+ModuleClosedNodes0=6
 ModuleBookmarks0=
 ModuleBreakpoints0=
 ModuleClosedNodes1=
@@ -18,4 +18,4 @@ ModuleClosedNodes5=
 ModuleBookmarks5=
 ModuleBreakpoints5=
 SelectedBuild=0
-UserTypesHint=CoffeeTheme,Card,CoffeeStamp,Data
+UserTypesHint=Data,CoffeeStamp,Card,CoffeeTheme
