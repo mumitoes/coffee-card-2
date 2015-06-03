@@ -228,21 +228,25 @@ Sub btnScan_LongClick ' in order to scan the barcode or bring the barcode scanne
 	
 	qrscanner.theBottomPromptMessage = "Scan Your Coffee Stamp."
 	qrscanner.theBottomPromptTextSize = 5%y                         'text size in pixels
-	qrscanner.bottomPromptColor = Colors.Black
+	qrscanner.bottomPromptColor = Colors.Yellow
 	qrscanner.bottomPromptDistanceFromBottom = 5%y                  'pixel distance from top
 	
-	qrscanner.BeginScan("scanner")	
+	scanSuccess = False
+	qrscanner.BeginScan("scanner")	'This is the function that opens the scanner activity
+	'	the string that is passed into the BeginScan function is the name of the events that result from the scanner library
+	' e.g if we passed "Taco" insted of scanner then the bottem functions woulod be called "Taco_result" and "Taco_noscan"
 End Sub
 
 Sub scanner_result(atype As String,Values As String)
-	scanSuccess = True
-	CoffeeCount = CoffeeCount + 1
-	Log("type:" & atype &  "Values:" & Values)
+	If Values <> "Null" Then
+		scanSuccess = True
+		CoffeeCount = CoffeeCount + 1
+		Log("type:" & atype &  "Values:" & Values)
+	End If
 	updateStamps
 End Sub
 
 Sub scanner_noscan(atype As String,Values As String)
-	scanSuccess = False
 	Log("type:" & atype &  "Values:" & Values)
 	Msgbox(Values,"Scan Failed")
 
