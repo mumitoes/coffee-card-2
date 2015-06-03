@@ -46,6 +46,7 @@ Dim myCoName As Cursor
 Dim myStamp As Cursor
 Dim Card As Card
 Dim CoffeeCount As Int
+Dim myButtonColours As Cursor
 
 End Sub
 
@@ -76,10 +77,12 @@ Sub Activity_Create(FirstTime As Boolean)
 	loadDBlogo
 	loadDBname
 	loadStamp
-	
+	loadDBbuttonColours
 End Sub
 
-Sub loadDBcolours 'Load background colours from database
+'===========================================Layout========================================
+#Region Layout design
+Sub loadDBcolours 'Assign background colours from database to Background Panel
 	myColors = myTheme.loadColours
 	For i = 0 To myColors.RowCount - 1 '
 		myColors.Position = i 
@@ -92,7 +95,7 @@ Sub loadDBcolours 'Load background colours from database
 	Next
 End Sub
 
-Sub loadDBlogo 'Load Logo as string from database
+Sub loadDBlogo 'Assign Logo as string from database to Logo Image
 	myLogo=myTheme.loadLogo
 	For i = 0 To myLogo.RowCount - 1
 		myLogo.Position=i
@@ -102,7 +105,7 @@ Sub loadDBlogo 'Load Logo as string from database
 	Next
 End Sub
 
-Sub loadDBname 'Load company name from database
+Sub loadDBname ' method to assign Company Name to Company Name label
 	myCoName=myTheme.loadCompanyName
 	For i = 0 To myCoName.RowCount - 1
 		myCoName.Position=i	
@@ -110,7 +113,7 @@ Sub loadDBname 'Load company name from database
 	Next
 End Sub
 
-Sub loadStamp 'load stamp from database
+Sub loadStamp ' method to assign stamp image to Stamp Images
 	myStamp=myTheme.loadStampIcon
 	For i = 0 To myStamp.RowCount - 1
 		myStamp.Position=i
@@ -119,6 +122,20 @@ Sub loadStamp 'load stamp from database
 		imgStamp1.Bitmap=image
 	Next
 End Sub
+
+Sub loadDBbuttonColours ' method to assign colours to Scan Button
+	myButtonColours =myTheme.loadBtnColours
+	For i = 0 To myButtonColours.RowCount - 1 
+		myButtonColours.Position = i 
+		Dim btnRBG As ColorDrawable
+		Dim colours As Int
+		colours = Colors.RGB(myButtonColours.GetInt("BtnRed"),myButtonColours.GetInt("BtnBlue"),myButtonColours.GetInt("BtnGreen"))
+		'colours = Colors.RGB(199, 89, 0)
+		btnRBG.Initialize(colours, 5)
+		btnScan.background=btnRBG
+	Next
+End Sub
+#End Region
 
 Sub Activity_Resume
 
