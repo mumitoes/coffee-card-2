@@ -17,21 +17,16 @@
 	<uses-permission android:name="android.hardware.camera.autofocus"/>
 	<uses-permission android:name="android.permission.VIBRATE"/>
 	<uses-permission android:name="android.permission.FLASHLIGHT"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
 	<application
 		android:icon="@drawable/icon"
 		android:label="Coff E Card">
-		
-		<activity android:name="ice.zxing.CaptureActivity"
-							android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"
-							android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-							android:windowSoftInputMode="stateAlwaysHidden">
-						</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".main"
 			android:label="Coff E Card"
-			android:screenOrientation="portrait">
+			android:screenOrientation="unspecified">
 			<intent-filter>
 			   <action android:name="android.intent.action.MAIN" />
 			   <category android:name="android.intent.category.LAUNCHER" />

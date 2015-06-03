@@ -33,7 +33,7 @@ Library3=jhsicezxing1
 #End Region
 
 #Region  Activity Attributes 
-	#FullScreen: True
+	#FullScreen: False
 	#IncludeTitle: True
 #End Region
 
@@ -58,7 +58,6 @@ Sub Globals
 	Private btnScan As Button
 	Private imgLogo As ImageView
 	Private imgStamp1, imgStamp2, imgStamp3, imgStamp4, imgStamp5, imgStamp6 As ImageView
-	'Private imgStamp() As ImageView
 	Private lblCompanyName As Label
 	Private pnlBG As Panel
 	Private pnlStamp1, pnlStamp2, pnlStamp3, pnlStamp4, pnlStamp5, pnlStamp6 As Panel
@@ -112,7 +111,6 @@ Sub loadDBname 'Load company name from database
 End Sub
 
 Sub loadStamp 'load stamp from database
-	'imgStamp = Array As ImageView(imgStamp1, imgStamp2, imgStamp3, imgStamp4, imgStamp5, imgStamp6)
 	myStamp=myTheme.loadStampIcon
 	For i = 0 To myStamp.RowCount - 1
 		myStamp.Position=i
@@ -131,82 +129,72 @@ Sub Activity_Pause (UserClosed As Boolean)
 End Sub
 
 Private Sub updateStamps
-'	For i = 0 To CoffeeCount Mod 7
-'		imgStamp(i).Visible = True
-'	Next
-'	
-'	If CoffeeCount = 6 Then
-'		ToastMessageShow(" You Have Earned A free Coffee", True)
-'		Activity.LoadLayout("freecoffee") 'will load 2 layout for coffee app
-'	Else
-'		ToastMessageShow (" You still need " & (6 - CoffeeCount) & " more stamp in order to get a free coffee", False)
-'	End If
-	If CoffeeCount = 6 Then 
-		ToastMessageShow(" You Have Earned A free Coffee", True)
-		Activity.LoadLayout("freecoffee") 'will load 2 layout for coffee app
-		imgStamp1.Visible = True
-		imgStamp2.Visible = True
-		imgStamp3.Visible = True
-		imgStamp4.Visible = True
-		imgStamp5.Visible = True
-		imgStamp6.Visible = True
+If CoffeeCount = 6 Then 
+	ToastMessageShow(" You Have Earned A free Coffee", True)
+	Activity.LoadLayout("freecoffee") 'will load 2 layout for coffee app
+	imgStamp1.Visible = True
+	imgStamp2.Visible = True
+	imgStamp3.Visible = True
+	imgStamp4.Visible = True
+	imgStamp5.Visible = True
+	imgStamp6.Visible = True
     End If 
 	
 	If CoffeeCount = 5 Then 'from 5 to 1 will show how many more coffess you will need to get a free coffee
-		ToastMessageShow (" You still need 1 more stamp in order to get a free coffee", False)
-		imgStamp1.Visible = True
-		imgStamp2.Visible = True
-		imgStamp3.Visible = True
-		imgStamp4.Visible = True
-		imgStamp5.Visible = True
-		imgStamp6.Visible = False
+	ToastMessageShow (" You still need 1 more stamp in order to get a free coffee", False)
+	imgStamp1.Visible = True
+	imgStamp2.Visible = True
+	imgStamp3.Visible = True
+	imgStamp4.Visible = True
+	imgStamp5.Visible = True
+	imgStamp6.Visible = False
 	End If 
 	
 	If CoffeeCount = 4 Then 
-		ToastMessageShow (" You still need 2 more stamp in order to get a free coffee", False)
-		imgStamp1.Visible = True
-		imgStamp2.Visible = True
-		imgStamp3.Visible = True
-		imgStamp4.Visible = True
-		imgStamp5.Visible = False
-		imgStamp6.Visible = False
+	ToastMessageShow (" You still need 2 more stamp in order to get a free coffee", False)
+	imgStamp1.Visible = True
+	imgStamp2.Visible = True
+	imgStamp3.Visible = True
+	imgStamp4.Visible = True
+	imgStamp5.Visible = False
+	imgStamp6.Visible = False
 	End If  
 	If CoffeeCount = 3 Then 
-		ToastMessageShow (" You still need 3 more stamp in order to get a free coffee", False)
-		imgStamp1.Visible = True
-		imgStamp2.Visible = True
-		imgStamp3.Visible = True
-		imgStamp4.Visible = False
-		imgStamp5.Visible = False
-		imgStamp6.Visible = False
+	ToastMessageShow (" You still need 3 more stamp in order to get a free coffee", False)
+	imgStamp1.Visible = True
+	imgStamp2.Visible = True
+	imgStamp3.Visible = True
+	imgStamp4.Visible = False
+	imgStamp5.Visible = False
+	imgStamp6.Visible = False
 	End If 
 	If CoffeeCount = 2 Then 
-		ToastMessageShow (" you still need 4  more stamp in order to get a free coffee", False)
-		imgStamp1.Visible = True
-		imgStamp2.Visible = True
-		imgStamp3.Visible = False
-		imgStamp4.Visible = False
-		imgStamp5.Visible = False
-		imgStamp6.Visible = False
+	ToastMessageShow (" you still need 4  more stamp in order to get a free coffee", False)
+	imgStamp1.Visible = True
+	imgStamp2.Visible = True
+	imgStamp3.Visible = False
+	imgStamp4.Visible = False
+	imgStamp5.Visible = False
+	imgStamp6.Visible = False
 	End If  
 	If CoffeeCount = 1 Then
-		ToastMessageShow (" You still need 5  more stamp in order to get a free coffee", False)
-		imgStamp1.Visible = True
-		imgStamp2.Visible = False
-		imgStamp3.Visible = False
-		imgStamp4.Visible = False
-		imgStamp5.Visible = False
-		imgStamp6.Visible = False
+	ToastMessageShow (" You still need 5  more stamp in order to get a free coffee", False)
+	imgStamp1.Visible = True
+	imgStamp2.Visible = False
+	imgStamp3.Visible = False
+	imgStamp4.Visible = False
+	imgStamp5.Visible = False
+	imgStamp6.Visible = False
 	End If 
 	
 	If CoffeeCount = 0 Then 
-		ToastMessageShow (" Don't Forget to use your Coffe-E-Card when you buying  a coffee", False)
-		imgStamp1.Visible = False
-		imgStamp2.Visible = False
-		imgStamp3.Visible = False
-		imgStamp4.Visible = False
-		imgStamp5.Visible = False
-		imgStamp6.Visible = False
+	ToastMessageShow (" Don't Forget to use your Coffe-E-Card when you buying  a coffee", False)
+	imgStamp1.Visible = False
+	imgStamp2.Visible = False
+	imgStamp3.Visible = False
+	imgStamp4.Visible = False
+	imgStamp5.Visible = False
+	imgStamp6.Visible = False
 	End If 
 End Sub
 Sub btnScan_Click 'in order to bring information about free coffee just press once 
@@ -240,21 +228,16 @@ Sub btnScan_LongClick ' in order to scan the barcode or bring the barcode scanne
 	
 	qrscanner.theBottomPromptMessage = "Scan Your Coffee Stamp."
 	qrscanner.theBottomPromptTextSize = 5%y                         'text size in pixels
-	qrscanner.bottomPromptColor = Colors.Yellow
+	qrscanner.bottomPromptColor = Colors.Black
 	qrscanner.bottomPromptDistanceFromBottom = 5%y                  'pixel distance from top
 	
-	qrscanner.BeginScan("scanner")	'This function is what opens the scanner the word in the brackets is the name of the 
-									' functions that handle events from the scanning library e.g if we had "Taco" insted of "scanner"
-									' then the next 2 functions would be Taco_result and Taco_noscan
+	qrscanner.BeginScan("scanner")	
 End Sub
 
 Sub scanner_result(atype As String,Values As String)
-	scanSuccess = False
-	If Values <> "Null" Then
-		scanSuccess = True
-		CoffeeCount = CoffeeCount + 1
-		Log("type:" & atype &  "Values:" & Values)
-	End If
+	scanSuccess = True
+	CoffeeCount = CoffeeCount + 1
+	Log("type:" & atype &  "Values:" & Values)
 	updateStamps
 End Sub
 
