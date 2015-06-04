@@ -67,6 +67,8 @@ Sub Globals
 	Dim myTheme As CoffeeTheme
 	Dim scanSuccess As Boolean
 	Dim qrscanner As JhsIceZxing1
+	Private No As Button
+	Private Yes As Button
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -79,6 +81,9 @@ Sub Activity_Create(FirstTime As Boolean)
 	loadDBname
 	loadStamp
 	loadDBbuttonColours
+	
+	CoffeeCount=5
+	
 	
 End Sub
 
@@ -218,11 +223,13 @@ End Sub
 Sub btnScan_Click 'in order to bring information about free coffee just press once 
 	updateStamps	
 End Sub
-Sub yes_Click 'to redeem your free coffee press Yes 
-	
+Sub btnyes_Click 'to redeem your free coffee press Yes 
+	CoffeeCount = 0
+	updateStamps
+	Activity.LoadLayout("main")
 	
 End Sub
-Sub No_Click ' you can also save and redeem later press No
+Sub btnno_Click ' you can also save and redeem later press No
 	activity.LoadLayout("main") 'will return to main layout
 End Sub
 
@@ -269,3 +276,4 @@ Sub scanner_noscan(atype As String,Values As String)
 	Msgbox(Values,"Scan Failed")
 
 End Sub
+
