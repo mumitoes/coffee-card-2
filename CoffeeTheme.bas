@@ -48,9 +48,3 @@ cursor1=SQL1.ExecQuery("SELECT StampIcon FROM themes")
 Return cursor1
 End Sub
 
-'pulls in colour RBG from database
-Sub loadBtnColours As Cursor
-cursor1=SQL1.ExecQuery("SELECT BtnRed, BtnBlue, BtnGreen FROM themes")
-Return cursor1
-End Sub
-

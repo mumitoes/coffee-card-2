@@ -46,7 +46,6 @@ Dim myCoName As Cursor
 Dim myStamp As Cursor
 Dim Card As Card
 Dim CoffeeCount As Int
-Dim myButtonColours As Cursor
 
 End Sub
 
@@ -77,12 +76,10 @@ Sub Activity_Create(FirstTime As Boolean)
 	loadDBlogo
 	loadDBname
 	loadStamp
-	loadDBbuttonColours
+	
 End Sub
 
-'===========================================Layout========================================
-#Region Layout design
-Sub loadDBcolours 'Assign background colours from database to Background Panel
+Sub loadDBcolours 'Load background colours from database
 	myColors = myTheme.loadColours
 	For i = 0 To myColors.RowCount - 1 '
 		myColors.Position = i 
@@ -95,7 +92,7 @@ Sub loadDBcolours 'Assign background colours from database to Background Panel
 	Next
 End Sub
 
-Sub loadDBlogo 'Assign Logo as string from database to Logo Image
+Sub loadDBlogo 'Load Logo as string from database
 	myLogo=myTheme.loadLogo
 	For i = 0 To myLogo.RowCount - 1
 		myLogo.Position=i
@@ -105,7 +102,7 @@ Sub loadDBlogo 'Assign Logo as string from database to Logo Image
 	Next
 End Sub
 
-Sub loadDBname ' method to assign Company Name to Company Name label
+Sub loadDBname 'Load company name from database
 	myCoName=myTheme.loadCompanyName
 	For i = 0 To myCoName.RowCount - 1
 		myCoName.Position=i	
@@ -113,7 +110,7 @@ Sub loadDBname ' method to assign Company Name to Company Name label
 	Next
 End Sub
 
-Sub loadStamp ' method to assign stamp image to Stamp Images
+Sub loadStamp 'load stamp from database
 	myStamp=myTheme.loadStampIcon
 	For i = 0 To myStamp.RowCount - 1
 		myStamp.Position=i
@@ -122,20 +119,6 @@ Sub loadStamp ' method to assign stamp image to Stamp Images
 		imgStamp1.Bitmap=image
 	Next
 End Sub
-
-Sub loadDBbuttonColours ' method to assign colours to Scan Button
-	myButtonColours =myTheme.loadBtnColours
-	For i = 0 To myButtonColours.RowCount - 1 
-		myButtonColours.Position = i 
-		Dim btnRBG As ColorDrawable
-		Dim colours As Int
-		colours = Colors.RGB(myButtonColours.GetInt("BtnRed"),myButtonColours.GetInt("BtnBlue"),myButtonColours.GetInt("BtnGreen"))
-		'colours = Colors.RGB(199, 89, 0)
-		btnRBG.Initialize(colours, 5)
-		btnScan.background=btnRBG
-	Next
-End Sub
-#End Region
 
 Sub Activity_Resume
 
@@ -245,21 +228,25 @@ Sub btnScan_LongClick ' in order to scan the barcode or bring the barcode scanne
 	
 	qrscanner.theBottomPromptMessage = "Scan Your Coffee Stamp."
 	qrscanner.theBottomPromptTextSize = 5%y                         'text size in pixels
-	qrscanner.bottomPromptColor = Colors.Black
+	qrscanner.bottomPromptColor = Colors.Yellow
 	qrscanner.bottomPromptDistanceFromBottom = 5%y                  'pixel distance from top
 	
-	qrscanner.BeginScan("scanner")	
+	scanSuccess = False
+	qrscanner.BeginScan("scanner")	'This is the function that opens the scanner activity
+	'	the string that is passed into the BeginScan function is the name of the events that result from the scanner library
+	' e.g if we passed "Taco" insted of scanner then the bottem functions woulod be called "Taco_result" and "Taco_noscan"
 End Sub
 
 Sub scanner_result(atype As String,Values As String)
-	scanSuccess = True
-	CoffeeCount = CoffeeCount + 1
-	Log("type:" & atype &  "Values:" & Values)
+	If Values <> "Null" Then
+		scanSuccess = True
+		CoffeeCount = CoffeeCount + 1
+		Log("type:" & atype &  "Values:" & Values)
+	End If
 	updateStamps
 End Sub
 
 Sub scanner_noscan(atype As String,Values As String)
-	scanSuccess = False
 	Log("type:" & atype &  "Values:" & Values)
 	Msgbox(Values,"Scan Failed")
 

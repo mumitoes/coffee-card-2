@@ -1,7 +1,7 @@
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
-
+$Objects/
 # Folder config file
 Desktop.ini
 
@@ -44,3 +44,5 @@ Temporary Items
 *.meta
 Objects/AndroidManifest.xml
 Objects/bin/temp.ap_
+Objects/bin/temp.ap_
+*.ap_
