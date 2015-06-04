@@ -44,3 +44,4 @@ Temporary Items
 *.meta
 Objects/AndroidManifest.xml
 Objects/bin/temp.ap_
+Objects/bin/temp.ap_
