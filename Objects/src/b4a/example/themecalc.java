@@ -12,8 +12,9 @@ public static Object getObject() {
 }
  public anywheresoftware.b4a.keywords.Common __c = null;
 public b4a.example.main _main = null;
+public b4a.example.drinkmenu _drinkmenu = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Main",Debug.moduleToString(b4a.example.main.class)};
+		return new Object[] {"DrinkMenu",Debug.moduleToString(b4a.example.drinkmenu.class),"Main",Debug.moduleToString(b4a.example.main.class)};
 }
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 3;BA.debugLine="Sub Process_Globals";

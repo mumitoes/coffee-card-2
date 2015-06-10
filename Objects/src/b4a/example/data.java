@@ -27,8 +27,9 @@ public class data extends B4AClass.ImplB4AClass implements BA.SubDelegator{
  public anywheresoftware.b4a.keywords.Common __c = null;
 public b4a.example.main _main = null;
 public b4a.example.themecalc _themecalc = null;
+public b4a.example.drinkmenu _drinkmenu = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Main",Debug.moduleToString(b4a.example.main.class),"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
+		return new Object[] {"DrinkMenu",Debug.moduleToString(b4a.example.drinkmenu.class),"Main",Debug.moduleToString(b4a.example.main.class),"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
 }
 public String  _class_globals() throws Exception{
  //BA.debugLineNum = 3;BA.debugLine="Sub Class_Globals";

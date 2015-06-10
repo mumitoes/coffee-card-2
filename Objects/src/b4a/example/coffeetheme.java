@@ -29,8 +29,9 @@ public anywheresoftware.b4a.sql.SQL _sql1 = null;
 public anywheresoftware.b4a.sql.SQL.CursorWrapper _cursor1 = null;
 public b4a.example.main _main = null;
 public b4a.example.themecalc _themecalc = null;
+public b4a.example.drinkmenu _drinkmenu = null;
   public Object[] GetGlobals() {
-		return new Object[] {"cursor1",_cursor1,"Main",Debug.moduleToString(b4a.example.main.class),"SQL1",_sql1,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
+		return new Object[] {"cursor1",_cursor1,"DrinkMenu",Debug.moduleToString(b4a.example.drinkmenu.class),"Main",Debug.moduleToString(b4a.example.main.class),"SQL1",_sql1,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
 }
 public String  _class_globals() throws Exception{
  //BA.debugLineNum = 6;BA.debugLine="Sub Class_Globals";

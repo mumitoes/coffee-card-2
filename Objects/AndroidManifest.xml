@@ -41,5 +41,12 @@
 			</intent-filter>
 			
 		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".drinkmenu"
+			android:label="Coff E Card"
+			android:screenOrientation="portrait">
+		</activity>
 	</application>
 </manifest>

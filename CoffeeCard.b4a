@@ -1,20 +1,23 @@
 ﻿Version=5
-NumberOfModules=5
+NumberOfModules=6
 Module1=CoffeeTheme
 Module2=Card
 Module3=CoffeeStamp
 Module4=ThemeCalc
 Module5=Data
+Module6=DrinkMenu
 Build1=Default,b4a.example
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~AddApplicationText(~\n~<activity android:name="ice.zxing.CaptureActivity"~\n~					android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"~\n~					android:theme="@android:style/Theme.NoTitleBar.Fullscreen"~\n~					android:windowSoftInputMode="stateAlwaysHidden">~\n~				</activity>)~\n~'End of default text.~\n~
 IconFile=
-NumberOfFiles=6
+NumberOfFiles=8
 File1=coffee_stamp.png
 File2=customerthemes.sqlite
-File3=freecoffee.bal
-File4=free-coffee-1-2.jpg
-File5=logoSample.png
-File6=main.bal
+File3=DrinksMenu.bal
+File4=freecoffee.bal
+File5=free-coffee-1-2.jpg
+File6=logoSample.png
+File7=main.bal
+File8=Thumbs.db
 NumberOfLibraries=3
 Library1=core
 Library2=sql
@@ -67,6 +70,12 @@ Sub Globals
 	Dim qrscanner As JhsIceZxing1
 	Private No As Button
 	Private Yes As Button
+	Private btnBack As Button
+	Private btnOrder As Button
+	Private pgBackGround As Panel
+	Private Spinner1 As Spinner
+	Private WebView1 As WebView
+	Private btnExtras As Button
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -139,6 +148,7 @@ Sub loadDBbuttonColours ' method to assign colours to Scan Button
 		btnScan.background=btnRBG
 	Next
 End Sub
+
 #End Region
 
 Sub Activity_Resume
@@ -228,7 +238,7 @@ Sub btnyes_Click 'to redeem your free coffee press Yes
 	
 End Sub
 Sub btnno_Click ' you can also save and redeem later press No
-	activity.LoadLayout("main") 'will return to main layout
+	Activity.LoadLayout("main") 'will return to main layout
 End Sub
 
 Sub btnScan_LongClick ' in order to scan the barcode or bring the barcode scanner long press btnScan
@@ -274,4 +284,3 @@ Sub scanner_noscan(atype As String,Values As String)
 	Msgbox(Values,"Scan Failed")
 
 End Sub
-
