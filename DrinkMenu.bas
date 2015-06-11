@@ -45,6 +45,7 @@ Sub Globals
 	Private pgBackGround As Panel
 	Private WebView1 As WebView
 	Private btnExtras As Button
+	Private ScrollView1 As ScrollView
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -64,7 +65,7 @@ End Sub
 
 '========================================================= DRINK MENU Layout =================================================================================
 
-Sub loadBackGroundcolours 'Assign background colours from database to Background Panel
+Sub loadBackGroundcolours 'Sets backgrouns colours
 	myColors = myTheme.loadColours
 	For i = 0 To myColors.RowCount - 1 '
 		myColors.Position = i 
@@ -77,7 +78,7 @@ Sub loadBackGroundcolours 'Assign background colours from database to Background
 	Next
 End Sub
 
-Sub DrinkMenubuttonColours ' method to assign colours to Scan Button
+Sub DrinkMenubuttonColours 'Sets button colours
 	myButtonColours =myTheme.loadBtnColours
 	For i = 0 To myButtonColours.RowCount - 1 
 		myButtonColours.Position = i 
@@ -90,6 +91,7 @@ Sub DrinkMenubuttonColours ' method to assign colours to Scan Button
 	Next
 End Sub
 
+'Sends the sql to a web view that can be viewed on the design
 Sub Drinks_Menu (SQL As SQL, Query As String, StringArgs() As String, Limit As Int, Clickable As Boolean) As String
 	Dim Table As List
 	Dim cur As Cursor
@@ -136,6 +138,7 @@ Sub Drinks_Menu (SQL As SQL, Query As String, StringArgs() As String, Limit As I
 
 End Sub
 
+'Sets the sql into a memory table then passes it to the spinner
 Sub MemoryTable(SQL As SQL, Query As String, StringArgs() As String, Limit As Int) As List
 	Dim cur As Cursor
 	If StringArgs <> Null Then 
@@ -158,7 +161,7 @@ Sub MemoryTable(SQL As SQL, Query As String, StringArgs() As String, Limit As In
 	cur.Close
 	Return table
 End Sub
-
+'shows a list of only drink names so they can be selected and added to the cart database
 Sub DrinkSpinner(SQL As SQL, Query As String, StringArgs() As String, Limit As Int, Spinner1 As Spinner)
 	Spinner1.Clear
 	Dim Table As List
