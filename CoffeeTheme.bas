@@ -1,5 +1,5 @@
 ﻿Type=Class
-Version=5
+Version=5.02
 ModulesStructureVersion=1
 B4A=true
 @EndOfDesignText@
@@ -53,3 +53,25 @@ Sub loadBtnColours As Cursor
 cursor1=SQL1.ExecQuery("SELECT BtnRed, BtnBlue, BtnGreen FROM themes")
 Return cursor1
 End Sub
+
+Sub loadCoffeeMenu As Cursor
+cursor1=SQL1.ExecQuery("SELECT ID, Name, Description, Cost FROM CoffeeMenu")
+Return cursor1
+End Sub
+
+Sub SelectDrink As Cursor
+cursor1=SQL1.ExecQuery("SELECT Name FROM CoffeeMenu")
+Return cursor1
+End Sub
+
+Sub DrinkExtras As Cursor
+cursor1=SQL1.ExecQuery("SELECT ID, Description , Cost FROM CoffeeExtras")
+Return cursor1
+End Sub
+
+Sub ExtraSelect As Cursor
+cursor1=SQL1.ExecQuery("SELECT Description FROM CoffeeExtras")
+Return cursor1
+End Sub
+
+

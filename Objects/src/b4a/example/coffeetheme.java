@@ -92,6 +92,28 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
+public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadcoffeemenu() throws Exception{
+try {
+		Debug.PushSubsStack("loadCoffeeMenu (coffeetheme) ","coffeetheme",1,ba,this,52);
+ BA.debugLineNum = 52;BA.debugLine="Sub loadCoffeeMenu As Cursor";
+Debug.ShouldStop(524288);
+ BA.debugLineNum = 53;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT ID, Name, Descripti";
+Debug.ShouldStop(1048576);
+_cursor1.setObject((android.database.Cursor)(_sql1.ExecQuery("SELECT ID, Name, Description, Cost FROM CoffeeMenu")));
+ BA.debugLineNum = 54;BA.debugLine="Return cursor1";
+Debug.ShouldStop(2097152);
+if (true) return _cursor1;
+ BA.debugLineNum = 55;BA.debugLine="End Sub";
+Debug.ShouldStop(4194304);
+return null;
+}
+catch (Exception e) {
+			Debug.ErrorCaught(e);
+			throw e;
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
 public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadcolours() throws Exception{
 try {
 		Debug.PushSubsStack("loadColours (coffeetheme) ","coffeetheme",1,ba,this,26);

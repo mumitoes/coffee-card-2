@@ -340,10 +340,11 @@ public anywheresoftware.b4a.objects.ButtonWrapper _btnorder = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pgbackground = null;
 public anywheresoftware.b4a.objects.WebViewWrapper _webview1 = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _btnextras = null;
+public anywheresoftware.b4a.objects.ScrollViewWrapper _scrollview1 = null;
 public b4a.example.main _main = null;
 public b4a.example.themecalc _themecalc = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"btnExtras",mostCurrent._btnextras,"btnOrder",mostCurrent._btnorder,"btnScan",mostCurrent._btnscan,"Card",Debug.moduleToString(b4a.example.card.class),"CoffeeCount",_coffeecount,"HtmlCSS",_htmlcss,"imgLogo",mostCurrent._imglogo,"imgStamp1",mostCurrent._imgstamp1,"imgStamp2",mostCurrent._imgstamp2,"imgStamp3",mostCurrent._imgstamp3,"imgStamp4",mostCurrent._imgstamp4,"imgStamp5",mostCurrent._imgstamp5,"imgStamp6",mostCurrent._imgstamp6,"lblCompanyName",mostCurrent._lblcompanyname,"Main",Debug.moduleToString(b4a.example.main.class),"myButtonColours",_mybuttoncolours,"myColors",_mycolors,"myCoName",_myconame,"myLogo",_mylogo,"myStamp",_mystamp,"myTheme",mostCurrent._mytheme,"No",mostCurrent._no,"pgBackGround",mostCurrent._pgbackground,"pnlBG",mostCurrent._pnlbg,"pnlStamp1",mostCurrent._pnlstamp1,"pnlStamp2",mostCurrent._pnlstamp2,"pnlStamp3",mostCurrent._pnlstamp3,"pnlStamp4",mostCurrent._pnlstamp4,"pnlStamp5",mostCurrent._pnlstamp5,"pnlStamp6",mostCurrent._pnlstamp6,"qrscanner",mostCurrent._qrscanner,"scanSuccess",_scansuccess,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class),"WebView1",mostCurrent._webview1,"Yes",mostCurrent._yes};
+		return new Object[] {"Activity",mostCurrent._activity,"btnExtras",mostCurrent._btnextras,"btnOrder",mostCurrent._btnorder,"btnScan",mostCurrent._btnscan,"Card",Debug.moduleToString(b4a.example.card.class),"CoffeeCount",_coffeecount,"HtmlCSS",_htmlcss,"imgLogo",mostCurrent._imglogo,"imgStamp1",mostCurrent._imgstamp1,"imgStamp2",mostCurrent._imgstamp2,"imgStamp3",mostCurrent._imgstamp3,"imgStamp4",mostCurrent._imgstamp4,"imgStamp5",mostCurrent._imgstamp5,"imgStamp6",mostCurrent._imgstamp6,"lblCompanyName",mostCurrent._lblcompanyname,"Main",Debug.moduleToString(b4a.example.main.class),"myButtonColours",_mybuttoncolours,"myColors",_mycolors,"myCoName",_myconame,"myLogo",_mylogo,"myStamp",_mystamp,"myTheme",mostCurrent._mytheme,"No",mostCurrent._no,"pgBackGround",mostCurrent._pgbackground,"pnlBG",mostCurrent._pnlbg,"pnlStamp1",mostCurrent._pnlstamp1,"pnlStamp2",mostCurrent._pnlstamp2,"pnlStamp3",mostCurrent._pnlstamp3,"pnlStamp4",mostCurrent._pnlstamp4,"pnlStamp5",mostCurrent._pnlstamp5,"pnlStamp6",mostCurrent._pnlstamp6,"qrscanner",mostCurrent._qrscanner,"scanSuccess",_scansuccess,"ScrollView1",mostCurrent._scrollview1,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class),"WebView1",mostCurrent._webview1,"Yes",mostCurrent._yes};
 }
 
 public static void initializeProcessGlobals() {
@@ -355,15 +356,15 @@ public static void initializeProcessGlobals() {
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,45);
+		Debug.PushSubsStack("Activity_Create (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,46);
 Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 45;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-Debug.ShouldStop(4096);
- BA.debugLineNum = 47;BA.debugLine="Activity.LoadLayout(\"DrinksMenu\")";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 46;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+Debug.ShouldStop(8192);
+ BA.debugLineNum = 48;BA.debugLine="Activity.LoadLayout(\"DrinksMenu\")";
+Debug.ShouldStop(32768);
 mostCurrent._activity.LoadLayout("DrinksMenu",mostCurrent.activityBA);
- BA.debugLineNum = 50;BA.debugLine="End Sub";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 51;BA.debugLine="End Sub";
+Debug.ShouldStop(262144);
 return "";
 }
 catch (Exception e) {
@@ -375,12 +376,12 @@ finally {
 		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,56);
+		Debug.PushSubsStack("Activity_Pause (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,57);
 Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 56;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(8388608);
- BA.debugLineNum = 58;BA.debugLine="End Sub";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 57;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+Debug.ShouldStop(16777216);
+ BA.debugLineNum = 59;BA.debugLine="End Sub";
+Debug.ShouldStop(67108864);
 return "";
 }
 catch (Exception e) {
@@ -392,11 +393,11 @@ finally {
 		}}
 public static String  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,52);
- BA.debugLineNum = 52;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(524288);
- BA.debugLineNum = 54;BA.debugLine="End Sub";
-Debug.ShouldStop(2097152);
+		Debug.PushSubsStack("Activity_Resume (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,53);
+ BA.debugLineNum = 53;BA.debugLine="Sub Activity_Resume";
+Debug.ShouldStop(1048576);
+ BA.debugLineNum = 55;BA.debugLine="End Sub";
+Debug.ShouldStop(4194304);
 return "";
 }
 catch (Exception e) {
@@ -408,11 +409,11 @@ finally {
 		}}
 public static String  _btnextras_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnExtras_Click (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,175);
- BA.debugLineNum = 175;BA.debugLine="Sub btnExtras_Click";
-Debug.ShouldStop(16384);
- BA.debugLineNum = 177;BA.debugLine="End Sub";
-Debug.ShouldStop(65536);
+		Debug.PushSubsStack("btnExtras_Click (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,136);
+ BA.debugLineNum = 136;BA.debugLine="Sub btnExtras_Click";
+Debug.ShouldStop(128);
+ BA.debugLineNum = 138;BA.debugLine="End Sub";
+Debug.ShouldStop(512);
 return "";
 }
 catch (Exception e) {
@@ -424,11 +425,11 @@ finally {
 		}}
 public static String  _btnorder_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnOrder_Click (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,171);
- BA.debugLineNum = 171;BA.debugLine="Sub btnOrder_Click";
-Debug.ShouldStop(1024);
- BA.debugLineNum = 173;BA.debugLine="End Sub";
-Debug.ShouldStop(4096);
+		Debug.PushSubsStack("btnOrder_Click (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,132);
+ BA.debugLineNum = 132;BA.debugLine="Sub btnOrder_Click";
+Debug.ShouldStop(8);
+ BA.debugLineNum = 134;BA.debugLine="End Sub";
+Debug.ShouldStop(32);
 return "";
 }
 catch (Exception e) {
@@ -440,48 +441,48 @@ finally {
 		}}
 public static String  _drinkmenubuttoncolours() throws Exception{
 try {
-		Debug.PushSubsStack("DrinkMenubuttonColours (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,75);
+		Debug.PushSubsStack("DrinkMenubuttonColours (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,76);
 int _i = 0;
 anywheresoftware.b4a.objects.drawable.ColorDrawable _btnrbg = null;
 int _colours = 0;
- BA.debugLineNum = 75;BA.debugLine="Sub DrinkMenubuttonColours ' method to assign colo";
-Debug.ShouldStop(1024);
- BA.debugLineNum = 76;BA.debugLine="myButtonColours =myTheme.loadBtnColours";
+ BA.debugLineNum = 76;BA.debugLine="Sub DrinkMenubuttonColours 'Sets button colours";
 Debug.ShouldStop(2048);
-_mybuttoncolours = mostCurrent._mytheme._loadbtncolours();
- BA.debugLineNum = 77;BA.debugLine="For i = 0 To myButtonColours.RowCount - 1";
+ BA.debugLineNum = 77;BA.debugLine="myButtonColours =myTheme.loadBtnColours";
 Debug.ShouldStop(4096);
-{
-final int step50 = 1;
-final int limit50 = (int) (_mybuttoncolours.getRowCount()-1);
-for (_i = (int) (0); (step50 > 0 && _i <= limit50) || (step50 < 0 && _i >= limit50); _i = ((int)(0 + _i + step50))) {
-Debug.locals.put("i", _i);
- BA.debugLineNum = 78;BA.debugLine="myButtonColours.Position = i";
+_mybuttoncolours = mostCurrent._mytheme._loadbtncolours();
+ BA.debugLineNum = 78;BA.debugLine="For i = 0 To myButtonColours.RowCount - 1";
 Debug.ShouldStop(8192);
-_mybuttoncolours.setPosition(_i);
- BA.debugLineNum = 79;BA.debugLine="Dim btnRBG As ColorDrawable";
+{
+final int step51 = 1;
+final int limit51 = (int) (_mybuttoncolours.getRowCount()-1);
+for (_i = (int) (0); (step51 > 0 && _i <= limit51) || (step51 < 0 && _i >= limit51); _i = ((int)(0 + _i + step51))) {
+Debug.locals.put("i", _i);
+ BA.debugLineNum = 79;BA.debugLine="myButtonColours.Position = i";
 Debug.ShouldStop(16384);
-_btnrbg = new anywheresoftware.b4a.objects.drawable.ColorDrawable();Debug.locals.put("btnRBG", _btnrbg);
- BA.debugLineNum = 80;BA.debugLine="Dim colours As Int";
+_mybuttoncolours.setPosition(_i);
+ BA.debugLineNum = 80;BA.debugLine="Dim btnRBG As ColorDrawable";
 Debug.ShouldStop(32768);
-_colours = 0;Debug.locals.put("colours", _colours);
- BA.debugLineNum = 81;BA.debugLine="colours = Colors.RGB(myButtonColours.GetInt(\"Btn";
+_btnrbg = new anywheresoftware.b4a.objects.drawable.ColorDrawable();Debug.locals.put("btnRBG", _btnrbg);
+ BA.debugLineNum = 81;BA.debugLine="Dim colours As Int";
 Debug.ShouldStop(65536);
-_colours = anywheresoftware.b4a.keywords.Common.Colors.RGB(_mybuttoncolours.GetInt("BtnRed"),_mybuttoncolours.GetInt("BtnBlue"),_mybuttoncolours.GetInt("BtnGreen"));Debug.locals.put("colours", _colours);
- BA.debugLineNum = 82;BA.debugLine="btnRBG.Initialize(colours, 5)";
+_colours = 0;Debug.locals.put("colours", _colours);
+ BA.debugLineNum = 82;BA.debugLine="colours = Colors.RGB(myButtonColours.GetInt(\"Btn";
 Debug.ShouldStop(131072);
-_btnrbg.Initialize(_colours,(int) (5));
- BA.debugLineNum = 83;BA.debugLine="btnExtras.background=btnRBG";
+_colours = anywheresoftware.b4a.keywords.Common.Colors.RGB(_mybuttoncolours.GetInt("BtnRed"),_mybuttoncolours.GetInt("BtnBlue"),_mybuttoncolours.GetInt("BtnGreen"));Debug.locals.put("colours", _colours);
+ BA.debugLineNum = 83;BA.debugLine="btnRBG.Initialize(colours, 5)";
 Debug.ShouldStop(262144);
-mostCurrent._btnextras.setBackground((android.graphics.drawable.Drawable)(_btnrbg.getObject()));
- BA.debugLineNum = 84;BA.debugLine="btnOrder.background=btnRBG";
+_btnrbg.Initialize(_colours,(int) (5));
+ BA.debugLineNum = 84;BA.debugLine="btnExtras.background=btnRBG";
 Debug.ShouldStop(524288);
+mostCurrent._btnextras.setBackground((android.graphics.drawable.Drawable)(_btnrbg.getObject()));
+ BA.debugLineNum = 85;BA.debugLine="btnOrder.background=btnRBG";
+Debug.ShouldStop(1048576);
 mostCurrent._btnorder.setBackground((android.graphics.drawable.Drawable)(_btnrbg.getObject()));
  }
 }Debug.locals.put("i", _i);
 ;
- BA.debugLineNum = 86;BA.debugLine="End Sub";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 87;BA.debugLine="End Sub";
+Debug.ShouldStop(4194304);
 return "";
 }
 catch (Exception e) {
@@ -491,149 +492,13 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
-public static String  _drinks_menu(anywheresoftware.b4a.sql.SQL _sql,String _query,String[] _stringargs,int _limit,boolean _clickable) throws Exception{
+public static String  _drinks_menu() throws Exception{
 try {
-		Debug.PushSubsStack("Drinks_Menu (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,88);
-anywheresoftware.b4a.objects.collections.List _table = null;
-anywheresoftware.b4a.sql.SQL.CursorWrapper _cur = null;
-anywheresoftware.b4a.keywords.StringBuilderWrapper _sb = null;
-int _i = 0;
-int _row = 0;
-Debug.locals.put("SQL", _sql);
-Debug.locals.put("Query", _query);
-Debug.locals.put("StringArgs", _stringargs);
-Debug.locals.put("Limit", _limit);
-Debug.locals.put("Clickable", _clickable);
- BA.debugLineNum = 88;BA.debugLine="Sub Drinks_Menu (SQL As SQL, Query As String, Stri";
-Debug.ShouldStop(8388608);
- BA.debugLineNum = 89;BA.debugLine="Dim Table As List";
-Debug.ShouldStop(16777216);
-_table = new anywheresoftware.b4a.objects.collections.List();Debug.locals.put("Table", _table);
- BA.debugLineNum = 90;BA.debugLine="Dim cur As Cursor";
+		Debug.PushSubsStack("Drinks_Menu (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,90);
+ BA.debugLineNum = 90;BA.debugLine="Sub Drinks_Menu";
 Debug.ShouldStop(33554432);
-_cur = new anywheresoftware.b4a.sql.SQL.CursorWrapper();Debug.locals.put("cur", _cur);
- BA.debugLineNum = 91;BA.debugLine="If StringArgs <> Null Then";
-Debug.ShouldStop(67108864);
-if (_stringargs!= null) { 
- BA.debugLineNum = 92;BA.debugLine="cur = SQL.ExecQuery2(Query, StringArgs)";
+ BA.debugLineNum = 92;BA.debugLine="End Sub";
 Debug.ShouldStop(134217728);
-_cur.setObject((android.database.Cursor)(_sql.ExecQuery2(_query,_stringargs)));
- }else {
- BA.debugLineNum = 94;BA.debugLine="cur = SQL.ExecQuery(Query)";
-Debug.ShouldStop(536870912);
-_cur.setObject((android.database.Cursor)(_sql.ExecQuery(_query)));
- };
- BA.debugLineNum = 96;BA.debugLine="Log(\"ExecuteHtml: \" & Query)";
-Debug.ShouldStop(-2147483648);
-anywheresoftware.b4a.keywords.Common.Log("ExecuteHtml: "+_query);
- BA.debugLineNum = 97;BA.debugLine="If Limit > 0 Then Limit = Min(Limit, cur.RowCount";
-Debug.ShouldStop(1);
-if (_limit>0) { 
-_limit = (int) (anywheresoftware.b4a.keywords.Common.Min(_limit,_cur.getRowCount()));Debug.locals.put("Limit", _limit);}
-else {
-_limit = _cur.getRowCount();Debug.locals.put("Limit", _limit);};
- BA.debugLineNum = 98;BA.debugLine="Dim sb As StringBuilder";
-Debug.ShouldStop(2);
-_sb = new anywheresoftware.b4a.keywords.StringBuilderWrapper();Debug.locals.put("sb", _sb);
- BA.debugLineNum = 99;BA.debugLine="sb.Initialize";
-Debug.ShouldStop(4);
-_sb.Initialize();
- BA.debugLineNum = 100;BA.debugLine="sb.Append(\"<html><body>\").Append(CRLF)";
-Debug.ShouldStop(8);
-_sb.Append("<html><body>").Append(anywheresoftware.b4a.keywords.Common.CRLF);
- BA.debugLineNum = 101;BA.debugLine="sb.Append(\"<style type='text/css'>\").Append(HtmlC";
-Debug.ShouldStop(16);
-_sb.Append("<style type='text/css'>").Append(_htmlcss).Append("</style>").Append(anywheresoftware.b4a.keywords.Common.CRLF);
- BA.debugLineNum = 102;BA.debugLine="sb.Append(\"<table><tr>\").Append(CRLF)";
-Debug.ShouldStop(32);
-_sb.Append("<table><tr>").Append(anywheresoftware.b4a.keywords.Common.CRLF);
- BA.debugLineNum = 103;BA.debugLine="For i = 0 To cur.ColumnCount - 1";
-Debug.ShouldStop(64);
-{
-final int step75 = 1;
-final int limit75 = (int) (_cur.getColumnCount()-1);
-for (_i = (int) (0); (step75 > 0 && _i <= limit75) || (step75 < 0 && _i >= limit75); _i = ((int)(0 + _i + step75))) {
-Debug.locals.put("i", _i);
- BA.debugLineNum = 104;BA.debugLine="sb.Append(\"<th>\").Append(cur.GetColumnName(i)).A";
-Debug.ShouldStop(128);
-_sb.Append("<th>").Append(_cur.GetColumnName(_i)).Append("</th>");
- }
-}Debug.locals.put("i", _i);
-;
- BA.debugLineNum = 107;BA.debugLine="sb.Append(\"</tr>\").Append(CRLF)";
-Debug.ShouldStop(1024);
-_sb.Append("</tr>").Append(anywheresoftware.b4a.keywords.Common.CRLF);
- BA.debugLineNum = 108;BA.debugLine="For row = 0 To Limit - 1";
-Debug.ShouldStop(2048);
-{
-final int step79 = 1;
-final int limit79 = (int) (_limit-1);
-for (_row = (int) (0); (step79 > 0 && _row <= limit79) || (step79 < 0 && _row >= limit79); _row = ((int)(0 + _row + step79))) {
-Debug.locals.put("row", _row);
- BA.debugLineNum = 109;BA.debugLine="cur.Position = row";
-Debug.ShouldStop(4096);
-_cur.setPosition(_row);
- BA.debugLineNum = 110;BA.debugLine="If row Mod 2 = 0 Then";
-Debug.ShouldStop(8192);
-if (_row%2==0) { 
- BA.debugLineNum = 111;BA.debugLine="sb.Append(\"<tr>\")";
-Debug.ShouldStop(16384);
-_sb.Append("<tr>");
- }else {
- BA.debugLineNum = 113;BA.debugLine="sb.Append(\"<tr class='odd'>\")";
-Debug.ShouldStop(65536);
-_sb.Append("<tr class='odd'>");
- };
- BA.debugLineNum = 115;BA.debugLine="For i = 0 To cur.ColumnCount - 1";
-Debug.ShouldStop(262144);
-{
-final int step86 = 1;
-final int limit86 = (int) (_cur.getColumnCount()-1);
-for (_i = (int) (0); (step86 > 0 && _i <= limit86) || (step86 < 0 && _i >= limit86); _i = ((int)(0 + _i + step86))) {
-Debug.locals.put("i", _i);
- BA.debugLineNum = 116;BA.debugLine="sb.Append(\"<td>\")";
-Debug.ShouldStop(524288);
-_sb.Append("<td>");
- BA.debugLineNum = 117;BA.debugLine="If Clickable Then";
-Debug.ShouldStop(1048576);
-if (_clickable) { 
- BA.debugLineNum = 118;BA.debugLine="sb.Append(\"<a href='http://\").Append(i).Append";
-Debug.ShouldStop(2097152);
-_sb.Append("<a href='http://").Append(BA.NumberToString(_i)).Append(".");
- BA.debugLineNum = 119;BA.debugLine="sb.Append(row)";
-Debug.ShouldStop(4194304);
-_sb.Append(BA.NumberToString(_row));
- BA.debugLineNum = 120;BA.debugLine="sb.Append(\".com'>\").Append(cur.GetString2(i)).";
-Debug.ShouldStop(8388608);
-_sb.Append(".com'>").Append(_cur.GetString2(_i)).Append("</a>");
- }else {
- BA.debugLineNum = 122;BA.debugLine="sb.Append(cur.GetString2(i))";
-Debug.ShouldStop(33554432);
-_sb.Append(_cur.GetString2(_i));
- };
- BA.debugLineNum = 124;BA.debugLine="sb.Append(\"</td>\")";
-Debug.ShouldStop(134217728);
-_sb.Append("</td>");
- }
-}Debug.locals.put("i", _i);
-;
- BA.debugLineNum = 126;BA.debugLine="sb.Append(\"</tr>\").Append(CRLF)";
-Debug.ShouldStop(536870912);
-_sb.Append("</tr>").Append(anywheresoftware.b4a.keywords.Common.CRLF);
- }
-}Debug.locals.put("row", _row);
-;
- BA.debugLineNum = 128;BA.debugLine="cur.Close";
-Debug.ShouldStop(-2147483648);
-_cur.Close();
- BA.debugLineNum = 129;BA.debugLine="sb.Append(\"</table></body></html>\")";
-Debug.ShouldStop(1);
-_sb.Append("</table></body></html>");
- BA.debugLineNum = 130;BA.debugLine="Return sb.ToString";
-Debug.ShouldStop(2);
-if (true) return _sb.ToString();
- BA.debugLineNum = 132;BA.debugLine="End Sub";
-Debug.ShouldStop(8);
 return "";
 }
 catch (Exception e) {
@@ -645,7 +510,7 @@ finally {
 		}}
 public static String  _drinkspinner(anywheresoftware.b4a.sql.SQL _sql,String _query,String[] _stringargs,int _limit,anywheresoftware.b4a.objects.SpinnerWrapper _spinner1) throws Exception{
 try {
-		Debug.PushSubsStack("DrinkSpinner (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,157);
+		Debug.PushSubsStack("DrinkSpinner (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,118);
 anywheresoftware.b4a.objects.collections.List _table = null;
 String[] _cols = null;
 int _i = 0;
@@ -654,39 +519,39 @@ Debug.locals.put("Query", _query);
 Debug.locals.put("StringArgs", _stringargs);
 Debug.locals.put("Limit", _limit);
 Debug.locals.put("Spinner1", _spinner1);
- BA.debugLineNum = 157;BA.debugLine="Sub DrinkSpinner(SQL As SQL, Query As String, Stri";
-Debug.ShouldStop(268435456);
- BA.debugLineNum = 158;BA.debugLine="Spinner1.Clear";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 118;BA.debugLine="Sub DrinkSpinner(SQL As SQL, Query As String, Stri";
+Debug.ShouldStop(2097152);
+ BA.debugLineNum = 119;BA.debugLine="Spinner1.Clear";
+Debug.ShouldStop(4194304);
 _spinner1.Clear();
- BA.debugLineNum = 159;BA.debugLine="Dim Table As List";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 120;BA.debugLine="Dim Table As List";
+Debug.ShouldStop(8388608);
 _table = new anywheresoftware.b4a.objects.collections.List();Debug.locals.put("Table", _table);
- BA.debugLineNum = 160;BA.debugLine="Table = MemoryTable(SQL, Query, StringArgs, Limit";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 121;BA.debugLine="Table = MemoryTable(SQL, Query, StringArgs, Limit";
+Debug.ShouldStop(16777216);
 _table = _memorytable(_sql,_query,_stringargs,_limit);Debug.locals.put("Table", _table);
- BA.debugLineNum = 161;BA.debugLine="Dim Cols() As String";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 122;BA.debugLine="Dim Cols() As String";
+Debug.ShouldStop(33554432);
 _cols = new String[(int) (0)];
 java.util.Arrays.fill(_cols,"");Debug.locals.put("Cols", _cols);
- BA.debugLineNum = 162;BA.debugLine="For i = 0 To Table.Size - 1";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 123;BA.debugLine="For i = 0 To Table.Size - 1";
+Debug.ShouldStop(67108864);
 {
-final int step130 = 1;
-final int limit130 = (int) (_table.getSize()-1);
-for (_i = (int) (0); (step130 > 0 && _i <= limit130) || (step130 < 0 && _i >= limit130); _i = ((int)(0 + _i + step130))) {
+final int step90 = 1;
+final int limit90 = (int) (_table.getSize()-1);
+for (_i = (int) (0); (step90 > 0 && _i <= limit90) || (step90 < 0 && _i >= limit90); _i = ((int)(0 + _i + step90))) {
 Debug.locals.put("i", _i);
- BA.debugLineNum = 163;BA.debugLine="Cols = Table.Get(i)";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 124;BA.debugLine="Cols = Table.Get(i)";
+Debug.ShouldStop(134217728);
 _cols = (String[])(_table.Get(_i));Debug.locals.put("Cols", _cols);
- BA.debugLineNum = 164;BA.debugLine="Spinner1.Add(Cols(1))";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 125;BA.debugLine="Spinner1.Add(Cols(1))";
+Debug.ShouldStop(268435456);
 _spinner1.Add(_cols[(int) (1)]);
  }
 }Debug.locals.put("i", _i);
 ;
- BA.debugLineNum = 166;BA.debugLine="End Sub";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 127;BA.debugLine="End Sub";
+Debug.ShouldStop(1073741824);
 return "";
 }
 catch (Exception e) {
@@ -740,54 +605,56 @@ mostCurrent._pgbackground = new anywheresoftware.b4a.objects.PanelWrapper();
 mostCurrent._webview1 = new anywheresoftware.b4a.objects.WebViewWrapper();
  //BA.debugLineNum = 42;BA.debugLine="Private btnExtras As Button";
 mostCurrent._btnextras = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 43;BA.debugLine="End Sub";
+ //BA.debugLineNum = 43;BA.debugLine="Private ScrollView1 As ScrollView";
+mostCurrent._scrollview1 = new anywheresoftware.b4a.objects.ScrollViewWrapper();
+ //BA.debugLineNum = 44;BA.debugLine="End Sub";
 return "";
 }
 public static String  _loadbackgroundcolours() throws Exception{
 try {
-		Debug.PushSubsStack("loadBackGroundcolours (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,62);
+		Debug.PushSubsStack("loadBackGroundcolours (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,63);
 int _i = 0;
 anywheresoftware.b4a.objects.drawable.GradientDrawable _bggradient = null;
 int[] _colours = null;
- BA.debugLineNum = 62;BA.debugLine="Sub loadBackGroundcolours 'Assign background colou";
-Debug.ShouldStop(536870912);
- BA.debugLineNum = 63;BA.debugLine="myColors = myTheme.loadColours";
+ BA.debugLineNum = 63;BA.debugLine="Sub loadBackGroundcolours 'Sets backgrouns colours";
 Debug.ShouldStop(1073741824);
-_mycolors = mostCurrent._mytheme._loadcolours();
- BA.debugLineNum = 64;BA.debugLine="For i = 0 To myColors.RowCount - 1 '";
+ BA.debugLineNum = 64;BA.debugLine="myColors = myTheme.loadColours";
 Debug.ShouldStop(-2147483648);
-{
-final int step38 = 1;
-final int limit38 = (int) (_mycolors.getRowCount()-1);
-for (_i = (int) (0); (step38 > 0 && _i <= limit38) || (step38 < 0 && _i >= limit38); _i = ((int)(0 + _i + step38))) {
-Debug.locals.put("i", _i);
- BA.debugLineNum = 65;BA.debugLine="myColors.Position = i";
+_mycolors = mostCurrent._mytheme._loadcolours();
+ BA.debugLineNum = 65;BA.debugLine="For i = 0 To myColors.RowCount - 1 '";
 Debug.ShouldStop(1);
-_mycolors.setPosition(_i);
- BA.debugLineNum = 66;BA.debugLine="Dim bgGradient As GradientDrawable";
+{
+final int step39 = 1;
+final int limit39 = (int) (_mycolors.getRowCount()-1);
+for (_i = (int) (0); (step39 > 0 && _i <= limit39) || (step39 < 0 && _i >= limit39); _i = ((int)(0 + _i + step39))) {
+Debug.locals.put("i", _i);
+ BA.debugLineNum = 66;BA.debugLine="myColors.Position = i";
 Debug.ShouldStop(2);
-_bggradient = new anywheresoftware.b4a.objects.drawable.GradientDrawable();Debug.locals.put("bgGradient", _bggradient);
- BA.debugLineNum = 67;BA.debugLine="Dim colours(2) As Int";
+_mycolors.setPosition(_i);
+ BA.debugLineNum = 67;BA.debugLine="Dim bgGradient As GradientDrawable";
 Debug.ShouldStop(4);
+_bggradient = new anywheresoftware.b4a.objects.drawable.GradientDrawable();Debug.locals.put("bgGradient", _bggradient);
+ BA.debugLineNum = 68;BA.debugLine="Dim colours(2) As Int";
+Debug.ShouldStop(8);
 _colours = new int[(int) (2)];
 ;Debug.locals.put("colours", _colours);
- BA.debugLineNum = 68;BA.debugLine="colours(0) = Colors.RGB(myColors.GetInt(\"BG1Red\"";
-Debug.ShouldStop(8);
-_colours[(int) (0)] = anywheresoftware.b4a.keywords.Common.Colors.RGB(_mycolors.GetInt("BG1Red"),_mycolors.GetInt("BG1Blue"),_mycolors.GetInt("BG1Green"));Debug.locals.put("colours", _colours);
- BA.debugLineNum = 69;BA.debugLine="colours(1) = Colors.RGB(myColors.GetInt(\"BG2Red\"";
+ BA.debugLineNum = 69;BA.debugLine="colours(0) = Colors.RGB(myColors.GetInt(\"BG1Red\"";
 Debug.ShouldStop(16);
-_colours[(int) (1)] = anywheresoftware.b4a.keywords.Common.Colors.RGB(_mycolors.GetInt("BG2Red"),_mycolors.GetInt("BG2Blue"),_mycolors.GetInt("BG2Green"));Debug.locals.put("colours", _colours);
- BA.debugLineNum = 70;BA.debugLine="bgGradient.Initialize(\"TR_BL\", colours)";
+_colours[(int) (0)] = anywheresoftware.b4a.keywords.Common.Colors.RGB(_mycolors.GetInt("BG1Red"),_mycolors.GetInt("BG1Blue"),_mycolors.GetInt("BG1Green"));Debug.locals.put("colours", _colours);
+ BA.debugLineNum = 70;BA.debugLine="colours(1) = Colors.RGB(myColors.GetInt(\"BG2Red\"";
 Debug.ShouldStop(32);
-_bggradient.Initialize(BA.getEnumFromString(android.graphics.drawable.GradientDrawable.Orientation.class,"TR_BL"),_colours);
- BA.debugLineNum = 71;BA.debugLine="pgBackGround.Background=bgGradient";
+_colours[(int) (1)] = anywheresoftware.b4a.keywords.Common.Colors.RGB(_mycolors.GetInt("BG2Red"),_mycolors.GetInt("BG2Blue"),_mycolors.GetInt("BG2Green"));Debug.locals.put("colours", _colours);
+ BA.debugLineNum = 71;BA.debugLine="bgGradient.Initialize(\"TR_BL\", colours)";
 Debug.ShouldStop(64);
+_bggradient.Initialize(BA.getEnumFromString(android.graphics.drawable.GradientDrawable.Orientation.class,"TR_BL"),_colours);
+ BA.debugLineNum = 72;BA.debugLine="pgBackGround.Background=bgGradient";
+Debug.ShouldStop(128);
 mostCurrent._pgbackground.setBackground((android.graphics.drawable.Drawable)(_bggradient.getObject()));
  }
 }Debug.locals.put("i", _i);
 ;
- BA.debugLineNum = 73;BA.debugLine="End Sub";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 74;BA.debugLine="End Sub";
+Debug.ShouldStop(512);
 return "";
 }
 catch (Exception e) {
@@ -799,7 +666,7 @@ finally {
 		}}
 public static anywheresoftware.b4a.objects.collections.List  _memorytable(anywheresoftware.b4a.sql.SQL _sql,String _query,String[] _stringargs,int _limit) throws Exception{
 try {
-		Debug.PushSubsStack("MemoryTable (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,134);
+		Debug.PushSubsStack("MemoryTable (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,95);
 anywheresoftware.b4a.sql.SQL.CursorWrapper _cur = null;
 anywheresoftware.b4a.objects.collections.List _table = null;
 int _row = 0;
@@ -809,78 +676,78 @@ Debug.locals.put("SQL", _sql);
 Debug.locals.put("Query", _query);
 Debug.locals.put("StringArgs", _stringargs);
 Debug.locals.put("Limit", _limit);
- BA.debugLineNum = 134;BA.debugLine="Sub MemoryTable(SQL As SQL, Query As String, Strin";
-Debug.ShouldStop(32);
- BA.debugLineNum = 135;BA.debugLine="Dim cur As Cursor";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 95;BA.debugLine="Sub MemoryTable(SQL As SQL, Query As String, Strin";
+Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 96;BA.debugLine="Dim cur As Cursor";
+Debug.ShouldStop(-2147483648);
 _cur = new anywheresoftware.b4a.sql.SQL.CursorWrapper();Debug.locals.put("cur", _cur);
- BA.debugLineNum = 136;BA.debugLine="If StringArgs <> Null Then";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 97;BA.debugLine="If StringArgs <> Null Then";
+Debug.ShouldStop(1);
 if (_stringargs!= null) { 
- BA.debugLineNum = 137;BA.debugLine="cur = SQL.ExecQuery2(Query, StringArgs)";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 98;BA.debugLine="cur = SQL.ExecQuery2(Query, StringArgs)";
+Debug.ShouldStop(2);
 _cur.setObject((android.database.Cursor)(_sql.ExecQuery2(_query,_stringargs)));
  }else {
- BA.debugLineNum = 139;BA.debugLine="cur = SQL.ExecQuery(Query)";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 100;BA.debugLine="cur = SQL.ExecQuery(Query)";
+Debug.ShouldStop(8);
 _cur.setObject((android.database.Cursor)(_sql.ExecQuery(_query)));
  };
- BA.debugLineNum = 141;BA.debugLine="Log(\"MemoryTable: \" & Query)";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 102;BA.debugLine="Log(\"MemoryTable: \" & Query)";
+Debug.ShouldStop(32);
 anywheresoftware.b4a.keywords.Common.Log("MemoryTable: "+_query);
- BA.debugLineNum = 142;BA.debugLine="Dim table As List";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 103;BA.debugLine="Dim table As List";
+Debug.ShouldStop(64);
 _table = new anywheresoftware.b4a.objects.collections.List();Debug.locals.put("table", _table);
- BA.debugLineNum = 143;BA.debugLine="table.Initialize";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 104;BA.debugLine="table.Initialize";
+Debug.ShouldStop(128);
 _table.Initialize();
- BA.debugLineNum = 144;BA.debugLine="If Limit > 0 Then Limit = Min(Limit, cur.RowCount";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 105;BA.debugLine="If Limit > 0 Then Limit = Min(Limit, cur.RowCount";
+Debug.ShouldStop(256);
 if (_limit>0) { 
 _limit = (int) (anywheresoftware.b4a.keywords.Common.Min(_limit,_cur.getRowCount()));Debug.locals.put("Limit", _limit);}
 else {
 _limit = _cur.getRowCount();Debug.locals.put("Limit", _limit);};
- BA.debugLineNum = 145;BA.debugLine="For row = 0 To Limit - 1";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 106;BA.debugLine="For row = 0 To Limit - 1";
+Debug.ShouldStop(512);
 {
-final int step114 = 1;
-final int limit114 = (int) (_limit-1);
-for (_row = (int) (0); (step114 > 0 && _row <= limit114) || (step114 < 0 && _row >= limit114); _row = ((int)(0 + _row + step114))) {
+final int step74 = 1;
+final int limit74 = (int) (_limit-1);
+for (_row = (int) (0); (step74 > 0 && _row <= limit74) || (step74 < 0 && _row >= limit74); _row = ((int)(0 + _row + step74))) {
 Debug.locals.put("row", _row);
- BA.debugLineNum = 146;BA.debugLine="cur.Position = row";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 107;BA.debugLine="cur.Position = row";
+Debug.ShouldStop(1024);
 _cur.setPosition(_row);
- BA.debugLineNum = 147;BA.debugLine="Dim values(cur.ColumnCount) As String";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 108;BA.debugLine="Dim values(cur.ColumnCount) As String";
+Debug.ShouldStop(2048);
 _values = new String[_cur.getColumnCount()];
 java.util.Arrays.fill(_values,"");Debug.locals.put("values", _values);
- BA.debugLineNum = 148;BA.debugLine="For col = 0 To cur.ColumnCount - 1";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 109;BA.debugLine="For col = 0 To cur.ColumnCount - 1";
+Debug.ShouldStop(4096);
 {
-final int step117 = 1;
-final int limit117 = (int) (_cur.getColumnCount()-1);
-for (_col = (int) (0); (step117 > 0 && _col <= limit117) || (step117 < 0 && _col >= limit117); _col = ((int)(0 + _col + step117))) {
+final int step77 = 1;
+final int limit77 = (int) (_cur.getColumnCount()-1);
+for (_col = (int) (0); (step77 > 0 && _col <= limit77) || (step77 < 0 && _col >= limit77); _col = ((int)(0 + _col + step77))) {
 Debug.locals.put("col", _col);
- BA.debugLineNum = 149;BA.debugLine="values(col) = cur.GetString2(col)";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 110;BA.debugLine="values(col) = cur.GetString2(col)";
+Debug.ShouldStop(8192);
 _values[_col] = _cur.GetString2(_col);Debug.locals.put("values", _values);
  }
 }Debug.locals.put("col", _col);
 ;
- BA.debugLineNum = 151;BA.debugLine="table.Add(values)";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 112;BA.debugLine="table.Add(values)";
+Debug.ShouldStop(32768);
 _table.Add((Object)(_values));
  }
 }Debug.locals.put("row", _row);
 ;
- BA.debugLineNum = 153;BA.debugLine="cur.Close";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 114;BA.debugLine="cur.Close";
+Debug.ShouldStop(131072);
 _cur.Close();
- BA.debugLineNum = 154;BA.debugLine="Return table";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 115;BA.debugLine="Return table";
+Debug.ShouldStop(262144);
 if (true) return _table;
- BA.debugLineNum = 155;BA.debugLine="End Sub";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 116;BA.debugLine="End Sub";
+Debug.ShouldStop(524288);
 return null;
 }
 catch (Exception e) {
@@ -915,13 +782,13 @@ return "";
 }
 public static String  _spinner1_itemclick(int _position,Object _value) throws Exception{
 try {
-		Debug.PushSubsStack("Spinner1_ItemClick (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,168);
+		Debug.PushSubsStack("Spinner1_ItemClick (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,129);
 Debug.locals.put("Position", _position);
 Debug.locals.put("Value", _value);
- BA.debugLineNum = 168;BA.debugLine="Sub Spinner1_ItemClick (Position As Int, Value As";
-Debug.ShouldStop(128);
- BA.debugLineNum = 169;BA.debugLine="End Sub";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 129;BA.debugLine="Sub Spinner1_ItemClick (Position As Int, Value As";
+Debug.ShouldStop(1);
+ BA.debugLineNum = 130;BA.debugLine="End Sub";
+Debug.ShouldStop(2);
 return "";
 }
 catch (Exception e) {

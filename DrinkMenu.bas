@@ -1,5 +1,5 @@
 ﻿Type=Activity
-Version=5
+Version=5.02
 ModulesStructureVersion=1
 B4A=true
 @EndOfDesignText@
@@ -92,49 +92,8 @@ Sub DrinkMenubuttonColours 'Sets button colours
 End Sub
 
 'Sends the sql to a web view that can be viewed on the design
-Sub Drinks_Menu (SQL As SQL, Query As String, StringArgs() As String, Limit As Int, Clickable As Boolean) As String
-	Dim Table As List
-	Dim cur As Cursor
-	If StringArgs <> Null Then 
-		cur = SQL.ExecQuery2(Query, StringArgs)
-	Else
-		cur = SQL.ExecQuery(Query)
-	End If
-	Log("ExecuteHtml: " & Query)
-	If Limit > 0 Then Limit = Min(Limit, cur.RowCount) Else Limit = cur.RowCount
-	Dim sb As StringBuilder
-	sb.Initialize
-	sb.Append("<html><body>").Append(CRLF)
-	sb.Append("<style type='text/css'>").Append(HtmlCSS).Append("</style>").Append(CRLF)
-	sb.Append("<table><tr>").Append(CRLF)
-	For i = 0 To cur.ColumnCount - 1
-		sb.Append("<th>").Append(cur.GetColumnName(i)).Append("</th>")
-	Next
-		
-	sb.Append("</tr>").Append(CRLF)
-	For row = 0 To Limit - 1
-		cur.Position = row
-		If row Mod 2 = 0 Then
-			sb.Append("<tr>")
-		Else
-			sb.Append("<tr class='odd'>")
-		End If
-		For i = 0 To cur.ColumnCount - 1
-			sb.Append("<td>")
-			If Clickable Then
-				sb.Append("<a href='http://").Append(i).Append(".")
-				sb.Append(row)
-				sb.Append(".com'>").Append(cur.GetString2(i)).Append("</a>")
-			Else
-				sb.Append(cur.GetString2(i))
-			End If
-			sb.Append("</td>")
-		Next
-		sb.Append("</tr>").Append(CRLF)
-	Next
-	cur.Close
-	sb.Append("</table></body></html>")
-	Return sb.ToString
+Sub Drinks_Menu
+ListView1.
 
 End Sub
 
