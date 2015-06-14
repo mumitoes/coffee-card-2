@@ -48,8 +48,8 @@ public static RemoteObject _shopname = RemoteObject.createImmutable("");
 public static RemoteObject _stampid = RemoteObject.createImmutable("");
 public static RemoteObject _date = RemoteObject.createImmutable(0);
 public static b4a.example.main _main = null;
-public static b4a.example.themecalc _themecalc = null;
 public static b4a.example.maplocator _maplocator = null;
+public static b4a.example.themecalc _themecalc = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
 		return new Object[] {"Date",_ref.getField(false, "_date"),"ShopName",_ref.getField(false, "_shopname"),"StampID",_ref.getField(false, "_stampid")};
 }

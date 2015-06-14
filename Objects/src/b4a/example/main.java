@@ -380,8 +380,8 @@ public static boolean _scansuccess = false;
 public ice.zxing.b4aZXingLib _qrscanner = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _no = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _yes = null;
-public b4a.example.themecalc _themecalc = null;
 public b4a.example.maplocator _maplocator = null;
+public b4a.example.themecalc _themecalc = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="main";
 RDebugUtils.currentLine=131072;
@@ -419,135 +419,135 @@ RDebugUtils.currentModule="main";
 int _i = 0;
 anywheresoftware.b4a.objects.drawable.GradientDrawable _bggradient = null;
 int[] _colours = null;
-RDebugUtils.currentLine=196608;
- //BA.debugLineNum = 196608;BA.debugLine="Sub loadDBcolours 'Assign background colours from";
-RDebugUtils.currentLine=196609;
- //BA.debugLineNum = 196609;BA.debugLine="myColors = myTheme.loadColours";
+RDebugUtils.currentLine=327680;
+ //BA.debugLineNum = 327680;BA.debugLine="Sub loadDBcolours 'Assign background colours from";
+RDebugUtils.currentLine=327681;
+ //BA.debugLineNum = 327681;BA.debugLine="myColors = myTheme.loadColours";
 _mycolors = mostCurrent._mytheme._loadcolours(null);
-RDebugUtils.currentLine=196610;
- //BA.debugLineNum = 196610;BA.debugLine="For i = 0 To myColors.RowCount - 1 '";
+RDebugUtils.currentLine=327682;
+ //BA.debugLineNum = 327682;BA.debugLine="For i = 0 To myColors.RowCount - 1 '";
 {
 final int step35 = 1;
 final int limit35 = (int) (_mycolors.getRowCount()-1);
 for (_i = (int) (0); (step35 > 0 && _i <= limit35) || (step35 < 0 && _i >= limit35); _i = ((int)(0 + _i + step35))) {
-RDebugUtils.currentLine=196611;
- //BA.debugLineNum = 196611;BA.debugLine="myColors.Position = i";
+RDebugUtils.currentLine=327683;
+ //BA.debugLineNum = 327683;BA.debugLine="myColors.Position = i";
 _mycolors.setPosition(_i);
-RDebugUtils.currentLine=196612;
- //BA.debugLineNum = 196612;BA.debugLine="Dim bgGradient As GradientDrawable";
+RDebugUtils.currentLine=327684;
+ //BA.debugLineNum = 327684;BA.debugLine="Dim bgGradient As GradientDrawable";
 _bggradient = new anywheresoftware.b4a.objects.drawable.GradientDrawable();
-RDebugUtils.currentLine=196613;
- //BA.debugLineNum = 196613;BA.debugLine="Dim colours(2) As Int";
+RDebugUtils.currentLine=327685;
+ //BA.debugLineNum = 327685;BA.debugLine="Dim colours(2) As Int";
 _colours = new int[(int) (2)];
 ;
-RDebugUtils.currentLine=196614;
- //BA.debugLineNum = 196614;BA.debugLine="colours(0) = Colors.RGB(myColors.GetInt(\"BG1Red\"";
+RDebugUtils.currentLine=327686;
+ //BA.debugLineNum = 327686;BA.debugLine="colours(0) = Colors.RGB(myColors.GetInt(\"BG1Red\"";
 _colours[(int) (0)] = anywheresoftware.b4a.keywords.Common.Colors.RGB(_mycolors.GetInt("BG1Red"),_mycolors.GetInt("BG1Blue"),_mycolors.GetInt("BG1Green"));
-RDebugUtils.currentLine=196615;
- //BA.debugLineNum = 196615;BA.debugLine="colours(1) = Colors.RGB(myColors.GetInt(\"BG2Red\"";
+RDebugUtils.currentLine=327687;
+ //BA.debugLineNum = 327687;BA.debugLine="colours(1) = Colors.RGB(myColors.GetInt(\"BG2Red\"";
 _colours[(int) (1)] = anywheresoftware.b4a.keywords.Common.Colors.RGB(_mycolors.GetInt("BG2Red"),_mycolors.GetInt("BG2Blue"),_mycolors.GetInt("BG2Green"));
-RDebugUtils.currentLine=196616;
- //BA.debugLineNum = 196616;BA.debugLine="bgGradient.Initialize(\"TR_BL\", colours)";
+RDebugUtils.currentLine=327688;
+ //BA.debugLineNum = 327688;BA.debugLine="bgGradient.Initialize(\"TR_BL\", colours)";
 _bggradient.Initialize(BA.getEnumFromString(android.graphics.drawable.GradientDrawable.Orientation.class,"TR_BL"),_colours);
-RDebugUtils.currentLine=196617;
- //BA.debugLineNum = 196617;BA.debugLine="pnlBG.Background=bgGradient";
+RDebugUtils.currentLine=327689;
+ //BA.debugLineNum = 327689;BA.debugLine="pnlBG.Background=bgGradient";
 mostCurrent._pnlbg.setBackground((android.graphics.drawable.Drawable)(_bggradient.getObject()));
  }
 };
-RDebugUtils.currentLine=196619;
- //BA.debugLineNum = 196619;BA.debugLine="End Sub";
+RDebugUtils.currentLine=327691;
+ //BA.debugLineNum = 327691;BA.debugLine="End Sub";
 return "";
 }
 public static String  _loaddblogo() throws Exception{
 RDebugUtils.currentModule="main";
 int _i = 0;
 anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper _image = null;
-RDebugUtils.currentLine=262144;
- //BA.debugLineNum = 262144;BA.debugLine="Sub loadDBlogo 'Assign Logo as string from databas";
-RDebugUtils.currentLine=262145;
- //BA.debugLineNum = 262145;BA.debugLine="myLogo=myTheme.loadLogo";
+RDebugUtils.currentLine=393216;
+ //BA.debugLineNum = 393216;BA.debugLine="Sub loadDBlogo 'Assign Logo as string from databas";
+RDebugUtils.currentLine=393217;
+ //BA.debugLineNum = 393217;BA.debugLine="myLogo=myTheme.loadLogo";
 _mylogo = mostCurrent._mytheme._loadlogo(null);
-RDebugUtils.currentLine=262146;
- //BA.debugLineNum = 262146;BA.debugLine="For i = 0 To myLogo.RowCount - 1";
+RDebugUtils.currentLine=393218;
+ //BA.debugLineNum = 393218;BA.debugLine="For i = 0 To myLogo.RowCount - 1";
 {
 final int step47 = 1;
 final int limit47 = (int) (_mylogo.getRowCount()-1);
 for (_i = (int) (0); (step47 > 0 && _i <= limit47) || (step47 < 0 && _i >= limit47); _i = ((int)(0 + _i + step47))) {
-RDebugUtils.currentLine=262147;
- //BA.debugLineNum = 262147;BA.debugLine="myLogo.Position=i";
+RDebugUtils.currentLine=393219;
+ //BA.debugLineNum = 393219;BA.debugLine="myLogo.Position=i";
 _mylogo.setPosition(_i);
-RDebugUtils.currentLine=262148;
- //BA.debugLineNum = 262148;BA.debugLine="Dim image As Bitmap";
+RDebugUtils.currentLine=393220;
+ //BA.debugLineNum = 393220;BA.debugLine="Dim image As Bitmap";
 _image = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper();
-RDebugUtils.currentLine=262149;
- //BA.debugLineNum = 262149;BA.debugLine="image.Initialize(File.DirAssets, myLogo.GetStrin";
+RDebugUtils.currentLine=393221;
+ //BA.debugLineNum = 393221;BA.debugLine="image.Initialize(File.DirAssets, myLogo.GetStrin";
 _image.Initialize(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),_mylogo.GetString("Logo"));
-RDebugUtils.currentLine=262150;
- //BA.debugLineNum = 262150;BA.debugLine="imgLogo.Bitmap=image";
+RDebugUtils.currentLine=393222;
+ //BA.debugLineNum = 393222;BA.debugLine="imgLogo.Bitmap=image";
 mostCurrent._imglogo.setBitmap((android.graphics.Bitmap)(_image.getObject()));
  }
 };
-RDebugUtils.currentLine=262152;
- //BA.debugLineNum = 262152;BA.debugLine="End Sub";
+RDebugUtils.currentLine=393224;
+ //BA.debugLineNum = 393224;BA.debugLine="End Sub";
 return "";
 }
 public static String  _loaddbname() throws Exception{
 RDebugUtils.currentModule="main";
 int _i = 0;
-RDebugUtils.currentLine=327680;
- //BA.debugLineNum = 327680;BA.debugLine="Sub loadDBname ' method to assign Company Name to";
-RDebugUtils.currentLine=327681;
- //BA.debugLineNum = 327681;BA.debugLine="myCoName=myTheme.loadCompanyName";
+RDebugUtils.currentLine=458752;
+ //BA.debugLineNum = 458752;BA.debugLine="Sub loadDBname ' method to assign Company Name to";
+RDebugUtils.currentLine=458753;
+ //BA.debugLineNum = 458753;BA.debugLine="myCoName=myTheme.loadCompanyName";
 _myconame = mostCurrent._mytheme._loadcompanyname(null);
-RDebugUtils.currentLine=327682;
- //BA.debugLineNum = 327682;BA.debugLine="For i = 0 To myCoName.RowCount - 1";
+RDebugUtils.currentLine=458754;
+ //BA.debugLineNum = 458754;BA.debugLine="For i = 0 To myCoName.RowCount - 1";
 {
 final int step56 = 1;
 final int limit56 = (int) (_myconame.getRowCount()-1);
 for (_i = (int) (0); (step56 > 0 && _i <= limit56) || (step56 < 0 && _i >= limit56); _i = ((int)(0 + _i + step56))) {
-RDebugUtils.currentLine=327683;
- //BA.debugLineNum = 327683;BA.debugLine="myCoName.Position=i";
+RDebugUtils.currentLine=458755;
+ //BA.debugLineNum = 458755;BA.debugLine="myCoName.Position=i";
 _myconame.setPosition(_i);
-RDebugUtils.currentLine=327684;
- //BA.debugLineNum = 327684;BA.debugLine="lblCompanyName.Text  =myCoName.GetString(\"Compan";
+RDebugUtils.currentLine=458756;
+ //BA.debugLineNum = 458756;BA.debugLine="lblCompanyName.Text  =myCoName.GetString(\"Compan";
 mostCurrent._lblcompanyname.setText((Object)(_myconame.GetString("CompanyName")));
  }
 };
-RDebugUtils.currentLine=327686;
- //BA.debugLineNum = 327686;BA.debugLine="End Sub";
+RDebugUtils.currentLine=458758;
+ //BA.debugLineNum = 458758;BA.debugLine="End Sub";
 return "";
 }
 public static String  _loadstamp() throws Exception{
 RDebugUtils.currentModule="main";
 int _i = 0;
 anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper _image = null;
-RDebugUtils.currentLine=393216;
- //BA.debugLineNum = 393216;BA.debugLine="Sub loadStamp ' method to assign stamp image to St";
-RDebugUtils.currentLine=393217;
- //BA.debugLineNum = 393217;BA.debugLine="myStamp=myTheme.loadStampIcon";
+RDebugUtils.currentLine=524288;
+ //BA.debugLineNum = 524288;BA.debugLine="Sub loadStamp ' method to assign stamp image to St";
+RDebugUtils.currentLine=524289;
+ //BA.debugLineNum = 524289;BA.debugLine="myStamp=myTheme.loadStampIcon";
 _mystamp = mostCurrent._mytheme._loadstampicon(null);
-RDebugUtils.currentLine=393218;
- //BA.debugLineNum = 393218;BA.debugLine="For i = 0 To myStamp.RowCount - 1";
+RDebugUtils.currentLine=524290;
+ //BA.debugLineNum = 524290;BA.debugLine="For i = 0 To myStamp.RowCount - 1";
 {
 final int step63 = 1;
 final int limit63 = (int) (_mystamp.getRowCount()-1);
 for (_i = (int) (0); (step63 > 0 && _i <= limit63) || (step63 < 0 && _i >= limit63); _i = ((int)(0 + _i + step63))) {
-RDebugUtils.currentLine=393219;
- //BA.debugLineNum = 393219;BA.debugLine="myStamp.Position=i";
+RDebugUtils.currentLine=524291;
+ //BA.debugLineNum = 524291;BA.debugLine="myStamp.Position=i";
 _mystamp.setPosition(_i);
-RDebugUtils.currentLine=393220;
- //BA.debugLineNum = 393220;BA.debugLine="Dim image As Bitmap";
+RDebugUtils.currentLine=524292;
+ //BA.debugLineNum = 524292;BA.debugLine="Dim image As Bitmap";
 _image = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper();
-RDebugUtils.currentLine=393221;
- //BA.debugLineNum = 393221;BA.debugLine="image.Initialize(File.DirAssets, myLogo.GetStrin";
+RDebugUtils.currentLine=524293;
+ //BA.debugLineNum = 524293;BA.debugLine="image.Initialize(File.DirAssets, myLogo.GetStrin";
 _image.Initialize(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),_mylogo.GetString("StampIcon"));
-RDebugUtils.currentLine=393222;
- //BA.debugLineNum = 393222;BA.debugLine="imgStamp1.Bitmap=image";
+RDebugUtils.currentLine=524294;
+ //BA.debugLineNum = 524294;BA.debugLine="imgStamp1.Bitmap=image";
 mostCurrent._imgstamp1.setBitmap((android.graphics.Bitmap)(_image.getObject()));
  }
 };
-RDebugUtils.currentLine=393224;
- //BA.debugLineNum = 393224;BA.debugLine="End Sub";
+RDebugUtils.currentLine=524296;
+ //BA.debugLineNum = 524296;BA.debugLine="End Sub";
 return "";
 }
 public static String  _loaddbbuttoncolours() throws Exception{
@@ -555,55 +555,55 @@ RDebugUtils.currentModule="main";
 int _i = 0;
 anywheresoftware.b4a.objects.drawable.ColorDrawable _btnrbg = null;
 int _colours = 0;
-RDebugUtils.currentLine=458752;
- //BA.debugLineNum = 458752;BA.debugLine="Sub loadDBbuttonColours ' method to assign colours";
-RDebugUtils.currentLine=458753;
- //BA.debugLineNum = 458753;BA.debugLine="myButtonColours =myTheme.loadBtnColours";
+RDebugUtils.currentLine=589824;
+ //BA.debugLineNum = 589824;BA.debugLine="Sub loadDBbuttonColours ' method to assign colours";
+RDebugUtils.currentLine=589825;
+ //BA.debugLineNum = 589825;BA.debugLine="myButtonColours =myTheme.loadBtnColours";
 _mybuttoncolours = mostCurrent._mytheme._loadbtncolours(null);
-RDebugUtils.currentLine=458754;
- //BA.debugLineNum = 458754;BA.debugLine="For i = 0 To myButtonColours.RowCount - 1";
+RDebugUtils.currentLine=589826;
+ //BA.debugLineNum = 589826;BA.debugLine="For i = 0 To myButtonColours.RowCount - 1";
 {
 final int step72 = 1;
 final int limit72 = (int) (_mybuttoncolours.getRowCount()-1);
 for (_i = (int) (0); (step72 > 0 && _i <= limit72) || (step72 < 0 && _i >= limit72); _i = ((int)(0 + _i + step72))) {
-RDebugUtils.currentLine=458755;
- //BA.debugLineNum = 458755;BA.debugLine="myButtonColours.Position = i";
+RDebugUtils.currentLine=589827;
+ //BA.debugLineNum = 589827;BA.debugLine="myButtonColours.Position = i";
 _mybuttoncolours.setPosition(_i);
-RDebugUtils.currentLine=458756;
- //BA.debugLineNum = 458756;BA.debugLine="Dim btnRBG As ColorDrawable";
+RDebugUtils.currentLine=589828;
+ //BA.debugLineNum = 589828;BA.debugLine="Dim btnRBG As ColorDrawable";
 _btnrbg = new anywheresoftware.b4a.objects.drawable.ColorDrawable();
-RDebugUtils.currentLine=458757;
- //BA.debugLineNum = 458757;BA.debugLine="Dim colours As Int";
+RDebugUtils.currentLine=589829;
+ //BA.debugLineNum = 589829;BA.debugLine="Dim colours As Int";
 _colours = 0;
-RDebugUtils.currentLine=458758;
- //BA.debugLineNum = 458758;BA.debugLine="colours = Colors.RGB(myButtonColours.GetInt(\"Btn";
+RDebugUtils.currentLine=589830;
+ //BA.debugLineNum = 589830;BA.debugLine="colours = Colors.RGB(myButtonColours.GetInt(\"Btn";
 _colours = anywheresoftware.b4a.keywords.Common.Colors.RGB(_mybuttoncolours.GetInt("BtnRed"),_mybuttoncolours.GetInt("BtnBlue"),_mybuttoncolours.GetInt("BtnGreen"));
-RDebugUtils.currentLine=458759;
- //BA.debugLineNum = 458759;BA.debugLine="btnRBG.Initialize(colours, 5)";
+RDebugUtils.currentLine=589831;
+ //BA.debugLineNum = 589831;BA.debugLine="btnRBG.Initialize(colours, 5)";
 _btnrbg.Initialize(_colours,(int) (5));
-RDebugUtils.currentLine=458760;
- //BA.debugLineNum = 458760;BA.debugLine="btnScan.background=btnRBG";
+RDebugUtils.currentLine=589832;
+ //BA.debugLineNum = 589832;BA.debugLine="btnScan.background=btnRBG";
 mostCurrent._btnscan.setBackground((android.graphics.drawable.Drawable)(_btnrbg.getObject()));
  }
 };
-RDebugUtils.currentLine=458762;
- //BA.debugLineNum = 458762;BA.debugLine="End Sub";
+RDebugUtils.currentLine=589834;
+ //BA.debugLineNum = 589834;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="main";
-RDebugUtils.currentLine=589824;
- //BA.debugLineNum = 589824;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=589826;
- //BA.debugLineNum = 589826;BA.debugLine="End Sub";
+RDebugUtils.currentLine=262144;
+ //BA.debugLineNum = 262144;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=262146;
+ //BA.debugLineNum = 262146;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
 RDebugUtils.currentModule="main";
-RDebugUtils.currentLine=524288;
- //BA.debugLineNum = 524288;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=524290;
- //BA.debugLineNum = 524290;BA.debugLine="End Sub";
+RDebugUtils.currentLine=196608;
+ //BA.debugLineNum = 196608;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=196610;
+ //BA.debugLineNum = 196610;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnno_click() throws Exception{

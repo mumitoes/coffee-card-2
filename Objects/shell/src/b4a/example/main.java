@@ -81,8 +81,8 @@ public static RemoteObject _scansuccess = RemoteObject.createImmutable(false);
 public static RemoteObject _qrscanner = RemoteObject.declareNull("ice.zxing.b4aZXingLib");
 public static RemoteObject _no = RemoteObject.declareNull("anywheresoftware.b4a.objects.ButtonWrapper");
 public static RemoteObject _yes = RemoteObject.declareNull("anywheresoftware.b4a.objects.ButtonWrapper");
-public static b4a.example.themecalc _themecalc = null;
 public static b4a.example.maplocator _maplocator = null;
+public static b4a.example.themecalc _themecalc = null;
   public Object[] GetGlobals() {
 		return new Object[] {"Activity",main.mostCurrent._activity,"btnScan",main.mostCurrent._btnscan,"Card",Debug.moduleToString(b4a.example.card.class),"CoffeeCount",main._coffeecount,"imgLogo",main.mostCurrent._imglogo,"imgStamp1",main.mostCurrent._imgstamp1,"imgStamp2",main.mostCurrent._imgstamp2,"imgStamp3",main.mostCurrent._imgstamp3,"imgStamp4",main.mostCurrent._imgstamp4,"imgStamp5",main.mostCurrent._imgstamp5,"imgStamp6",main.mostCurrent._imgstamp6,"lblCompanyName",main.mostCurrent._lblcompanyname,"MapLocator",Debug.moduleToString(b4a.example.maplocator.class),"myButtonColours",main._mybuttoncolours,"myColors",main._mycolors,"myCoName",main._myconame,"myLogo",main._mylogo,"myStamp",main._mystamp,"myTheme",main.mostCurrent._mytheme,"No",main.mostCurrent._no,"pnlBG",main.mostCurrent._pnlbg,"pnlStamp1",main.mostCurrent._pnlstamp1,"pnlStamp2",main.mostCurrent._pnlstamp2,"pnlStamp3",main.mostCurrent._pnlstamp3,"pnlStamp4",main.mostCurrent._pnlstamp4,"pnlStamp5",main.mostCurrent._pnlstamp5,"pnlStamp6",main.mostCurrent._pnlstamp6,"qrscanner",main.mostCurrent._qrscanner,"scanSuccess",main._scansuccess,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class),"Yes",main.mostCurrent._yes};
 }

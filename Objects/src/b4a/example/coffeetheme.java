@@ -35,8 +35,8 @@ public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.sql.SQL _sql1 = null;
 public anywheresoftware.b4a.sql.SQL.CursorWrapper _cursor1 = null;
 public b4a.example.main _main = null;
-public b4a.example.themecalc _themecalc = null;
 public b4a.example.maplocator _maplocator = null;
+public b4a.example.themecalc _themecalc = null;
 public String  _initialize(b4a.example.coffeetheme __ref,anywheresoftware.b4a.BA _ba) throws Exception{
 __ref = this;
 innerInitialize(_ba);

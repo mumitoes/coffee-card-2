@@ -36,8 +36,8 @@ public String _shopname = "";
 public String _stampid = "";
 public int _date = 0;
 public b4a.example.main _main = null;
-public b4a.example.themecalc _themecalc = null;
 public b4a.example.maplocator _maplocator = null;
+public b4a.example.themecalc _themecalc = null;
 public String  _initialize(b4a.example.coffeestamp __ref,anywheresoftware.b4a.BA _ba) throws Exception{
 __ref = this;
 innerInitialize(_ba);

@@ -48,8 +48,8 @@ public static RemoteObject _card = RemoteObject.declareNull("b4a.example.card");
 public static RemoteObject _coffeecount = RemoteObject.createImmutable(0);
 public static RemoteObject _img7 = RemoteObject.declareNull("anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper");
 public static b4a.example.main _main = null;
-public static b4a.example.themecalc _themecalc = null;
 public static b4a.example.maplocator _maplocator = null;
+public static b4a.example.themecalc _themecalc = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
 		return new Object[] {"CoffeeCount",_ref.getField(false, "_coffeecount"),"img7",_ref.getField(false, "_img7")};
 }

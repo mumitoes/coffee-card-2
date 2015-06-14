@@ -45,11 +45,10 @@ public boolean isSingleton() {
 
 public static RemoteObject __c = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common");
 public static RemoteObject _sql1 = RemoteObject.declareNull("anywheresoftware.b4a.sql.SQL");
-public static RemoteObject _cursor1 = RemoteObject.declareNull("anywheresoftware.b4a.sql.SQL.CursorWrapper");
 public static b4a.example.main _main = null;
-public static b4a.example.themecalc _themecalc = null;
 public static b4a.example.maplocator _maplocator = null;
+public static b4a.example.themecalc _themecalc = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
-		return new Object[] {"cursor1",_ref.getField(false, "_cursor1"),"SQL1",_ref.getField(false, "_sql1")};
+		return new Object[] {"SQL1",_ref.getField(false, "_sql1")};
 }
 }

@@ -45,8 +45,8 @@ public boolean isSingleton() {
 
 public static RemoteObject __c = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common");
 public static b4a.example.main _main = null;
-public static b4a.example.themecalc _themecalc = null;
 public static b4a.example.maplocator _maplocator = null;
+public static b4a.example.themecalc _themecalc = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
 		return new Object[] {};
 }

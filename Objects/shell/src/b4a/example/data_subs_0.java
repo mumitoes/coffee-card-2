@@ -13,7 +13,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _createcard(RemoteObject __ref,RemoteObject _cardname,RemoteObject _stampcount,RemoteObject _bonusnumber) throws Exception{
 try {
-		Debug.PushSubsStack("CreateCard (data) ","data",5,__ref.getField(false, "ba"),__ref,40);
+		Debug.PushSubsStack("CreateCard (data) ","data",7,__ref.getField(false, "ba"),__ref,40);
 if (RapidSub.canDelegate("createcard")) return __ref.runUserSub(false, "data","createcard", __ref, _cardname, _stampcount, _bonusnumber);
 Debug.locals.put("CardName", _cardname);
 Debug.locals.put("StampCount", _stampcount);
@@ -40,7 +40,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (data) ","data",5,__ref.getField(false, "ba"),__ref,8);
+		Debug.PushSubsStack("Initialize (data) ","data",7,__ref.getField(false, "ba"),__ref,8);
 if (RapidSub.canDelegate("initialize")) return __ref.runUserSub(false, "data","initialize", __ref, _ba);
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -59,7 +59,7 @@ finally {
 		}}
 public static RemoteObject  _loadcard(RemoteObject __ref,RemoteObject _cardname) throws Exception{
 try {
-		Debug.PushSubsStack("LoadCard (data) ","data",5,__ref.getField(false, "ba"),__ref,47);
+		Debug.PushSubsStack("LoadCard (data) ","data",7,__ref.getField(false, "ba"),__ref,47);
 if (RapidSub.canDelegate("loadcard")) return __ref.runUserSub(false, "data","loadcard", __ref, _cardname);
 RemoteObject _bonusnumber = RemoteObject.createImmutable(0);
 RemoteObject _stampcount = RemoteObject.createImmutable(0);
@@ -129,7 +129,7 @@ finally {
 		}}
 public static RemoteObject  _savecard(RemoteObject __ref,RemoteObject _coffeecount,RemoteObject _bonusnumber) throws Exception{
 try {
-		Debug.PushSubsStack("SaveCard (data) ","data",5,__ref.getField(false, "ba"),__ref,13);
+		Debug.PushSubsStack("SaveCard (data) ","data",7,__ref.getField(false, "ba"),__ref,13);
 if (RapidSub.canDelegate("savecard")) return __ref.runUserSub(false, "data","savecard", __ref, _coffeecount, _bonusnumber);
 RemoteObject _countfromcard = RemoteObject.createImmutable(0);
 Debug.locals.put("CoffeeCount", _coffeecount);

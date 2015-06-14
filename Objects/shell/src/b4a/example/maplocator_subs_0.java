@@ -8,7 +8,7 @@ public class maplocator_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (maplocator) ","maplocator",6,maplocator.mostCurrent.activityBA,maplocator.mostCurrent,18);
+		Debug.PushSubsStack("Activity_Create (maplocator) ","maplocator",4,maplocator.mostCurrent.activityBA,maplocator.mostCurrent,18);
 if (RapidSub.canDelegate("activity_create")) return maplocator.remoteMe.runUserSub(false, "maplocator","activity_create", _firsttime);
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 18;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -29,7 +29,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (maplocator) ","maplocator",6,maplocator.mostCurrent.activityBA,maplocator.mostCurrent,30);
+		Debug.PushSubsStack("Activity_Pause (maplocator) ","maplocator",4,maplocator.mostCurrent.activityBA,maplocator.mostCurrent,30);
 if (RapidSub.canDelegate("activity_pause")) return maplocator.remoteMe.runUserSub(false, "maplocator","activity_pause", _userclosed);
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 30;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -47,7 +47,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (maplocator) ","maplocator",6,maplocator.mostCurrent.activityBA,maplocator.mostCurrent,26);
+		Debug.PushSubsStack("Activity_Resume (maplocator) ","maplocator",4,maplocator.mostCurrent.activityBA,maplocator.mostCurrent,26);
 if (RapidSub.canDelegate("activity_resume")) return maplocator.remoteMe.runUserSub(false, "maplocator","activity_resume");
  BA.debugLineNum = 26;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(33554432);

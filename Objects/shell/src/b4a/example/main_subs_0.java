@@ -490,16 +490,16 @@ public static void initializeProcessGlobals() {
 	    main.processGlobalsRun = true;
 		try {
 		        main_subs_0._process_globals();
-themecalc_subs_0._process_globals();
 maplocator_subs_0._process_globals();
+themecalc_subs_0._process_globals();
 main.myClass = BA.getDeviceClass ("b4a.example.main");
 coffeetheme.myClass = BA.getDeviceClass ("b4a.example.coffeetheme");
 card.myClass = BA.getDeviceClass ("b4a.example.card");
 coffeestamp.myClass = BA.getDeviceClass ("b4a.example.coffeestamp");
-themecalc.myClass = BA.getDeviceClass ("b4a.example.themecalc");
-data.myClass = BA.getDeviceClass ("b4a.example.data");
 maplocator.myClass = BA.getDeviceClass ("b4a.example.maplocator");
 address.myClass = BA.getDeviceClass ("b4a.example.address");
+themecalc.myClass = BA.getDeviceClass ("b4a.example.themecalc");
+data.myClass = BA.getDeviceClass ("b4a.example.data");
 		
         } catch (Exception e) {
 			throw new RuntimeException(e);

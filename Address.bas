@@ -1,12 +1,12 @@
 ﻿Type=Class
-Version=5
+Version=5.02
 ModulesStructureVersion=1
 B4A=true
 @EndOfDesignText@
 'Class module
 Sub Class_Globals
 	Private SQL1 As SQL
-	Private cursor1 As Cursor
+	'Private cursor1 As Cursor
 End Sub
 
 'Initializes the object. You can add parameters to this method if needed.

@@ -10,14 +10,12 @@ public static RemoteObject  _class_globals(RemoteObject __ref) throws Exception{
  //BA.debugLineNum = 2;BA.debugLine="Sub Class_Globals";
  //BA.debugLineNum = 3;BA.debugLine="Private SQL1 As SQL";
 address._sql1 = RemoteObject.createNew ("anywheresoftware.b4a.sql.SQL");__ref.setField("_sql1",address._sql1);
- //BA.debugLineNum = 4;BA.debugLine="Private cursor1 As Cursor";
-address._cursor1 = RemoteObject.createNew ("anywheresoftware.b4a.sql.SQL.CursorWrapper");__ref.setField("_cursor1",address._cursor1);
  //BA.debugLineNum = 5;BA.debugLine="End Sub";
 return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (address) ","address",7,__ref.getField(false, "ba"),__ref,8);
+		Debug.PushSubsStack("Initialize (address) ","address",5,__ref.getField(false, "ba"),__ref,8);
 if (RapidSub.canDelegate("initialize")) return __ref.runUserSub(false, "address","initialize", __ref, _ba);
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);

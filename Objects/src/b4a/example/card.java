@@ -36,8 +36,8 @@ public b4a.example.card _card = null;
 public int _coffeecount = 0;
 public anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper _img7 = null;
 public b4a.example.main _main = null;
-public b4a.example.themecalc _themecalc = null;
 public b4a.example.maplocator _maplocator = null;
+public b4a.example.themecalc _themecalc = null;
 public int  _coffeestamp(b4a.example.card __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="card";
