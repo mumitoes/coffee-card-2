@@ -30,8 +30,9 @@ public anywheresoftware.b4a.sql.SQL.CursorWrapper _cursor1 = null;
 public b4a.example.main _main = null;
 public b4a.example.themecalc _themecalc = null;
 public b4a.example.drinkmenu _drinkmenu = null;
+public b4a.example.drinkextras _drinkextras = null;
   public Object[] GetGlobals() {
-		return new Object[] {"cursor1",_cursor1,"DrinkMenu",Debug.moduleToString(b4a.example.drinkmenu.class),"Main",Debug.moduleToString(b4a.example.main.class),"SQL1",_sql1,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
+		return new Object[] {"cursor1",_cursor1,"DrinkExtras",Debug.moduleToString(b4a.example.drinkextras.class),"DrinkMenu",Debug.moduleToString(b4a.example.drinkmenu.class),"Main",Debug.moduleToString(b4a.example.main.class),"SQL1",_sql1,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
 }
 public String  _class_globals() throws Exception{
  //BA.debugLineNum = 6;BA.debugLine="Sub Class_Globals";
@@ -42,6 +43,50 @@ _cursor1 = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
  //BA.debugLineNum = 9;BA.debugLine="End Sub";
 return "";
 }
+public anywheresoftware.b4a.sql.SQL.CursorWrapper  _drinkextras() throws Exception{
+try {
+		Debug.PushSubsStack("DrinkExtras (coffeetheme) ","coffeetheme",1,ba,this,62);
+ BA.debugLineNum = 62;BA.debugLine="Sub DrinkExtras As Cursor";
+Debug.ShouldStop(536870912);
+ BA.debugLineNum = 63;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT ID, Description , C";
+Debug.ShouldStop(1073741824);
+_cursor1.setObject((android.database.Cursor)(_sql1.ExecQuery("SELECT ID, Description , Cost FROM CoffeeExtras")));
+ BA.debugLineNum = 64;BA.debugLine="Return cursor1";
+Debug.ShouldStop(-2147483648);
+if (true) return _cursor1;
+ BA.debugLineNum = 65;BA.debugLine="End Sub";
+Debug.ShouldStop(1);
+return null;
+}
+catch (Exception e) {
+			Debug.ErrorCaught(e);
+			throw e;
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public anywheresoftware.b4a.sql.SQL.CursorWrapper  _extraselect() throws Exception{
+try {
+		Debug.PushSubsStack("ExtraSelect (coffeetheme) ","coffeetheme",1,ba,this,67);
+ BA.debugLineNum = 67;BA.debugLine="Sub ExtraSelect As Cursor";
+Debug.ShouldStop(4);
+ BA.debugLineNum = 68;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT Description FROM Co";
+Debug.ShouldStop(8);
+_cursor1.setObject((android.database.Cursor)(_sql1.ExecQuery("SELECT Description FROM CoffeeExtras")));
+ BA.debugLineNum = 69;BA.debugLine="Return cursor1";
+Debug.ShouldStop(16);
+if (true) return _cursor1;
+ BA.debugLineNum = 70;BA.debugLine="End Sub";
+Debug.ShouldStop(32);
+return null;
+}
+catch (Exception e) {
+			Debug.ErrorCaught(e);
+			throw e;
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
 public String  _initialize(anywheresoftware.b4a.BA _ba) throws Exception{
 innerInitialize(_ba);
 try {
@@ -193,6 +238,28 @@ Debug.ShouldStop(1024);
 if (true) return _cursor1;
  BA.debugLineNum = 44;BA.debugLine="End Sub";
 Debug.ShouldStop(2048);
+return null;
+}
+catch (Exception e) {
+			Debug.ErrorCaught(e);
+			throw e;
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public anywheresoftware.b4a.sql.SQL.CursorWrapper  _selectdrink() throws Exception{
+try {
+		Debug.PushSubsStack("SelectDrink (coffeetheme) ","coffeetheme",1,ba,this,57);
+ BA.debugLineNum = 57;BA.debugLine="Sub SelectDrink As Cursor";
+Debug.ShouldStop(16777216);
+ BA.debugLineNum = 58;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT Name FROM CoffeeMen";
+Debug.ShouldStop(33554432);
+_cursor1.setObject((android.database.Cursor)(_sql1.ExecQuery("SELECT Name FROM CoffeeMenu")));
+ BA.debugLineNum = 59;BA.debugLine="Return cursor1";
+Debug.ShouldStop(67108864);
+if (true) return _cursor1;
+ BA.debugLineNum = 60;BA.debugLine="End Sub";
+Debug.ShouldStop(134217728);
 return null;
 }
 catch (Exception e) {

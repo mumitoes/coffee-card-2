@@ -13,8 +13,8 @@ Dim myStamp As Cursor
 Dim Card As Card
 Dim CoffeeCount As Int
 Dim myButtonColours As Cursor
-Dim myDrinkMenu As Cursor
-Dim DrinkSelect As Cursor
+Dim myDrinkExtras As Cursor
+Dim ExtraSelect As Cursor
 
 End Sub
 
@@ -38,17 +38,15 @@ Sub Globals
 	Private Yes As Button
 	Private btnOrder As Button
 	Private pgBackGround As Panel
-	Private WebView1 As WebView
-	Private btnExtras As Button
-	Private ScrollView1 As ScrollView
-	Private ListView1 As ListView
-	Private Selectdrink As Spinner
+	Private btnDrinkMenu As Button
+	Private ListView2 As ListView
+	Private SelectExtra As Spinner
 	
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
-	Activity.LoadLayout("DrinksMenu")
+	Activity.LoadLayout("Extras")
 	
 	
 End Sub
@@ -60,8 +58,6 @@ End Sub
 Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
-
-'========================================================= DRINK MENU Layout =================================================================================
 
 Sub loadBackGroundcolours 'Sets backgrouns colours
 	myColors = myTheme.loadColours
@@ -84,35 +80,35 @@ Sub DrinkMenubuttonColours 'Sets button colours
 		Dim colours As Int
 		colours = Colors.RGB(myButtonColours.GetInt("BtnRed"),myButtonColours.GetInt("BtnBlue"),myButtonColours.GetInt("BtnGreen"))
 		btnRBG.Initialize(colours, 5)
-		btnExtras.background=btnRBG
+		btnDrinkMenu.background=btnRBG
 		btnOrder.background=btnRBG
 	Next
 End Sub
 
 'Sends the sql to a web view that can be viewed on the design
 Sub Drinks_Menu
-ListView1.Clear
-For i = 0 To myDrinkMenu.RowCount -1
-myDrinkMenu.Position = i
-ListView1.AddSingleLine(myDrinkMenu.GetInt("ID") & " : " & myDrinkMenu.GetString("Name") & " " & myDrinkMenu.GetString("Description") & " " & myDrinkMenu.GetInt("Cost"))
+ListView2.Clear
+For i = 0 To myDrinkExtras.RowCount -1
+myDrinkExtras.Position = i
+ListView2.AddSingleLine(myDrinkExtras.GetInt("ID") & " : " & myDrinkExtras.GetString("Description") & " " & myDrinkExtras.GetInt("Cost"))
 
-ListView1.SingleLineLayout.ItemHeight = 350
-ListView1.SingleLineLayout.Label.TextSize = 35
-ListView1.SingleLineLayout.Label.TextColor = Colors.White
-ListView1.SingleLineLayout.Label.Color = Colors.White
+ListView2.SingleLineLayout.ItemHeight = 350
+ListView2.SingleLineLayout.Label.TextSize = 35
+ListView2.SingleLineLayout.Label.TextColor = Colors.White
+ListView2.SingleLineLayout.Label.Color = Colors.White
 
 Next
 
 End Sub
 
 'shows a list of only drink names so they can be selected and added to the cart database
-Sub Spinner1_ItemClick
-Selectdrink.Clear
-Selectdrink.Add("Name")
+Sub Spinner2_ItemClick
+SelectExtra.Clear
+SelectExtra.Add("Description")
 If File.Exists(File.DirInternal, "customerthemes.sqlite") Then
-Selectdrink.SelectedIndex = Selectdrink.IndexOf (File.ReadString(File.DirInternal,"customerthemes.sqlite"))
+SelectExtra.SelectedIndex = SelectExtra.IndexOf (File.ReadString(File.DirInternal,"customerthemes.sqlite"))
 Else
-Selectdrink.SelectedIndex = 1
+SelectExtra.SelectedIndex = 1
 End If
 	
 End Sub
@@ -121,7 +117,7 @@ Sub btnOrder_Click
 
 End Sub
 
-Sub btnDrinkExtras_Click
-	Activity.LoadLayout("Extras")
+Sub btnDrinkMenu_Click
+	Activity.LoadLayout("DrinksMenu")
 End Sub
 

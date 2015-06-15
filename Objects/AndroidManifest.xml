@@ -48,5 +48,12 @@
 			android:label="Coff E Card"
 			android:screenOrientation="portrait">
 		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".drinkextras"
+			android:label="Coff E Card"
+			android:screenOrientation="portrait">
+		</activity>
 	</application>
 </manifest>

@@ -14,8 +14,8 @@ import anywheresoftware.b4a.B4AUncaughtException;
 import anywheresoftware.b4a.debug.*;
 import java.lang.ref.WeakReference;
 
-public class drinkmenu extends Activity implements B4AActivity{
-	public static drinkmenu mostCurrent;
+public class drinkextras extends Activity implements B4AActivity{
+	public static drinkextras mostCurrent;
 	static boolean afterFirstLayout;
 	static boolean isFirst = true;
     private static boolean processGlobalsRun = false;
@@ -32,7 +32,7 @@ public class drinkmenu extends Activity implements B4AActivity{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		if (isFirst) {
-			processBA = new BA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.drinkmenu");
+			processBA = new BA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.drinkextras");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -41,7 +41,7 @@ public class drinkmenu extends Activity implements B4AActivity{
 		else if (previousOne != null) {
 			Activity p = previousOne.get();
 			if (p != null && p != this) {
-                BA.LogInfo("Killing previous instance (drinkmenu).");
+                BA.LogInfo("Killing previous instance (drinkextras).");
 				p.finish();
 			}
 		}
@@ -81,7 +81,7 @@ public class drinkmenu extends Activity implements B4AActivity{
 	private void afterFirstLayout() {
         if (this != mostCurrent)
 			return;
-		activityBA = new BA(this, layout, processBA, "b4a.example", "b4a.example.drinkmenu");
+		activityBA = new BA(this, layout, processBA, "b4a.example", "b4a.example.drinkextras");
         
         processBA.sharedProcessBA.activityBA = new java.lang.ref.WeakReference<BA>(activityBA);
         anywheresoftware.b4a.objects.ViewWrapper.lastId = 0;
@@ -90,19 +90,19 @@ public class drinkmenu extends Activity implements B4AActivity{
         if (BA.isShellModeRuntimeCheck(processBA)) {
 			if (isFirst)
 				processBA.raiseEvent2(null, true, "SHELL", false);
-			processBA.raiseEvent2(null, true, "CREATE", true, "b4a.example.drinkmenu", processBA, activityBA, _activity, anywheresoftware.b4a.keywords.Common.Density, mostCurrent);
+			processBA.raiseEvent2(null, true, "CREATE", true, "b4a.example.drinkextras", processBA, activityBA, _activity, anywheresoftware.b4a.keywords.Common.Density, mostCurrent);
 			_activity.reinitializeForShell(activityBA, "activity");
 		}
         initializeProcessGlobals();		
         initializeGlobals();
         
-        BA.LogInfo("** Activity (drinkmenu) Create, isFirst = " + isFirst + " **");
+        BA.LogInfo("** Activity (drinkextras) Create, isFirst = " + isFirst + " **");
         processBA.raiseEvent2(null, true, "activity_create", false, isFirst);
 		isFirst = false;
 		if (this != mostCurrent)
 			return;
         processBA.setActivityPaused(false);
-        BA.LogInfo("** Activity (drinkmenu) Resume **");
+        BA.LogInfo("** Activity (drinkextras) Resume **");
         processBA.raiseEvent(null, "activity_resume");
         if (android.os.Build.VERSION.SDK_INT >= 11) {
 			try {
@@ -191,7 +191,7 @@ public class drinkmenu extends Activity implements B4AActivity{
 		}
 	}
     public static Class<?> getObject() {
-		return drinkmenu.class;
+		return drinkextras.class;
 	}
     private Boolean onKeySubExist = null;
     private Boolean onKeyUpSubExist = null;
@@ -256,7 +256,7 @@ public class drinkmenu extends Activity implements B4AActivity{
         if (_activity == null) //workaround for emulator bug (Issue 2423)
             return;
 		anywheresoftware.b4a.Msgbox.dismiss(true);
-        BA.LogInfo("** Activity (drinkmenu) Pause, UserClosed = " + activityBA.activity.isFinishing() + " **");
+        BA.LogInfo("** Activity (drinkextras) Pause, UserClosed = " + activityBA.activity.isFinishing() + " **");
         processBA.raiseEvent2(_activity, true, "activity_pause", false, activityBA.activity.isFinishing());		
         processBA.setActivityPaused(true);
         mostCurrent = null;
@@ -292,7 +292,7 @@ public class drinkmenu extends Activity implements B4AActivity{
 			if (mostCurrent == null || mostCurrent != activity.get())
 				return;
 			processBA.setActivityPaused(false);
-            BA.LogInfo("** Activity (drinkmenu) Resume **");
+            BA.LogInfo("** Activity (drinkextras) Resume **");
 		    processBA.raiseEvent(mostCurrent._activity, "activity_resume", (Object[])null);
 		}
     }
@@ -314,8 +314,8 @@ public static anywheresoftware.b4a.sql.SQL.CursorWrapper _mystamp = null;
 public b4a.example.card _card = null;
 public static int _coffeecount = 0;
 public static anywheresoftware.b4a.sql.SQL.CursorWrapper _mybuttoncolours = null;
-public static anywheresoftware.b4a.sql.SQL.CursorWrapper _mydrinkmenu = null;
-public static anywheresoftware.b4a.sql.SQL.CursorWrapper _drinkselect = null;
+public static anywheresoftware.b4a.sql.SQL.CursorWrapper _mydrinkextras = null;
+public static anywheresoftware.b4a.sql.SQL.CursorWrapper _extraselect = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _btnscan = null;
 public anywheresoftware.b4a.objects.ImageViewWrapper _imglogo = null;
 public anywheresoftware.b4a.objects.ImageViewWrapper _imgstamp1 = null;
@@ -339,16 +339,14 @@ public anywheresoftware.b4a.objects.ButtonWrapper _no = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _yes = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _btnorder = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pgbackground = null;
-public anywheresoftware.b4a.objects.WebViewWrapper _webview1 = null;
-public anywheresoftware.b4a.objects.ButtonWrapper _btnextras = null;
-public anywheresoftware.b4a.objects.ScrollViewWrapper _scrollview1 = null;
-public anywheresoftware.b4a.objects.ListViewWrapper _listview1 = null;
-public anywheresoftware.b4a.objects.SpinnerWrapper _selectdrink = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _btndrinkmenu = null;
+public anywheresoftware.b4a.objects.ListViewWrapper _listview2 = null;
+public anywheresoftware.b4a.objects.SpinnerWrapper _selectextra = null;
 public b4a.example.main _main = null;
 public b4a.example.themecalc _themecalc = null;
-public b4a.example.drinkextras _drinkextras = null;
+public b4a.example.drinkmenu _drinkmenu = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"btnExtras",mostCurrent._btnextras,"btnOrder",mostCurrent._btnorder,"btnScan",mostCurrent._btnscan,"Card",Debug.moduleToString(b4a.example.card.class),"CoffeeCount",_coffeecount,"DrinkExtras",Debug.moduleToString(b4a.example.drinkextras.class),"DrinkSelect",_drinkselect,"imgLogo",mostCurrent._imglogo,"imgStamp1",mostCurrent._imgstamp1,"imgStamp2",mostCurrent._imgstamp2,"imgStamp3",mostCurrent._imgstamp3,"imgStamp4",mostCurrent._imgstamp4,"imgStamp5",mostCurrent._imgstamp5,"imgStamp6",mostCurrent._imgstamp6,"lblCompanyName",mostCurrent._lblcompanyname,"ListView1",mostCurrent._listview1,"Main",Debug.moduleToString(b4a.example.main.class),"myButtonColours",_mybuttoncolours,"myColors",_mycolors,"myCoName",_myconame,"myDrinkMenu",_mydrinkmenu,"myLogo",_mylogo,"myStamp",_mystamp,"myTheme",mostCurrent._mytheme,"No",mostCurrent._no,"pgBackGround",mostCurrent._pgbackground,"pnlBG",mostCurrent._pnlbg,"pnlStamp1",mostCurrent._pnlstamp1,"pnlStamp2",mostCurrent._pnlstamp2,"pnlStamp3",mostCurrent._pnlstamp3,"pnlStamp4",mostCurrent._pnlstamp4,"pnlStamp5",mostCurrent._pnlstamp5,"pnlStamp6",mostCurrent._pnlstamp6,"qrscanner",mostCurrent._qrscanner,"scanSuccess",_scansuccess,"ScrollView1",mostCurrent._scrollview1,"Selectdrink",mostCurrent._selectdrink,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class),"WebView1",mostCurrent._webview1,"Yes",mostCurrent._yes};
+		return new Object[] {"Activity",mostCurrent._activity,"btnDrinkMenu",mostCurrent._btndrinkmenu,"btnOrder",mostCurrent._btnorder,"btnScan",mostCurrent._btnscan,"Card",Debug.moduleToString(b4a.example.card.class),"CoffeeCount",_coffeecount,"DrinkMenu",Debug.moduleToString(b4a.example.drinkmenu.class),"ExtraSelect",_extraselect,"imgLogo",mostCurrent._imglogo,"imgStamp1",mostCurrent._imgstamp1,"imgStamp2",mostCurrent._imgstamp2,"imgStamp3",mostCurrent._imgstamp3,"imgStamp4",mostCurrent._imgstamp4,"imgStamp5",mostCurrent._imgstamp5,"imgStamp6",mostCurrent._imgstamp6,"lblCompanyName",mostCurrent._lblcompanyname,"ListView2",mostCurrent._listview2,"Main",Debug.moduleToString(b4a.example.main.class),"myButtonColours",_mybuttoncolours,"myColors",_mycolors,"myCoName",_myconame,"myDrinkExtras",_mydrinkextras,"myLogo",_mylogo,"myStamp",_mystamp,"myTheme",mostCurrent._mytheme,"No",mostCurrent._no,"pgBackGround",mostCurrent._pgbackground,"pnlBG",mostCurrent._pnlbg,"pnlStamp1",mostCurrent._pnlstamp1,"pnlStamp2",mostCurrent._pnlstamp2,"pnlStamp3",mostCurrent._pnlstamp3,"pnlStamp4",mostCurrent._pnlstamp4,"pnlStamp5",mostCurrent._pnlstamp5,"pnlStamp6",mostCurrent._pnlstamp6,"qrscanner",mostCurrent._qrscanner,"scanSuccess",_scansuccess,"SelectExtra",mostCurrent._selectextra,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class),"Yes",mostCurrent._yes};
 }
 
 public static void initializeProcessGlobals() {
@@ -360,15 +358,15 @@ public static void initializeProcessGlobals() {
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,44);
+		Debug.PushSubsStack("Activity_Create (drinkextras) ","drinkextras",7,mostCurrent.activityBA,mostCurrent,42);
 Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 44;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ BA.debugLineNum = 42;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+Debug.ShouldStop(512);
+ BA.debugLineNum = 44;BA.debugLine="Activity.LoadLayout(\"Extras\")";
 Debug.ShouldStop(2048);
- BA.debugLineNum = 46;BA.debugLine="Activity.LoadLayout(\"DrinksMenu\")";
-Debug.ShouldStop(8192);
-mostCurrent._activity.LoadLayout("DrinksMenu",mostCurrent.activityBA);
- BA.debugLineNum = 49;BA.debugLine="End Sub";
-Debug.ShouldStop(65536);
+mostCurrent._activity.LoadLayout("Extras",mostCurrent.activityBA);
+ BA.debugLineNum = 47;BA.debugLine="End Sub";
+Debug.ShouldStop(16384);
 return "";
 }
 catch (Exception e) {
@@ -380,12 +378,12 @@ finally {
 		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,55);
+		Debug.PushSubsStack("Activity_Pause (drinkextras) ","drinkextras",7,mostCurrent.activityBA,mostCurrent,53);
 Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 55;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ BA.debugLineNum = 53;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+Debug.ShouldStop(1048576);
+ BA.debugLineNum = 55;BA.debugLine="End Sub";
 Debug.ShouldStop(4194304);
- BA.debugLineNum = 57;BA.debugLine="End Sub";
-Debug.ShouldStop(16777216);
 return "";
 }
 catch (Exception e) {
@@ -397,11 +395,11 @@ finally {
 		}}
 public static String  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,51);
- BA.debugLineNum = 51;BA.debugLine="Sub Activity_Resume";
+		Debug.PushSubsStack("Activity_Resume (drinkextras) ","drinkextras",7,mostCurrent.activityBA,mostCurrent,49);
+ BA.debugLineNum = 49;BA.debugLine="Sub Activity_Resume";
+Debug.ShouldStop(65536);
+ BA.debugLineNum = 51;BA.debugLine="End Sub";
 Debug.ShouldStop(262144);
- BA.debugLineNum = 53;BA.debugLine="End Sub";
-Debug.ShouldStop(1048576);
 return "";
 }
 catch (Exception e) {
@@ -411,30 +409,14 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
-public static String  _btndrinkextras_click() throws Exception{
+public static String  _btndrinkmenu_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnDrinkExtras_Click (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,119);
- BA.debugLineNum = 119;BA.debugLine="Sub btnDrinkExtras_Click";
-Debug.ShouldStop(4194304);
- BA.debugLineNum = 120;BA.debugLine="Activity.LoadLayout(\"Extras\")";
-Debug.ShouldStop(8388608);
-mostCurrent._activity.LoadLayout("Extras",mostCurrent.activityBA);
- BA.debugLineNum = 121;BA.debugLine="End Sub";
-Debug.ShouldStop(16777216);
-return "";
-}
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static String  _btnorder_click() throws Exception{
-try {
-		Debug.PushSubsStack("btnOrder_Click (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,115);
- BA.debugLineNum = 115;BA.debugLine="Sub btnOrder_Click";
+		Debug.PushSubsStack("btnDrinkMenu_Click (drinkextras) ","drinkextras",7,mostCurrent.activityBA,mostCurrent,115);
+ BA.debugLineNum = 115;BA.debugLine="Sub btnDrinkMenu_Click";
 Debug.ShouldStop(262144);
+ BA.debugLineNum = 116;BA.debugLine="Activity.LoadLayout(\"DrinksMenu\")";
+Debug.ShouldStop(524288);
+mostCurrent._activity.LoadLayout("DrinksMenu",mostCurrent.activityBA);
  BA.debugLineNum = 117;BA.debugLine="End Sub";
 Debug.ShouldStop(1048576);
 return "";
@@ -446,50 +428,66 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
+public static String  _btnorder_click() throws Exception{
+try {
+		Debug.PushSubsStack("btnOrder_Click (drinkextras) ","drinkextras",7,mostCurrent.activityBA,mostCurrent,111);
+ BA.debugLineNum = 111;BA.debugLine="Sub btnOrder_Click";
+Debug.ShouldStop(16384);
+ BA.debugLineNum = 113;BA.debugLine="End Sub";
+Debug.ShouldStop(65536);
+return "";
+}
+catch (Exception e) {
+			Debug.ErrorCaught(e);
+			throw e;
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
 public static String  _drinkmenubuttoncolours() throws Exception{
 try {
-		Debug.PushSubsStack("DrinkMenubuttonColours (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,74);
+		Debug.PushSubsStack("DrinkMenubuttonColours (drinkextras) ","drinkextras",7,mostCurrent.activityBA,mostCurrent,70);
 int _i = 0;
 anywheresoftware.b4a.objects.drawable.ColorDrawable _btnrbg = null;
 int _colours = 0;
- BA.debugLineNum = 74;BA.debugLine="Sub DrinkMenubuttonColours 'Sets button colours";
-Debug.ShouldStop(512);
- BA.debugLineNum = 75;BA.debugLine="myButtonColours =myTheme.loadBtnColours";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 70;BA.debugLine="Sub DrinkMenubuttonColours 'Sets button colours";
+Debug.ShouldStop(32);
+ BA.debugLineNum = 71;BA.debugLine="myButtonColours =myTheme.loadBtnColours";
+Debug.ShouldStop(64);
 _mybuttoncolours = mostCurrent._mytheme._loadbtncolours();
- BA.debugLineNum = 76;BA.debugLine="For i = 0 To myButtonColours.RowCount - 1";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 72;BA.debugLine="For i = 0 To myButtonColours.RowCount - 1";
+Debug.ShouldStop(128);
 {
-final int step53 = 1;
-final int limit53 = (int) (_mybuttoncolours.getRowCount()-1);
-for (_i = (int) (0); (step53 > 0 && _i <= limit53) || (step53 < 0 && _i >= limit53); _i = ((int)(0 + _i + step53))) {
+final int step51 = 1;
+final int limit51 = (int) (_mybuttoncolours.getRowCount()-1);
+for (_i = (int) (0); (step51 > 0 && _i <= limit51) || (step51 < 0 && _i >= limit51); _i = ((int)(0 + _i + step51))) {
 Debug.locals.put("i", _i);
- BA.debugLineNum = 77;BA.debugLine="myButtonColours.Position = i";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 73;BA.debugLine="myButtonColours.Position = i";
+Debug.ShouldStop(256);
 _mybuttoncolours.setPosition(_i);
- BA.debugLineNum = 78;BA.debugLine="Dim btnRBG As ColorDrawable";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 74;BA.debugLine="Dim btnRBG As ColorDrawable";
+Debug.ShouldStop(512);
 _btnrbg = new anywheresoftware.b4a.objects.drawable.ColorDrawable();Debug.locals.put("btnRBG", _btnrbg);
- BA.debugLineNum = 79;BA.debugLine="Dim colours As Int";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 75;BA.debugLine="Dim colours As Int";
+Debug.ShouldStop(1024);
 _colours = 0;Debug.locals.put("colours", _colours);
- BA.debugLineNum = 80;BA.debugLine="colours = Colors.RGB(myButtonColours.GetInt(\"Btn";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 76;BA.debugLine="colours = Colors.RGB(myButtonColours.GetInt(\"Btn";
+Debug.ShouldStop(2048);
 _colours = anywheresoftware.b4a.keywords.Common.Colors.RGB(_mybuttoncolours.GetInt("BtnRed"),_mybuttoncolours.GetInt("BtnBlue"),_mybuttoncolours.GetInt("BtnGreen"));Debug.locals.put("colours", _colours);
- BA.debugLineNum = 81;BA.debugLine="btnRBG.Initialize(colours, 5)";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 77;BA.debugLine="btnRBG.Initialize(colours, 5)";
+Debug.ShouldStop(4096);
 _btnrbg.Initialize(_colours,(int) (5));
- BA.debugLineNum = 82;BA.debugLine="btnExtras.background=btnRBG";
-Debug.ShouldStop(131072);
-mostCurrent._btnextras.setBackground((android.graphics.drawable.Drawable)(_btnrbg.getObject()));
- BA.debugLineNum = 83;BA.debugLine="btnOrder.background=btnRBG";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 78;BA.debugLine="btnDrinkMenu.background=btnRBG";
+Debug.ShouldStop(8192);
+mostCurrent._btndrinkmenu.setBackground((android.graphics.drawable.Drawable)(_btnrbg.getObject()));
+ BA.debugLineNum = 79;BA.debugLine="btnOrder.background=btnRBG";
+Debug.ShouldStop(16384);
 mostCurrent._btnorder.setBackground((android.graphics.drawable.Drawable)(_btnrbg.getObject()));
  }
 }Debug.locals.put("i", _i);
 ;
- BA.debugLineNum = 85;BA.debugLine="End Sub";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 81;BA.debugLine="End Sub";
+Debug.ShouldStop(65536);
 return "";
 }
 catch (Exception e) {
@@ -501,43 +499,43 @@ finally {
 		}}
 public static String  _drinks_menu() throws Exception{
 try {
-		Debug.PushSubsStack("Drinks_Menu (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,88);
+		Debug.PushSubsStack("Drinks_Menu (drinkextras) ","drinkextras",7,mostCurrent.activityBA,mostCurrent,84);
 int _i = 0;
- BA.debugLineNum = 88;BA.debugLine="Sub Drinks_Menu";
-Debug.ShouldStop(8388608);
- BA.debugLineNum = 89;BA.debugLine="ListView1.Clear";
-Debug.ShouldStop(16777216);
-mostCurrent._listview1.Clear();
- BA.debugLineNum = 90;BA.debugLine="For i = 0 To myDrinkMenu.RowCount -1";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 84;BA.debugLine="Sub Drinks_Menu";
+Debug.ShouldStop(524288);
+ BA.debugLineNum = 85;BA.debugLine="ListView2.Clear";
+Debug.ShouldStop(1048576);
+mostCurrent._listview2.Clear();
+ BA.debugLineNum = 86;BA.debugLine="For i = 0 To myDrinkExtras.RowCount -1";
+Debug.ShouldStop(2097152);
 {
-final int step65 = 1;
-final int limit65 = (int) (_mydrinkmenu.getRowCount()-1);
-for (_i = (int) (0); (step65 > 0 && _i <= limit65) || (step65 < 0 && _i >= limit65); _i = ((int)(0 + _i + step65))) {
+final int step63 = 1;
+final int limit63 = (int) (_mydrinkextras.getRowCount()-1);
+for (_i = (int) (0); (step63 > 0 && _i <= limit63) || (step63 < 0 && _i >= limit63); _i = ((int)(0 + _i + step63))) {
 Debug.locals.put("i", _i);
- BA.debugLineNum = 91;BA.debugLine="myDrinkMenu.Position = i";
+ BA.debugLineNum = 87;BA.debugLine="myDrinkExtras.Position = i";
+Debug.ShouldStop(4194304);
+_mydrinkextras.setPosition(_i);
+ BA.debugLineNum = 88;BA.debugLine="ListView2.AddSingleLine(myDrinkExtras.GetInt(\"ID\")";
+Debug.ShouldStop(8388608);
+mostCurrent._listview2.AddSingleLine(BA.NumberToString(_mydrinkextras.GetInt("ID"))+" : "+_mydrinkextras.GetString("Description")+" "+BA.NumberToString(_mydrinkextras.GetInt("Cost")));
+ BA.debugLineNum = 90;BA.debugLine="ListView2.SingleLineLayout.ItemHeight = 350";
+Debug.ShouldStop(33554432);
+mostCurrent._listview2.getSingleLineLayout().setItemHeight((int) (350));
+ BA.debugLineNum = 91;BA.debugLine="ListView2.SingleLineLayout.Label.TextSize = 35";
 Debug.ShouldStop(67108864);
-_mydrinkmenu.setPosition(_i);
- BA.debugLineNum = 92;BA.debugLine="ListView1.AddSingleLine(myDrinkMenu.GetInt(\"ID\") &";
+mostCurrent._listview2.getSingleLineLayout().Label.setTextSize((float) (35));
+ BA.debugLineNum = 92;BA.debugLine="ListView2.SingleLineLayout.Label.TextColor = Color";
 Debug.ShouldStop(134217728);
-mostCurrent._listview1.AddSingleLine(BA.NumberToString(_mydrinkmenu.GetInt("ID"))+" : "+_mydrinkmenu.GetString("Name")+" "+_mydrinkmenu.GetString("Description")+" "+BA.NumberToString(_mydrinkmenu.GetInt("Cost")));
- BA.debugLineNum = 94;BA.debugLine="ListView1.SingleLineLayout.ItemHeight = 350";
-Debug.ShouldStop(536870912);
-mostCurrent._listview1.getSingleLineLayout().setItemHeight((int) (350));
- BA.debugLineNum = 95;BA.debugLine="ListView1.SingleLineLayout.Label.TextSize = 35";
-Debug.ShouldStop(1073741824);
-mostCurrent._listview1.getSingleLineLayout().Label.setTextSize((float) (35));
- BA.debugLineNum = 96;BA.debugLine="ListView1.SingleLineLayout.Label.TextColor = Color";
-Debug.ShouldStop(-2147483648);
-mostCurrent._listview1.getSingleLineLayout().Label.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.White);
- BA.debugLineNum = 97;BA.debugLine="ListView1.SingleLineLayout.Label.Color = Colors.Wh";
-Debug.ShouldStop(1);
-mostCurrent._listview1.getSingleLineLayout().Label.setColor(anywheresoftware.b4a.keywords.Common.Colors.White);
+mostCurrent._listview2.getSingleLineLayout().Label.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.White);
+ BA.debugLineNum = 93;BA.debugLine="ListView2.SingleLineLayout.Label.Color = Colors.Wh";
+Debug.ShouldStop(268435456);
+mostCurrent._listview2.getSingleLineLayout().Label.setColor(anywheresoftware.b4a.keywords.Common.Colors.White);
  }
 }Debug.locals.put("i", _i);
 ;
- BA.debugLineNum = 101;BA.debugLine="End Sub";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 97;BA.debugLine="End Sub";
+Debug.ShouldStop(1);
 return "";
 }
 catch (Exception e) {
@@ -587,64 +585,60 @@ mostCurrent._yes = new anywheresoftware.b4a.objects.ButtonWrapper();
 mostCurrent._btnorder = new anywheresoftware.b4a.objects.ButtonWrapper();
  //BA.debugLineNum = 35;BA.debugLine="Private pgBackGround As Panel";
 mostCurrent._pgbackground = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 36;BA.debugLine="Private WebView1 As WebView";
-mostCurrent._webview1 = new anywheresoftware.b4a.objects.WebViewWrapper();
- //BA.debugLineNum = 37;BA.debugLine="Private btnExtras As Button";
-mostCurrent._btnextras = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 38;BA.debugLine="Private ScrollView1 As ScrollView";
-mostCurrent._scrollview1 = new anywheresoftware.b4a.objects.ScrollViewWrapper();
- //BA.debugLineNum = 39;BA.debugLine="Private ListView1 As ListView";
-mostCurrent._listview1 = new anywheresoftware.b4a.objects.ListViewWrapper();
- //BA.debugLineNum = 40;BA.debugLine="Private Selectdrink As Spinner";
-mostCurrent._selectdrink = new anywheresoftware.b4a.objects.SpinnerWrapper();
- //BA.debugLineNum = 42;BA.debugLine="End Sub";
+ //BA.debugLineNum = 36;BA.debugLine="Private btnDrinkMenu As Button";
+mostCurrent._btndrinkmenu = new anywheresoftware.b4a.objects.ButtonWrapper();
+ //BA.debugLineNum = 37;BA.debugLine="Private ListView2 As ListView";
+mostCurrent._listview2 = new anywheresoftware.b4a.objects.ListViewWrapper();
+ //BA.debugLineNum = 38;BA.debugLine="Private SelectExtra As Spinner";
+mostCurrent._selectextra = new anywheresoftware.b4a.objects.SpinnerWrapper();
+ //BA.debugLineNum = 40;BA.debugLine="End Sub";
 return "";
 }
 public static String  _loadbackgroundcolours() throws Exception{
 try {
-		Debug.PushSubsStack("loadBackGroundcolours (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,61);
+		Debug.PushSubsStack("loadBackGroundcolours (drinkextras) ","drinkextras",7,mostCurrent.activityBA,mostCurrent,57);
 int _i = 0;
 anywheresoftware.b4a.objects.drawable.GradientDrawable _bggradient = null;
 int[] _colours = null;
- BA.debugLineNum = 61;BA.debugLine="Sub loadBackGroundcolours 'Sets backgrouns colours";
-Debug.ShouldStop(268435456);
- BA.debugLineNum = 62;BA.debugLine="myColors = myTheme.loadColours";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 57;BA.debugLine="Sub loadBackGroundcolours 'Sets backgrouns colours";
+Debug.ShouldStop(16777216);
+ BA.debugLineNum = 58;BA.debugLine="myColors = myTheme.loadColours";
+Debug.ShouldStop(33554432);
 _mycolors = mostCurrent._mytheme._loadcolours();
- BA.debugLineNum = 63;BA.debugLine="For i = 0 To myColors.RowCount - 1 '";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 59;BA.debugLine="For i = 0 To myColors.RowCount - 1 '";
+Debug.ShouldStop(67108864);
 {
-final int step41 = 1;
-final int limit41 = (int) (_mycolors.getRowCount()-1);
-for (_i = (int) (0); (step41 > 0 && _i <= limit41) || (step41 < 0 && _i >= limit41); _i = ((int)(0 + _i + step41))) {
+final int step39 = 1;
+final int limit39 = (int) (_mycolors.getRowCount()-1);
+for (_i = (int) (0); (step39 > 0 && _i <= limit39) || (step39 < 0 && _i >= limit39); _i = ((int)(0 + _i + step39))) {
 Debug.locals.put("i", _i);
- BA.debugLineNum = 64;BA.debugLine="myColors.Position = i";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 60;BA.debugLine="myColors.Position = i";
+Debug.ShouldStop(134217728);
 _mycolors.setPosition(_i);
- BA.debugLineNum = 65;BA.debugLine="Dim bgGradient As GradientDrawable";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 61;BA.debugLine="Dim bgGradient As GradientDrawable";
+Debug.ShouldStop(268435456);
 _bggradient = new anywheresoftware.b4a.objects.drawable.GradientDrawable();Debug.locals.put("bgGradient", _bggradient);
- BA.debugLineNum = 66;BA.debugLine="Dim colours(2) As Int";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 62;BA.debugLine="Dim colours(2) As Int";
+Debug.ShouldStop(536870912);
 _colours = new int[(int) (2)];
 ;Debug.locals.put("colours", _colours);
- BA.debugLineNum = 67;BA.debugLine="colours(0) = Colors.RGB(myColors.GetInt(\"BG1Red\"";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 63;BA.debugLine="colours(0) = Colors.RGB(myColors.GetInt(\"BG1Red\"";
+Debug.ShouldStop(1073741824);
 _colours[(int) (0)] = anywheresoftware.b4a.keywords.Common.Colors.RGB(_mycolors.GetInt("BG1Red"),_mycolors.GetInt("BG1Blue"),_mycolors.GetInt("BG1Green"));Debug.locals.put("colours", _colours);
- BA.debugLineNum = 68;BA.debugLine="colours(1) = Colors.RGB(myColors.GetInt(\"BG2Red\"";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 64;BA.debugLine="colours(1) = Colors.RGB(myColors.GetInt(\"BG2Red\"";
+Debug.ShouldStop(-2147483648);
 _colours[(int) (1)] = anywheresoftware.b4a.keywords.Common.Colors.RGB(_mycolors.GetInt("BG2Red"),_mycolors.GetInt("BG2Blue"),_mycolors.GetInt("BG2Green"));Debug.locals.put("colours", _colours);
- BA.debugLineNum = 69;BA.debugLine="bgGradient.Initialize(\"TR_BL\", colours)";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 65;BA.debugLine="bgGradient.Initialize(\"TR_BL\", colours)";
+Debug.ShouldStop(1);
 _bggradient.Initialize(BA.getEnumFromString(android.graphics.drawable.GradientDrawable.Orientation.class,"TR_BL"),_colours);
- BA.debugLineNum = 70;BA.debugLine="pgBackGround.Background=bgGradient";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 66;BA.debugLine="pgBackGround.Background=bgGradient";
+Debug.ShouldStop(2);
 mostCurrent._pgbackground.setBackground((android.graphics.drawable.Drawable)(_bggradient.getObject()));
  }
 }Debug.locals.put("i", _i);
 ;
- BA.debugLineNum = 72;BA.debugLine="End Sub";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 68;BA.debugLine="End Sub";
+Debug.ShouldStop(8);
 return "";
 }
 catch (Exception e) {
@@ -670,37 +664,37 @@ mostCurrent._card = new b4a.example.card();
 _coffeecount = 0;
  //BA.debugLineNum = 10;BA.debugLine="Dim myButtonColours As Cursor";
 _mybuttoncolours = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
- //BA.debugLineNum = 11;BA.debugLine="Dim myDrinkMenu As Cursor";
-_mydrinkmenu = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
- //BA.debugLineNum = 12;BA.debugLine="Dim DrinkSelect As Cursor";
-_drinkselect = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
+ //BA.debugLineNum = 11;BA.debugLine="Dim myDrinkExtras As Cursor";
+_mydrinkextras = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
+ //BA.debugLineNum = 12;BA.debugLine="Dim ExtraSelect As Cursor";
+_extraselect = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
  //BA.debugLineNum = 14;BA.debugLine="End Sub";
 return "";
 }
-public static String  _spinner1_itemclick() throws Exception{
+public static String  _spinner2_itemclick() throws Exception{
 try {
-		Debug.PushSubsStack("Spinner1_ItemClick (drinkmenu) ","drinkmenu",6,mostCurrent.activityBA,mostCurrent,104);
- BA.debugLineNum = 104;BA.debugLine="Sub Spinner1_ItemClick";
-Debug.ShouldStop(128);
- BA.debugLineNum = 105;BA.debugLine="Selectdrink.Clear";
-Debug.ShouldStop(256);
-mostCurrent._selectdrink.Clear();
- BA.debugLineNum = 106;BA.debugLine="Selectdrink.Add(\"Name\")";
-Debug.ShouldStop(512);
-mostCurrent._selectdrink.Add("Name");
- BA.debugLineNum = 107;BA.debugLine="If File.Exists(File.DirInternal, \"customerthemes.s";
-Debug.ShouldStop(1024);
+		Debug.PushSubsStack("Spinner2_ItemClick (drinkextras) ","drinkextras",7,mostCurrent.activityBA,mostCurrent,100);
+ BA.debugLineNum = 100;BA.debugLine="Sub Spinner2_ItemClick";
+Debug.ShouldStop(8);
+ BA.debugLineNum = 101;BA.debugLine="SelectExtra.Clear";
+Debug.ShouldStop(16);
+mostCurrent._selectextra.Clear();
+ BA.debugLineNum = 102;BA.debugLine="SelectExtra.Add(\"Description\")";
+Debug.ShouldStop(32);
+mostCurrent._selectextra.Add("Description");
+ BA.debugLineNum = 103;BA.debugLine="If File.Exists(File.DirInternal, \"customerthemes.s";
+Debug.ShouldStop(64);
 if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"customerthemes.sqlite")) { 
- BA.debugLineNum = 108;BA.debugLine="Selectdrink.SelectedIndex = Selectdrink.IndexOf (F";
-Debug.ShouldStop(2048);
-mostCurrent._selectdrink.setSelectedIndex(mostCurrent._selectdrink.IndexOf(anywheresoftware.b4a.keywords.Common.File.ReadString(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"customerthemes.sqlite")));
+ BA.debugLineNum = 104;BA.debugLine="SelectExtra.SelectedIndex = SelectExtra.IndexOf (F";
+Debug.ShouldStop(128);
+mostCurrent._selectextra.setSelectedIndex(mostCurrent._selectextra.IndexOf(anywheresoftware.b4a.keywords.Common.File.ReadString(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"customerthemes.sqlite")));
  }else {
- BA.debugLineNum = 110;BA.debugLine="Selectdrink.SelectedIndex = 1";
-Debug.ShouldStop(8192);
-mostCurrent._selectdrink.setSelectedIndex((int) (1));
+ BA.debugLineNum = 106;BA.debugLine="SelectExtra.SelectedIndex = 1";
+Debug.ShouldStop(512);
+mostCurrent._selectextra.setSelectedIndex((int) (1));
  };
- BA.debugLineNum = 113;BA.debugLine="End Sub";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 109;BA.debugLine="End Sub";
+Debug.ShouldStop(4096);
 return "";
 }
 catch (Exception e) {
