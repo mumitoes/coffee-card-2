@@ -22,6 +22,8 @@ Sub Globals
 	Private lblPhone As Label
 	
 	Dim companyDetails As Address
+
+	Private PnlBg As Panel
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -31,6 +33,10 @@ Sub Activity_Create(FirstTime As Boolean)
 	companyDetails.Initialize
 	loadPhone
 	loadAddress
+	
+	'=========================set default layout==========================
+	PnlBg.Background = companyDetails.LoadBGColours() 'Background
+
 	End Sub
 
 Sub Activity_Resume
@@ -63,5 +69,8 @@ Sub loadAddress
 			End If
 	Next
 End Sub
+
+
+
 
 

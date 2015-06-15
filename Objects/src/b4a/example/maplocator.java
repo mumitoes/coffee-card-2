@@ -312,10 +312,11 @@ public anywheresoftware.b4a.objects.LabelWrapper _lbladdress = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lblcompanyname = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lblphone = null;
 public b4a.example.address _companydetails = null;
+public anywheresoftware.b4a.objects.PanelWrapper _pnlbg = null;
 public b4a.example.main _main = null;
 public b4a.example.themecalc _themecalc = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"companyDetails",mostCurrent._companydetails,"compDetails",_compdetails,"lblAddress",mostCurrent._lbladdress,"lblCompanyName",mostCurrent._lblcompanyname,"lblPhone",mostCurrent._lblphone,"Main",Debug.moduleToString(b4a.example.main.class),"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
+		return new Object[] {"Activity",mostCurrent._activity,"companyDetails",mostCurrent._companydetails,"compDetails",_compdetails,"lblAddress",mostCurrent._lbladdress,"lblCompanyName",mostCurrent._lblcompanyname,"lblPhone",mostCurrent._lblphone,"Main",Debug.moduleToString(b4a.example.main.class),"PnlBg",mostCurrent._pnlbg,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
 }
 
 public static void initializeProcessGlobals() {
@@ -327,24 +328,27 @@ public static void initializeProcessGlobals() {
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (maplocator) ","maplocator",4,mostCurrent.activityBA,mostCurrent,22);
+		Debug.PushSubsStack("Activity_Create (maplocator) ","maplocator",4,mostCurrent.activityBA,mostCurrent,24);
 Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 22;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-Debug.ShouldStop(2097152);
- BA.debugLineNum = 24;BA.debugLine="Activity.LoadLayout(\"MapLocation\")";
+ BA.debugLineNum = 24;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
 Debug.ShouldStop(8388608);
-mostCurrent._activity.LoadLayout("MapLocation",mostCurrent.activityBA);
- BA.debugLineNum = 26;BA.debugLine="companyDetails.Initialize";
+ BA.debugLineNum = 26;BA.debugLine="Activity.LoadLayout(\"MapLocation\")";
 Debug.ShouldStop(33554432);
-mostCurrent._companydetails._initialize(processBA);
- BA.debugLineNum = 27;BA.debugLine="loadPhone";
-Debug.ShouldStop(67108864);
-_loadphone();
- BA.debugLineNum = 28;BA.debugLine="loadAddress";
+mostCurrent._activity.LoadLayout("MapLocation",mostCurrent.activityBA);
+ BA.debugLineNum = 28;BA.debugLine="companyDetails.Initialize";
 Debug.ShouldStop(134217728);
-_loadaddress();
- BA.debugLineNum = 29;BA.debugLine="End Sub";
+mostCurrent._companydetails._initialize(processBA);
+ BA.debugLineNum = 29;BA.debugLine="loadPhone";
 Debug.ShouldStop(268435456);
+_loadphone();
+ BA.debugLineNum = 30;BA.debugLine="loadAddress";
+Debug.ShouldStop(536870912);
+_loadaddress();
+ BA.debugLineNum = 33;BA.debugLine="PnlBg.Background = companyDetails.LoadBGColours()";
+Debug.ShouldStop(1);
+mostCurrent._pnlbg.setBackground((android.graphics.drawable.Drawable)(mostCurrent._companydetails._loadbgcolours().getObject()));
+ BA.debugLineNum = 35;BA.debugLine="End Sub";
+Debug.ShouldStop(4);
 return "";
 }
 catch (Exception e) {
@@ -356,12 +360,12 @@ finally {
 		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (maplocator) ","maplocator",4,mostCurrent.activityBA,mostCurrent,35);
+		Debug.PushSubsStack("Activity_Pause (maplocator) ","maplocator",4,mostCurrent.activityBA,mostCurrent,41);
 Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 35;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(4);
- BA.debugLineNum = 37;BA.debugLine="End Sub";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 41;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+Debug.ShouldStop(256);
+ BA.debugLineNum = 43;BA.debugLine="End Sub";
+Debug.ShouldStop(1024);
 return "";
 }
 catch (Exception e) {
@@ -373,11 +377,11 @@ finally {
 		}}
 public static String  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (maplocator) ","maplocator",4,mostCurrent.activityBA,mostCurrent,31);
- BA.debugLineNum = 31;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(1073741824);
- BA.debugLineNum = 33;BA.debugLine="End Sub";
-Debug.ShouldStop(1);
+		Debug.PushSubsStack("Activity_Resume (maplocator) ","maplocator",4,mostCurrent.activityBA,mostCurrent,37);
+ BA.debugLineNum = 37;BA.debugLine="Sub Activity_Resume";
+Debug.ShouldStop(16);
+ BA.debugLineNum = 39;BA.debugLine="End Sub";
+Debug.ShouldStop(64);
 return "";
 }
 catch (Exception e) {
@@ -396,51 +400,53 @@ mostCurrent._lblcompanyname = new anywheresoftware.b4a.objects.LabelWrapper();
 mostCurrent._lblphone = new anywheresoftware.b4a.objects.LabelWrapper();
  //BA.debugLineNum = 19;BA.debugLine="Dim companyDetails As Address";
 mostCurrent._companydetails = new b4a.example.address();
- //BA.debugLineNum = 20;BA.debugLine="End Sub";
+ //BA.debugLineNum = 21;BA.debugLine="Private PnlBg As Panel";
+mostCurrent._pnlbg = new anywheresoftware.b4a.objects.PanelWrapper();
+ //BA.debugLineNum = 22;BA.debugLine="End Sub";
 return "";
 }
 public static String  _loadaddress() throws Exception{
 try {
-		Debug.PushSubsStack("loadAddress (maplocator) ","maplocator",4,mostCurrent.activityBA,mostCurrent,48);
+		Debug.PushSubsStack("loadAddress (maplocator) ","maplocator",4,mostCurrent.activityBA,mostCurrent,54);
 int _i = 0;
 String _address2 = "";
- BA.debugLineNum = 48;BA.debugLine="Sub loadAddress";
-Debug.ShouldStop(32768);
- BA.debugLineNum = 49;BA.debugLine="compDetails = companyDetails.loadCompanyDetails";
-Debug.ShouldStop(65536);
-_compdetails = mostCurrent._companydetails._loadcompanydetails();
- BA.debugLineNum = 50;BA.debugLine="For i = 0 To compDetails.RowCount - 1";
-Debug.ShouldStop(131072);
-{
-final int step28 = 1;
-final int limit28 = (int) (_compdetails.getRowCount()-1);
-for (_i = (int) (0); (step28 > 0 && _i <= limit28) || (step28 < 0 && _i >= limit28); _i = ((int)(0 + _i + step28))) {
-Debug.locals.put("i", _i);
- BA.debugLineNum = 51;BA.debugLine="compDetails.Position = i";
-Debug.ShouldStop(262144);
-_compdetails.setPosition(_i);
- BA.debugLineNum = 52;BA.debugLine="Dim address2 As String";
-Debug.ShouldStop(524288);
-_address2 = "";Debug.locals.put("address2", _address2);
- BA.debugLineNum = 53;BA.debugLine="address2 = compDetails.GetString(\"Address2\")";
-Debug.ShouldStop(1048576);
-_address2 = _compdetails.GetString("Address2");Debug.locals.put("address2", _address2);
- BA.debugLineNum = 54;BA.debugLine="If address2 <> Null Then";
+ BA.debugLineNum = 54;BA.debugLine="Sub loadAddress";
 Debug.ShouldStop(2097152);
-if (_address2!= null) { 
- BA.debugLineNum = 55;BA.debugLine="lblAddress.Text = compDetails.Getstring(\"Address";
+ BA.debugLineNum = 55;BA.debugLine="compDetails = companyDetails.loadCompanyDetails";
 Debug.ShouldStop(4194304);
+_compdetails = mostCurrent._companydetails._loadcompanydetails();
+ BA.debugLineNum = 56;BA.debugLine="For i = 0 To compDetails.RowCount - 1";
+Debug.ShouldStop(8388608);
+{
+final int step30 = 1;
+final int limit30 = (int) (_compdetails.getRowCount()-1);
+for (_i = (int) (0); (step30 > 0 && _i <= limit30) || (step30 < 0 && _i >= limit30); _i = ((int)(0 + _i + step30))) {
+Debug.locals.put("i", _i);
+ BA.debugLineNum = 57;BA.debugLine="compDetails.Position = i";
+Debug.ShouldStop(16777216);
+_compdetails.setPosition(_i);
+ BA.debugLineNum = 58;BA.debugLine="Dim address2 As String";
+Debug.ShouldStop(33554432);
+_address2 = "";Debug.locals.put("address2", _address2);
+ BA.debugLineNum = 59;BA.debugLine="address2 = compDetails.GetString(\"Address2\")";
+Debug.ShouldStop(67108864);
+_address2 = _compdetails.GetString("Address2");Debug.locals.put("address2", _address2);
+ BA.debugLineNum = 60;BA.debugLine="If address2 <> Null Then";
+Debug.ShouldStop(134217728);
+if (_address2!= null) { 
+ BA.debugLineNum = 61;BA.debugLine="lblAddress.Text = compDetails.Getstring(\"Address";
+Debug.ShouldStop(268435456);
 mostCurrent._lbladdress.setText((Object)(_compdetails.GetString("Address1")+anywheresoftware.b4a.keywords.Common.CRLF+_compdetails.GetString("Address2")+", "+_compdetails.GetString("Suburb")+anywheresoftware.b4a.keywords.Common.CRLF+_compdetails.GetString("City")));
  }else {
- BA.debugLineNum = 57;BA.debugLine="lblAddress.Text = compDetails.Getstring(\"Address";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 63;BA.debugLine="lblAddress.Text = compDetails.Getstring(\"Address";
+Debug.ShouldStop(1073741824);
 mostCurrent._lbladdress.setText((Object)(_compdetails.GetString("Address1")+anywheresoftware.b4a.keywords.Common.CRLF+_compdetails.GetString("Suburb")+anywheresoftware.b4a.keywords.Common.CRLF+_compdetails.GetString("City")));
  };
  }
 }Debug.locals.put("i", _i);
 ;
- BA.debugLineNum = 60;BA.debugLine="End Sub";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 66;BA.debugLine="End Sub";
+Debug.ShouldStop(2);
 return "";
 }
 catch (Exception e) {
@@ -452,34 +458,34 @@ finally {
 		}}
 public static String  _loadphone() throws Exception{
 try {
-		Debug.PushSubsStack("loadPhone (maplocator) ","maplocator",4,mostCurrent.activityBA,mostCurrent,39);
+		Debug.PushSubsStack("loadPhone (maplocator) ","maplocator",4,mostCurrent.activityBA,mostCurrent,45);
 int _i = 0;
- BA.debugLineNum = 39;BA.debugLine="Sub loadPhone ' method to assign Phone number";
-Debug.ShouldStop(64);
- BA.debugLineNum = 40;BA.debugLine="compDetails=companyDetails.loadCompanyDetails";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 45;BA.debugLine="Sub loadPhone ' method to assign Phone number";
+Debug.ShouldStop(4096);
+ BA.debugLineNum = 46;BA.debugLine="compDetails=companyDetails.loadCompanyDetails";
+Debug.ShouldStop(8192);
 _compdetails = mostCurrent._companydetails._loadcompanydetails();
- BA.debugLineNum = 41;BA.debugLine="For i = 0 To compDetails.RowCount - 1";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 47;BA.debugLine="For i = 0 To compDetails.RowCount - 1";
+Debug.ShouldStop(16384);
 {
-final int step20 = 1;
-final int limit20 = (int) (_compdetails.getRowCount()-1);
-for (_i = (int) (0); (step20 > 0 && _i <= limit20) || (step20 < 0 && _i >= limit20); _i = ((int)(0 + _i + step20))) {
+final int step22 = 1;
+final int limit22 = (int) (_compdetails.getRowCount()-1);
+for (_i = (int) (0); (step22 > 0 && _i <= limit22) || (step22 < 0 && _i >= limit22); _i = ((int)(0 + _i + step22))) {
 Debug.locals.put("i", _i);
- BA.debugLineNum = 42;BA.debugLine="compDetails.Position=i";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 48;BA.debugLine="compDetails.Position=i";
+Debug.ShouldStop(32768);
 _compdetails.setPosition(_i);
- BA.debugLineNum = 43;BA.debugLine="lblPhone.Text  = compDetails.GetString(\"PhoneCod";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 49;BA.debugLine="lblPhone.Text  = compDetails.GetString(\"PhoneCod";
+Debug.ShouldStop(65536);
 mostCurrent._lblphone.setText((Object)(_compdetails.GetString("PhoneCode")+" "+_compdetails.GetString("PhoneNo")));
- BA.debugLineNum = 44;BA.debugLine="lblCompanyName.Text = compDetails.GetString(\"Nam";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 50;BA.debugLine="lblCompanyName.Text = compDetails.GetString(\"Nam";
+Debug.ShouldStop(131072);
 mostCurrent._lblcompanyname.setText((Object)(_compdetails.GetString("Name")));
  }
 }Debug.locals.put("i", _i);
 ;
- BA.debugLineNum = 46;BA.debugLine="End Sub";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 52;BA.debugLine="End Sub";
+Debug.ShouldStop(524288);
 return "";
 }
 catch (Exception e) {
