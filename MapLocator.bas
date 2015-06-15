@@ -18,7 +18,7 @@ End Sub
 Sub Globals
 	'These global variables will be redeclared each time the activity is created.
 	'These variables can only be accessed from this module.
-	Private lblAddress As Label
+	Private lblAddress, lblCompanyName As Label
 	Private lblPhone As Label
 	
 	Dim companyDetails As Address
@@ -46,6 +46,7 @@ Sub loadPhone ' method to assign Phone number
 	For i = 0 To compDetails.RowCount - 1
 		compDetails.Position=i	
 		lblPhone.Text  = compDetails.GetString("PhoneCode") & " " & compDetails.GetString("PhoneNo")
+		lblCompanyName.Text = compDetails.GetString("")
 	Next
 End Sub
 

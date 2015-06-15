@@ -75,9 +75,9 @@ try {
 		Debug.PushSubsStack("loadCompanyDetails (address) ","address",5,ba,this,21);
  BA.debugLineNum = 21;BA.debugLine="Sub loadCompanyDetails As Cursor";
 Debug.ShouldStop(1048576);
- BA.debugLineNum = 22;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT Address1 , Address2";
+ BA.debugLineNum = 22;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT Name, Address1 , Ad";
 Debug.ShouldStop(2097152);
-_cursor1.setObject((android.database.Cursor)(_sql1.ExecQuery("SELECT Address1 , Address2 , Suburb , City , PhoneCode , PhoneNo FROM CompanyDetails")));
+_cursor1.setObject((android.database.Cursor)(_sql1.ExecQuery("SELECT Name, Address1 , Address2 , Suburb , City , PhoneCode , PhoneNo FROM CompanyDetails")));
  BA.debugLineNum = 23;BA.debugLine="Return cursor1";
 Debug.ShouldStop(4194304);
 if (true) return _cursor1;
