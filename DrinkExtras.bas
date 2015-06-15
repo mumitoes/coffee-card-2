@@ -102,7 +102,7 @@ Next
 End Sub
 
 'shows a list of only drink names so they can be selected and added to the cart database
-Sub Spinner2_ItemClick
+Sub Drink_Extra_Selector
 SelectExtra.Clear
 SelectExtra.Add("Description")
 If File.Exists(File.DirInternal, "customerthemes.sqlite") Then
