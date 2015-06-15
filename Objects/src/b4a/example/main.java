@@ -776,9 +776,9 @@ Debug.locals.put("i", _i);
  BA.debugLineNum = 94;BA.debugLine="myCoName.Position=i";
 Debug.ShouldStop(536870912);
 _myconame.setPosition(_i);
- BA.debugLineNum = 95;BA.debugLine="lblCompanyName.Text  =myCoName.GetString(\"Compan";
+ BA.debugLineNum = 95;BA.debugLine="lblCompanyName.Text  =myCoName.GetString(\"Name\")";
 Debug.ShouldStop(1073741824);
-mostCurrent._lblcompanyname.setText((Object)(_myconame.GetString("CompanyName")));
+mostCurrent._lblcompanyname.setText((Object)(_myconame.GetString("Name")));
  }
 }Debug.locals.put("i", _i);
 ;
@@ -839,7 +839,7 @@ finally {
 
 public static void initializeProcessGlobals() {
     if (mostCurrent != null && mostCurrent.activityBA != null) {
-Debug.StartDebugging(mostCurrent.activityBA, 43081, new int[] {9, 2, 1, 1, 2, 1, 1, 3}, "a10638fa-8e55-463e-ad20-c42a076251b8");}
+Debug.StartDebugging(mostCurrent.activityBA, 37112, new int[] {9, 2, 1, 1, 2, 1, 1, 3}, "22e56aa2-53d5-4abc-8a4c-6ef85bedf1df");}
 
     if (main.processGlobalsRun == false) {
 	    main.processGlobalsRun = true;

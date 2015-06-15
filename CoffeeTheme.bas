@@ -39,7 +39,7 @@ Return cursor1
 End Sub
 
 Sub loadCompanyName As Cursor
-cursor1=SQL1.ExecQuery("SELECT CompanyName FROM themes")
+cursor1=SQL1.ExecQuery("SELECT Name FROM CompanyDetails")
 Return cursor1
 End Sub
 

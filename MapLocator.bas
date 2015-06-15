@@ -46,7 +46,7 @@ Sub loadPhone ' method to assign Phone number
 	For i = 0 To compDetails.RowCount - 1
 		compDetails.Position=i	
 		lblPhone.Text  = compDetails.GetString("PhoneCode") & " " & compDetails.GetString("PhoneNo")
-		lblCompanyName.Text = compDetails.GetString("")
+		lblCompanyName.Text = compDetails.GetString("Name")
 	Next
 End Sub
 

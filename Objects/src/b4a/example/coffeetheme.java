@@ -119,9 +119,9 @@ try {
 		Debug.PushSubsStack("loadCompanyName (coffeetheme) ","coffeetheme",1,ba,this,36);
  BA.debugLineNum = 36;BA.debugLine="Sub loadCompanyName As Cursor";
 Debug.ShouldStop(8);
- BA.debugLineNum = 37;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT CompanyName FROM th";
+ BA.debugLineNum = 37;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT Name FROM CompanyDe";
 Debug.ShouldStop(16);
-_cursor1.setObject((android.database.Cursor)(_sql1.ExecQuery("SELECT CompanyName FROM themes")));
+_cursor1.setObject((android.database.Cursor)(_sql1.ExecQuery("SELECT Name FROM CompanyDetails")));
  BA.debugLineNum = 38;BA.debugLine="Return cursor1";
 Debug.ShouldStop(32);
 if (true) return _cursor1;

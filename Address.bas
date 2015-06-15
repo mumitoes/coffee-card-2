@@ -24,6 +24,6 @@ Public Sub Initialize
 End Sub
 
 Sub loadCompanyDetails As Cursor
-cursor1=SQL1.ExecQuery("SELECT Address1 , Address2 , Suburb , City , PhoneCode , PhoneNo FROM CompanyDetails")
+cursor1=SQL1.ExecQuery("SELECT Name, Address1 , Address2 , Suburb , City , PhoneCode , PhoneNo FROM CompanyDetails")
 Return cursor1
 End Sub

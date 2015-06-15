@@ -125,7 +125,7 @@ Sub loadDBname ' method to assign Company Name to Company Name label
 	myCoName=myTheme.loadCompanyName
 	For i = 0 To myCoName.RowCount - 1
 		myCoName.Position=i	
-		lblCompanyName.Text  =myCoName.GetString("CompanyName")
+		lblCompanyName.Text  =myCoName.GetString("Name")
 	Next
 End Sub
 
