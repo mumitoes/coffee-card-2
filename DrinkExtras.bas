@@ -41,6 +41,8 @@ Sub Globals
 	Private btnDrinkMenu As Button
 	Private ListView2 As ListView
 	Private SelectExtra As Spinner
+	Dim companyDetails As Address
+	Dim myTheme As CoffeeTheme
 	
 End Sub
 
@@ -59,31 +61,10 @@ Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
 
-Sub loadBackGroundcolours 'Sets backgrouns colours
-	myColors = myTheme.loadColours
-	For i = 0 To myColors.RowCount - 1 '
-		myColors.Position = i 
-		Dim bgGradient As GradientDrawable
-		Dim colours(2) As Int
-		colours(0) = Colors.RGB(myColors.GetInt("BG1Red"),myColors.GetInt("BG1Blue"),myColors.GetInt("BG1Green"))
-		colours(1) = Colors.RGB(myColors.GetInt("BG2Red"),myColors.GetInt("BG2Blue"),myColors.GetInt("BG2Green"))
-		bgGradient.Initialize("TR_BL", colours)
-		pgBackGround.Background=bgGradient
-	Next
-End Sub
-
-Sub DrinkMenubuttonColours 'Sets button colours
-	myButtonColours =myTheme.loadBtnColours
-	For i = 0 To myButtonColours.RowCount - 1 
-		myButtonColours.Position = i 
-		Dim btnRBG As ColorDrawable
-		Dim colours As Int
-		colours = Colors.RGB(myButtonColours.GetInt("BtnRed"),myButtonColours.GetInt("BtnBlue"),myButtonColours.GetInt("BtnGreen"))
-		btnRBG.Initialize(colours, 5)
-		btnDrinkMenu.background=btnRBG
-		btnOrder.background=btnRBG
-	Next
-End Sub
+Sub ExtrasLayout
+pgBackGround.Background = companyDetails.LoadBGColours() 'Background
+	btnDrinkMenu.Background = companyDetails.loadDBbuttonColours() 'Button colors
+	btnOrder.Background = companyDetails.loadDBbuttonColours() 'Button colors
 
 'Sends the sql to a web view that can be viewed on the design
 Sub Drinks_Menu

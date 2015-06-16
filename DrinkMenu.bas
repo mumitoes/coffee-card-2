@@ -43,6 +43,8 @@ Sub Globals
 	Private ScrollView1 As ScrollView
 	Private ListView1 As ListView
 	Private Selectdrink As Spinner
+	Dim companyDetails As Address
+	Dim myTheme As CoffeeTheme
 	
 End Sub
 
@@ -63,33 +65,13 @@ End Sub
 
 '========================================================= DRINK MENU Layout =================================================================================
 
-Sub loadBackGroundcolours 'Sets backgrouns colours
-	myColors = myTheme.loadColours
-	For i = 0 To myColors.RowCount - 1 '
-		myColors.Position = i 
-		Dim bgGradient As GradientDrawable
-		Dim colours(2) As Int
-		colours(0) = Colors.RGB(myColors.GetInt("BG1Red"),myColors.GetInt("BG1Blue"),myColors.GetInt("BG1Green"))
-		colours(1) = Colors.RGB(myColors.GetInt("BG2Red"),myColors.GetInt("BG2Blue"),myColors.GetInt("BG2Green"))
-		bgGradient.Initialize("TR_BL", colours)
-		pgBackGround.Background=bgGradient
-	Next
-End Sub
-
-Sub DrinkMenubuttonColours 'Sets button colours
-	myButtonColours =myTheme.loadBtnColours
-	For i = 0 To myButtonColours.RowCount - 1 
-		myButtonColours.Position = i 
-		Dim btnRBG As ColorDrawable
-		Dim colours As Int
-		colours = Colors.RGB(myButtonColours.GetInt("BtnRed"),myButtonColours.GetInt("BtnBlue"),myButtonColours.GetInt("BtnGreen"))
-		btnRBG.Initialize(colours, 5)
-		btnExtras.background=btnRBG
-		btnOrder.background=btnRBG
-	Next
-End Sub
+Sub MenuLayout
+pgBackGround.Background = companyDetails.LoadBGColours() 'Background
+	btnExtras.Background = companyDetails.loadDBbuttonColours() 'Button colors
+	btnOrder.Background = companyDetails.loadDBbuttonColours() 'Button colors
 
 'Sends the sql to a web view that can be viewed on the design
+
 Sub Drinks_Menu
 ListView1.Clear
 For i = 0 To myDrinkMenu.RowCount -1
@@ -100,9 +82,7 @@ ListView1.SingleLineLayout.ItemHeight = 350
 ListView1.SingleLineLayout.Label.TextSize = 35
 ListView1.SingleLineLayout.Label.TextColor = Colors.White
 ListView1.SingleLineLayout.Label.Color = Colors.White
-
 Next
-
 End Sub
 
 'shows a list of only drink names so they can be selected and added to the cart database

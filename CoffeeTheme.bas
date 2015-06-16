@@ -39,7 +39,7 @@ Return cursor1
 End Sub
 
 Sub loadCompanyName As Cursor
-cursor1=SQL1.ExecQuery("SELECT CompanyName FROM themes")
+cursor1=SQL1.ExecQuery("SELECT Name FROM CompanyDetails")
 Return cursor1
 End Sub
 
@@ -52,6 +52,11 @@ End Sub
 Sub loadBtnColours As Cursor
 cursor1=SQL1.ExecQuery("SELECT BtnRed, BtnBlue, BtnGreen FROM themes")
 Return cursor1
+End Sub
+
+Sub loadCompanyDetails As Cursor 'load company info
+	cursor1=SQL1.ExecQuery("SELECT Name, Address1 , Address2 , Suburb , City , PhoneCode , PhoneNo FROM CompanyDetails")
+	Return cursor1
 End Sub
 
 Sub loadCoffeeMenu As Cursor
