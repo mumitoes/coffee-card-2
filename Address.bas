@@ -4,48 +4,96 @@ ModulesStructureVersion=1
 B4A=true
 @EndOfDesignText@
 'Class module
+'"THEME METHODS" - loads all methods to calculate theme
 Sub Class_Globals
-	Private SQL1 As SQL
-	Private cursor1 As Cursor
-	Dim myColors As Cursor
+	Dim myColors, myLogo, myContactDeets, myAddress, myButtonColours, myStamp As Cursor
 	Dim myData As CoffeeTheme
 End Sub
 
 'Initializes the object. You can add parameters to this method if needed.
 Public Sub Initialize
-
 	myData.Initialize
-	
-	'  Removed below line as after we made changes to our database they weren't initialised
-		'If File.Exists(File.DirInternal, "customerthemes.sqlite")=False Then
-	File.Copy(File.DirAssets, "customerthemes.sqlite",File.DirInternal,"customerthemes.sqlite")
-	'End If
-	
-	'if not already initialised then action.
-	If SQL1.IsInitialized=False Then
-	SQL1.Initialize(File.DirInternal, "customerthemes.sqlite", False)
-	End If
 End Sub
 
-Sub loadCompanyDetails As Cursor
-	cursor1=SQL1.ExecQuery("SELECT Name, Address1 , Address2 , Suburb , City , PhoneCode , PhoneNo FROM CompanyDetails")
-	Return cursor1
-End Sub
-
-'Sub loadColours As Cursor
-'	cursor1=SQL1.ExecQuery("SELECT BG1Red, BG1Blue, BG1Green, BG2Red, BG2Blue, BG2Green FROM themes")
-'	Return cursor1
-'End Sub
-
+'Load background panel color
 Sub LoadBGColours() As GradientDrawable
 	myColors = myData.loadColours
+	Dim bgGradient As GradientDrawable
 	For i = 0 To myColors.RowCount - 1 
 		myColors.Position = i 
-		Dim bgGradient As GradientDrawable
 		Dim colours(2) As Int
 		colours(0) = Colors.RGB(myColors.GetInt("BG1Red"),myColors.GetInt("BG1Blue"),myColors.GetInt("BG1Green"))
 		colours(1) = Colors.RGB(myColors.GetInt("BG2Red"),myColors.GetInt("BG2Blue"),myColors.GetInt("BG2Green"))
 		bgGradient.Initialize("TR_BL", colours)
 	Next
 		Return bgGradient
+End Sub
+
+Sub loadPhone() As String ' method to assign Phone number
+	myContactDeets=myData.loadCompanyDetails
+	Dim phone As String
+	For i = 0 To myContactDeets.RowCount - 1
+		myContactDeets.Position=i	
+		phone  = myContactDeets.GetString("PhoneCode") & " " & myContactDeets.GetString("PhoneNo")
+	Next
+		Return phone 
+End Sub
+
+Sub loadName() As String ' method to assign company name
+	myContactDeets=myData.loadCompanyDetails
+	Dim name As String
+	For i = 0 To myContactDeets.RowCount - 1
+		myContactDeets.Position=i	
+		name  = myContactDeets.GetString("Name")
+	Next
+		Return name 
+End Sub
+
+
+Sub loadAddress() As String 'method to assign address value
+	myAddress = myData.loadCompanyDetails
+	Dim address As String
+	For i = 0 To myAddress.RowCount - 1
+		myAddress.Position = i
+		Dim address2 As String
+		address2 = myAddress.GetString("Address2")
+			If address2 <> Null Then
+		address = myAddress.Getstring("Address1") & CRLF & myAddress.GetString("Address2") & ", " & myAddress.GetString("Suburb") & CRLF & myAddress.GetString("City") 
+			Else
+		address = myAddress.Getstring("Address1") & CRLF & myAddress.GetString("Suburb") & CRLF & myAddress.GetString("City") 
+			End If
+	Next
+	Return address
+End Sub
+
+Sub loadDBlogo() As Bitmap 'Assign Logo as string from database to Logo Image
+	myLogo=myData.loadLogo
+	Dim logo As Bitmap
+	For i = 0 To myLogo.RowCount - 1
+		myLogo.Position=i
+		logo.Initialize(File.DirAssets, myLogo.GetString("Logo"))
+	Next
+	Return logo
+End Sub
+
+Sub loadDBbuttonColours() As ColorDrawable ' method to assign colours to Scan Button
+	myButtonColours = myData.loadBtnColours
+		Dim btnRBG As ColorDrawable
+		Dim colours As Int
+	For i = 0 To myButtonColours.RowCount - 1 
+		myButtonColours.Position = i 
+		colours = Colors.RGB(myButtonColours.GetInt("BtnRed"),myButtonColours.GetInt("BtnBlue"),myButtonColours.GetInt("BtnGreen"))
+		btnRBG.Initialize(colours, 10)
+	Next
+	Return btnRBG
+End Sub
+
+Sub loadStamp() As Bitmap ' method to assign stamp image to Stamp Images
+	myStamp=myData.loadStampIcon
+	For i = 0 To myStamp.RowCount - 1
+		myStamp.Position=i
+		Dim stamp As Bitmap
+		stamp.Initialize(File.DirAssets, myLogo.GetString("StampIcon"))
+	Next
+	Return stamp
 End Sub

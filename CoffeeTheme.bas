@@ -4,7 +4,7 @@ ModulesStructureVersion=1
 B4A=true
 @EndOfDesignText@
 'Class module
-
+'DATAMANAGER
 'create a default theme (stamps images, logo image, company name as label, button properties) send to coffee activity
 'If website/url is available grab colours logo and button colours.
 'theme manager
@@ -52,4 +52,9 @@ End Sub
 Sub loadBtnColours As Cursor
 cursor1=SQL1.ExecQuery("SELECT BtnRed, BtnBlue, BtnGreen FROM themes")
 Return cursor1
+End Sub
+
+Sub loadCompanyDetails As Cursor 'load company info
+	cursor1=SQL1.ExecQuery("SELECT Name, Address1 , Address2 , Suburb , City , PhoneCode , PhoneNo FROM CompanyDetails")
+	Return cursor1
 End Sub

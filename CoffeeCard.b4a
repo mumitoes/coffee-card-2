@@ -73,7 +73,7 @@ Sub Globals
 	Private lblCompanyName As Label
 	Private pnlBG As Panel
 	Private pnlStamp1, pnlStamp2, pnlStamp3, pnlStamp4, pnlStamp5, pnlStamp6 As Panel
-
+	Dim companyDetails As Address
 	Dim myTheme As CoffeeTheme
 	Dim scanSuccess As Boolean
 	Dim qrscanner As JhsIceZxing1
@@ -86,70 +86,83 @@ Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("main")
 
 	
-	myTheme.Initialize ' initialise theme database on load
-	loadDBcolours
-	loadDBlogo
-	loadDBname
-	loadStamp
-	loadDBbuttonColours
+	myTheme.Initialize ' initialise theme database on load	
+	companyDetails.Initialize 'initialise methods to set layout
+	loadLayout
 
 	
 End Sub
 
 '===========================================Layout========================================
 #Region Layout design
-Sub loadDBcolours 'Assign background colours from database to Background Panel
-	myColors = myTheme.loadColours
-	For i = 0 To myColors.RowCount - 1 '
-		myColors.Position = i 
-		Dim bgGradient As GradientDrawable
-		Dim colours(2) As Int
-		colours(0) = Colors.RGB(myColors.GetInt("BG1Red"),myColors.GetInt("BG1Blue"),myColors.GetInt("BG1Green"))
-		colours(1) = Colors.RGB(myColors.GetInt("BG2Red"),myColors.GetInt("BG2Blue"),myColors.GetInt("BG2Green"))
-		bgGradient.Initialize("TR_BL", colours)
-		pnlBG.Background=bgGradient
-	Next
+
+Sub loadLayout
+ 	'=========================set default layout and details==========================
+	pnlBG.Background = companyDetails.LoadBGColours() 'Background
+	lblCompanyName.Text = companyDetails.loadName() 'Company name
+	imgLogo.Bitmap = companyDetails.loadDBlogo() 'Logo
+	btnScan.Background = companyDetails.loadDBbuttonColours() 'Button colors
+	imgStamp1.Bitmap = companyDetails.loadStamp()'load stamp
+	imgStamp2.Bitmap = companyDetails.loadStamp()'load stamp
+	imgStamp3.Bitmap = companyDetails.loadStamp()'load stamp
+	imgStamp4.Bitmap = companyDetails.loadStamp()'load stamp
+	imgStamp5.Bitmap = companyDetails.loadStamp()'load stamp
+	imgStamp6.Bitmap = companyDetails.loadStamp()'load stamp
 End Sub
 
-Sub loadDBlogo 'Assign Logo as string from database to Logo Image
-	myLogo=myTheme.loadLogo
-	For i = 0 To myLogo.RowCount - 1
-		myLogo.Position=i
-		Dim image As Bitmap
-		image.Initialize(File.DirAssets, myLogo.GetString("Logo"))
-		imgLogo.Bitmap=image
-	Next
-End Sub
 
-Sub loadDBname ' method to assign Company Name to Company Name label
-	myCoName=myTheme.loadCompanyName
-	For i = 0 To myCoName.RowCount - 1
-		myCoName.Position=i	
-		lblCompanyName.Text  =myCoName.GetString("Name")
-	Next
-End Sub
-
-Sub loadStamp ' method to assign stamp image to Stamp Images
-	myStamp=myTheme.loadStampIcon
-	For i = 0 To myStamp.RowCount - 1
-		myStamp.Position=i
-		Dim image As Bitmap
-		image.Initialize(File.DirAssets, myLogo.GetString("StampIcon"))
-		imgStamp1.Bitmap=image
-	Next
-End Sub
-
-Sub loadDBbuttonColours ' method to assign colours to Scan Button
-	myButtonColours =myTheme.loadBtnColours
-	For i = 0 To myButtonColours.RowCount - 1 
-		myButtonColours.Position = i 
-		Dim btnRBG As ColorDrawable
-		Dim colours As Int
-		colours = Colors.RGB(myButtonColours.GetInt("BtnRed"),myButtonColours.GetInt("BtnBlue"),myButtonColours.GetInt("BtnGreen"))
-		btnRBG.Initialize(colours, 5)
-		btnScan.background=btnRBG
-	Next
-End Sub
+'Sub loadDBcolours 'Assign background colours from database to Background Panel
+'	myColors = myTheme.loadColours
+'	For i = 0 To myColors.RowCount - 1 '
+'		myColors.Position = i 
+'		Dim bgGradient As GradientDrawable
+'		Dim colours(2) As Int
+'		colours(0) = Colors.RGB(myColors.GetInt("BG1Red"),myColors.GetInt("BG1Blue"),myColors.GetInt("BG1Green"))
+'		colours(1) = Colors.RGB(myColors.GetInt("BG2Red"),myColors.GetInt("BG2Blue"),myColors.GetInt("BG2Green"))
+'		bgGradient.Initialize("TR_BL", colours)
+'		pnlBG.Background=bgGradient
+'	Next
+'End Sub
+'
+'Sub loadDBlogo 'Assign Logo as string from database to Logo Image
+'	myLogo=myTheme.loadLogo
+'	For i = 0 To myLogo.RowCount - 1
+'		myLogo.Position=i
+'		Dim image As Bitmap
+'		image.Initialize(File.DirAssets, myLogo.GetString("Logo"))
+'		imgLogo.Bitmap=image
+'	Next
+'End Sub
+'
+'Sub loadDBname ' method to assign Company Name to Company Name label
+'	myCoName=myTheme.loadCompanyName
+'	For i = 0 To myCoName.RowCount - 1
+'		myCoName.Position=i	
+'		lblCompanyName.Text  =myCoName.GetString("Name")
+'	Next
+'End Sub
+'
+'Sub loadStamp ' method to assign stamp image to Stamp Images
+'	myStamp=myTheme.loadStampIcon
+'	For i = 0 To myStamp.RowCount - 1
+'		myStamp.Position=i
+'		Dim image As Bitmap
+'		image.Initialize(File.DirAssets, myLogo.GetString("StampIcon"))
+'		imgStamp1.Bitmap=image
+'	Next
+'End Sub
+'
+'Sub loadDBbuttonColours ' method to assign colours to Scan Button
+'	myButtonColours =myTheme.loadBtnColours
+'	For i = 0 To myButtonColours.RowCount - 1 
+'		myButtonColours.Position = i 
+'		Dim btnRBG As ColorDrawable
+'		Dim colours As Int
+'		colours = Colors.RGB(myButtonColours.GetInt("BtnRed"),myButtonColours.GetInt("BtnBlue"),myButtonColours.GetInt("BtnGreen"))
+'		btnRBG.Initialize(colours, 5)
+'		btnScan.background=btnRBG
+'	Next
+'End Sub
 #End Region
 
 Sub Activity_Resume

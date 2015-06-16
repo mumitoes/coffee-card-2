@@ -114,6 +114,28 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
+public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadcompanydetails() throws Exception{
+try {
+		Debug.PushSubsStack("loadCompanyDetails (coffeetheme) ","coffeetheme",1,ba,this,52);
+ BA.debugLineNum = 52;BA.debugLine="Sub loadCompanyDetails As Cursor 'load company inf";
+Debug.ShouldStop(524288);
+ BA.debugLineNum = 53;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT Name, Address1 , A";
+Debug.ShouldStop(1048576);
+_cursor1.setObject((android.database.Cursor)(_sql1.ExecQuery("SELECT Name, Address1 , Address2 , Suburb , City , PhoneCode , PhoneNo FROM CompanyDetails")));
+ BA.debugLineNum = 54;BA.debugLine="Return cursor1";
+Debug.ShouldStop(2097152);
+if (true) return _cursor1;
+ BA.debugLineNum = 55;BA.debugLine="End Sub";
+Debug.ShouldStop(4194304);
+return null;
+}
+catch (Exception e) {
+			Debug.ErrorCaught(e);
+			throw e;
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
 public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadcompanyname() throws Exception{
 try {
 		Debug.PushSubsStack("loadCompanyName (coffeetheme) ","coffeetheme",1,ba,this,36);
