@@ -67,7 +67,7 @@ pgBackGround.Background = companyDetails.LoadBGColours() 'Background
 	btnOrder.Background = companyDetails.loadDBbuttonColours() 'Button colors
 
 'Sends the sql to a web view that can be viewed on the design
-Sub Drinks_Menu
+Sub Drink_Extras
 ListView2.Clear
 For i = 0 To myDrinkExtras.RowCount -1
 myDrinkExtras.Position = i

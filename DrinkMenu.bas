@@ -72,7 +72,7 @@ pgBackGround.Background = companyDetails.LoadBGColours() 'Background
 
 'Sends the sql to a web view that can be viewed on the design
 
-Sub Drinks_Menu
+Sub Drink_Menu
 ListView1.Clear
 For i = 0 To myDrinkMenu.RowCount -1
 myDrinkMenu.Position = i
