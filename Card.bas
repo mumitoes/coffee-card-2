@@ -14,7 +14,7 @@ Public Sub Initialize
 'Initializes the object. You can add parameters to this method if needed.
 End Sub
 
-Sub CoffeeStamp As Int
+Sub Coffee_Stamp As Int
 CoffeeCount = CoffeeCount + 1 'Adds 1 stamp to coffee count when a coffee is scanned
 Return CoffeeCount ' and returns the new number of stamps the users has towards a free coffee
 End Sub 
