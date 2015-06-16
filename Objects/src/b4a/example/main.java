@@ -307,13 +307,8 @@ public class main extends Activity implements B4AActivity{
 	}
 
 public anywheresoftware.b4a.keywords.Common __c = null;
-public static anywheresoftware.b4a.sql.SQL.CursorWrapper _mycolors = null;
-public static anywheresoftware.b4a.sql.SQL.CursorWrapper _mylogo = null;
-public static anywheresoftware.b4a.sql.SQL.CursorWrapper _myconame = null;
-public static anywheresoftware.b4a.sql.SQL.CursorWrapper _mystamp = null;
-public b4a.example.card _card = null;
 public static int _coffeecount = 0;
-public static anywheresoftware.b4a.sql.SQL.CursorWrapper _mybuttoncolours = null;
+public b4a.example.card _card = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _btnscan = null;
 public anywheresoftware.b4a.objects.ImageViewWrapper _imglogo = null;
 public anywheresoftware.b4a.objects.ImageViewWrapper _imgstamp1 = null;
@@ -339,7 +334,7 @@ public anywheresoftware.b4a.objects.ButtonWrapper _yes = null;
 public b4a.example.maplocator _maplocator = null;
 public b4a.example.themecalc _themecalc = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"btnScan",mostCurrent._btnscan,"Card",Debug.moduleToString(b4a.example.card.class),"CoffeeCount",_coffeecount,"companyDetails",mostCurrent._companydetails,"imgLogo",mostCurrent._imglogo,"imgStamp1",mostCurrent._imgstamp1,"imgStamp2",mostCurrent._imgstamp2,"imgStamp3",mostCurrent._imgstamp3,"imgStamp4",mostCurrent._imgstamp4,"imgStamp5",mostCurrent._imgstamp5,"imgStamp6",mostCurrent._imgstamp6,"lblCompanyName",mostCurrent._lblcompanyname,"MapLocator",Debug.moduleToString(b4a.example.maplocator.class),"myButtonColours",_mybuttoncolours,"myColors",_mycolors,"myCoName",_myconame,"myLogo",_mylogo,"myStamp",_mystamp,"myTheme",mostCurrent._mytheme,"No",mostCurrent._no,"pnlBG",mostCurrent._pnlbg,"pnlStamp1",mostCurrent._pnlstamp1,"pnlStamp2",mostCurrent._pnlstamp2,"pnlStamp3",mostCurrent._pnlstamp3,"pnlStamp4",mostCurrent._pnlstamp4,"pnlStamp5",mostCurrent._pnlstamp5,"pnlStamp6",mostCurrent._pnlstamp6,"qrscanner",mostCurrent._qrscanner,"scanSuccess",_scansuccess,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class),"Yes",mostCurrent._yes};
+		return new Object[] {"Activity",mostCurrent._activity,"btnScan",mostCurrent._btnscan,"Card",Debug.moduleToString(b4a.example.card.class),"CoffeeCount",_coffeecount,"companyDetails",mostCurrent._companydetails,"imgLogo",mostCurrent._imglogo,"imgStamp1",mostCurrent._imgstamp1,"imgStamp2",mostCurrent._imgstamp2,"imgStamp3",mostCurrent._imgstamp3,"imgStamp4",mostCurrent._imgstamp4,"imgStamp5",mostCurrent._imgstamp5,"imgStamp6",mostCurrent._imgstamp6,"lblCompanyName",mostCurrent._lblcompanyname,"MapLocator",Debug.moduleToString(b4a.example.maplocator.class),"myTheme",mostCurrent._mytheme,"No",mostCurrent._no,"pnlBG",mostCurrent._pnlbg,"pnlStamp1",mostCurrent._pnlstamp1,"pnlStamp2",mostCurrent._pnlstamp2,"pnlStamp3",mostCurrent._pnlstamp3,"pnlStamp4",mostCurrent._pnlstamp4,"pnlStamp5",mostCurrent._pnlstamp5,"pnlStamp6",mostCurrent._pnlstamp6,"qrscanner",mostCurrent._qrscanner,"scanSuccess",_scansuccess,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class),"Yes",mostCurrent._yes};
 }
 
 public static boolean isAnyActivityVisible() {
@@ -376,24 +371,24 @@ public static void killProgram() {
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (main) ","main",0,mostCurrent.activityBA,mostCurrent,51);
+		Debug.PushSubsStack("Activity_Create (main) ","main",0,mostCurrent.activityBA,mostCurrent,45);
 Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 51;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-Debug.ShouldStop(262144);
- BA.debugLineNum = 53;BA.debugLine="Activity.LoadLayout(\"main\")";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 45;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+Debug.ShouldStop(4096);
+ BA.debugLineNum = 47;BA.debugLine="Activity.LoadLayout(\"main\")";
+Debug.ShouldStop(16384);
 mostCurrent._activity.LoadLayout("main",mostCurrent.activityBA);
- BA.debugLineNum = 56;BA.debugLine="myTheme.Initialize ' initialise theme database on";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 50;BA.debugLine="myTheme.Initialize ' initialise theme database on";
+Debug.ShouldStop(131072);
 mostCurrent._mytheme._initialize(processBA);
- BA.debugLineNum = 57;BA.debugLine="companyDetails.Initialize 'initialise methods to";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 51;BA.debugLine="companyDetails.Initialize 'initialise methods to";
+Debug.ShouldStop(262144);
 mostCurrent._companydetails._initialize(processBA);
- BA.debugLineNum = 58;BA.debugLine="loadLayout";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 52;BA.debugLine="loadLayout";
+Debug.ShouldStop(524288);
 _loadlayout();
- BA.debugLineNum = 61;BA.debugLine="End Sub";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 55;BA.debugLine="End Sub";
+Debug.ShouldStop(4194304);
 return "";
 }
 catch (Exception e) {
@@ -405,12 +400,12 @@ finally {
 		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (main) ","main",0,mostCurrent.activityBA,mostCurrent,139);
+		Debug.PushSubsStack("Activity_Pause (main) ","main",0,mostCurrent.activityBA,mostCurrent,78);
 Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 139;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(1024);
- BA.debugLineNum = 141;BA.debugLine="End Sub";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 78;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+Debug.ShouldStop(8192);
+ BA.debugLineNum = 80;BA.debugLine="End Sub";
+Debug.ShouldStop(32768);
 return "";
 }
 catch (Exception e) {
@@ -422,11 +417,11 @@ finally {
 		}}
 public static String  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (main) ","main",0,mostCurrent.activityBA,mostCurrent,135);
- BA.debugLineNum = 135;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(64);
- BA.debugLineNum = 137;BA.debugLine="End Sub";
-Debug.ShouldStop(256);
+		Debug.PushSubsStack("Activity_Resume (main) ","main",0,mostCurrent.activityBA,mostCurrent,74);
+ BA.debugLineNum = 74;BA.debugLine="Sub Activity_Resume";
+Debug.ShouldStop(512);
+ BA.debugLineNum = 76;BA.debugLine="End Sub";
+Debug.ShouldStop(2048);
 return "";
 }
 catch (Exception e) {
@@ -438,14 +433,14 @@ finally {
 		}}
 public static String  _btnno_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnno_Click (main) ","main",0,mostCurrent.activityBA,mostCurrent,225);
- BA.debugLineNum = 225;BA.debugLine="Sub btnno_Click ' you can also save and redeem lat";
-Debug.ShouldStop(1);
- BA.debugLineNum = 226;BA.debugLine="Activity.LoadLayout(\"main\") 'will return to main";
+		Debug.PushSubsStack("btnno_Click (main) ","main",0,mostCurrent.activityBA,mostCurrent,162);
+ BA.debugLineNum = 162;BA.debugLine="Sub btnno_Click ' you can also save and redeem lat";
 Debug.ShouldStop(2);
-mostCurrent._activity.LoadLayout("main",mostCurrent.activityBA);
- BA.debugLineNum = 227;BA.debugLine="End Sub";
+ BA.debugLineNum = 163;BA.debugLine="Activity.LoadLayout(\"main\") 'will return to main";
 Debug.ShouldStop(4);
+mostCurrent._activity.LoadLayout("main",mostCurrent.activityBA);
+ BA.debugLineNum = 164;BA.debugLine="End Sub";
+Debug.ShouldStop(8);
 return "";
 }
 catch (Exception e) {
@@ -457,13 +452,13 @@ finally {
 		}}
 public static String  _btnscan_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnScan_Click (main) ","main",0,mostCurrent.activityBA,mostCurrent,212);
- BA.debugLineNum = 212;BA.debugLine="Sub btnScan_Click 'in order to bring information a";
-Debug.ShouldStop(524288);
- BA.debugLineNum = 216;BA.debugLine="StartActivity(MapLocator)";
-Debug.ShouldStop(8388608);
-anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)(mostCurrent._maplocator.getObject()));
- BA.debugLineNum = 218;BA.debugLine="End Sub";
+		Debug.PushSubsStack("btnScan_Click (main) ","main",0,mostCurrent.activityBA,mostCurrent,151);
+ BA.debugLineNum = 151;BA.debugLine="Sub btnScan_Click 'in order to bring information a";
+Debug.ShouldStop(4194304);
+ BA.debugLineNum = 153;BA.debugLine="StartActivity(\"MapLocator\")";
+Debug.ShouldStop(16777216);
+anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)("MapLocator"));
+ BA.debugLineNum = 154;BA.debugLine="End Sub";
 Debug.ShouldStop(33554432);
 return "";
 }
@@ -476,59 +471,59 @@ finally {
 		}}
 public static String  _btnscan_longclick() throws Exception{
 try {
-		Debug.PushSubsStack("btnScan_LongClick (main) ","main",0,mostCurrent.activityBA,mostCurrent,229);
- BA.debugLineNum = 229;BA.debugLine="Sub btnScan_LongClick ' in order to scan the barco";
-Debug.ShouldStop(16);
- BA.debugLineNum = 230;BA.debugLine="qrscanner.isportrait = True";
+		Debug.PushSubsStack("btnScan_LongClick (main) ","main",0,mostCurrent.activityBA,mostCurrent,166);
+ BA.debugLineNum = 166;BA.debugLine="Sub btnScan_LongClick ' in order to scan the barco";
 Debug.ShouldStop(32);
-mostCurrent._qrscanner.isportrait = anywheresoftware.b4a.keywords.Common.True;
- BA.debugLineNum = 231;BA.debugLine="qrscanner.useFrontCam = False";
+ BA.debugLineNum = 167;BA.debugLine="qrscanner.isportrait = True";
 Debug.ShouldStop(64);
+mostCurrent._qrscanner.isportrait = anywheresoftware.b4a.keywords.Common.True;
+ BA.debugLineNum = 168;BA.debugLine="qrscanner.useFrontCam = False";
+Debug.ShouldStop(128);
 mostCurrent._qrscanner.useFrontCam = anywheresoftware.b4a.keywords.Common.False;
- BA.debugLineNum = 234;BA.debugLine="qrscanner.timeoutDuration = 30";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 171;BA.debugLine="qrscanner.timeoutDuration = 30";
+Debug.ShouldStop(1024);
 mostCurrent._qrscanner.timeoutDuration = (int) (30);
- BA.debugLineNum = 238;BA.debugLine="qrscanner.theViewFinderXfactor = 0.7";
-Debug.ShouldStop(8192);
-mostCurrent._qrscanner.theViewFinderXfactor = 0.7;
- BA.debugLineNum = 239;BA.debugLine="qrscanner.theViewFinderYfactor = 0.5";
+ BA.debugLineNum = 175;BA.debugLine="qrscanner.theViewFinderXfactor = 0.7";
 Debug.ShouldStop(16384);
+mostCurrent._qrscanner.theViewFinderXfactor = 0.7;
+ BA.debugLineNum = 176;BA.debugLine="qrscanner.theViewFinderYfactor = 0.5";
+Debug.ShouldStop(32768);
 mostCurrent._qrscanner.theViewFinderYfactor = 0.5;
- BA.debugLineNum = 241;BA.debugLine="qrscanner.theFrameColor = Colors.LightGray";
-Debug.ShouldStop(65536);
-mostCurrent._qrscanner.theFrameColor = anywheresoftware.b4a.keywords.Common.Colors.LightGray;
- BA.debugLineNum = 242;BA.debugLine="qrscanner.theLaserColor = Colors.Red";
+ BA.debugLineNum = 178;BA.debugLine="qrscanner.theFrameColor = Colors.LightGray";
 Debug.ShouldStop(131072);
-mostCurrent._qrscanner.theLaserColor = anywheresoftware.b4a.keywords.Common.Colors.Red;
- BA.debugLineNum = 243;BA.debugLine="qrscanner.theMaskColor = Colors.argb(95, 0, 0, 25";
+mostCurrent._qrscanner.theFrameColor = anywheresoftware.b4a.keywords.Common.Colors.LightGray;
+ BA.debugLineNum = 179;BA.debugLine="qrscanner.theLaserColor = Colors.Red";
 Debug.ShouldStop(262144);
-mostCurrent._qrscanner.theMaskColor = anywheresoftware.b4a.keywords.Common.Colors.ARGB((int) (95),(int) (0),(int) (0),(int) (255));
- BA.debugLineNum = 244;BA.debugLine="qrscanner.theResultColor = Colors.Green";
+mostCurrent._qrscanner.theLaserColor = anywheresoftware.b4a.keywords.Common.Colors.Red;
+ BA.debugLineNum = 180;BA.debugLine="qrscanner.theMaskColor = Colors.argb(95, 0, 0, 25";
 Debug.ShouldStop(524288);
-mostCurrent._qrscanner.theResultColor = anywheresoftware.b4a.keywords.Common.Colors.Green;
- BA.debugLineNum = 245;BA.debugLine="qrscanner.theResultPointColor = Colors.Red";
+mostCurrent._qrscanner.theMaskColor = anywheresoftware.b4a.keywords.Common.Colors.ARGB((int) (95),(int) (0),(int) (0),(int) (255));
+ BA.debugLineNum = 181;BA.debugLine="qrscanner.theResultColor = Colors.Green";
 Debug.ShouldStop(1048576);
+mostCurrent._qrscanner.theResultColor = anywheresoftware.b4a.keywords.Common.Colors.Green;
+ BA.debugLineNum = 182;BA.debugLine="qrscanner.theResultPointColor = Colors.Red";
+Debug.ShouldStop(2097152);
 mostCurrent._qrscanner.theResultPointColor = anywheresoftware.b4a.keywords.Common.Colors.Red;
- BA.debugLineNum = 247;BA.debugLine="qrscanner.theBottomPromptMessage = \"Scan Your Cof";
-Debug.ShouldStop(4194304);
-mostCurrent._qrscanner.theBottomPromptMessage = "Scan Your Coffee Stamp.";
- BA.debugLineNum = 248;BA.debugLine="qrscanner.theBottomPromptTextSize = 5%y";
+ BA.debugLineNum = 184;BA.debugLine="qrscanner.theBottomPromptMessage = \"Scan Your Cof";
 Debug.ShouldStop(8388608);
-mostCurrent._qrscanner.theBottomPromptTextSize = anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (5),mostCurrent.activityBA);
- BA.debugLineNum = 249;BA.debugLine="qrscanner.bottomPromptColor = Colors.Yellow";
+mostCurrent._qrscanner.theBottomPromptMessage = "Scan Your Coffee Stamp.";
+ BA.debugLineNum = 185;BA.debugLine="qrscanner.theBottomPromptTextSize = 5%y";
 Debug.ShouldStop(16777216);
-mostCurrent._qrscanner.bottomPromptColor = anywheresoftware.b4a.keywords.Common.Colors.Yellow;
- BA.debugLineNum = 250;BA.debugLine="qrscanner.bottomPromptDistanceFromBottom = 5%y";
+mostCurrent._qrscanner.theBottomPromptTextSize = anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (5),mostCurrent.activityBA);
+ BA.debugLineNum = 186;BA.debugLine="qrscanner.bottomPromptColor = Colors.Yellow";
 Debug.ShouldStop(33554432);
+mostCurrent._qrscanner.bottomPromptColor = anywheresoftware.b4a.keywords.Common.Colors.Yellow;
+ BA.debugLineNum = 187;BA.debugLine="qrscanner.bottomPromptDistanceFromBottom = 5%y";
+Debug.ShouldStop(67108864);
 mostCurrent._qrscanner.bottomPromptDistanceFromBottom = anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (5),mostCurrent.activityBA);
- BA.debugLineNum = 252;BA.debugLine="scanSuccess = False";
-Debug.ShouldStop(134217728);
-_scansuccess = anywheresoftware.b4a.keywords.Common.False;
- BA.debugLineNum = 253;BA.debugLine="qrscanner.BeginScan(\"scanner\")	'This is the funct";
+ BA.debugLineNum = 189;BA.debugLine="scanSuccess = False";
 Debug.ShouldStop(268435456);
+_scansuccess = anywheresoftware.b4a.keywords.Common.False;
+ BA.debugLineNum = 190;BA.debugLine="qrscanner.BeginScan(\"scanner\")	'This is the funct";
+Debug.ShouldStop(536870912);
 mostCurrent._qrscanner.BeginScan(mostCurrent.activityBA,"scanner");
- BA.debugLineNum = 256;BA.debugLine="End Sub";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 193;BA.debugLine="End Sub";
+Debug.ShouldStop(1);
 return "";
 }
 catch (Exception e) {
@@ -540,20 +535,20 @@ finally {
 		}}
 public static String  _btnyes_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnyes_Click (main) ","main",0,mostCurrent.activityBA,mostCurrent,219);
- BA.debugLineNum = 219;BA.debugLine="Sub btnyes_Click 'to redeem your free coffee press";
-Debug.ShouldStop(67108864);
- BA.debugLineNum = 220;BA.debugLine="CoffeeCount = 0";
+		Debug.PushSubsStack("btnyes_Click (main) ","main",0,mostCurrent.activityBA,mostCurrent,156);
+ BA.debugLineNum = 156;BA.debugLine="Sub btnyes_Click 'to redeem your free coffee press";
 Debug.ShouldStop(134217728);
-_coffeecount = (int) (0);
- BA.debugLineNum = 221;BA.debugLine="updateStamps";
+ BA.debugLineNum = 157;BA.debugLine="CoffeeCount = 0";
 Debug.ShouldStop(268435456);
-_updatestamps();
- BA.debugLineNum = 222;BA.debugLine="Activity.LoadLayout(\"main\")";
+_coffeecount = (int) (0);
+ BA.debugLineNum = 158;BA.debugLine="updateStamps";
 Debug.ShouldStop(536870912);
+_updatestamps();
+ BA.debugLineNum = 159;BA.debugLine="Activity.LoadLayout(\"main\")";
+Debug.ShouldStop(1073741824);
 mostCurrent._activity.LoadLayout("main",mostCurrent.activityBA);
- BA.debugLineNum = 224;BA.debugLine="End Sub";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 161;BA.debugLine="End Sub";
+Debug.ShouldStop(1);
 return "";
 }
 catch (Exception e) {
@@ -564,83 +559,83 @@ finally {
 			Debug.PopSubsStack();
 		}}
 public static String  _globals() throws Exception{
- //BA.debugLineNum = 31;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 36;BA.debugLine="Dim Card As Card";
+ //BA.debugLineNum = 25;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 30;BA.debugLine="Dim Card As Card";
 mostCurrent._card = new b4a.example.card();
- //BA.debugLineNum = 37;BA.debugLine="Private btnScan As Button";
+ //BA.debugLineNum = 31;BA.debugLine="Private btnScan As Button";
 mostCurrent._btnscan = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 38;BA.debugLine="Private imgLogo As ImageView";
+ //BA.debugLineNum = 32;BA.debugLine="Private imgLogo As ImageView";
 mostCurrent._imglogo = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 39;BA.debugLine="Private imgStamp1, imgStamp2, imgStamp3, imgStamp";
+ //BA.debugLineNum = 33;BA.debugLine="Private imgStamp1, imgStamp2, imgStamp3, imgStamp";
 mostCurrent._imgstamp1 = new anywheresoftware.b4a.objects.ImageViewWrapper();
 mostCurrent._imgstamp2 = new anywheresoftware.b4a.objects.ImageViewWrapper();
 mostCurrent._imgstamp3 = new anywheresoftware.b4a.objects.ImageViewWrapper();
 mostCurrent._imgstamp4 = new anywheresoftware.b4a.objects.ImageViewWrapper();
 mostCurrent._imgstamp5 = new anywheresoftware.b4a.objects.ImageViewWrapper();
 mostCurrent._imgstamp6 = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 40;BA.debugLine="Private lblCompanyName As Label";
+ //BA.debugLineNum = 34;BA.debugLine="Private lblCompanyName As Label";
 mostCurrent._lblcompanyname = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 41;BA.debugLine="Private pnlBG As Panel";
+ //BA.debugLineNum = 35;BA.debugLine="Private pnlBG As Panel";
 mostCurrent._pnlbg = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 42;BA.debugLine="Private pnlStamp1, pnlStamp2, pnlStamp3, pnlStamp";
+ //BA.debugLineNum = 36;BA.debugLine="Private pnlStamp1, pnlStamp2, pnlStamp3, pnlStamp";
 mostCurrent._pnlstamp1 = new anywheresoftware.b4a.objects.PanelWrapper();
 mostCurrent._pnlstamp2 = new anywheresoftware.b4a.objects.PanelWrapper();
 mostCurrent._pnlstamp3 = new anywheresoftware.b4a.objects.PanelWrapper();
 mostCurrent._pnlstamp4 = new anywheresoftware.b4a.objects.PanelWrapper();
 mostCurrent._pnlstamp5 = new anywheresoftware.b4a.objects.PanelWrapper();
 mostCurrent._pnlstamp6 = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 43;BA.debugLine="Dim companyDetails As Address";
+ //BA.debugLineNum = 37;BA.debugLine="Dim companyDetails As Address";
 mostCurrent._companydetails = new b4a.example.address();
- //BA.debugLineNum = 44;BA.debugLine="Dim myTheme As CoffeeTheme";
+ //BA.debugLineNum = 38;BA.debugLine="Dim myTheme As CoffeeTheme";
 mostCurrent._mytheme = new b4a.example.coffeetheme();
- //BA.debugLineNum = 45;BA.debugLine="Dim scanSuccess As Boolean";
+ //BA.debugLineNum = 39;BA.debugLine="Dim scanSuccess As Boolean";
 _scansuccess = false;
- //BA.debugLineNum = 46;BA.debugLine="Dim qrscanner As JhsIceZxing1";
+ //BA.debugLineNum = 40;BA.debugLine="Dim qrscanner As JhsIceZxing1";
 mostCurrent._qrscanner = new ice.zxing.b4aZXingLib();
- //BA.debugLineNum = 47;BA.debugLine="Private No As Button";
+ //BA.debugLineNum = 41;BA.debugLine="Private No As Button";
 mostCurrent._no = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 48;BA.debugLine="Private Yes As Button";
+ //BA.debugLineNum = 42;BA.debugLine="Private Yes As Button";
 mostCurrent._yes = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 49;BA.debugLine="End Sub";
+ //BA.debugLineNum = 43;BA.debugLine="End Sub";
 return "";
 }
 public static String  _loadlayout() throws Exception{
 try {
-		Debug.PushSubsStack("loadLayout (main) ","main",0,mostCurrent.activityBA,mostCurrent,66);
- BA.debugLineNum = 66;BA.debugLine="Sub loadLayout";
-Debug.ShouldStop(2);
- BA.debugLineNum = 68;BA.debugLine="pnlBG.Background = companyDetails.LoadBGColours()";
-Debug.ShouldStop(8);
+		Debug.PushSubsStack("loadLayout (main) ","main",0,mostCurrent.activityBA,mostCurrent,60);
+ BA.debugLineNum = 60;BA.debugLine="Sub loadLayout";
+Debug.ShouldStop(134217728);
+ BA.debugLineNum = 61;BA.debugLine="pnlBG.Background = companyDetails.LoadBGColours()";
+Debug.ShouldStop(268435456);
 mostCurrent._pnlbg.setBackground((android.graphics.drawable.Drawable)(mostCurrent._companydetails._loadbgcolours().getObject()));
- BA.debugLineNum = 69;BA.debugLine="lblCompanyName.Text = companyDetails.loadName() '";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 62;BA.debugLine="lblCompanyName.Text = companyDetails.loadName() '";
+Debug.ShouldStop(536870912);
 mostCurrent._lblcompanyname.setText((Object)(mostCurrent._companydetails._loadname()));
- BA.debugLineNum = 70;BA.debugLine="imgLogo.Bitmap = companyDetails.loadDBlogo() 'Log";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 63;BA.debugLine="imgLogo.Bitmap = companyDetails.loadDBlogo() 'Log";
+Debug.ShouldStop(1073741824);
 mostCurrent._imglogo.setBitmap((android.graphics.Bitmap)(mostCurrent._companydetails._loaddblogo().getObject()));
- BA.debugLineNum = 71;BA.debugLine="btnScan.Background = companyDetails.loadDBbuttonC";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 64;BA.debugLine="btnScan.Background = companyDetails.loadDBbuttonC";
+Debug.ShouldStop(-2147483648);
 mostCurrent._btnscan.setBackground((android.graphics.drawable.Drawable)(mostCurrent._companydetails._loaddbbuttoncolours().getObject()));
- BA.debugLineNum = 72;BA.debugLine="imgStamp1.Bitmap = companyDetails.loadStamp()'loa";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 65;BA.debugLine="imgStamp1.Bitmap = companyDetails.loadStamp()'loa";
+Debug.ShouldStop(1);
 mostCurrent._imgstamp1.setBitmap((android.graphics.Bitmap)(mostCurrent._companydetails._loadstamp().getObject()));
- BA.debugLineNum = 73;BA.debugLine="imgStamp2.Bitmap = companyDetails.loadStamp()'loa";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 66;BA.debugLine="imgStamp2.Bitmap = companyDetails.loadStamp()'loa";
+Debug.ShouldStop(2);
 mostCurrent._imgstamp2.setBitmap((android.graphics.Bitmap)(mostCurrent._companydetails._loadstamp().getObject()));
- BA.debugLineNum = 74;BA.debugLine="imgStamp3.Bitmap = companyDetails.loadStamp()'loa";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 67;BA.debugLine="imgStamp3.Bitmap = companyDetails.loadStamp()'loa";
+Debug.ShouldStop(4);
 mostCurrent._imgstamp3.setBitmap((android.graphics.Bitmap)(mostCurrent._companydetails._loadstamp().getObject()));
- BA.debugLineNum = 75;BA.debugLine="imgStamp4.Bitmap = companyDetails.loadStamp()'loa";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 68;BA.debugLine="imgStamp4.Bitmap = companyDetails.loadStamp()'loa";
+Debug.ShouldStop(8);
 mostCurrent._imgstamp4.setBitmap((android.graphics.Bitmap)(mostCurrent._companydetails._loadstamp().getObject()));
- BA.debugLineNum = 76;BA.debugLine="imgStamp5.Bitmap = companyDetails.loadStamp()'loa";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 69;BA.debugLine="imgStamp5.Bitmap = companyDetails.loadStamp()'loa";
+Debug.ShouldStop(16);
 mostCurrent._imgstamp5.setBitmap((android.graphics.Bitmap)(mostCurrent._companydetails._loadstamp().getObject()));
- BA.debugLineNum = 77;BA.debugLine="imgStamp6.Bitmap = companyDetails.loadStamp()'loa";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 70;BA.debugLine="imgStamp6.Bitmap = companyDetails.loadStamp()'loa";
+Debug.ShouldStop(32);
 mostCurrent._imgstamp6.setBitmap((android.graphics.Bitmap)(mostCurrent._companydetails._loadstamp().getObject()));
- BA.debugLineNum = 78;BA.debugLine="End Sub";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 71;BA.debugLine="End Sub";
+Debug.ShouldStop(64);
 return "";
 }
 catch (Exception e) {
@@ -653,7 +648,7 @@ finally {
 
 public static void initializeProcessGlobals() {
     if (mostCurrent != null && mostCurrent.activityBA != null) {
-Debug.StartDebugging(mostCurrent.activityBA, 38668, new int[] {9, 2, 1, 1, 2, 3, 1, 3}, "189f79fc-94cd-44b8-bbcd-1766d3b0de59");}
+Debug.StartDebugging(mostCurrent.activityBA, 7229, new int[] {7, 2, 1, 1, 2, 3, 1, 3}, "74107585-f2a8-438f-b573-f9c4bcfa8747");}
 
     if (main.processGlobalsRun == false) {
 	    main.processGlobalsRun = true;
@@ -668,38 +663,26 @@ themecalc._process_globals();
     }
 }public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 18;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 21;BA.debugLine="Dim myColors As Cursor";
-_mycolors = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
- //BA.debugLineNum = 22;BA.debugLine="Dim myLogo As Cursor";
-_mylogo = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
- //BA.debugLineNum = 23;BA.debugLine="Dim myCoName As Cursor";
-_myconame = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
- //BA.debugLineNum = 24;BA.debugLine="Dim myStamp As Cursor";
-_mystamp = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
- //BA.debugLineNum = 25;BA.debugLine="Dim Card As Card";
-mostCurrent._card = new b4a.example.card();
- //BA.debugLineNum = 26;BA.debugLine="Dim CoffeeCount As Int";
+ //BA.debugLineNum = 21;BA.debugLine="Dim CoffeeCount As Int";
 _coffeecount = 0;
- //BA.debugLineNum = 27;BA.debugLine="Dim myButtonColours As Cursor";
-_mybuttoncolours = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
- //BA.debugLineNum = 29;BA.debugLine="End Sub";
+ //BA.debugLineNum = 23;BA.debugLine="End Sub";
 return "";
 }
 public static String  _scanner_noscan(String _atype,String _values) throws Exception{
 try {
-		Debug.PushSubsStack("scanner_noscan (main) ","main",0,mostCurrent.activityBA,mostCurrent,267);
+		Debug.PushSubsStack("scanner_noscan (main) ","main",0,mostCurrent.activityBA,mostCurrent,204);
 Debug.locals.put("atype", _atype);
 Debug.locals.put("Values", _values);
- BA.debugLineNum = 267;BA.debugLine="Sub scanner_noscan(atype As String,Values As Strin";
-Debug.ShouldStop(1024);
- BA.debugLineNum = 268;BA.debugLine="Log(\"type:\" & atype &  \"Values:\" & Values)";
+ BA.debugLineNum = 204;BA.debugLine="Sub scanner_noscan(atype As String,Values As Strin";
 Debug.ShouldStop(2048);
-anywheresoftware.b4a.keywords.Common.Log("type:"+_atype+"Values:"+_values);
- BA.debugLineNum = 269;BA.debugLine="Msgbox(Values,\"Scan Failed\")";
+ BA.debugLineNum = 205;BA.debugLine="Log(\"type:\" & atype &  \"Values:\" & Values)";
 Debug.ShouldStop(4096);
+anywheresoftware.b4a.keywords.Common.Log("type:"+_atype+"Values:"+_values);
+ BA.debugLineNum = 206;BA.debugLine="Msgbox(Values,\"Scan Failed\")";
+Debug.ShouldStop(8192);
 anywheresoftware.b4a.keywords.Common.Msgbox(_values,"Scan Failed",mostCurrent.activityBA);
- BA.debugLineNum = 271;BA.debugLine="End Sub";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 208;BA.debugLine="End Sub";
+Debug.ShouldStop(32768);
 return "";
 }
 catch (Exception e) {
@@ -711,29 +694,29 @@ finally {
 		}}
 public static String  _scanner_result(String _atype,String _values) throws Exception{
 try {
-		Debug.PushSubsStack("scanner_result (main) ","main",0,mostCurrent.activityBA,mostCurrent,258);
+		Debug.PushSubsStack("scanner_result (main) ","main",0,mostCurrent.activityBA,mostCurrent,195);
 Debug.locals.put("atype", _atype);
 Debug.locals.put("Values", _values);
- BA.debugLineNum = 258;BA.debugLine="Sub scanner_result(atype As String,Values As Strin";
-Debug.ShouldStop(2);
- BA.debugLineNum = 259;BA.debugLine="If Values <> \"Null\" Then";
+ BA.debugLineNum = 195;BA.debugLine="Sub scanner_result(atype As String,Values As Strin";
 Debug.ShouldStop(4);
-if ((_values).equals("Null") == false) { 
- BA.debugLineNum = 260;BA.debugLine="scanSuccess = True";
+ BA.debugLineNum = 196;BA.debugLine="If Values <> \"Null\" Then";
 Debug.ShouldStop(8);
-_scansuccess = anywheresoftware.b4a.keywords.Common.True;
- BA.debugLineNum = 261;BA.debugLine="CoffeeCount = CoffeeCount + 1";
+if ((_values).equals("Null") == false) { 
+ BA.debugLineNum = 197;BA.debugLine="scanSuccess = True";
 Debug.ShouldStop(16);
-_coffeecount = (int) (_coffeecount+1);
- BA.debugLineNum = 262;BA.debugLine="Log(\"type:\" & atype &  \"Values:\" & Values)";
+_scansuccess = anywheresoftware.b4a.keywords.Common.True;
+ BA.debugLineNum = 198;BA.debugLine="CoffeeCount = CoffeeCount + 1";
 Debug.ShouldStop(32);
+_coffeecount = (int) (_coffeecount+1);
+ BA.debugLineNum = 199;BA.debugLine="Log(\"type:\" & atype &  \"Values:\" & Values)";
+Debug.ShouldStop(64);
 anywheresoftware.b4a.keywords.Common.Log("type:"+_atype+"Values:"+_values);
  };
- BA.debugLineNum = 264;BA.debugLine="updateStamps";
-Debug.ShouldStop(128);
-_updatestamps();
- BA.debugLineNum = 265;BA.debugLine="End Sub";
+ BA.debugLineNum = 201;BA.debugLine="updateStamps";
 Debug.ShouldStop(256);
+_updatestamps();
+ BA.debugLineNum = 202;BA.debugLine="End Sub";
+Debug.ShouldStop(512);
 return "";
 }
 catch (Exception e) {
@@ -745,189 +728,189 @@ finally {
 		}}
 public static String  _updatestamps() throws Exception{
 try {
-		Debug.PushSubsStack("updateStamps (main) ","main",0,mostCurrent.activityBA,mostCurrent,143);
- BA.debugLineNum = 143;BA.debugLine="Private Sub updateStamps";
-Debug.ShouldStop(16384);
- BA.debugLineNum = 144;BA.debugLine="If CoffeeCount = 6 Then";
-Debug.ShouldStop(32768);
-if (_coffeecount==6) { 
- BA.debugLineNum = 145;BA.debugLine="ToastMessageShow(\" You Have Earned A free Coffee\"";
-Debug.ShouldStop(65536);
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(" You Have Earned A free Coffee",anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 146;BA.debugLine="Activity.LoadLayout(\"freecoffee\") 'will load 2 la";
+		Debug.PushSubsStack("updateStamps (main) ","main",0,mostCurrent.activityBA,mostCurrent,82);
+ BA.debugLineNum = 82;BA.debugLine="Private Sub updateStamps";
 Debug.ShouldStop(131072);
-mostCurrent._activity.LoadLayout("freecoffee",mostCurrent.activityBA);
- BA.debugLineNum = 147;BA.debugLine="imgStamp1.Visible = True";
+ BA.debugLineNum = 83;BA.debugLine="If CoffeeCount = 6 Then";
 Debug.ShouldStop(262144);
-mostCurrent._imgstamp1.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 148;BA.debugLine="imgStamp2.Visible = True";
+if (_coffeecount==6) { 
+ BA.debugLineNum = 84;BA.debugLine="ToastMessageShow(\" You Have Earned A free Coffee\"";
 Debug.ShouldStop(524288);
-mostCurrent._imgstamp2.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 149;BA.debugLine="imgStamp3.Visible = True";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(" You Have Earned A free Coffee",anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 85;BA.debugLine="Activity.LoadLayout(\"freecoffee\") 'will load 2 la";
 Debug.ShouldStop(1048576);
-mostCurrent._imgstamp3.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 150;BA.debugLine="imgStamp4.Visible = True";
+mostCurrent._activity.LoadLayout("freecoffee",mostCurrent.activityBA);
+ BA.debugLineNum = 86;BA.debugLine="imgStamp1.Visible = True";
 Debug.ShouldStop(2097152);
-mostCurrent._imgstamp4.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 151;BA.debugLine="imgStamp5.Visible = True";
+mostCurrent._imgstamp1.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 87;BA.debugLine="imgStamp2.Visible = True";
 Debug.ShouldStop(4194304);
-mostCurrent._imgstamp5.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 152;BA.debugLine="imgStamp6.Visible = True";
+mostCurrent._imgstamp2.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 88;BA.debugLine="imgStamp3.Visible = True";
 Debug.ShouldStop(8388608);
+mostCurrent._imgstamp3.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 89;BA.debugLine="imgStamp4.Visible = True";
+Debug.ShouldStop(16777216);
+mostCurrent._imgstamp4.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 90;BA.debugLine="imgStamp5.Visible = True";
+Debug.ShouldStop(33554432);
+mostCurrent._imgstamp5.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 91;BA.debugLine="imgStamp6.Visible = True";
+Debug.ShouldStop(67108864);
 mostCurrent._imgstamp6.setVisible(anywheresoftware.b4a.keywords.Common.True);
  };
- BA.debugLineNum = 155;BA.debugLine="If CoffeeCount = 5 Then 'from 5 to 1 will show ho";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 94;BA.debugLine="If CoffeeCount = 5 Then 'from 5 to 1 will show ho";
+Debug.ShouldStop(536870912);
 if (_coffeecount==5) { 
- BA.debugLineNum = 156;BA.debugLine="ToastMessageShow (\" You still need 1 more stamp i";
-Debug.ShouldStop(134217728);
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(" You still need 1 more stamp in order to get a free coffee",anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 157;BA.debugLine="imgStamp1.Visible = True";
-Debug.ShouldStop(268435456);
-mostCurrent._imgstamp1.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 158;BA.debugLine="imgStamp2.Visible = True";
-Debug.ShouldStop(536870912);
-mostCurrent._imgstamp2.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 159;BA.debugLine="imgStamp3.Visible = True";
+ BA.debugLineNum = 95;BA.debugLine="ToastMessageShow (\" You still need 1 more stamp i";
 Debug.ShouldStop(1073741824);
-mostCurrent._imgstamp3.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 160;BA.debugLine="imgStamp4.Visible = True";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(" You still need 1 more stamp in order to get a free coffee",anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 96;BA.debugLine="imgStamp1.Visible = True";
 Debug.ShouldStop(-2147483648);
-mostCurrent._imgstamp4.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 161;BA.debugLine="imgStamp5.Visible = True";
+mostCurrent._imgstamp1.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 97;BA.debugLine="imgStamp2.Visible = True";
 Debug.ShouldStop(1);
-mostCurrent._imgstamp5.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 162;BA.debugLine="imgStamp6.Visible = False";
+mostCurrent._imgstamp2.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 98;BA.debugLine="imgStamp3.Visible = True";
 Debug.ShouldStop(2);
-mostCurrent._imgstamp6.setVisible(anywheresoftware.b4a.keywords.Common.False);
- };
- BA.debugLineNum = 165;BA.debugLine="If CoffeeCount = 4 Then";
-Debug.ShouldStop(16);
-if (_coffeecount==4) { 
- BA.debugLineNum = 166;BA.debugLine="ToastMessageShow (\" You still need 2 more stamp i";
-Debug.ShouldStop(32);
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(" You still need 2 more stamp in order to get a free coffee",anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 167;BA.debugLine="imgStamp1.Visible = True";
-Debug.ShouldStop(64);
-mostCurrent._imgstamp1.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 168;BA.debugLine="imgStamp2.Visible = True";
-Debug.ShouldStop(128);
-mostCurrent._imgstamp2.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 169;BA.debugLine="imgStamp3.Visible = True";
-Debug.ShouldStop(256);
 mostCurrent._imgstamp3.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 170;BA.debugLine="imgStamp4.Visible = True";
-Debug.ShouldStop(512);
-mostCurrent._imgstamp4.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 171;BA.debugLine="imgStamp5.Visible = False";
-Debug.ShouldStop(1024);
-mostCurrent._imgstamp5.setVisible(anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 172;BA.debugLine="imgStamp6.Visible = False";
-Debug.ShouldStop(2048);
-mostCurrent._imgstamp6.setVisible(anywheresoftware.b4a.keywords.Common.False);
- };
- BA.debugLineNum = 174;BA.debugLine="If CoffeeCount = 3 Then";
-Debug.ShouldStop(8192);
-if (_coffeecount==3) { 
- BA.debugLineNum = 175;BA.debugLine="ToastMessageShow (\" You still need 3 more stamp i";
-Debug.ShouldStop(16384);
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(" You still need 3 more stamp in order to get a free coffee",anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 176;BA.debugLine="imgStamp1.Visible = True";
-Debug.ShouldStop(32768);
-mostCurrent._imgstamp1.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 177;BA.debugLine="imgStamp2.Visible = True";
-Debug.ShouldStop(65536);
-mostCurrent._imgstamp2.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 178;BA.debugLine="imgStamp3.Visible = True";
-Debug.ShouldStop(131072);
-mostCurrent._imgstamp3.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 179;BA.debugLine="imgStamp4.Visible = False";
-Debug.ShouldStop(262144);
-mostCurrent._imgstamp4.setVisible(anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 180;BA.debugLine="imgStamp5.Visible = False";
-Debug.ShouldStop(524288);
-mostCurrent._imgstamp5.setVisible(anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 181;BA.debugLine="imgStamp6.Visible = False";
-Debug.ShouldStop(1048576);
-mostCurrent._imgstamp6.setVisible(anywheresoftware.b4a.keywords.Common.False);
- };
- BA.debugLineNum = 183;BA.debugLine="If CoffeeCount = 2 Then";
-Debug.ShouldStop(4194304);
-if (_coffeecount==2) { 
- BA.debugLineNum = 184;BA.debugLine="ToastMessageShow (\" you still need 4  more stamp";
-Debug.ShouldStop(8388608);
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(" you still need 4  more stamp in order to get a free coffee",anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 185;BA.debugLine="imgStamp1.Visible = True";
-Debug.ShouldStop(16777216);
-mostCurrent._imgstamp1.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 186;BA.debugLine="imgStamp2.Visible = True";
-Debug.ShouldStop(33554432);
-mostCurrent._imgstamp2.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 187;BA.debugLine="imgStamp3.Visible = False";
-Debug.ShouldStop(67108864);
-mostCurrent._imgstamp3.setVisible(anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 188;BA.debugLine="imgStamp4.Visible = False";
-Debug.ShouldStop(134217728);
-mostCurrent._imgstamp4.setVisible(anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 189;BA.debugLine="imgStamp5.Visible = False";
-Debug.ShouldStop(268435456);
-mostCurrent._imgstamp5.setVisible(anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 190;BA.debugLine="imgStamp6.Visible = False";
-Debug.ShouldStop(536870912);
-mostCurrent._imgstamp6.setVisible(anywheresoftware.b4a.keywords.Common.False);
- };
- BA.debugLineNum = 192;BA.debugLine="If CoffeeCount = 1 Then";
-Debug.ShouldStop(-2147483648);
-if (_coffeecount==1) { 
- BA.debugLineNum = 193;BA.debugLine="ToastMessageShow (\" You still need 5  more stamp";
-Debug.ShouldStop(1);
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(" You still need 5  more stamp in order to get a free coffee",anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 194;BA.debugLine="imgStamp1.Visible = True";
-Debug.ShouldStop(2);
-mostCurrent._imgstamp1.setVisible(anywheresoftware.b4a.keywords.Common.True);
- BA.debugLineNum = 195;BA.debugLine="imgStamp2.Visible = False";
+ BA.debugLineNum = 99;BA.debugLine="imgStamp4.Visible = True";
 Debug.ShouldStop(4);
-mostCurrent._imgstamp2.setVisible(anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 196;BA.debugLine="imgStamp3.Visible = False";
+mostCurrent._imgstamp4.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 100;BA.debugLine="imgStamp5.Visible = True";
 Debug.ShouldStop(8);
-mostCurrent._imgstamp3.setVisible(anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 197;BA.debugLine="imgStamp4.Visible = False";
+mostCurrent._imgstamp5.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 101;BA.debugLine="imgStamp6.Visible = False";
 Debug.ShouldStop(16);
-mostCurrent._imgstamp4.setVisible(anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 198;BA.debugLine="imgStamp5.Visible = False";
-Debug.ShouldStop(32);
-mostCurrent._imgstamp5.setVisible(anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 199;BA.debugLine="imgStamp6.Visible = False";
-Debug.ShouldStop(64);
 mostCurrent._imgstamp6.setVisible(anywheresoftware.b4a.keywords.Common.False);
  };
- BA.debugLineNum = 202;BA.debugLine="If CoffeeCount = 0 Then";
+ BA.debugLineNum = 104;BA.debugLine="If CoffeeCount = 4 Then";
+Debug.ShouldStop(128);
+if (_coffeecount==4) { 
+ BA.debugLineNum = 105;BA.debugLine="ToastMessageShow (\" You still need 2 more stamp i";
+Debug.ShouldStop(256);
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(" You still need 2 more stamp in order to get a free coffee",anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 106;BA.debugLine="imgStamp1.Visible = True";
 Debug.ShouldStop(512);
-if (_coffeecount==0) { 
- BA.debugLineNum = 203;BA.debugLine="ToastMessageShow (\" Don't Forget to use your Coff";
+mostCurrent._imgstamp1.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 107;BA.debugLine="imgStamp2.Visible = True";
 Debug.ShouldStop(1024);
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(" Don't Forget to use your Coffe-E-Card when you buying  a coffee",anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 204;BA.debugLine="imgStamp1.Visible = False";
+mostCurrent._imgstamp2.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 108;BA.debugLine="imgStamp3.Visible = True";
 Debug.ShouldStop(2048);
-mostCurrent._imgstamp1.setVisible(anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 205;BA.debugLine="imgStamp2.Visible = False";
+mostCurrent._imgstamp3.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 109;BA.debugLine="imgStamp4.Visible = True";
 Debug.ShouldStop(4096);
-mostCurrent._imgstamp2.setVisible(anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 206;BA.debugLine="imgStamp3.Visible = False";
+mostCurrent._imgstamp4.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 110;BA.debugLine="imgStamp5.Visible = False";
 Debug.ShouldStop(8192);
-mostCurrent._imgstamp3.setVisible(anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 207;BA.debugLine="imgStamp4.Visible = False";
-Debug.ShouldStop(16384);
-mostCurrent._imgstamp4.setVisible(anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 208;BA.debugLine="imgStamp5.Visible = False";
-Debug.ShouldStop(32768);
 mostCurrent._imgstamp5.setVisible(anywheresoftware.b4a.keywords.Common.False);
- BA.debugLineNum = 209;BA.debugLine="imgStamp6.Visible = False";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 111;BA.debugLine="imgStamp6.Visible = False";
+Debug.ShouldStop(16384);
 mostCurrent._imgstamp6.setVisible(anywheresoftware.b4a.keywords.Common.False);
  };
- BA.debugLineNum = 211;BA.debugLine="End Sub";
+ BA.debugLineNum = 113;BA.debugLine="If CoffeeCount = 3 Then";
+Debug.ShouldStop(65536);
+if (_coffeecount==3) { 
+ BA.debugLineNum = 114;BA.debugLine="ToastMessageShow (\" You still need 3 more stamp i";
+Debug.ShouldStop(131072);
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(" You still need 3 more stamp in order to get a free coffee",anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 115;BA.debugLine="imgStamp1.Visible = True";
 Debug.ShouldStop(262144);
+mostCurrent._imgstamp1.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 116;BA.debugLine="imgStamp2.Visible = True";
+Debug.ShouldStop(524288);
+mostCurrent._imgstamp2.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 117;BA.debugLine="imgStamp3.Visible = True";
+Debug.ShouldStop(1048576);
+mostCurrent._imgstamp3.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 118;BA.debugLine="imgStamp4.Visible = False";
+Debug.ShouldStop(2097152);
+mostCurrent._imgstamp4.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 119;BA.debugLine="imgStamp5.Visible = False";
+Debug.ShouldStop(4194304);
+mostCurrent._imgstamp5.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 120;BA.debugLine="imgStamp6.Visible = False";
+Debug.ShouldStop(8388608);
+mostCurrent._imgstamp6.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ };
+ BA.debugLineNum = 122;BA.debugLine="If CoffeeCount = 2 Then";
+Debug.ShouldStop(33554432);
+if (_coffeecount==2) { 
+ BA.debugLineNum = 123;BA.debugLine="ToastMessageShow (\" you still need 4  more stamp";
+Debug.ShouldStop(67108864);
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(" you still need 4  more stamp in order to get a free coffee",anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 124;BA.debugLine="imgStamp1.Visible = True";
+Debug.ShouldStop(134217728);
+mostCurrent._imgstamp1.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 125;BA.debugLine="imgStamp2.Visible = True";
+Debug.ShouldStop(268435456);
+mostCurrent._imgstamp2.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 126;BA.debugLine="imgStamp3.Visible = False";
+Debug.ShouldStop(536870912);
+mostCurrent._imgstamp3.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 127;BA.debugLine="imgStamp4.Visible = False";
+Debug.ShouldStop(1073741824);
+mostCurrent._imgstamp4.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 128;BA.debugLine="imgStamp5.Visible = False";
+Debug.ShouldStop(-2147483648);
+mostCurrent._imgstamp5.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 129;BA.debugLine="imgStamp6.Visible = False";
+Debug.ShouldStop(1);
+mostCurrent._imgstamp6.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ };
+ BA.debugLineNum = 131;BA.debugLine="If CoffeeCount = 1 Then";
+Debug.ShouldStop(4);
+if (_coffeecount==1) { 
+ BA.debugLineNum = 132;BA.debugLine="ToastMessageShow (\" You still need 5  more stamp";
+Debug.ShouldStop(8);
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(" You still need 5  more stamp in order to get a free coffee",anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 133;BA.debugLine="imgStamp1.Visible = True";
+Debug.ShouldStop(16);
+mostCurrent._imgstamp1.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ BA.debugLineNum = 134;BA.debugLine="imgStamp2.Visible = False";
+Debug.ShouldStop(32);
+mostCurrent._imgstamp2.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 135;BA.debugLine="imgStamp3.Visible = False";
+Debug.ShouldStop(64);
+mostCurrent._imgstamp3.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 136;BA.debugLine="imgStamp4.Visible = False";
+Debug.ShouldStop(128);
+mostCurrent._imgstamp4.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 137;BA.debugLine="imgStamp5.Visible = False";
+Debug.ShouldStop(256);
+mostCurrent._imgstamp5.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 138;BA.debugLine="imgStamp6.Visible = False";
+Debug.ShouldStop(512);
+mostCurrent._imgstamp6.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ };
+ BA.debugLineNum = 141;BA.debugLine="If CoffeeCount = 0 Then";
+Debug.ShouldStop(4096);
+if (_coffeecount==0) { 
+ BA.debugLineNum = 142;BA.debugLine="ToastMessageShow (\" Don't Forget to use your Coff";
+Debug.ShouldStop(8192);
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(" Don't Forget to use your Coffe-E-Card when you buying  a coffee",anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 143;BA.debugLine="imgStamp1.Visible = False";
+Debug.ShouldStop(16384);
+mostCurrent._imgstamp1.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 144;BA.debugLine="imgStamp2.Visible = False";
+Debug.ShouldStop(32768);
+mostCurrent._imgstamp2.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 145;BA.debugLine="imgStamp3.Visible = False";
+Debug.ShouldStop(65536);
+mostCurrent._imgstamp3.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 146;BA.debugLine="imgStamp4.Visible = False";
+Debug.ShouldStop(131072);
+mostCurrent._imgstamp4.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 147;BA.debugLine="imgStamp5.Visible = False";
+Debug.ShouldStop(262144);
+mostCurrent._imgstamp5.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ BA.debugLineNum = 148;BA.debugLine="imgStamp6.Visible = False";
+Debug.ShouldStop(524288);
+mostCurrent._imgstamp6.setVisible(anywheresoftware.b4a.keywords.Common.False);
+ };
+ BA.debugLineNum = 150;BA.debugLine="End Sub";
+Debug.ShouldStop(2097152);
 return "";
 }
 catch (Exception e) {

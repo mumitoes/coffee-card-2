@@ -72,17 +72,17 @@ finally {
 		}}
 public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadbtncolours() throws Exception{
 try {
-		Debug.PushSubsStack("loadBtnColours (coffeetheme) ","coffeetheme",1,ba,this,47);
- BA.debugLineNum = 47;BA.debugLine="Sub loadBtnColours As Cursor";
-Debug.ShouldStop(16384);
- BA.debugLineNum = 48;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT BtnRed, BtnBlue, Bt";
-Debug.ShouldStop(32768);
+		Debug.PushSubsStack("loadBtnColours (coffeetheme) ","coffeetheme",1,ba,this,42);
+ BA.debugLineNum = 42;BA.debugLine="Sub loadBtnColours As Cursor";
+Debug.ShouldStop(512);
+ BA.debugLineNum = 43;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT BtnRed, BtnBlue, Bt";
+Debug.ShouldStop(1024);
 _cursor1.setObject((android.database.Cursor)(_sql1.ExecQuery("SELECT BtnRed, BtnBlue, BtnGreen FROM themes")));
- BA.debugLineNum = 49;BA.debugLine="Return cursor1";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 44;BA.debugLine="Return cursor1";
+Debug.ShouldStop(2048);
 if (true) return _cursor1;
- BA.debugLineNum = 50;BA.debugLine="End Sub";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 45;BA.debugLine="End Sub";
+Debug.ShouldStop(4096);
 return null;
 }
 catch (Exception e) {
@@ -100,11 +100,11 @@ Debug.ShouldStop(33554432);
  BA.debugLineNum = 27;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT BG1Red, BG1Blue, BG";
 Debug.ShouldStop(67108864);
 _cursor1.setObject((android.database.Cursor)(_sql1.ExecQuery("SELECT BG1Red, BG1Blue, BG1Green, BG2Red, BG2Blue, BG2Green FROM themes")));
- BA.debugLineNum = 29;BA.debugLine="Return cursor1";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 28;BA.debugLine="Return cursor1";
+Debug.ShouldStop(134217728);
 if (true) return _cursor1;
- BA.debugLineNum = 30;BA.debugLine="End Sub";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 29;BA.debugLine="End Sub";
+Debug.ShouldStop(268435456);
 return null;
 }
 catch (Exception e) {
@@ -116,39 +116,17 @@ finally {
 		}}
 public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadcompanydetails() throws Exception{
 try {
-		Debug.PushSubsStack("loadCompanyDetails (coffeetheme) ","coffeetheme",1,ba,this,52);
- BA.debugLineNum = 52;BA.debugLine="Sub loadCompanyDetails As Cursor 'load company inf";
-Debug.ShouldStop(524288);
- BA.debugLineNum = 53;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT Name, Address1 , A";
-Debug.ShouldStop(1048576);
+		Debug.PushSubsStack("loadCompanyDetails (coffeetheme) ","coffeetheme",1,ba,this,47);
+ BA.debugLineNum = 47;BA.debugLine="Sub loadCompanyDetails As Cursor 'load company inf";
+Debug.ShouldStop(16384);
+ BA.debugLineNum = 48;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT Name, Address1 , A";
+Debug.ShouldStop(32768);
 _cursor1.setObject((android.database.Cursor)(_sql1.ExecQuery("SELECT Name, Address1 , Address2 , Suburb , City , PhoneCode , PhoneNo FROM CompanyDetails")));
- BA.debugLineNum = 54;BA.debugLine="Return cursor1";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 49;BA.debugLine="Return cursor1";
+Debug.ShouldStop(65536);
 if (true) return _cursor1;
- BA.debugLineNum = 55;BA.debugLine="End Sub";
-Debug.ShouldStop(4194304);
-return null;
-}
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadcompanyname() throws Exception{
-try {
-		Debug.PushSubsStack("loadCompanyName (coffeetheme) ","coffeetheme",1,ba,this,36);
- BA.debugLineNum = 36;BA.debugLine="Sub loadCompanyName As Cursor";
-Debug.ShouldStop(8);
- BA.debugLineNum = 37;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT Name FROM CompanyDe";
-Debug.ShouldStop(16);
-_cursor1.setObject((android.database.Cursor)(_sql1.ExecQuery("SELECT Name FROM CompanyDetails")));
- BA.debugLineNum = 38;BA.debugLine="Return cursor1";
-Debug.ShouldStop(32);
-if (true) return _cursor1;
- BA.debugLineNum = 39;BA.debugLine="End Sub";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 50;BA.debugLine="End Sub";
+Debug.ShouldStop(131072);
 return null;
 }
 catch (Exception e) {
@@ -182,17 +160,17 @@ finally {
 		}}
 public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadstampicon() throws Exception{
 try {
-		Debug.PushSubsStack("loadStampIcon (coffeetheme) ","coffeetheme",1,ba,this,41);
- BA.debugLineNum = 41;BA.debugLine="Sub loadStampIcon As Cursor";
-Debug.ShouldStop(256);
- BA.debugLineNum = 42;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT StampIcon FROM them";
-Debug.ShouldStop(512);
+		Debug.PushSubsStack("loadStampIcon (coffeetheme) ","coffeetheme",1,ba,this,36);
+ BA.debugLineNum = 36;BA.debugLine="Sub loadStampIcon As Cursor";
+Debug.ShouldStop(8);
+ BA.debugLineNum = 37;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT StampIcon FROM them";
+Debug.ShouldStop(16);
 _cursor1.setObject((android.database.Cursor)(_sql1.ExecQuery("SELECT StampIcon FROM themes")));
- BA.debugLineNum = 43;BA.debugLine="Return cursor1";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 38;BA.debugLine="Return cursor1";
+Debug.ShouldStop(32);
 if (true) return _cursor1;
- BA.debugLineNum = 44;BA.debugLine="End Sub";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 39;BA.debugLine="End Sub";
+Debug.ShouldStop(64);
 return null;
 }
 catch (Exception e) {
