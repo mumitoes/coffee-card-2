@@ -30,16 +30,11 @@ End Sub
 
 Sub loadColours As Cursor
 cursor1=SQL1.ExecQuery("SELECT BG1Red, BG1Blue, BG1Green, BG2Red, BG2Blue, BG2Green FROM themes")
-'Log("BGColor1, BGColor2")
-Return cursor1
-End Sub
-Sub loadLogo As Cursor
-cursor1=SQL1.ExecQuery("SELECT Logo FROM themes")
 Return cursor1
 End Sub
 
-Sub loadCompanyName As Cursor
-cursor1=SQL1.ExecQuery("SELECT Name FROM CompanyDetails")
+Sub loadLogo As Cursor
+cursor1=SQL1.ExecQuery("SELECT Logo FROM themes")
 Return cursor1
 End Sub
 

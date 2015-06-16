@@ -243,11 +243,8 @@ If CoffeeCount = 6 Then
 	End If 
 End Sub
 Sub btnScan_Click 'in order to bring information about free coffee just press once 
-'=========================delete comment for updateStamp when completed my task===============================
-	'updateStamps	
-	
-	StartActivity(MapLocator)
-	
+	updateStamps	
+
 End Sub
 Sub btnyes_Click 'to redeem your free coffee press Yes 
 	CoffeeCount = 0
