@@ -9,38 +9,12 @@ B4A=true
 #End Region
 
 Sub Process_Globals
-	'These global variables will be declared once when the application starts.
-	'These variables can be accessed from all modules.
-Dim myColors As Cursor
-Dim myLogo As Cursor
-Dim myCoName As Cursor
-Dim myStamp As Cursor
-Dim Card As Card
-Dim CoffeeCount As Int
-Dim myButtonColours As Cursor
 Dim myDrinkExtras As Cursor
 Dim ExtraSelect As Cursor
 
 End Sub
 
 Sub Globals
-	'These global variables will be redeclared each time the activity is created.
-	'These variables can only be accessed from this module.
-
-'Design members generated for the Coffee Theme Layout (Stamp images, Logo Image, Company Name label, Scan button)
-	Dim Card As Card 
-	Private btnScan As Button
-	Private imgLogo As ImageView
-	Private imgStamp1, imgStamp2, imgStamp3, imgStamp4, imgStamp5, imgStamp6 As ImageView
-	Private lblCompanyName As Label
-	Private pnlBG As Panel
-	Private pnlStamp1, pnlStamp2, pnlStamp3, pnlStamp4, pnlStamp5, pnlStamp6 As Panel
-	
-	Dim myTheme As CoffeeTheme
-	Dim scanSuccess As Boolean
-	Dim qrscanner As JhsIceZxing1
-	Private No As Button
-	Private Yes As Button
 	Private btnOrder As Button
 	Private pgBackGround As Panel
 	Private btnDrinkMenu As Button
