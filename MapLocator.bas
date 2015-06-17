@@ -21,7 +21,7 @@ Sub Globals
 	Private btnScan As Button
 	Private PnlBg As Panel
 	Private imgLogo As ImageView
-	Dim companyDetails As Address
+	Dim companyDetails As ThemeManager
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)

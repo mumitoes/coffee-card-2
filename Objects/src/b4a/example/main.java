@@ -326,7 +326,7 @@ public anywheresoftware.b4a.objects.PanelWrapper _pnlstamp4 = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pnlstamp5 = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pnlstamp6 = null;
 public b4a.example.address _companydetails = null;
-public b4a.example.coffeetheme _mytheme = null;
+public b4a.example.databasemanager _mytheme = null;
 public static boolean _scansuccess = false;
 public ice.zxing.b4aZXingLib _qrscanner = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _no = null;
@@ -586,8 +586,8 @@ mostCurrent._pnlstamp5 = new anywheresoftware.b4a.objects.PanelWrapper();
 mostCurrent._pnlstamp6 = new anywheresoftware.b4a.objects.PanelWrapper();
  //BA.debugLineNum = 37;BA.debugLine="Dim companyDetails As Address";
 mostCurrent._companydetails = new b4a.example.address();
- //BA.debugLineNum = 38;BA.debugLine="Dim myTheme As CoffeeTheme";
-mostCurrent._mytheme = new b4a.example.coffeetheme();
+ //BA.debugLineNum = 38;BA.debugLine="Dim myTheme As DatabaseManager";
+mostCurrent._mytheme = new b4a.example.databasemanager();
  //BA.debugLineNum = 39;BA.debugLine="Dim scanSuccess As Boolean";
 _scansuccess = false;
  //BA.debugLineNum = 40;BA.debugLine="Dim qrscanner As JhsIceZxing1";
@@ -648,7 +648,7 @@ finally {
 
 public static void initializeProcessGlobals() {
     if (mostCurrent != null && mostCurrent.activityBA != null) {
-Debug.StartDebugging(mostCurrent.activityBA, 7229, new int[] {7, 2, 1, 1, 2, 3, 1, 3}, "74107585-f2a8-438f-b573-f9c4bcfa8747");}
+Debug.StartDebugging(mostCurrent.activityBA, 35993, new int[] {7, 2, 1, 1, 2, 3, 1, 3, 2, 3}, "2cad462e-9557-40ff-9d06-fd87cc7e442c");}
 
     if (main.processGlobalsRun == false) {
 	    main.processGlobalsRun = true;

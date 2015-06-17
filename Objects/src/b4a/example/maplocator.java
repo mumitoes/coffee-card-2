@@ -313,7 +313,7 @@ public anywheresoftware.b4a.objects.LabelWrapper _lblphone = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _btnscan = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pnlbg = null;
 public anywheresoftware.b4a.objects.ImageViewWrapper _imglogo = null;
-public b4a.example.address _companydetails = null;
+public b4a.example.thememanager _companydetails = null;
 public b4a.example.main _main = null;
 public b4a.example.themecalc _themecalc = null;
   public Object[] GetGlobals() {
@@ -398,8 +398,8 @@ mostCurrent._btnscan = new anywheresoftware.b4a.objects.ButtonWrapper();
 mostCurrent._pnlbg = new anywheresoftware.b4a.objects.PanelWrapper();
  //BA.debugLineNum = 18;BA.debugLine="Private imgLogo As ImageView";
 mostCurrent._imglogo = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 19;BA.debugLine="Dim companyDetails As Address";
-mostCurrent._companydetails = new b4a.example.address();
+ //BA.debugLineNum = 19;BA.debugLine="Dim companyDetails As ThemeManager";
+mostCurrent._companydetails = new b4a.example.thememanager();
  //BA.debugLineNum = 20;BA.debugLine="End Sub";
 return "";
 }
