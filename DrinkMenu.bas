@@ -47,10 +47,10 @@ Sub Globals
 	Private pgBackGround As Panel
 	Private btnExtras As Button
 	Private ListView1 As ListView
-	Private Selectdrink As Spinner
 	Dim companyDetails As Address
 	Dim myTheme As CoffeeTheme
 	Dim myDB As CoffeeTheme
+	Private Spinner1 As Spinner
 	
 End Sub
 
@@ -97,13 +97,13 @@ End Sub
 
 'shows a list of only drink names so they can be selected and added to the cart database
 Sub Drink_Selector
-Selectdrink.Clear
+Spinner1.Clear
 DrinkSelect = myDB.SelectDrink
-Selectdrink.Add("Name")
+Spinner1.Add("Name")
 If File.Exists(File.DirInternal, "customerthemes.sqlite") Then
-Selectdrink.SelectedIndex = Selectdrink.IndexOf (File.ReadString(File.DirInternal,"customerthemes.sqlite"))
+Spinner1.SelectedIndex = Spinner1.IndexOf (File.ReadString(File.DirInternal,"customerthemes.sqlite"))
 Else
-Selectdrink.SelectedIndex = 1
+Spinner1.SelectedIndex = 1
 End If
 	
 End Sub
