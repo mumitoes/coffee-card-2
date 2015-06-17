@@ -1,5 +1,5 @@
 ﻿Type=Class
-Version=4.3
+Version=5.02
 ModulesStructureVersion=1
 B4A=true
 @EndOfDesignText@
@@ -39,7 +39,7 @@ Return cursor1
 End Sub
 
 Sub loadCompanyName As Cursor
-cursor1=SQL1.ExecQuery("SELECT CompanyName FROM themes")
+cursor1=SQL1.ExecQuery("SELECT Name FROM CompanyDetails")
 Return cursor1
 End Sub
 

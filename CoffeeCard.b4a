@@ -1,25 +1,36 @@
-﻿Version=4.3
-IconFile=
-NumberOfModules=5
+﻿Version=5.02
+NumberOfModules=6
 Module1=CoffeeTheme
 Module2=Card
 Module3=CoffeeStamp
 Module4=ThemeCalc
 Module5=Data
+Module6=StorePurchase
 Build1=Default,b4a.example
-DoNotOverwriteManifest=False
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~AddApplicationText(~\n~<activity android:name="ice.zxing.CaptureActivity"~\n~					android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"~\n~					android:theme="@android:style/Theme.NoTitleBar.Fullscreen"~\n~					android:windowSoftInputMode="stateAlwaysHidden">~\n~				</activity>)~\n~'End of default text.~\n~
-NumberOfFiles=6
-File1=coffee_stamp.png
-File2=customerthemes.sqlite
-File3=freecoffee.bal
-File4=free-coffee-1-2.jpg
-File5=logoSample.png
-File6=main.bal
-NumberOfLibraries=3
+IconFile=
+NumberOfFiles=16
+File1=basket.png
+File2=cart.bal
+File3=coffee_americano.png
+File4=coffee_cuppuchino.png
+File5=coffee_espresso.png
+File6=coffee_flatwhite.png
+File7=coffee_latte.png
+File8=coffee_machiatto.png
+File9=coffee_mochachino.png
+File10=coffee_stamp.png
+File11=customerthemes.sqlite
+File12=freecoffee.bal
+File13=free-coffee-1-2.jpg
+File14=logosample.png
+File15=main.bal
+File16=menuItem.jpg
+NumberOfLibraries=4
 Library1=core
 Library2=sql
 Library3=jhsicezxing1
+Library4=dialogs
 @EndOfDesignText@
 'Coffee Card App
 'By the Vision College Software Development Class of 2015
@@ -49,6 +60,7 @@ Dim Card As Card
 Dim CoffeeCount As Int
 Dim myButtonColours As Cursor
 
+	
 End Sub
 
 Sub Globals
@@ -66,7 +78,9 @@ Sub Globals
 	
 	Dim myTheme As CoffeeTheme
 	Dim scanSuccess As Boolean
+			
 	Dim qrscanner As JhsIceZxing1
+		
 	Private No As Button
 	Private Yes As Button
 End Sub
@@ -74,7 +88,6 @@ End Sub
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("main")
-
 	myTheme.Initialize ' initialise theme database on load
 	loadDBcolours
 	loadDBlogo
@@ -83,15 +96,14 @@ Sub Activity_Create(FirstTime As Boolean)
 	loadDBbuttonColours
 	
 	CoffeeCount=5
-	
-	
+		
 End Sub
 
 '===========================================Layout========================================
 #Region Layout design
 Sub loadDBcolours 'Assign background colours from database to Background Panel
 	myColors = myTheme.loadColours
-	For i = 0 To myColors.RowCount - 1 '
+	For i = 0 To myColors.RowCount - 1 
 		myColors.Position = i 
 		Dim bgGradient As GradientDrawable
 		Dim colours(2) As Int
@@ -116,7 +128,7 @@ Sub loadDBname ' method to assign Company Name to Company Name label
 	myCoName=myTheme.loadCompanyName
 	For i = 0 To myCoName.RowCount - 1
 		myCoName.Position=i	
-		lblCompanyName.Text  =myCoName.GetString("CompanyName")
+		lblCompanyName.Text  =myCoName.GetString("Name")
 	Next
 End Sub
 
@@ -230,7 +242,7 @@ Sub btnyes_Click 'to redeem your free coffee press Yes
 	
 End Sub
 Sub btnno_Click ' you can also save and redeem later press No
-	activity.LoadLayout("main") 'will return to main layout
+	Activity.LoadLayout("main") 'will return to main layout
 End Sub
 
 Sub btnScan_LongClick ' in order to scan the barcode or bring the barcode scanner long press btnScan
@@ -276,4 +288,5 @@ Sub scanner_noscan(atype As String,Values As String)
 	Msgbox(Values,"Scan Failed")
 
 End Sub
+
 
