@@ -74,6 +74,9 @@ Sub MenuLayout
 pgBackGround.Background = companyDetails.LoadBGColours() 'Background
 	btnExtras.Background = companyDetails.loadDBbuttonColours() 'Button colors
 	btnOrder.Background = companyDetails.loadDBbuttonColours() 'Button colors
+	
+End Sub
+	
 
 'Sends the sql to a web view that can be viewed on the design
 
