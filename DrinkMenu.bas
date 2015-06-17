@@ -70,7 +70,7 @@ End Sub
 
 '========================================================= DRINK MENU Layout =================================================================================
 
-Sub MenuLayout
+Sub Menu_Layout
 pgBackGround.Background = companyDetails.LoadBGColours() 'Background
 	btnExtras.Background = companyDetails.loadDBbuttonColours() 'Button colors
 	btnOrder.Background = companyDetails.loadDBbuttonColours() 'Button colors

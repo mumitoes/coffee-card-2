@@ -66,7 +66,7 @@ Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
 
-Sub ExtrasLayout
+Sub Extras_Layout
 pgBackGround.Background = companyDetails.LoadBGColours() 'Background
 	btnDrinkMenu.Background = companyDetails.loadDBbuttonColours() 'Button colors
 	btnOrder.Background = companyDetails.loadDBbuttonColours() 'Button colors
