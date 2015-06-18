@@ -50,22 +50,6 @@ Sub loadName() As String ' method to assign company name
 End Sub
 
 
-Sub loadAddress() As String 'method to assign address value
-	myAddress = myData.loadCompanyDetails
-	Dim address As String
-	For i = 0 To myAddress.RowCount - 1
-		myAddress.Position = i
-		Dim address2 As String
-		address2 = myAddress.GetString("Address2")
-			If address2 <> Null Then
-		address = myAddress.Getstring("Address1") & CRLF & myAddress.GetString("Address2") & ", " & myAddress.GetString("Suburb") & CRLF & myAddress.GetString("City") 
-			Else
-		address = myAddress.Getstring("Address1") & CRLF & myAddress.GetString("Suburb") & CRLF & myAddress.GetString("City") 
-			End If
-	Next
-	Return address
-End Sub
-
 Sub loadDBlogo() As Bitmap 'Assign Logo as string from database to Logo Image
 	myLogo=myData.loadLogo
 	Dim logo As Bitmap
@@ -96,4 +80,24 @@ Sub loadStamp() As Bitmap ' method to assign stamp image to Stamp Images
 		stamp.Initialize(File.DirAssets, myLogo.GetString("StampIcon"))
 	Next
 	Return stamp
+End Sub
+
+Sub loadMap() As String
+	myAddress = myData.loadCompanyDetails
+	Dim address As String
+	Dim url As String
+	For i = 0 To myAddress.RowCount - 1
+		myAddress.Position = i
+		Dim address2 As String
+		address2 = myAddress.GetString("Address2")
+			If address2 <> Null Then
+				address = myAddress.Getstring("Address1") & "+" & myAddress.GetString("Address2") & "+" & myAddress.GetString("Suburb") & "+" & myAddress.GetString("City") 
+							Else
+				address = myAddress.Getstring("Address1") & "+" & myAddress.GetString("Suburb") & "+" & myAddress.GetString("City") 
+			End If
+			address = address.Replace(" ", "+")
+			url = "https://www.google.com/maps?q=" & address
+	Next
+	'LogColor(url, Colors.Green)
+	Return url
 End Sub

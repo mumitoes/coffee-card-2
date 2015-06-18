@@ -32,11 +32,12 @@ public anywheresoftware.b4a.sql.SQL.CursorWrapper _myaddress = null;
 public anywheresoftware.b4a.sql.SQL.CursorWrapper _mybuttoncolours = null;
 public anywheresoftware.b4a.sql.SQL.CursorWrapper _mystamp = null;
 public b4a.example.coffeetheme _mydata = null;
+public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
 public b4a.example.main _main = null;
 public b4a.example.maplocator _maplocator = null;
 public b4a.example.themecalc _themecalc = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Main",Debug.moduleToString(b4a.example.main.class),"MapLocator",Debug.moduleToString(b4a.example.maplocator.class),"myAddress",_myaddress,"myButtonColours",_mybuttoncolours,"myColors",_mycolors,"myContactDeets",_mycontactdeets,"myData",_mydata,"myLogo",_mylogo,"myStamp",_mystamp,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
+		return new Object[] {"HttpUtils2Service",_httputils2service,"Main",Debug.moduleToString(b4a.example.main.class),"MapLocator",Debug.moduleToString(b4a.example.maplocator.class),"myAddress",_myaddress,"myButtonColours",_mybuttoncolours,"myColors",_mycolors,"myContactDeets",_mycontactdeets,"myData",_mydata,"myLogo",_mylogo,"myStamp",_mystamp,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
 }
 public String  _class_globals() throws Exception{
  //BA.debugLineNum = 3;BA.debugLine="Sub Class_Globals";
@@ -55,7 +56,7 @@ return "";
 public String  _initialize(anywheresoftware.b4a.BA _ba) throws Exception{
 innerInitialize(_ba);
 try {
-		Debug.PushSubsStack("Initialize (address) ","address",5,ba,this,9);
+		Debug.PushSubsStack("Initialize (address) ","address",7,ba,this,9);
 Debug.locals.put("ba", _ba);
  BA.debugLineNum = 9;BA.debugLine="Public Sub Initialize";
 Debug.ShouldStop(256);
@@ -75,7 +76,7 @@ finally {
 		}}
 public String  _loadaddress() throws Exception{
 try {
-		Debug.PushSubsStack("loadAddress (address) ","address",5,ba,this,48);
+		Debug.PushSubsStack("loadAddress (address) ","address",7,ba,this,48);
 String _address = "";
 int _i = 0;
 String _address2 = "";
@@ -133,7 +134,7 @@ finally {
 		}}
 public anywheresoftware.b4a.objects.drawable.GradientDrawable  _loadbgcolours() throws Exception{
 try {
-		Debug.PushSubsStack("LoadBGColours (address) ","address",5,ba,this,14);
+		Debug.PushSubsStack("LoadBGColours (address) ","address",7,ba,this,14);
 anywheresoftware.b4a.objects.drawable.GradientDrawable _bggradient = null;
 int _i = 0;
 int[] _colours = null;
@@ -187,7 +188,7 @@ finally {
 		}}
 public anywheresoftware.b4a.objects.drawable.ColorDrawable  _loaddbbuttoncolours() throws Exception{
 try {
-		Debug.PushSubsStack("loadDBbuttonColours (address) ","address",5,ba,this,74);
+		Debug.PushSubsStack("loadDBbuttonColours (address) ","address",7,ba,this,74);
 anywheresoftware.b4a.objects.drawable.ColorDrawable _btnrbg = null;
 int _colours = 0;
 int _i = 0;
@@ -237,7 +238,7 @@ finally {
 		}}
 public anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper  _loaddblogo() throws Exception{
 try {
-		Debug.PushSubsStack("loadDBlogo (address) ","address",5,ba,this,64);
+		Debug.PushSubsStack("loadDBlogo (address) ","address",7,ba,this,64);
 anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper _logo = null;
 int _i = 0;
  BA.debugLineNum = 64;BA.debugLine="Sub loadDBlogo() As Bitmap 'Assign Logo as string";
@@ -280,7 +281,7 @@ finally {
 		}}
 public String  _loadname() throws Exception{
 try {
-		Debug.PushSubsStack("loadName (address) ","address",5,ba,this,37);
+		Debug.PushSubsStack("loadName (address) ","address",7,ba,this,37);
 String _name = "";
 int _i = 0;
  BA.debugLineNum = 37;BA.debugLine="Sub loadName() As String ' method to assign compan";
@@ -323,7 +324,7 @@ finally {
 		}}
 public String  _loadphone() throws Exception{
 try {
-		Debug.PushSubsStack("loadPhone (address) ","address",5,ba,this,27);
+		Debug.PushSubsStack("loadPhone (address) ","address",7,ba,this,27);
 String _phone = "";
 int _i = 0;
  BA.debugLineNum = 27;BA.debugLine="Sub loadPhone() As String ' method to assign Phone";
@@ -366,7 +367,7 @@ finally {
 		}}
 public anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper  _loadstamp() throws Exception{
 try {
-		Debug.PushSubsStack("loadStamp (address) ","address",5,ba,this,86);
+		Debug.PushSubsStack("loadStamp (address) ","address",7,ba,this,86);
 int _i = 0;
 anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper _stamp = null;
  BA.debugLineNum = 86;BA.debugLine="Sub loadStamp() As Bitmap ' method to assign stamp";

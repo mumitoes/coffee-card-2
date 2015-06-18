@@ -28,11 +28,12 @@ public class card extends B4AClass.ImplB4AClass implements BA.SubDelegator{
 public b4a.example.card _card = null;
 public int _coffeecount = 0;
 public anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper _img7 = null;
+public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
 public b4a.example.main _main = null;
 public b4a.example.maplocator _maplocator = null;
 public b4a.example.themecalc _themecalc = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Card",Debug.moduleToString(b4a.example.card.class),"CoffeeCount",_coffeecount,"img7",_img7,"Main",Debug.moduleToString(b4a.example.main.class),"MapLocator",Debug.moduleToString(b4a.example.maplocator.class),"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
+		return new Object[] {"Card",Debug.moduleToString(b4a.example.card.class),"CoffeeCount",_coffeecount,"HttpUtils2Service",_httputils2service,"img7",_img7,"Main",Debug.moduleToString(b4a.example.main.class),"MapLocator",Debug.moduleToString(b4a.example.maplocator.class),"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
 }
 public String  _class_globals() throws Exception{
  //BA.debugLineNum = 2;BA.debugLine="Sub Class_Globals";
@@ -47,7 +48,7 @@ return "";
 }
 public int  _coffeestamp() throws Exception{
 try {
-		Debug.PushSubsStack("CoffeeStamp (card) ","card",2,ba,this,12);
+		Debug.PushSubsStack("CoffeeStamp (card) ","card",1,ba,this,12);
  BA.debugLineNum = 12;BA.debugLine="Sub CoffeeStamp As Int";
 Debug.ShouldStop(2048);
  BA.debugLineNum = 13;BA.debugLine="CoffeeCount = CoffeeCount + 1 'Adds 1 stamp to cof";
@@ -70,7 +71,7 @@ finally {
 public String  _initialize(anywheresoftware.b4a.BA _ba) throws Exception{
 innerInitialize(_ba);
 try {
-		Debug.PushSubsStack("Initialize (card) ","card",2,ba,this,8);
+		Debug.PushSubsStack("Initialize (card) ","card",1,ba,this,8);
 Debug.locals.put("ba", _ba);
  BA.debugLineNum = 8;BA.debugLine="Public Sub Initialize";
 Debug.ShouldStop(128);
@@ -87,7 +88,7 @@ finally {
 		}}
 public boolean  _redeem() throws Exception{
 try {
-		Debug.PushSubsStack("Redeem (card) ","card",2,ba,this,16);
+		Debug.PushSubsStack("Redeem (card) ","card",1,ba,this,16);
  BA.debugLineNum = 16;BA.debugLine="Sub Redeem As Boolean  'this part of code will hol";
 Debug.ShouldStop(32768);
  BA.debugLineNum = 17;BA.debugLine="If CoffeeCount = 6 Then ' if the person got 6 stam";

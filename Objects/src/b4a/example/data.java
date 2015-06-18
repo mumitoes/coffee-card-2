@@ -25,11 +25,12 @@ public class data extends B4AClass.ImplB4AClass implements BA.SubDelegator{
     }
 
  public anywheresoftware.b4a.keywords.Common __c = null;
+public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
 public b4a.example.main _main = null;
 public b4a.example.maplocator _maplocator = null;
 public b4a.example.themecalc _themecalc = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Main",Debug.moduleToString(b4a.example.main.class),"MapLocator",Debug.moduleToString(b4a.example.maplocator.class),"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
+		return new Object[] {"HttpUtils2Service",_httputils2service,"Main",Debug.moduleToString(b4a.example.main.class),"MapLocator",Debug.moduleToString(b4a.example.maplocator.class),"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
 }
 public String  _class_globals() throws Exception{
  //BA.debugLineNum = 3;BA.debugLine="Sub Class_Globals";
@@ -38,7 +39,7 @@ return "";
 }
 public String  _createcard(String _cardname,int _stampcount,int _bonusnumber) throws Exception{
 try {
-		Debug.PushSubsStack("CreateCard (data) ","data",7,ba,this,40);
+		Debug.PushSubsStack("CreateCard (data) ","data",9,ba,this,40);
 Debug.locals.put("CardName", _cardname);
 Debug.locals.put("StampCount", _stampcount);
 Debug.locals.put("BonusNumber", _bonusnumber);
@@ -65,7 +66,7 @@ finally {
 public String  _initialize(anywheresoftware.b4a.BA _ba) throws Exception{
 innerInitialize(_ba);
 try {
-		Debug.PushSubsStack("Initialize (data) ","data",7,ba,this,8);
+		Debug.PushSubsStack("Initialize (data) ","data",9,ba,this,8);
 Debug.locals.put("ba", _ba);
  BA.debugLineNum = 8;BA.debugLine="Public Sub Initialize";
 Debug.ShouldStop(128);
@@ -82,7 +83,7 @@ finally {
 		}}
 public int[]  _loadcard(String _cardname) throws Exception{
 try {
-		Debug.PushSubsStack("LoadCard (data) ","data",7,ba,this,47);
+		Debug.PushSubsStack("LoadCard (data) ","data",9,ba,this,47);
 int _bonusnumber = 0;
 int _stampcount = 0;
 String _carddata = "";
@@ -152,7 +153,7 @@ finally {
 		}}
 public String  _savecard(int _coffeecount,int _bonusnumber) throws Exception{
 try {
-		Debug.PushSubsStack("SaveCard (data) ","data",7,ba,this,13);
+		Debug.PushSubsStack("SaveCard (data) ","data",9,ba,this,13);
 int _countfromcard = 0;
 Debug.locals.put("CoffeeCount", _coffeecount);
 Debug.locals.put("BonusNumber", _bonusnumber);

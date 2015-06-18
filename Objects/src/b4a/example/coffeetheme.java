@@ -27,11 +27,12 @@ public class coffeetheme extends B4AClass.ImplB4AClass implements BA.SubDelegato
  public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.sql.SQL _sql1 = null;
 public anywheresoftware.b4a.sql.SQL.CursorWrapper _cursor1 = null;
+public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
 public b4a.example.main _main = null;
 public b4a.example.maplocator _maplocator = null;
 public b4a.example.themecalc _themecalc = null;
   public Object[] GetGlobals() {
-		return new Object[] {"cursor1",_cursor1,"Main",Debug.moduleToString(b4a.example.main.class),"MapLocator",Debug.moduleToString(b4a.example.maplocator.class),"SQL1",_sql1,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
+		return new Object[] {"cursor1",_cursor1,"HttpUtils2Service",_httputils2service,"Main",Debug.moduleToString(b4a.example.main.class),"MapLocator",Debug.moduleToString(b4a.example.maplocator.class),"SQL1",_sql1,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
 }
 public String  _class_globals() throws Exception{
  //BA.debugLineNum = 6;BA.debugLine="Sub Class_Globals";
@@ -45,7 +46,7 @@ return "";
 public String  _initialize(anywheresoftware.b4a.BA _ba) throws Exception{
 innerInitialize(_ba);
 try {
-		Debug.PushSubsStack("Initialize (coffeetheme) ","coffeetheme",1,ba,this,12);
+		Debug.PushSubsStack("Initialize (coffeetheme) ","coffeetheme",6,ba,this,12);
 Debug.locals.put("ba", _ba);
  BA.debugLineNum = 12;BA.debugLine="Public Sub Initialize";
 Debug.ShouldStop(2048);
@@ -72,7 +73,7 @@ finally {
 		}}
 public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadbtncolours() throws Exception{
 try {
-		Debug.PushSubsStack("loadBtnColours (coffeetheme) ","coffeetheme",1,ba,this,42);
+		Debug.PushSubsStack("loadBtnColours (coffeetheme) ","coffeetheme",6,ba,this,42);
  BA.debugLineNum = 42;BA.debugLine="Sub loadBtnColours As Cursor";
 Debug.ShouldStop(512);
  BA.debugLineNum = 43;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT BtnRed, BtnBlue, Bt";
@@ -94,7 +95,7 @@ finally {
 		}}
 public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadcolours() throws Exception{
 try {
-		Debug.PushSubsStack("loadColours (coffeetheme) ","coffeetheme",1,ba,this,26);
+		Debug.PushSubsStack("loadColours (coffeetheme) ","coffeetheme",6,ba,this,26);
  BA.debugLineNum = 26;BA.debugLine="Sub loadColours As Cursor";
 Debug.ShouldStop(33554432);
  BA.debugLineNum = 27;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT BG1Red, BG1Blue, BG";
@@ -116,7 +117,7 @@ finally {
 		}}
 public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadcompanydetails() throws Exception{
 try {
-		Debug.PushSubsStack("loadCompanyDetails (coffeetheme) ","coffeetheme",1,ba,this,47);
+		Debug.PushSubsStack("loadCompanyDetails (coffeetheme) ","coffeetheme",6,ba,this,47);
  BA.debugLineNum = 47;BA.debugLine="Sub loadCompanyDetails As Cursor 'load company inf";
 Debug.ShouldStop(16384);
  BA.debugLineNum = 48;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT Name, Address1 , A";
@@ -138,7 +139,7 @@ finally {
 		}}
 public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadlogo() throws Exception{
 try {
-		Debug.PushSubsStack("loadLogo (coffeetheme) ","coffeetheme",1,ba,this,31);
+		Debug.PushSubsStack("loadLogo (coffeetheme) ","coffeetheme",6,ba,this,31);
  BA.debugLineNum = 31;BA.debugLine="Sub loadLogo As Cursor";
 Debug.ShouldStop(1073741824);
  BA.debugLineNum = 32;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT Logo FROM themes\")";
@@ -160,7 +161,7 @@ finally {
 		}}
 public anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadstampicon() throws Exception{
 try {
-		Debug.PushSubsStack("loadStampIcon (coffeetheme) ","coffeetheme",1,ba,this,36);
+		Debug.PushSubsStack("loadStampIcon (coffeetheme) ","coffeetheme",6,ba,this,36);
  BA.debugLineNum = 36;BA.debugLine="Sub loadStampIcon As Cursor";
 Debug.ShouldStop(8);
  BA.debugLineNum = 37;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT StampIcon FROM them";

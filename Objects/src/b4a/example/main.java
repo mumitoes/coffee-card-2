@@ -325,16 +325,17 @@ public anywheresoftware.b4a.objects.PanelWrapper _pnlstamp3 = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pnlstamp4 = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pnlstamp5 = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pnlstamp6 = null;
-public b4a.example.address _companydetails = null;
+public b4a.example.thememanager _companydetails = null;
 public b4a.example.databasemanager _mytheme = null;
 public static boolean _scansuccess = false;
 public ice.zxing.b4aZXingLib _qrscanner = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _no = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _yes = null;
+public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
 public b4a.example.maplocator _maplocator = null;
 public b4a.example.themecalc _themecalc = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"btnScan",mostCurrent._btnscan,"Card",Debug.moduleToString(b4a.example.card.class),"CoffeeCount",_coffeecount,"companyDetails",mostCurrent._companydetails,"imgLogo",mostCurrent._imglogo,"imgStamp1",mostCurrent._imgstamp1,"imgStamp2",mostCurrent._imgstamp2,"imgStamp3",mostCurrent._imgstamp3,"imgStamp4",mostCurrent._imgstamp4,"imgStamp5",mostCurrent._imgstamp5,"imgStamp6",mostCurrent._imgstamp6,"lblCompanyName",mostCurrent._lblcompanyname,"MapLocator",Debug.moduleToString(b4a.example.maplocator.class),"myTheme",mostCurrent._mytheme,"No",mostCurrent._no,"pnlBG",mostCurrent._pnlbg,"pnlStamp1",mostCurrent._pnlstamp1,"pnlStamp2",mostCurrent._pnlstamp2,"pnlStamp3",mostCurrent._pnlstamp3,"pnlStamp4",mostCurrent._pnlstamp4,"pnlStamp5",mostCurrent._pnlstamp5,"pnlStamp6",mostCurrent._pnlstamp6,"qrscanner",mostCurrent._qrscanner,"scanSuccess",_scansuccess,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class),"Yes",mostCurrent._yes};
+		return new Object[] {"Activity",mostCurrent._activity,"btnScan",mostCurrent._btnscan,"Card",Debug.moduleToString(b4a.example.card.class),"CoffeeCount",_coffeecount,"companyDetails",mostCurrent._companydetails,"HttpUtils2Service",mostCurrent._httputils2service,"imgLogo",mostCurrent._imglogo,"imgStamp1",mostCurrent._imgstamp1,"imgStamp2",mostCurrent._imgstamp2,"imgStamp3",mostCurrent._imgstamp3,"imgStamp4",mostCurrent._imgstamp4,"imgStamp5",mostCurrent._imgstamp5,"imgStamp6",mostCurrent._imgstamp6,"lblCompanyName",mostCurrent._lblcompanyname,"MapLocator",Debug.moduleToString(b4a.example.maplocator.class),"myTheme",mostCurrent._mytheme,"No",mostCurrent._no,"pnlBG",mostCurrent._pnlbg,"pnlStamp1",mostCurrent._pnlstamp1,"pnlStamp2",mostCurrent._pnlstamp2,"pnlStamp3",mostCurrent._pnlstamp3,"pnlStamp4",mostCurrent._pnlstamp4,"pnlStamp5",mostCurrent._pnlstamp5,"pnlStamp6",mostCurrent._pnlstamp6,"qrscanner",mostCurrent._qrscanner,"scanSuccess",_scansuccess,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class),"Yes",mostCurrent._yes};
 }
 
 public static boolean isAnyActivityVisible() {
@@ -584,8 +585,8 @@ mostCurrent._pnlstamp3 = new anywheresoftware.b4a.objects.PanelWrapper();
 mostCurrent._pnlstamp4 = new anywheresoftware.b4a.objects.PanelWrapper();
 mostCurrent._pnlstamp5 = new anywheresoftware.b4a.objects.PanelWrapper();
 mostCurrent._pnlstamp6 = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 37;BA.debugLine="Dim companyDetails As Address";
-mostCurrent._companydetails = new b4a.example.address();
+ //BA.debugLineNum = 37;BA.debugLine="Dim companyDetails As ThemeManager";
+mostCurrent._companydetails = new b4a.example.thememanager();
  //BA.debugLineNum = 38;BA.debugLine="Dim myTheme As DatabaseManager";
 mostCurrent._mytheme = new b4a.example.databasemanager();
  //BA.debugLineNum = 39;BA.debugLine="Dim scanSuccess As Boolean";
@@ -648,12 +649,13 @@ finally {
 
 public static void initializeProcessGlobals() {
     if (mostCurrent != null && mostCurrent.activityBA != null) {
-Debug.StartDebugging(mostCurrent.activityBA, 35993, new int[] {7, 2, 1, 1, 2, 3, 1, 3, 2, 3}, "2cad462e-9557-40ff-9d06-fd87cc7e442c");}
+Debug.StartDebugging(mostCurrent.activityBA, 7519, new int[] {7, 1, 1, 2, 2, 4, 2, 3, 1, 3}, "d3d1e429-97fd-4de9-8da0-703cd8b92e55");}
 
     if (main.processGlobalsRun == false) {
 	    main.processGlobalsRun = true;
 		try {
-		        main._process_globals();
+		        anywheresoftware.b4a.samples.httputils2.httputils2service._process_globals();
+main._process_globals();
 maplocator._process_globals();
 themecalc._process_globals();
 		

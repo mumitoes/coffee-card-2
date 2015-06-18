@@ -307,17 +307,17 @@ public class maplocator extends Activity implements B4AActivity{
 	}
 
 public anywheresoftware.b4a.keywords.Common __c = null;
-public anywheresoftware.b4a.objects.LabelWrapper _lbladdress = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lblcompanyname = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lblphone = null;
-public anywheresoftware.b4a.objects.ButtonWrapper _btnscan = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pnlbg = null;
 public anywheresoftware.b4a.objects.ImageViewWrapper _imglogo = null;
 public b4a.example.thememanager _companydetails = null;
+public anywheresoftware.b4a.objects.WebViewWrapper _webview1 = null;
+public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
 public b4a.example.main _main = null;
 public b4a.example.themecalc _themecalc = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"btnScan",mostCurrent._btnscan,"companyDetails",mostCurrent._companydetails,"imgLogo",mostCurrent._imglogo,"lblAddress",mostCurrent._lbladdress,"lblCompanyName",mostCurrent._lblcompanyname,"lblPhone",mostCurrent._lblphone,"Main",Debug.moduleToString(b4a.example.main.class),"PnlBg",mostCurrent._pnlbg,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
+		return new Object[] {"Activity",mostCurrent._activity,"companyDetails",mostCurrent._companydetails,"HttpUtils2Service",mostCurrent._httputils2service,"imgLogo",mostCurrent._imglogo,"lblCompanyName",mostCurrent._lblcompanyname,"lblPhone",mostCurrent._lblphone,"Main",Debug.moduleToString(b4a.example.main.class),"PnlBg",mostCurrent._pnlbg,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class),"WebView1",mostCurrent._webview1};
 }
 
 public static void initializeProcessGlobals() {
@@ -329,13 +329,13 @@ public static void initializeProcessGlobals() {
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (maplocator) ","maplocator",4,mostCurrent.activityBA,mostCurrent,22);
+		Debug.PushSubsStack("Activity_Create (maplocator) ","maplocator",3,mostCurrent.activityBA,mostCurrent,22);
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 22;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
 Debug.ShouldStop(2097152);
- BA.debugLineNum = 24;BA.debugLine="Activity.LoadLayout(\"MapLocation\")";
+ BA.debugLineNum = 24;BA.debugLine="Activity.LoadLayout(\"MapLocation2\")";
 Debug.ShouldStop(8388608);
-mostCurrent._activity.LoadLayout("MapLocation",mostCurrent.activityBA);
+mostCurrent._activity.LoadLayout("MapLocation2",mostCurrent.activityBA);
  BA.debugLineNum = 26;BA.debugLine="companyDetails.Initialize";
 Debug.ShouldStop(33554432);
 mostCurrent._companydetails._initialize(processBA);
@@ -355,7 +355,7 @@ finally {
 		}}
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (maplocator) ","maplocator",4,mostCurrent.activityBA,mostCurrent,36);
+		Debug.PushSubsStack("Activity_Pause (maplocator) ","maplocator",3,mostCurrent.activityBA,mostCurrent,36);
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 36;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
 Debug.ShouldStop(8);
@@ -372,7 +372,7 @@ finally {
 		}}
 public static String  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (maplocator) ","maplocator",4,mostCurrent.activityBA,mostCurrent,32);
+		Debug.PushSubsStack("Activity_Resume (maplocator) ","maplocator",3,mostCurrent.activityBA,mostCurrent,32);
  BA.debugLineNum = 32;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(-2147483648);
  BA.debugLineNum = 34;BA.debugLine="End Sub";
@@ -388,24 +388,23 @@ finally {
 		}}
 public static String  _globals() throws Exception{
  //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 15;BA.debugLine="Private lblAddress, lblCompanyName, lblPhone As L";
-mostCurrent._lbladdress = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 15;BA.debugLine="Private lblCompanyName, lblPhone As Label";
 mostCurrent._lblcompanyname = new anywheresoftware.b4a.objects.LabelWrapper();
 mostCurrent._lblphone = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 16;BA.debugLine="Private btnScan As Button";
-mostCurrent._btnscan = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 17;BA.debugLine="Private PnlBg As Panel";
+ //BA.debugLineNum = 16;BA.debugLine="Private PnlBg As Panel";
 mostCurrent._pnlbg = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 18;BA.debugLine="Private imgLogo As ImageView";
+ //BA.debugLineNum = 17;BA.debugLine="Private imgLogo As ImageView";
 mostCurrent._imglogo = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 19;BA.debugLine="Dim companyDetails As ThemeManager";
+ //BA.debugLineNum = 18;BA.debugLine="Dim companyDetails As ThemeManager";
 mostCurrent._companydetails = new b4a.example.thememanager();
+ //BA.debugLineNum = 19;BA.debugLine="Private WebView1 As WebView";
+mostCurrent._webview1 = new anywheresoftware.b4a.objects.WebViewWrapper();
  //BA.debugLineNum = 20;BA.debugLine="End Sub";
 return "";
 }
 public static String  _loadlayout() throws Exception{
 try {
-		Debug.PushSubsStack("loadLayout (maplocator) ","maplocator",4,mostCurrent.activityBA,mostCurrent,40);
+		Debug.PushSubsStack("loadLayout (maplocator) ","maplocator",3,mostCurrent.activityBA,mostCurrent,40);
  BA.debugLineNum = 40;BA.debugLine="Sub loadLayout";
 Debug.ShouldStop(128);
  BA.debugLineNum = 42;BA.debugLine="PnlBg.Background = companyDetails.LoadBGColours()";
@@ -417,17 +416,14 @@ mostCurrent._lblphone.setText((Object)(mostCurrent._companydetails._loadphone())
  BA.debugLineNum = 44;BA.debugLine="lblCompanyName.Text = companyDetails.loadName() '";
 Debug.ShouldStop(2048);
 mostCurrent._lblcompanyname.setText((Object)(mostCurrent._companydetails._loadname()));
- BA.debugLineNum = 45;BA.debugLine="lblAddress.Text = companyDetails.loadAddress() 'A";
+ BA.debugLineNum = 45;BA.debugLine="imgLogo.Bitmap = companyDetails.loadDBlogo() 'Log";
 Debug.ShouldStop(4096);
-mostCurrent._lbladdress.setText((Object)(mostCurrent._companydetails._loadaddress()));
- BA.debugLineNum = 46;BA.debugLine="imgLogo.Bitmap = companyDetails.loadDBlogo() 'Log";
-Debug.ShouldStop(8192);
 mostCurrent._imglogo.setBitmap((android.graphics.Bitmap)(mostCurrent._companydetails._loaddblogo().getObject()));
- BA.debugLineNum = 47;BA.debugLine="btnScan.Background = companyDetails.loadDBbuttonC";
+ BA.debugLineNum = 46;BA.debugLine="WebView1.Loadurl(companyDetails.loadMap())";
+Debug.ShouldStop(8192);
+mostCurrent._webview1.LoadUrl(mostCurrent._companydetails._loadmap());
+ BA.debugLineNum = 47;BA.debugLine="End Sub";
 Debug.ShouldStop(16384);
-mostCurrent._btnscan.setBackground((android.graphics.drawable.Drawable)(mostCurrent._companydetails._loaddbbuttoncolours().getObject()));
- BA.debugLineNum = 48;BA.debugLine="End Sub";
-Debug.ShouldStop(32768);
 return "";
 }
 catch (Exception e) {

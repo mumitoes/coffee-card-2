@@ -28,11 +28,12 @@ public class coffeestamp extends B4AClass.ImplB4AClass implements BA.SubDelegato
 public String _shopname = "";
 public String _stampid = "";
 public int _date = 0;
+public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
 public b4a.example.main _main = null;
 public b4a.example.maplocator _maplocator = null;
 public b4a.example.themecalc _themecalc = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Date",_date,"Main",Debug.moduleToString(b4a.example.main.class),"MapLocator",Debug.moduleToString(b4a.example.maplocator.class),"ShopName",_shopname,"StampID",_stampid,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
+		return new Object[] {"Date",_date,"HttpUtils2Service",_httputils2service,"Main",Debug.moduleToString(b4a.example.main.class),"MapLocator",Debug.moduleToString(b4a.example.maplocator.class),"ShopName",_shopname,"StampID",_stampid,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
 }
 public String  _class_globals() throws Exception{
  //BA.debugLineNum = 2;BA.debugLine="Sub Class_Globals";
@@ -48,7 +49,7 @@ return "";
 public String  _initialize(anywheresoftware.b4a.BA _ba) throws Exception{
 innerInitialize(_ba);
 try {
-		Debug.PushSubsStack("Initialize (coffeestamp) ","coffeestamp",3,ba,this,9);
+		Debug.PushSubsStack("Initialize (coffeestamp) ","coffeestamp",2,ba,this,9);
 Debug.locals.put("ba", _ba);
  BA.debugLineNum = 9;BA.debugLine="Public Sub Initialize";
 Debug.ShouldStop(256);
