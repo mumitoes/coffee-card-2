@@ -32,7 +32,7 @@ public class maplocator extends Activity implements B4AActivity{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		if (isFirst) {
-			processBA = new BA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.maplocator");
+			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.maplocator");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -306,19 +306,7 @@ public class maplocator extends Activity implements B4AActivity{
 		processBA.raiseEvent2(null, true, "globals", false, (Object[])null);
 	}
 
-public anywheresoftware.b4a.keywords.Common __c = null;
-public anywheresoftware.b4a.objects.LabelWrapper _lblcompanyname = null;
-public anywheresoftware.b4a.objects.LabelWrapper _lblphone = null;
-public anywheresoftware.b4a.objects.PanelWrapper _pnlbg = null;
-public anywheresoftware.b4a.objects.ImageViewWrapper _imglogo = null;
-public b4a.example.thememanager _companydetails = null;
-public anywheresoftware.b4a.objects.WebViewWrapper _webview1 = null;
-public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
-public b4a.example.main _main = null;
-public b4a.example.themecalc _themecalc = null;
-  public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"companyDetails",mostCurrent._companydetails,"HttpUtils2Service",mostCurrent._httputils2service,"imgLogo",mostCurrent._imglogo,"lblCompanyName",mostCurrent._lblcompanyname,"lblPhone",mostCurrent._lblphone,"Main",Debug.moduleToString(b4a.example.main.class),"PnlBg",mostCurrent._pnlbg,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class),"WebView1",mostCurrent._webview1};
-}
+
 
 public static void initializeProcessGlobals() {
              try {
@@ -327,115 +315,71 @@ public static void initializeProcessGlobals() {
                 throw new RuntimeException(e);
             }
 }
+public anywheresoftware.b4a.keywords.Common __c = null;
+public anywheresoftware.b4a.objects.LabelWrapper _lblcompanyname = null;
+public anywheresoftware.b4a.objects.LabelWrapper _lblphone = null;
+public anywheresoftware.b4a.objects.PanelWrapper _pnlbg = null;
+public anywheresoftware.b4a.objects.ImageViewWrapper _imglogo = null;
+public b4a.example.thememanager _companydetails = null;
+public anywheresoftware.b4a.objects.WebViewWrapper _webview1 = null;
+public b4a.example.main _main = null;
+public b4a.example.drinkmenu _drinkmenu = null;
+public b4a.example.drinkextras _drinkextras = null;
+public b4a.example.themecalc _themecalc = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
-try {
-		Debug.PushSubsStack("Activity_Create (maplocator) ","maplocator",3,mostCurrent.activityBA,mostCurrent,22);
-Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 22;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-Debug.ShouldStop(2097152);
- BA.debugLineNum = 24;BA.debugLine="Activity.LoadLayout(\"MapLocation2\")";
-Debug.ShouldStop(8388608);
+RDebugUtils.currentModule="maplocator";
+RDebugUtils.currentLine=4259840;
+ //BA.debugLineNum = 4259840;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=4259842;
+ //BA.debugLineNum = 4259842;BA.debugLine="Activity.LoadLayout(\"MapLocation2\")";
 mostCurrent._activity.LoadLayout("MapLocation2",mostCurrent.activityBA);
- BA.debugLineNum = 26;BA.debugLine="companyDetails.Initialize";
-Debug.ShouldStop(33554432);
-mostCurrent._companydetails._initialize(processBA);
- BA.debugLineNum = 28;BA.debugLine="loadLayout";
-Debug.ShouldStop(134217728);
+RDebugUtils.currentLine=4259844;
+ //BA.debugLineNum = 4259844;BA.debugLine="companyDetails.Initialize";
+mostCurrent._companydetails._initialize(null,processBA);
+RDebugUtils.currentLine=4259846;
+ //BA.debugLineNum = 4259846;BA.debugLine="loadLayout";
 _loadlayout();
- BA.debugLineNum = 30;BA.debugLine="End Sub";
-Debug.ShouldStop(536870912);
-return "";
-}
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static String  _activity_pause(boolean _userclosed) throws Exception{
-try {
-		Debug.PushSubsStack("Activity_Pause (maplocator) ","maplocator",3,mostCurrent.activityBA,mostCurrent,36);
-Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 36;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(8);
- BA.debugLineNum = 38;BA.debugLine="End Sub";
-Debug.ShouldStop(32);
-return "";
-}
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static String  _activity_resume() throws Exception{
-try {
-		Debug.PushSubsStack("Activity_Resume (maplocator) ","maplocator",3,mostCurrent.activityBA,mostCurrent,32);
- BA.debugLineNum = 32;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(-2147483648);
- BA.debugLineNum = 34;BA.debugLine="End Sub";
-Debug.ShouldStop(2);
-return "";
-}
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static String  _globals() throws Exception{
- //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 15;BA.debugLine="Private lblCompanyName, lblPhone As Label";
-mostCurrent._lblcompanyname = new anywheresoftware.b4a.objects.LabelWrapper();
-mostCurrent._lblphone = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 16;BA.debugLine="Private PnlBg As Panel";
-mostCurrent._pnlbg = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 17;BA.debugLine="Private imgLogo As ImageView";
-mostCurrent._imglogo = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 18;BA.debugLine="Dim companyDetails As ThemeManager";
-mostCurrent._companydetails = new b4a.example.thememanager();
- //BA.debugLineNum = 19;BA.debugLine="Private WebView1 As WebView";
-mostCurrent._webview1 = new anywheresoftware.b4a.objects.WebViewWrapper();
- //BA.debugLineNum = 20;BA.debugLine="End Sub";
+RDebugUtils.currentLine=4259848;
+ //BA.debugLineNum = 4259848;BA.debugLine="End Sub";
 return "";
 }
 public static String  _loadlayout() throws Exception{
-try {
-		Debug.PushSubsStack("loadLayout (maplocator) ","maplocator",3,mostCurrent.activityBA,mostCurrent,40);
- BA.debugLineNum = 40;BA.debugLine="Sub loadLayout";
-Debug.ShouldStop(128);
- BA.debugLineNum = 42;BA.debugLine="PnlBg.Background = companyDetails.LoadBGColours()";
-Debug.ShouldStop(512);
-mostCurrent._pnlbg.setBackground((android.graphics.drawable.Drawable)(mostCurrent._companydetails._loadbgcolours().getObject()));
- BA.debugLineNum = 43;BA.debugLine="lblPhone.Text = companyDetails.loadPhone() 'Phone";
-Debug.ShouldStop(1024);
-mostCurrent._lblphone.setText((Object)(mostCurrent._companydetails._loadphone()));
- BA.debugLineNum = 44;BA.debugLine="lblCompanyName.Text = companyDetails.loadName() '";
-Debug.ShouldStop(2048);
-mostCurrent._lblcompanyname.setText((Object)(mostCurrent._companydetails._loadname()));
- BA.debugLineNum = 45;BA.debugLine="imgLogo.Bitmap = companyDetails.loadDBlogo() 'Log";
-Debug.ShouldStop(4096);
-mostCurrent._imglogo.setBitmap((android.graphics.Bitmap)(mostCurrent._companydetails._loaddblogo().getObject()));
- BA.debugLineNum = 46;BA.debugLine="WebView1.Loadurl(companyDetails.loadMap())";
-Debug.ShouldStop(8192);
-mostCurrent._webview1.LoadUrl(mostCurrent._companydetails._loadmap());
- BA.debugLineNum = 47;BA.debugLine="End Sub";
-Debug.ShouldStop(16384);
+RDebugUtils.currentModule="maplocator";
+RDebugUtils.currentLine=4456448;
+ //BA.debugLineNum = 4456448;BA.debugLine="Sub loadLayout";
+RDebugUtils.currentLine=4456450;
+ //BA.debugLineNum = 4456450;BA.debugLine="PnlBg.Background = companyDetails.LoadBGColours()";
+mostCurrent._pnlbg.setBackground((android.graphics.drawable.Drawable)(mostCurrent._companydetails._loadbgcolours(null).getObject()));
+RDebugUtils.currentLine=4456451;
+ //BA.debugLineNum = 4456451;BA.debugLine="lblPhone.Text = companyDetails.loadPhone() 'Phone";
+mostCurrent._lblphone.setText((Object)(mostCurrent._companydetails._loadphone(null)));
+RDebugUtils.currentLine=4456452;
+ //BA.debugLineNum = 4456452;BA.debugLine="lblCompanyName.Text = companyDetails.loadName() '";
+mostCurrent._lblcompanyname.setText((Object)(mostCurrent._companydetails._loadname(null)));
+RDebugUtils.currentLine=4456453;
+ //BA.debugLineNum = 4456453;BA.debugLine="imgLogo.Bitmap = companyDetails.loadDBlogo() 'Log";
+mostCurrent._imglogo.setBitmap((android.graphics.Bitmap)(mostCurrent._companydetails._loaddblogo(null).getObject()));
+RDebugUtils.currentLine=4456454;
+ //BA.debugLineNum = 4456454;BA.debugLine="WebView1.Loadurl(companyDetails.loadMap())";
+mostCurrent._webview1.LoadUrl(mostCurrent._companydetails._loadmap(null));
+RDebugUtils.currentLine=4456455;
+ //BA.debugLineNum = 4456455;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static String  _process_globals() throws Exception{
- //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 10;BA.debugLine="End Sub";
+public static String  _activity_pause(boolean _userclosed) throws Exception{
+RDebugUtils.currentModule="maplocator";
+RDebugUtils.currentLine=4390912;
+ //BA.debugLineNum = 4390912;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=4390914;
+ //BA.debugLineNum = 4390914;BA.debugLine="End Sub";
+return "";
+}
+public static String  _activity_resume() throws Exception{
+RDebugUtils.currentModule="maplocator";
+RDebugUtils.currentLine=4325376;
+ //BA.debugLineNum = 4325376;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=4325378;
+ //BA.debugLineNum = 4325378;BA.debugLine="End Sub";
 return "";
 }
 }

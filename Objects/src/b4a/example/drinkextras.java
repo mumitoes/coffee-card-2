@@ -32,7 +32,7 @@ public class drinkextras extends Activity implements B4AActivity{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		if (isFirst) {
-			processBA = new BA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.drinkextras");
+			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.drinkextras");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -306,48 +306,7 @@ public class drinkextras extends Activity implements B4AActivity{
 		processBA.raiseEvent2(null, true, "globals", false, (Object[])null);
 	}
 
-public anywheresoftware.b4a.keywords.Common __c = null;
-public static anywheresoftware.b4a.sql.SQL.CursorWrapper _mycolors = null;
-public static anywheresoftware.b4a.sql.SQL.CursorWrapper _mylogo = null;
-public static anywheresoftware.b4a.sql.SQL.CursorWrapper _myconame = null;
-public static anywheresoftware.b4a.sql.SQL.CursorWrapper _mystamp = null;
-public b4a.example.card _card = null;
-public static int _coffeecount = 0;
-public static anywheresoftware.b4a.sql.SQL.CursorWrapper _mybuttoncolours = null;
-public static anywheresoftware.b4a.sql.SQL.CursorWrapper _mydrinkextras = null;
-public static anywheresoftware.b4a.sql.SQL.CursorWrapper _extraselect = null;
-public anywheresoftware.b4a.objects.ButtonWrapper _btnscan = null;
-public anywheresoftware.b4a.objects.ImageViewWrapper _imglogo = null;
-public anywheresoftware.b4a.objects.ImageViewWrapper _imgstamp1 = null;
-public anywheresoftware.b4a.objects.ImageViewWrapper _imgstamp2 = null;
-public anywheresoftware.b4a.objects.ImageViewWrapper _imgstamp3 = null;
-public anywheresoftware.b4a.objects.ImageViewWrapper _imgstamp4 = null;
-public anywheresoftware.b4a.objects.ImageViewWrapper _imgstamp5 = null;
-public anywheresoftware.b4a.objects.ImageViewWrapper _imgstamp6 = null;
-public anywheresoftware.b4a.objects.LabelWrapper _lblcompanyname = null;
-public anywheresoftware.b4a.objects.PanelWrapper _pnlbg = null;
-public anywheresoftware.b4a.objects.PanelWrapper _pnlstamp1 = null;
-public anywheresoftware.b4a.objects.PanelWrapper _pnlstamp2 = null;
-public anywheresoftware.b4a.objects.PanelWrapper _pnlstamp3 = null;
-public anywheresoftware.b4a.objects.PanelWrapper _pnlstamp4 = null;
-public anywheresoftware.b4a.objects.PanelWrapper _pnlstamp5 = null;
-public anywheresoftware.b4a.objects.PanelWrapper _pnlstamp6 = null;
-public b4a.example.coffeetheme _mytheme = null;
-public static boolean _scansuccess = false;
-public ice.zxing.b4aZXingLib _qrscanner = null;
-public anywheresoftware.b4a.objects.ButtonWrapper _no = null;
-public anywheresoftware.b4a.objects.ButtonWrapper _yes = null;
-public anywheresoftware.b4a.objects.ButtonWrapper _btnorder = null;
-public anywheresoftware.b4a.objects.PanelWrapper _pgbackground = null;
-public anywheresoftware.b4a.objects.ButtonWrapper _btndrinkmenu = null;
-public anywheresoftware.b4a.objects.ListViewWrapper _listview2 = null;
-public anywheresoftware.b4a.objects.SpinnerWrapper _selectextra = null;
-public b4a.example.main _main = null;
-public b4a.example.themecalc _themecalc = null;
-public b4a.example.drinkmenu _drinkmenu = null;
-  public Object[] GetGlobals() {
-		return new Object[] {"Activity",mostCurrent._activity,"btnDrinkMenu",mostCurrent._btndrinkmenu,"btnOrder",mostCurrent._btnorder,"btnScan",mostCurrent._btnscan,"Card",Debug.moduleToString(b4a.example.card.class),"CoffeeCount",_coffeecount,"DrinkMenu",Debug.moduleToString(b4a.example.drinkmenu.class),"ExtraSelect",_extraselect,"imgLogo",mostCurrent._imglogo,"imgStamp1",mostCurrent._imgstamp1,"imgStamp2",mostCurrent._imgstamp2,"imgStamp3",mostCurrent._imgstamp3,"imgStamp4",mostCurrent._imgstamp4,"imgStamp5",mostCurrent._imgstamp5,"imgStamp6",mostCurrent._imgstamp6,"lblCompanyName",mostCurrent._lblcompanyname,"ListView2",mostCurrent._listview2,"Main",Debug.moduleToString(b4a.example.main.class),"myButtonColours",_mybuttoncolours,"myColors",_mycolors,"myCoName",_myconame,"myDrinkExtras",_mydrinkextras,"myLogo",_mylogo,"myStamp",_mystamp,"myTheme",mostCurrent._mytheme,"No",mostCurrent._no,"pgBackGround",mostCurrent._pgbackground,"pnlBG",mostCurrent._pnlbg,"pnlStamp1",mostCurrent._pnlstamp1,"pnlStamp2",mostCurrent._pnlstamp2,"pnlStamp3",mostCurrent._pnlstamp3,"pnlStamp4",mostCurrent._pnlstamp4,"pnlStamp5",mostCurrent._pnlstamp5,"pnlStamp6",mostCurrent._pnlstamp6,"qrscanner",mostCurrent._qrscanner,"scanSuccess",_scansuccess,"SelectExtra",mostCurrent._selectextra,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class),"Yes",mostCurrent._yes};
-}
+
 
 public static void initializeProcessGlobals() {
              try {
@@ -356,352 +315,110 @@ public static void initializeProcessGlobals() {
                 throw new RuntimeException(e);
             }
 }
-public static String  _activity_create(boolean _firsttime) throws Exception{
-try {
-		Debug.PushSubsStack("Activity_Create (drinkextras) ","drinkextras",7,mostCurrent.activityBA,mostCurrent,42);
-Debug.locals.put("FirstTime", _firsttime);
- BA.debugLineNum = 42;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-Debug.ShouldStop(512);
- BA.debugLineNum = 44;BA.debugLine="Activity.LoadLayout(\"Extras\")";
-Debug.ShouldStop(2048);
-mostCurrent._activity.LoadLayout("Extras",mostCurrent.activityBA);
- BA.debugLineNum = 47;BA.debugLine="End Sub";
-Debug.ShouldStop(16384);
+public anywheresoftware.b4a.keywords.Common __c = null;
+public static anywheresoftware.b4a.sql.SQL.CursorWrapper _mydrinkextras = null;
+public static anywheresoftware.b4a.sql.SQL.CursorWrapper _extraselect = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _btnorder = null;
+public anywheresoftware.b4a.objects.PanelWrapper _pgbackground = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _btndrinkmenu = null;
+public anywheresoftware.b4a.objects.ListViewWrapper _listview2 = null;
+public anywheresoftware.b4a.objects.SpinnerWrapper _spinner2 = null;
+public b4a.example.thememanager _companydetails = null;
+public b4a.example.databasemanager _mytheme = null;
+public b4a.example.main _main = null;
+public b4a.example.drinkmenu _drinkmenu = null;
+public b4a.example.maplocator _maplocator = null;
+public b4a.example.themecalc _themecalc = null;
+public static String  _extras_layout() throws Exception{
+RDebugUtils.currentModule="drinkextras";
+RDebugUtils.currentLine=3211264;
+ //BA.debugLineNum = 3211264;BA.debugLine="Sub Extras_Layout";
+RDebugUtils.currentLine=3211265;
+ //BA.debugLineNum = 3211265;BA.debugLine="pgBackGround.Background = companyDetails.LoadBGCol";
+mostCurrent._pgbackground.setBackground((android.graphics.drawable.Drawable)(mostCurrent._companydetails._loadbgcolours(null).getObject()));
+RDebugUtils.currentLine=3211266;
+ //BA.debugLineNum = 3211266;BA.debugLine="btnDrinkMenu.Background = companyDetails.loadDBbu";
+mostCurrent._btndrinkmenu.setBackground((android.graphics.drawable.Drawable)(mostCurrent._companydetails._loaddbbuttoncolours(null).getObject()));
+RDebugUtils.currentLine=3211267;
+ //BA.debugLineNum = 3211267;BA.debugLine="btnOrder.Background = companyDetails.loadDBbutton";
+mostCurrent._btnorder.setBackground((android.graphics.drawable.Drawable)(mostCurrent._companydetails._loaddbbuttoncolours(null).getObject()));
+RDebugUtils.currentLine=3211268;
+ //BA.debugLineNum = 3211268;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static String  _activity_pause(boolean _userclosed) throws Exception{
-try {
-		Debug.PushSubsStack("Activity_Pause (drinkextras) ","drinkextras",7,mostCurrent.activityBA,mostCurrent,53);
-Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 53;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(1048576);
- BA.debugLineNum = 55;BA.debugLine="End Sub";
-Debug.ShouldStop(4194304);
-return "";
-}
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static String  _activity_resume() throws Exception{
-try {
-		Debug.PushSubsStack("Activity_Resume (drinkextras) ","drinkextras",7,mostCurrent.activityBA,mostCurrent,49);
- BA.debugLineNum = 49;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(65536);
- BA.debugLineNum = 51;BA.debugLine="End Sub";
-Debug.ShouldStop(262144);
-return "";
-}
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static String  _btndrinkmenu_click() throws Exception{
-try {
-		Debug.PushSubsStack("btnDrinkMenu_Click (drinkextras) ","drinkextras",7,mostCurrent.activityBA,mostCurrent,115);
- BA.debugLineNum = 115;BA.debugLine="Sub btnDrinkMenu_Click";
-Debug.ShouldStop(262144);
- BA.debugLineNum = 116;BA.debugLine="Activity.LoadLayout(\"DrinksMenu\")";
-Debug.ShouldStop(524288);
-mostCurrent._activity.LoadLayout("DrinksMenu",mostCurrent.activityBA);
- BA.debugLineNum = 117;BA.debugLine="End Sub";
-Debug.ShouldStop(1048576);
-return "";
-}
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static String  _btnorder_click() throws Exception{
-try {
-		Debug.PushSubsStack("btnOrder_Click (drinkextras) ","drinkextras",7,mostCurrent.activityBA,mostCurrent,111);
- BA.debugLineNum = 111;BA.debugLine="Sub btnOrder_Click";
-Debug.ShouldStop(16384);
- BA.debugLineNum = 113;BA.debugLine="End Sub";
-Debug.ShouldStop(65536);
-return "";
-}
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static String  _drinkmenubuttoncolours() throws Exception{
-try {
-		Debug.PushSubsStack("DrinkMenubuttonColours (drinkextras) ","drinkextras",7,mostCurrent.activityBA,mostCurrent,70);
+public static String  _drink_extra_selector() throws Exception{
+RDebugUtils.currentModule="drinkextras";
 int _i = 0;
-anywheresoftware.b4a.objects.drawable.ColorDrawable _btnrbg = null;
-int _colours = 0;
- BA.debugLineNum = 70;BA.debugLine="Sub DrinkMenubuttonColours 'Sets button colours";
-Debug.ShouldStop(32);
- BA.debugLineNum = 71;BA.debugLine="myButtonColours =myTheme.loadBtnColours";
-Debug.ShouldStop(64);
-_mybuttoncolours = mostCurrent._mytheme._loadbtncolours();
- BA.debugLineNum = 72;BA.debugLine="For i = 0 To myButtonColours.RowCount - 1";
-Debug.ShouldStop(128);
+RDebugUtils.currentLine=3342336;
+ //BA.debugLineNum = 3342336;BA.debugLine="Sub Drink_Extra_Selector";
+RDebugUtils.currentLine=3342337;
+ //BA.debugLineNum = 3342337;BA.debugLine="Spinner2.Clear";
+mostCurrent._spinner2.Clear();
+RDebugUtils.currentLine=3342338;
+ //BA.debugLineNum = 3342338;BA.debugLine="ExtraSelect = myTheme.LoadExtraSelect";
+_extraselect = mostCurrent._mytheme._loadextraselect(null);
+RDebugUtils.currentLine=3342339;
+ //BA.debugLineNum = 3342339;BA.debugLine="For i = 0 To ExtraSelect.RowCount -1";
 {
-final int step51 = 1;
-final int limit51 = (int) (_mybuttoncolours.getRowCount()-1);
-for (_i = (int) (0); (step51 > 0 && _i <= limit51) || (step51 < 0 && _i >= limit51); _i = ((int)(0 + _i + step51))) {
-Debug.locals.put("i", _i);
- BA.debugLineNum = 73;BA.debugLine="myButtonColours.Position = i";
-Debug.ShouldStop(256);
-_mybuttoncolours.setPosition(_i);
- BA.debugLineNum = 74;BA.debugLine="Dim btnRBG As ColorDrawable";
-Debug.ShouldStop(512);
-_btnrbg = new anywheresoftware.b4a.objects.drawable.ColorDrawable();Debug.locals.put("btnRBG", _btnrbg);
- BA.debugLineNum = 75;BA.debugLine="Dim colours As Int";
-Debug.ShouldStop(1024);
-_colours = 0;Debug.locals.put("colours", _colours);
- BA.debugLineNum = 76;BA.debugLine="colours = Colors.RGB(myButtonColours.GetInt(\"Btn";
-Debug.ShouldStop(2048);
-_colours = anywheresoftware.b4a.keywords.Common.Colors.RGB(_mybuttoncolours.GetInt("BtnRed"),_mybuttoncolours.GetInt("BtnBlue"),_mybuttoncolours.GetInt("BtnGreen"));Debug.locals.put("colours", _colours);
- BA.debugLineNum = 77;BA.debugLine="btnRBG.Initialize(colours, 5)";
-Debug.ShouldStop(4096);
-_btnrbg.Initialize(_colours,(int) (5));
- BA.debugLineNum = 78;BA.debugLine="btnDrinkMenu.background=btnRBG";
-Debug.ShouldStop(8192);
-mostCurrent._btndrinkmenu.setBackground((android.graphics.drawable.Drawable)(_btnrbg.getObject()));
- BA.debugLineNum = 79;BA.debugLine="btnOrder.background=btnRBG";
-Debug.ShouldStop(16384);
-mostCurrent._btnorder.setBackground((android.graphics.drawable.Drawable)(_btnrbg.getObject()));
- }
-}Debug.locals.put("i", _i);
-;
- BA.debugLineNum = 81;BA.debugLine="End Sub";
-Debug.ShouldStop(65536);
-return "";
-}
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static String  _drinks_menu() throws Exception{
-try {
-		Debug.PushSubsStack("Drinks_Menu (drinkextras) ","drinkextras",7,mostCurrent.activityBA,mostCurrent,84);
-int _i = 0;
- BA.debugLineNum = 84;BA.debugLine="Sub Drinks_Menu";
-Debug.ShouldStop(524288);
- BA.debugLineNum = 85;BA.debugLine="ListView2.Clear";
-Debug.ShouldStop(1048576);
-mostCurrent._listview2.Clear();
- BA.debugLineNum = 86;BA.debugLine="For i = 0 To myDrinkExtras.RowCount -1";
-Debug.ShouldStop(2097152);
-{
-final int step63 = 1;
-final int limit63 = (int) (_mydrinkextras.getRowCount()-1);
-for (_i = (int) (0); (step63 > 0 && _i <= limit63) || (step63 < 0 && _i >= limit63); _i = ((int)(0 + _i + step63))) {
-Debug.locals.put("i", _i);
- BA.debugLineNum = 87;BA.debugLine="myDrinkExtras.Position = i";
-Debug.ShouldStop(4194304);
-_mydrinkextras.setPosition(_i);
- BA.debugLineNum = 88;BA.debugLine="ListView2.AddSingleLine(myDrinkExtras.GetInt(\"ID\")";
-Debug.ShouldStop(8388608);
-mostCurrent._listview2.AddSingleLine(BA.NumberToString(_mydrinkextras.GetInt("ID"))+" : "+_mydrinkextras.GetString("Description")+" "+BA.NumberToString(_mydrinkextras.GetInt("Cost")));
- BA.debugLineNum = 90;BA.debugLine="ListView2.SingleLineLayout.ItemHeight = 350";
-Debug.ShouldStop(33554432);
-mostCurrent._listview2.getSingleLineLayout().setItemHeight((int) (350));
- BA.debugLineNum = 91;BA.debugLine="ListView2.SingleLineLayout.Label.TextSize = 35";
-Debug.ShouldStop(67108864);
-mostCurrent._listview2.getSingleLineLayout().Label.setTextSize((float) (35));
- BA.debugLineNum = 92;BA.debugLine="ListView2.SingleLineLayout.Label.TextColor = Color";
-Debug.ShouldStop(134217728);
-mostCurrent._listview2.getSingleLineLayout().Label.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.White);
- BA.debugLineNum = 93;BA.debugLine="ListView2.SingleLineLayout.Label.Color = Colors.Wh";
-Debug.ShouldStop(268435456);
-mostCurrent._listview2.getSingleLineLayout().Label.setColor(anywheresoftware.b4a.keywords.Common.Colors.White);
- }
-}Debug.locals.put("i", _i);
-;
- BA.debugLineNum = 97;BA.debugLine="End Sub";
-Debug.ShouldStop(1);
-return "";
-}
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static String  _globals() throws Exception{
- //BA.debugLineNum = 16;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 21;BA.debugLine="Dim Card As Card";
-mostCurrent._card = new b4a.example.card();
- //BA.debugLineNum = 22;BA.debugLine="Private btnScan As Button";
-mostCurrent._btnscan = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 23;BA.debugLine="Private imgLogo As ImageView";
-mostCurrent._imglogo = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 24;BA.debugLine="Private imgStamp1, imgStamp2, imgStamp3, imgStamp";
-mostCurrent._imgstamp1 = new anywheresoftware.b4a.objects.ImageViewWrapper();
-mostCurrent._imgstamp2 = new anywheresoftware.b4a.objects.ImageViewWrapper();
-mostCurrent._imgstamp3 = new anywheresoftware.b4a.objects.ImageViewWrapper();
-mostCurrent._imgstamp4 = new anywheresoftware.b4a.objects.ImageViewWrapper();
-mostCurrent._imgstamp5 = new anywheresoftware.b4a.objects.ImageViewWrapper();
-mostCurrent._imgstamp6 = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 25;BA.debugLine="Private lblCompanyName As Label";
-mostCurrent._lblcompanyname = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 26;BA.debugLine="Private pnlBG As Panel";
-mostCurrent._pnlbg = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 27;BA.debugLine="Private pnlStamp1, pnlStamp2, pnlStamp3, pnlStamp";
-mostCurrent._pnlstamp1 = new anywheresoftware.b4a.objects.PanelWrapper();
-mostCurrent._pnlstamp2 = new anywheresoftware.b4a.objects.PanelWrapper();
-mostCurrent._pnlstamp3 = new anywheresoftware.b4a.objects.PanelWrapper();
-mostCurrent._pnlstamp4 = new anywheresoftware.b4a.objects.PanelWrapper();
-mostCurrent._pnlstamp5 = new anywheresoftware.b4a.objects.PanelWrapper();
-mostCurrent._pnlstamp6 = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 29;BA.debugLine="Dim myTheme As CoffeeTheme";
-mostCurrent._mytheme = new b4a.example.coffeetheme();
- //BA.debugLineNum = 30;BA.debugLine="Dim scanSuccess As Boolean";
-_scansuccess = false;
- //BA.debugLineNum = 31;BA.debugLine="Dim qrscanner As JhsIceZxing1";
-mostCurrent._qrscanner = new ice.zxing.b4aZXingLib();
- //BA.debugLineNum = 32;BA.debugLine="Private No As Button";
-mostCurrent._no = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 33;BA.debugLine="Private Yes As Button";
-mostCurrent._yes = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 34;BA.debugLine="Private btnOrder As Button";
-mostCurrent._btnorder = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 35;BA.debugLine="Private pgBackGround As Panel";
-mostCurrent._pgbackground = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 36;BA.debugLine="Private btnDrinkMenu As Button";
-mostCurrent._btndrinkmenu = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 37;BA.debugLine="Private ListView2 As ListView";
-mostCurrent._listview2 = new anywheresoftware.b4a.objects.ListViewWrapper();
- //BA.debugLineNum = 38;BA.debugLine="Private SelectExtra As Spinner";
-mostCurrent._selectextra = new anywheresoftware.b4a.objects.SpinnerWrapper();
- //BA.debugLineNum = 40;BA.debugLine="End Sub";
-return "";
-}
-public static String  _loadbackgroundcolours() throws Exception{
-try {
-		Debug.PushSubsStack("loadBackGroundcolours (drinkextras) ","drinkextras",7,mostCurrent.activityBA,mostCurrent,57);
-int _i = 0;
-anywheresoftware.b4a.objects.drawable.GradientDrawable _bggradient = null;
-int[] _colours = null;
- BA.debugLineNum = 57;BA.debugLine="Sub loadBackGroundcolours 'Sets backgrouns colours";
-Debug.ShouldStop(16777216);
- BA.debugLineNum = 58;BA.debugLine="myColors = myTheme.loadColours";
-Debug.ShouldStop(33554432);
-_mycolors = mostCurrent._mytheme._loadcolours();
- BA.debugLineNum = 59;BA.debugLine="For i = 0 To myColors.RowCount - 1 '";
-Debug.ShouldStop(67108864);
-{
-final int step39 = 1;
-final int limit39 = (int) (_mycolors.getRowCount()-1);
-for (_i = (int) (0); (step39 > 0 && _i <= limit39) || (step39 < 0 && _i >= limit39); _i = ((int)(0 + _i + step39))) {
-Debug.locals.put("i", _i);
- BA.debugLineNum = 60;BA.debugLine="myColors.Position = i";
-Debug.ShouldStop(134217728);
-_mycolors.setPosition(_i);
- BA.debugLineNum = 61;BA.debugLine="Dim bgGradient As GradientDrawable";
-Debug.ShouldStop(268435456);
-_bggradient = new anywheresoftware.b4a.objects.drawable.GradientDrawable();Debug.locals.put("bgGradient", _bggradient);
- BA.debugLineNum = 62;BA.debugLine="Dim colours(2) As Int";
-Debug.ShouldStop(536870912);
-_colours = new int[(int) (2)];
-;Debug.locals.put("colours", _colours);
- BA.debugLineNum = 63;BA.debugLine="colours(0) = Colors.RGB(myColors.GetInt(\"BG1Red\"";
-Debug.ShouldStop(1073741824);
-_colours[(int) (0)] = anywheresoftware.b4a.keywords.Common.Colors.RGB(_mycolors.GetInt("BG1Red"),_mycolors.GetInt("BG1Blue"),_mycolors.GetInt("BG1Green"));Debug.locals.put("colours", _colours);
- BA.debugLineNum = 64;BA.debugLine="colours(1) = Colors.RGB(myColors.GetInt(\"BG2Red\"";
-Debug.ShouldStop(-2147483648);
-_colours[(int) (1)] = anywheresoftware.b4a.keywords.Common.Colors.RGB(_mycolors.GetInt("BG2Red"),_mycolors.GetInt("BG2Blue"),_mycolors.GetInt("BG2Green"));Debug.locals.put("colours", _colours);
- BA.debugLineNum = 65;BA.debugLine="bgGradient.Initialize(\"TR_BL\", colours)";
-Debug.ShouldStop(1);
-_bggradient.Initialize(BA.getEnumFromString(android.graphics.drawable.GradientDrawable.Orientation.class,"TR_BL"),_colours);
- BA.debugLineNum = 66;BA.debugLine="pgBackGround.Background=bgGradient";
-Debug.ShouldStop(2);
-mostCurrent._pgbackground.setBackground((android.graphics.drawable.Drawable)(_bggradient.getObject()));
- }
-}Debug.locals.put("i", _i);
-;
- BA.debugLineNum = 68;BA.debugLine="End Sub";
-Debug.ShouldStop(8);
-return "";
-}
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static String  _process_globals() throws Exception{
- //BA.debugLineNum = 1;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 4;BA.debugLine="Dim myColors As Cursor";
-_mycolors = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
- //BA.debugLineNum = 5;BA.debugLine="Dim myLogo As Cursor";
-_mylogo = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
- //BA.debugLineNum = 6;BA.debugLine="Dim myCoName As Cursor";
-_myconame = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
- //BA.debugLineNum = 7;BA.debugLine="Dim myStamp As Cursor";
-_mystamp = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
- //BA.debugLineNum = 8;BA.debugLine="Dim Card As Card";
-mostCurrent._card = new b4a.example.card();
- //BA.debugLineNum = 9;BA.debugLine="Dim CoffeeCount As Int";
-_coffeecount = 0;
- //BA.debugLineNum = 10;BA.debugLine="Dim myButtonColours As Cursor";
-_mybuttoncolours = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
- //BA.debugLineNum = 11;BA.debugLine="Dim myDrinkExtras As Cursor";
-_mydrinkextras = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
- //BA.debugLineNum = 12;BA.debugLine="Dim ExtraSelect As Cursor";
-_extraselect = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
- //BA.debugLineNum = 14;BA.debugLine="End Sub";
-return "";
-}
-public static String  _spinner2_itemclick() throws Exception{
-try {
-		Debug.PushSubsStack("Spinner2_ItemClick (drinkextras) ","drinkextras",7,mostCurrent.activityBA,mostCurrent,100);
- BA.debugLineNum = 100;BA.debugLine="Sub Spinner2_ItemClick";
-Debug.ShouldStop(8);
- BA.debugLineNum = 101;BA.debugLine="SelectExtra.Clear";
-Debug.ShouldStop(16);
-mostCurrent._selectextra.Clear();
- BA.debugLineNum = 102;BA.debugLine="SelectExtra.Add(\"Description\")";
-Debug.ShouldStop(32);
-mostCurrent._selectextra.Add("Description");
- BA.debugLineNum = 103;BA.debugLine="If File.Exists(File.DirInternal, \"customerthemes.s";
-Debug.ShouldStop(64);
+final int step46 = 1;
+final int limit46 = (int) (_extraselect.getRowCount()-1);
+for (_i = (int) (0); (step46 > 0 && _i <= limit46) || (step46 < 0 && _i >= limit46); _i = ((int)(0 + _i + step46))) {
+RDebugUtils.currentLine=3342340;
+ //BA.debugLineNum = 3342340;BA.debugLine="ExtraSelect.Position = i";
+_extraselect.setPosition(_i);
+RDebugUtils.currentLine=3342341;
+ //BA.debugLineNum = 3342341;BA.debugLine="Spinner2.Add(ExtraSelect.GetString(\"Description\"))";
+mostCurrent._spinner2.Add(_extraselect.GetString("Description"));
+RDebugUtils.currentLine=3342342;
+ //BA.debugLineNum = 3342342;BA.debugLine="If File.Exists(File.DirInternal, \"customerthemes.s";
 if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"customerthemes.sqlite")) { 
- BA.debugLineNum = 104;BA.debugLine="SelectExtra.SelectedIndex = SelectExtra.IndexOf (F";
-Debug.ShouldStop(128);
-mostCurrent._selectextra.setSelectedIndex(mostCurrent._selectextra.IndexOf(anywheresoftware.b4a.keywords.Common.File.ReadString(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"customerthemes.sqlite")));
+RDebugUtils.currentLine=3342343;
+ //BA.debugLineNum = 3342343;BA.debugLine="Spinner2.SelectedIndex = Spinner2.IndexOf (File.Re";
+mostCurrent._spinner2.setSelectedIndex(mostCurrent._spinner2.IndexOf(anywheresoftware.b4a.keywords.Common.File.ReadString(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"customerthemes.sqlite")));
  }else {
- BA.debugLineNum = 106;BA.debugLine="SelectExtra.SelectedIndex = 1";
-Debug.ShouldStop(512);
-mostCurrent._selectextra.setSelectedIndex((int) (1));
+RDebugUtils.currentLine=3342345;
+ //BA.debugLineNum = 3342345;BA.debugLine="Spinner2.SelectedIndex = 1";
+mostCurrent._spinner2.setSelectedIndex((int) (1));
  };
- BA.debugLineNum = 109;BA.debugLine="End Sub";
-Debug.ShouldStop(4096);
+ }
+};
+RDebugUtils.currentLine=3342350;
+ //BA.debugLineNum = 3342350;BA.debugLine="End Sub";
 return "";
 }
-catch (Exception e) {
-			Debug.ErrorCaught(e);
-			throw e;
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
+public static String  _activity_pause(boolean _userclosed) throws Exception{
+RDebugUtils.currentModule="drinkextras";
+RDebugUtils.currentLine=3145728;
+ //BA.debugLineNum = 3145728;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=3145730;
+ //BA.debugLineNum = 3145730;BA.debugLine="End Sub";
+return "";
+}
+public static String  _activity_resume() throws Exception{
+RDebugUtils.currentModule="drinkextras";
+RDebugUtils.currentLine=3080192;
+ //BA.debugLineNum = 3080192;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=3080194;
+ //BA.debugLineNum = 3080194;BA.debugLine="End Sub";
+return "";
+}
+public static String  _btndrinkmenu_click() throws Exception{
+RDebugUtils.currentModule="drinkextras";
+RDebugUtils.currentLine=3473408;
+ //BA.debugLineNum = 3473408;BA.debugLine="Sub btnDrinkMenu_Click";
+RDebugUtils.currentLine=3473409;
+ //BA.debugLineNum = 3473409;BA.debugLine="Activity.LoadLayout(\"DrinksMenu\")";
+mostCurrent._activity.LoadLayout("DrinksMenu",mostCurrent.activityBA);
+RDebugUtils.currentLine=3473410;
+ //BA.debugLineNum = 3473410;BA.debugLine="End Sub";
+return "";
+}
+public static String  _btnorder_click() throws Exception{
+RDebugUtils.currentModule="drinkextras";
+RDebugUtils.currentLine=3407872;
+ //BA.debugLineNum = 3407872;BA.debugLine="Sub btnOrder_Click";
+RDebugUtils.currentLine=3407874;
+ //BA.debugLineNum = 3407874;BA.debugLine="End Sub";
+return "";
+}
 }
