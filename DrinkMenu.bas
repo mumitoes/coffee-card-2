@@ -95,6 +95,6 @@ Sub btnOrder_Click
 End Sub
 
 Sub btnDrinkExtras_Click
-	Activity.LoadLayout("Extras")
+	StartActivity(DrinkExtras)
 End Sub
 

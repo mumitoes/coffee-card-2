@@ -88,6 +88,6 @@ Sub btnOrder_Click
 End Sub
 
 Sub btnDrinkMenu_Click
-	Activity.LoadLayout("DrinksMenu")
+	StartActivity(DrinkMenu)
 End Sub
 
