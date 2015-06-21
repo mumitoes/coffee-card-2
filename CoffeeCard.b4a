@@ -200,8 +200,8 @@ If CoffeeCount = 6 Then
 	End If 
 End Sub
 Sub btnScan_Click 'in order to bring information about free coffee just press once 
-	'updateStamps
-	StartActivity(DrinkExtras)
+	updateStamps
+	'StartActivity(DrinkExtras)
 
 	'StartActivity(MapLocator)
 	
