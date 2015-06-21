@@ -17,16 +17,16 @@ End Sub
 Sub Globals
 	'These global variables will be redeclared each time the activity is created.
 	'These variables can only be accessed from this module.
-	Private lblAddress, lblCompanyName, lblPhone As Label
-	Private btnScan As Button
+	Private lblCompanyName, lblPhone As Label
 	Private PnlBg As Panel
 	Private imgLogo As ImageView
-	Dim companyDetails As Address
+	Dim companyDetails As ThemeManager
+	Private WebView1 As WebView
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
-	Activity.LoadLayout("MapLocation")
+	Activity.LoadLayout("MapLocation2")
 	
 	companyDetails.Initialize
 	
@@ -47,7 +47,6 @@ Sub loadLayout
 	PnlBg.Background = companyDetails.LoadBGColours() 'Background
 	lblPhone.Text = companyDetails.loadPhone() 'Phone
 	lblCompanyName.Text = companyDetails.loadName() 'Company name
-	lblAddress.Text = companyDetails.loadAddress() 'Address			
 	imgLogo.Bitmap = companyDetails.loadDBlogo() 'Logo
-	btnScan.Background = companyDetails.loadDBbuttonColours() 'Button colors
+	WebView1.Loadurl(companyDetails.loadMap())
 End Sub

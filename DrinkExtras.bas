@@ -11,7 +11,6 @@ B4A=true
 Sub Process_Globals
 Dim myDrinkExtras As Cursor
 Dim ExtraSelect As Cursor
-
 End Sub
 
 Sub Globals
@@ -19,16 +18,20 @@ Sub Globals
 	Private pgBackGround As Panel
 	Private btnDrinkMenu As Button
 	Private ListView2 As ListView
-	Private SelectExtra As Spinner
-	Dim companyDetails As Address
-	Dim myTheme As CoffeeTheme
+	Dim Spinner2 As Spinner
+	Dim companyDetails As ThemeManager
+	Dim myTheme As DatabaseManager
 	
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("Extras")
-	
+	myTheme.Initialize
+	companyDetails.Initialize
+	Extras_Layout
+	Drink_Extras
+	Drink_Extra_Selector
 	
 End Sub
 
@@ -49,28 +52,34 @@ End Sub
 'Sends the sql to a web view that can be viewed on the design
 Sub Drink_Extras
 ListView2.Clear
+myDrinkExtras = myTheme.LoadDrinkExtras
 For i = 0 To myDrinkExtras.RowCount -1
 myDrinkExtras.Position = i
-ListView2.AddSingleLine(myDrinkExtras.GetInt("ID") & " : " & myDrinkExtras.GetString("Description") & " " & myDrinkExtras.GetInt("Cost"))
+ListView2.AddSingleLine(myDrinkExtras.GetInt("ID") & " : " & myDrinkExtras.GetString("Description") & CRLF & "$" & myDrinkExtras.Getstring("Cost") & "0")
 
-ListView2.SingleLineLayout.ItemHeight = 350
-ListView2.SingleLineLayout.Label.TextSize = 35
-ListView2.SingleLineLayout.Label.TextColor = Colors.White
+ListView2.SingleLineLayout.ItemHeight = 150
+ListView2.SingleLineLayout.Label.TextSize = 15
+ListView2.SingleLineLayout.Label.TextColor = Colors.Black
 ListView2.SingleLineLayout.Label.Color = Colors.White
 
 Next
-
+myDrinkExtras.Close
 End Sub
 
 'shows a list of only drink names so they can be selected and added to the cart database
 Sub Drink_Extra_Selector
-SelectExtra.Clear
-SelectExtra.Add("Description")
+Spinner2.Clear
+ExtraSelect = myTheme.LoadExtraSelect
+For i = 0 To ExtraSelect.RowCount -1
+ExtraSelect.Position = i
+Spinner2.Add(ExtraSelect.GetString("Description"))
 If File.Exists(File.DirInternal, "customerthemes.sqlite") Then
-SelectExtra.SelectedIndex = SelectExtra.IndexOf (File.ReadString(File.DirInternal,"customerthemes.sqlite"))
+Spinner2.SelectedIndex = Spinner2.IndexOf (File.ReadString(File.DirInternal,"customerthemes.sqlite"))
 Else
-SelectExtra.SelectedIndex = 1
+Spinner2.SelectedIndex = 1
 End If
+
+Next
 	
 End Sub
 
