@@ -29,9 +29,10 @@ public b4a.example.card _card = null;
 public int _coffeecount = 0;
 public anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper _img7 = null;
 public b4a.example.main _main = null;
+public b4a.example.maplocator _maplocator = null;
 public b4a.example.themecalc _themecalc = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Card",Debug.moduleToString(b4a.example.card.class),"CoffeeCount",_coffeecount,"img7",_img7,"Main",Debug.moduleToString(b4a.example.main.class),"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
+		return new Object[] {"Card",Debug.moduleToString(b4a.example.card.class),"CoffeeCount",_coffeecount,"img7",_img7,"Main",Debug.moduleToString(b4a.example.main.class),"MapLocator",Debug.moduleToString(b4a.example.maplocator.class),"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
 }
 public String  _class_globals() throws Exception{
  //BA.debugLineNum = 2;BA.debugLine="Sub Class_Globals";

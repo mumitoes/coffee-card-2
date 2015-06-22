@@ -28,9 +28,10 @@ public class coffeetheme extends B4AClass.ImplB4AClass implements BA.SubDelegato
 public anywheresoftware.b4a.sql.SQL _sql1 = null;
 public anywheresoftware.b4a.sql.SQL.CursorWrapper _cursor1 = null;
 public b4a.example.main _main = null;
+public b4a.example.maplocator _maplocator = null;
 public b4a.example.themecalc _themecalc = null;
   public Object[] GetGlobals() {
-		return new Object[] {"cursor1",_cursor1,"Main",Debug.moduleToString(b4a.example.main.class),"SQL1",_sql1,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
+		return new Object[] {"cursor1",_cursor1,"Main",Debug.moduleToString(b4a.example.main.class),"MapLocator",Debug.moduleToString(b4a.example.maplocator.class),"SQL1",_sql1,"ThemeCalc",Debug.moduleToString(b4a.example.themecalc.class)};
 }
 public String  _class_globals() throws Exception{
  //BA.debugLineNum = 6;BA.debugLine="Sub Class_Globals";
@@ -118,9 +119,9 @@ try {
 		Debug.PushSubsStack("loadCompanyName (coffeetheme) ","coffeetheme",1,ba,this,36);
  BA.debugLineNum = 36;BA.debugLine="Sub loadCompanyName As Cursor";
 Debug.ShouldStop(8);
- BA.debugLineNum = 37;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT CompanyName FROM th";
+ BA.debugLineNum = 37;BA.debugLine="cursor1=SQL1.ExecQuery(\"SELECT Name FROM CompanyDe";
 Debug.ShouldStop(16);
-_cursor1.setObject((android.database.Cursor)(_sql1.ExecQuery("SELECT CompanyName FROM themes")));
+_cursor1.setObject((android.database.Cursor)(_sql1.ExecQuery("SELECT Name FROM CompanyDetails")));
  BA.debugLineNum = 38;BA.debugLine="Return cursor1";
 Debug.ShouldStop(32);
 if (true) return _cursor1;
