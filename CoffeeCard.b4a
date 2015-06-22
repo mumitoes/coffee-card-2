@@ -202,9 +202,9 @@ If CoffeeCount = 6 Then
 End Sub
 Sub btnScan_Click 'in order to bring information about free coffee just press once 
 	'updateStamps
-	'StartActivity(DrinkExtras)
+	StartActivity(DrinkExtras)
 
-	StartActivity(MapLocator)
+	'StartActivity(MapLocator)
 	
 End Sub
 Sub btnyes_Click 'to redeem your free coffee press Yes 
