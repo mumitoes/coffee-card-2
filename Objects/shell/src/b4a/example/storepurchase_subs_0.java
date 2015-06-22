@@ -82,32 +82,32 @@ finally {
 		}}
 public static RemoteObject  _btnpickup_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnPickUp_Click (storepurchase) ","storepurchase",6,storepurchase.mostCurrent.activityBA,storepurchase.mostCurrent,136);
+		Debug.PushSubsStack("btnPickUp_Click (storepurchase) ","storepurchase",6,storepurchase.mostCurrent.activityBA,storepurchase.mostCurrent,143);
 if (RapidSub.canDelegate("btnpickup_click")) return storepurchase.remoteMe.runUserSub(false, "storepurchase","btnpickup_click");
 RemoteObject _td = RemoteObject.declareNull("anywheresoftware.b4a.agraham.dialogs.InputDialog.TimeDialog");
- BA.debugLineNum = 136;BA.debugLine="Sub btnPickUp_Click";
-Debug.ShouldStop(128);
- BA.debugLineNum = 137;BA.debugLine="Dim td As TimeDialog 'the dialog from the dialog l";
-Debug.ShouldStop(256);
-_td = RemoteObject.createNew ("anywheresoftware.b4a.agraham.dialogs.InputDialog.TimeDialog");Debug.locals.put("td", _td);
- BA.debugLineNum = 138;BA.debugLine="td.Hour = alarmHours";
-Debug.ShouldStop(512);
-_td.runMethod(true,"setHour",storepurchase._alarmhours);
- BA.debugLineNum = 139;BA.debugLine="td.Minute = alarmMinutes";
-Debug.ShouldStop(1024);
-_td.runMethod(true,"setMinute",storepurchase._alarmminutes);
- BA.debugLineNum = 141;BA.debugLine="If td.Show(\"Select time to activate alarm\", \"\", \"O";
-Debug.ShouldStop(4096);
-if (RemoteObject.solveBoolean("=",_td.runMethodAndSync(true,"Show",(Object)(BA.ObjectToString("Select time to activate alarm")),(Object)(BA.ObjectToString("")),(Object)(BA.ObjectToString("Ok")),(Object)(BA.ObjectToString("Cancel")),(Object)(BA.ObjectToString("")),storepurchase.mostCurrent.activityBA,(Object)((storepurchase.mostCurrent.__c.getField(false,"Null")))),BA.numberCast(double.class, storepurchase.mostCurrent.__c.getField(false,"DialogResponse").getField(true,"POSITIVE")))) { 
- BA.debugLineNum = 142;BA.debugLine="alarmHours = td.Hour";
-Debug.ShouldStop(8192);
-storepurchase._alarmhours = _td.runMethod(true,"getHour");
- BA.debugLineNum = 143;BA.debugLine="alarmMinutes = td.Minute";
+ BA.debugLineNum = 143;BA.debugLine="Sub btnPickUp_Click";
 Debug.ShouldStop(16384);
+ BA.debugLineNum = 144;BA.debugLine="Dim td As TimeDialog 'the dialog from the dialog l";
+Debug.ShouldStop(32768);
+_td = RemoteObject.createNew ("anywheresoftware.b4a.agraham.dialogs.InputDialog.TimeDialog");Debug.locals.put("td", _td);
+ BA.debugLineNum = 145;BA.debugLine="td.Hour = alarmHours";
+Debug.ShouldStop(65536);
+_td.runMethod(true,"setHour",storepurchase._alarmhours);
+ BA.debugLineNum = 146;BA.debugLine="td.Minute = alarmMinutes";
+Debug.ShouldStop(131072);
+_td.runMethod(true,"setMinute",storepurchase._alarmminutes);
+ BA.debugLineNum = 148;BA.debugLine="If td.Show(\"Select time to activate alarm\", \"\", \"O";
+Debug.ShouldStop(524288);
+if (RemoteObject.solveBoolean("=",_td.runMethodAndSync(true,"Show",(Object)(BA.ObjectToString("Select time to activate alarm")),(Object)(BA.ObjectToString("")),(Object)(BA.ObjectToString("Ok")),(Object)(BA.ObjectToString("Cancel")),(Object)(BA.ObjectToString("")),storepurchase.mostCurrent.activityBA,(Object)((storepurchase.mostCurrent.__c.getField(false,"Null")))),BA.numberCast(double.class, storepurchase.mostCurrent.__c.getField(false,"DialogResponse").getField(true,"POSITIVE")))) { 
+ BA.debugLineNum = 149;BA.debugLine="alarmHours = td.Hour";
+Debug.ShouldStop(1048576);
+storepurchase._alarmhours = _td.runMethod(true,"getHour");
+ BA.debugLineNum = 150;BA.debugLine="alarmMinutes = td.Minute";
+Debug.ShouldStop(2097152);
 storepurchase._alarmminutes = _td.runMethod(true,"getMinute");
  };
- BA.debugLineNum = 145;BA.debugLine="End Sub";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 152;BA.debugLine="End Sub";
+Debug.ShouldStop(8388608);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -119,15 +119,15 @@ finally {
 		}}
 public static RemoteObject  _btnplaceorder_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnPlaceOrder_Click (storepurchase) ","storepurchase",6,storepurchase.mostCurrent.activityBA,storepurchase.mostCurrent,147);
+		Debug.PushSubsStack("btnPlaceOrder_Click (storepurchase) ","storepurchase",6,storepurchase.mostCurrent.activityBA,storepurchase.mostCurrent,154);
 if (RapidSub.canDelegate("btnplaceorder_click")) return storepurchase.remoteMe.runUserSub(false, "storepurchase","btnplaceorder_click");
- BA.debugLineNum = 147;BA.debugLine="Sub btnPlaceOrder_Click";
-Debug.ShouldStop(262144);
- BA.debugLineNum = 149;BA.debugLine="UpdateOrderDatabase";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 154;BA.debugLine="Sub btnPlaceOrder_Click";
+Debug.ShouldStop(33554432);
+ BA.debugLineNum = 156;BA.debugLine="UpdateOrderDatabase";
+Debug.ShouldStop(134217728);
 _updateorderdatabase();
- BA.debugLineNum = 150;BA.debugLine="End Sub";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 157;BA.debugLine="End Sub";
+Debug.ShouldStop(268435456);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -139,15 +139,15 @@ finally {
 		}}
 public static RemoteObject  _btnremove_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnRemove_Click (storepurchase) ","storepurchase",6,storepurchase.mostCurrent.activityBA,storepurchase.mostCurrent,152);
+		Debug.PushSubsStack("btnRemove_Click (storepurchase) ","storepurchase",6,storepurchase.mostCurrent.activityBA,storepurchase.mostCurrent,159);
 if (RapidSub.canDelegate("btnremove_click")) return storepurchase.remoteMe.runUserSub(false, "storepurchase","btnremove_click");
- BA.debugLineNum = 152;BA.debugLine="Sub btnRemove_Click";
-Debug.ShouldStop(8388608);
- BA.debugLineNum = 153;BA.debugLine="scvMain.Panel.RemoveView";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 159;BA.debugLine="Sub btnRemove_Click";
+Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 160;BA.debugLine="scvMain.Panel.RemoveView";
+Debug.ShouldStop(-2147483648);
 storepurchase.mostCurrent._scvmain.runMethod(false,"getPanel").runVoidMethod ("RemoveView");
- BA.debugLineNum = 154;BA.debugLine="End Sub";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 161;BA.debugLine="End Sub";
+Debug.ShouldStop(1);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -170,6 +170,30 @@ storepurchase._csrstorecart.setObject(storepurchase._sqlstorecart.runMethod(fals
 Debug.ShouldStop(1024);
 storepurchase._csrstorecart.setObject(storepurchase._sqlstorecart.runMethod(false,"ExecQuery",(Object)(RemoteObject.createImmutable("SELECT ID,Name,Description,Cost,picture FROM CoffeeExtra INNER JOIN SELECT ID, CompanyName FROM themes ON CoffeeExtras.ID=themes.ID"))));
  BA.debugLineNum = 108;BA.debugLine="End Sub";
+Debug.ShouldStop(2048);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			Debug.ErrorCaught(e);
+			throw e;
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public static RemoteObject  _costcalc() throws Exception{
+try {
+		Debug.PushSubsStack("costCalc (storepurchase) ","storepurchase",6,storepurchase.mostCurrent.activityBA,storepurchase.mostCurrent,135);
+if (RapidSub.canDelegate("costcalc")) return storepurchase.remoteMe.runUserSub(false, "storepurchase","costcalc");
+ BA.debugLineNum = 135;BA.debugLine="Sub costCalc";
+Debug.ShouldStop(64);
+ BA.debugLineNum = 137;BA.debugLine="If edtItemQty.Text >1 Then";
+Debug.ShouldStop(256);
+if (RemoteObject.solveBoolean(">",BA.numberCast(double.class, storepurchase.mostCurrent._edtitemqty.runMethod(true,"getText")),BA.numberCast(double.class, 1))) { 
+ BA.debugLineNum = 138;BA.debugLine="lblItemsCostSubtotal.Text = edtItemQty.Text * lblI";
+Debug.ShouldStop(512);
+storepurchase.mostCurrent._lblitemscostsubtotal.runMethod(true,"setText",(RemoteObject.solve(new RemoteObject[] {BA.numberCast(double.class, storepurchase.mostCurrent._edtitemqty.runMethod(true,"getText")),BA.numberCast(double.class, storepurchase.mostCurrent._lblitemcost.runMethod(true,"getText"))}, "*",0, 0)));
+ };
+ BA.debugLineNum = 140;BA.debugLine="End Sub";
 Debug.ShouldStop(2048);
 return RemoteObject.createImmutable("");
 }
@@ -225,11 +249,14 @@ storepurchase.mostCurrent._edtitemqty.runMethodAndSync(true,"setText",(storepurc
  BA.debugLineNum = 128;BA.debugLine="lblItemCost.Text=csrStoreCart.GetString(\"Cost\")'C";
 Debug.ShouldStop(-2147483648);
 storepurchase.mostCurrent._lblitemcost.runMethod(true,"setText",(storepurchase._csrstorecart.runMethod(true,"GetString",(Object)(RemoteObject.createImmutable("Cost")))));
- BA.debugLineNum = 133;BA.debugLine="csrStoreCart.Close";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 129;BA.debugLine="lblItemsCostSubtotal.Text=costCalc";
+Debug.ShouldStop(1);
+storepurchase.mostCurrent._lblitemscostsubtotal.runMethod(true,"setText",(_costcalc()));
+ BA.debugLineNum = 132;BA.debugLine="csrStoreCart.Close";
+Debug.ShouldStop(8);
 storepurchase._csrstorecart.runVoidMethod ("Close");
- BA.debugLineNum = 134;BA.debugLine="End Sub";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 133;BA.debugLine="End Sub";
+Debug.ShouldStop(16);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -264,6 +291,7 @@ storepurchase.mostCurrent._lblcompliment = RemoteObject.createNew ("anywheresoft
 storepurchase.mostCurrent._lblitemname = RemoteObject.createNew ("anywheresoftware.b4a.objects.LabelWrapper");
 storepurchase.mostCurrent._lblitemdesc = RemoteObject.createNew ("anywheresoftware.b4a.objects.LabelWrapper");
 storepurchase.mostCurrent._lblitemcost = RemoteObject.createNew ("anywheresoftware.b4a.objects.LabelWrapper");
+storepurchase.mostCurrent._lblitemscostsubtotal = RemoteObject.createNew ("anywheresoftware.b4a.objects.LabelWrapper");
  //BA.debugLineNum = 29;BA.debugLine="Dim edtItemQty As EditText";
 storepurchase.mostCurrent._edtitemqty = RemoteObject.createNew ("anywheresoftware.b4a.objects.EditTextWrapper");
  //BA.debugLineNum = 31;BA.debugLine="End Sub";
@@ -377,7 +405,7 @@ _colours.setArrayElement (storepurchase.mostCurrent.__c.getField(false,"Colors")
  BA.debugLineNum = 96;BA.debugLine="gd1.Initialize(\"TOP_BOTTOM\",colours)";
 Debug.ShouldStop(-2147483648);
 _gd1.runVoidMethod ("Initialize",(Object)(BA.getEnumFromString(BA.getDeviceClass("android.graphics.drawable.GradientDrawable.Orientation"),"TOP_BOTTOM")),(Object)(_colours));
- BA.debugLineNum = 97;BA.debugLine="PnlItem.background=gd1";
+ BA.debugLineNum = 97;BA.debugLine="pnlItem.background=gd1";
 Debug.ShouldStop(1);
 storepurchase.mostCurrent._pnlitem.runMethod(false,"setBackground",(_gd1.getObject()));
  }
@@ -455,15 +483,15 @@ finally {
 		}}
 public static RemoteObject  _updateorderdatabase() throws Exception{
 try {
-		Debug.PushSubsStack("UpdateOrderDatabase (storepurchase) ","storepurchase",6,storepurchase.mostCurrent.activityBA,storepurchase.mostCurrent,156);
+		Debug.PushSubsStack("UpdateOrderDatabase (storepurchase) ","storepurchase",6,storepurchase.mostCurrent.activityBA,storepurchase.mostCurrent,163);
 if (RapidSub.canDelegate("updateorderdatabase")) return storepurchase.remoteMe.runUserSub(false, "storepurchase","updateorderdatabase");
- BA.debugLineNum = 156;BA.debugLine="Sub UpdateOrderDatabase";
-Debug.ShouldStop(134217728);
- BA.debugLineNum = 158;BA.debugLine="csrStoreCart=SQLstoreCart.ExecQuery(\"INSERT INTO";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 163;BA.debugLine="Sub UpdateOrderDatabase";
+Debug.ShouldStop(4);
+ BA.debugLineNum = 165;BA.debugLine="csrStoreCart=SQLstoreCart.ExecQuery(\"INSERT INTO";
+Debug.ShouldStop(16);
 storepurchase._csrstorecart.setObject(storepurchase._sqlstorecart.runMethod(false,"ExecQuery",(Object)(RemoteObject.concat(RemoteObject.createImmutable("INSERT INTO CoffeePurchases (CustomerID,Picture,Description,Qty,Cost,PickUpTime)"),RemoteObject.createImmutable("VALUES (@CustID,@picture,@name,@desc,@Qty@,@Cost,@PickUp")))));
- BA.debugLineNum = 159;BA.debugLine="End Sub";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 166;BA.debugLine="End Sub";
+Debug.ShouldStop(32);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {

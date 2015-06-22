@@ -336,6 +336,7 @@ public anywheresoftware.b4a.objects.LabelWrapper _lblcompliment = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lblitemname = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lblitemdesc = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lblitemcost = null;
+public anywheresoftware.b4a.objects.LabelWrapper _lblitemscostsubtotal = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _edtitemqty = null;
 public b4a.example.main _main = null;
 public b4a.example.themecalc _themecalc = null;
@@ -372,48 +373,51 @@ public static String  _fillscrollview() throws Exception{
 RDebugUtils.currentModule="storepurchase";
 int _i = 0;
 anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper _bitmap = null;
-RDebugUtils.currentLine=2949120;
- //BA.debugLineNum = 2949120;BA.debugLine="Sub FillScrollView 'fills the scroll view which co";
-RDebugUtils.currentLine=2949121;
- //BA.debugLineNum = 2949121;BA.debugLine="CoffeePurchasesDB 'databsae call";
+RDebugUtils.currentLine=3014656;
+ //BA.debugLineNum = 3014656;BA.debugLine="Sub FillScrollView 'fills the scroll view which co";
+RDebugUtils.currentLine=3014657;
+ //BA.debugLineNum = 3014657;BA.debugLine="CoffeePurchasesDB 'databsae call";
 _coffeepurchasesdb();
-RDebugUtils.currentLine=2949122;
- //BA.debugLineNum = 2949122;BA.debugLine="loadPanelColours";
+RDebugUtils.currentLine=3014658;
+ //BA.debugLineNum = 3014658;BA.debugLine="loadPanelColours";
 _loadpanelcolours();
-RDebugUtils.currentLine=2949124;
- //BA.debugLineNum = 2949124;BA.debugLine="For i=0 To csrStoreCart.RowCount-1";
+RDebugUtils.currentLine=3014660;
+ //BA.debugLineNum = 3014660;BA.debugLine="For i=0 To csrStoreCart.RowCount-1";
 {
 final int step73 = 1;
 final int limit73 = (int) (_csrstorecart.getRowCount()-1);
 for (_i = (int) (0); (step73 > 0 && _i <= limit73) || (step73 < 0 && _i >= limit73); _i = ((int)(0 + _i + step73))) {
-RDebugUtils.currentLine=2949125;
- //BA.debugLineNum = 2949125;BA.debugLine="csrStoreCart.Position=i";
+RDebugUtils.currentLine=3014661;
+ //BA.debugLineNum = 3014661;BA.debugLine="csrStoreCart.Position=i";
 _csrstorecart.setPosition(_i);
  }
 };
-RDebugUtils.currentLine=2949132;
- //BA.debugLineNum = 2949132;BA.debugLine="Dim bitmap As Bitmap";
+RDebugUtils.currentLine=3014668;
+ //BA.debugLineNum = 3014668;BA.debugLine="Dim bitmap As Bitmap";
 _bitmap = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper();
-RDebugUtils.currentLine=2949133;
- //BA.debugLineNum = 2949133;BA.debugLine="bitmap.Initialize(File.DirAssets,csrStoreCart .Ge";
+RDebugUtils.currentLine=3014669;
+ //BA.debugLineNum = 3014669;BA.debugLine="bitmap.Initialize(File.DirAssets,csrStoreCart .Ge";
 _bitmap.Initialize(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),_csrstorecart.GetString("picture"));
-RDebugUtils.currentLine=2949135;
- //BA.debugLineNum = 2949135;BA.debugLine="lblItemName.Text=csrStoreCart.GetString(\"Name\")'N";
+RDebugUtils.currentLine=3014671;
+ //BA.debugLineNum = 3014671;BA.debugLine="lblItemName.Text=csrStoreCart.GetString(\"Name\")'N";
 mostCurrent._lblitemname.setText((Object)(_csrstorecart.GetString("Name")));
-RDebugUtils.currentLine=2949136;
- //BA.debugLineNum = 2949136;BA.debugLine="lblItemDesc.Text=csrStoreCart.GetString(\"Descript";
+RDebugUtils.currentLine=3014672;
+ //BA.debugLineNum = 3014672;BA.debugLine="lblItemDesc.Text=csrStoreCart.GetString(\"Descript";
 mostCurrent._lblitemdesc.setText((Object)(_csrstorecart.GetString("Description")));
-RDebugUtils.currentLine=2949137;
- //BA.debugLineNum = 2949137;BA.debugLine="edtItemQty.Text=csrStoreCart.GetString(\"Qty\")'QTY";
+RDebugUtils.currentLine=3014673;
+ //BA.debugLineNum = 3014673;BA.debugLine="edtItemQty.Text=csrStoreCart.GetString(\"Qty\")'QTY";
 mostCurrent._edtitemqty.setText((Object)(_csrstorecart.GetString("Qty")));
-RDebugUtils.currentLine=2949138;
- //BA.debugLineNum = 2949138;BA.debugLine="lblItemCost.Text=csrStoreCart.GetString(\"Cost\")'C";
+RDebugUtils.currentLine=3014674;
+ //BA.debugLineNum = 3014674;BA.debugLine="lblItemCost.Text=csrStoreCart.GetString(\"Cost\")'C";
 mostCurrent._lblitemcost.setText((Object)(_csrstorecart.GetString("Cost")));
-RDebugUtils.currentLine=2949143;
- //BA.debugLineNum = 2949143;BA.debugLine="csrStoreCart.Close";
+RDebugUtils.currentLine=3014675;
+ //BA.debugLineNum = 3014675;BA.debugLine="lblItemsCostSubtotal.Text=costCalc";
+mostCurrent._lblitemscostsubtotal.setText((Object)(_costcalc()));
+RDebugUtils.currentLine=3014678;
+ //BA.debugLineNum = 3014678;BA.debugLine="csrStoreCart.Close";
 _csrstorecart.Close();
-RDebugUtils.currentLine=2949144;
- //BA.debugLineNum = 2949144;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3014679;
+ //BA.debugLineNum = 3014679;BA.debugLine="End Sub";
 return "";
 }
 public static String  _loaddblogo() throws Exception{
@@ -501,76 +505,91 @@ return "";
 public static String  _btnpickup_click() throws Exception{
 RDebugUtils.currentModule="storepurchase";
 anywheresoftware.b4a.agraham.dialogs.InputDialog.TimeDialog _td = null;
-RDebugUtils.currentLine=4521984;
- //BA.debugLineNum = 4521984;BA.debugLine="Sub btnPickUp_Click";
-RDebugUtils.currentLine=4521985;
- //BA.debugLineNum = 4521985;BA.debugLine="Dim td As TimeDialog 'the dialog from the dialog l";
+RDebugUtils.currentLine=3080192;
+ //BA.debugLineNum = 3080192;BA.debugLine="Sub btnPickUp_Click";
+RDebugUtils.currentLine=3080193;
+ //BA.debugLineNum = 3080193;BA.debugLine="Dim td As TimeDialog 'the dialog from the dialog l";
 _td = new anywheresoftware.b4a.agraham.dialogs.InputDialog.TimeDialog();
-RDebugUtils.currentLine=4521986;
- //BA.debugLineNum = 4521986;BA.debugLine="td.Hour = alarmHours";
+RDebugUtils.currentLine=3080194;
+ //BA.debugLineNum = 3080194;BA.debugLine="td.Hour = alarmHours";
 _td.setHour(_alarmhours);
-RDebugUtils.currentLine=4521987;
- //BA.debugLineNum = 4521987;BA.debugLine="td.Minute = alarmMinutes";
+RDebugUtils.currentLine=3080195;
+ //BA.debugLineNum = 3080195;BA.debugLine="td.Minute = alarmMinutes";
 _td.setMinute(_alarmminutes);
-RDebugUtils.currentLine=4521989;
- //BA.debugLineNum = 4521989;BA.debugLine="If td.Show(\"Select time to activate alarm\", \"\", \"O";
+RDebugUtils.currentLine=3080197;
+ //BA.debugLineNum = 3080197;BA.debugLine="If td.Show(\"Select time to activate alarm\", \"\", \"O";
 if (_td.Show("Select time to activate alarm","","Ok","Cancel","",mostCurrent.activityBA,(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null))==anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE) { 
-RDebugUtils.currentLine=4521990;
- //BA.debugLineNum = 4521990;BA.debugLine="alarmHours = td.Hour";
+RDebugUtils.currentLine=3080198;
+ //BA.debugLineNum = 3080198;BA.debugLine="alarmHours = td.Hour";
 _alarmhours = _td.getHour();
-RDebugUtils.currentLine=4521991;
- //BA.debugLineNum = 4521991;BA.debugLine="alarmMinutes = td.Minute";
+RDebugUtils.currentLine=3080199;
+ //BA.debugLineNum = 3080199;BA.debugLine="alarmMinutes = td.Minute";
 _alarmminutes = _td.getMinute();
  };
-RDebugUtils.currentLine=4521993;
- //BA.debugLineNum = 4521993;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3080201;
+ //BA.debugLineNum = 3080201;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnplaceorder_click() throws Exception{
 RDebugUtils.currentModule="storepurchase";
-RDebugUtils.currentLine=3014656;
- //BA.debugLineNum = 3014656;BA.debugLine="Sub btnPlaceOrder_Click";
-RDebugUtils.currentLine=3014658;
- //BA.debugLineNum = 3014658;BA.debugLine="UpdateOrderDatabase";
+RDebugUtils.currentLine=3145728;
+ //BA.debugLineNum = 3145728;BA.debugLine="Sub btnPlaceOrder_Click";
+RDebugUtils.currentLine=3145730;
+ //BA.debugLineNum = 3145730;BA.debugLine="UpdateOrderDatabase";
 _updateorderdatabase();
-RDebugUtils.currentLine=3014659;
- //BA.debugLineNum = 3014659;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3145731;
+ //BA.debugLineNum = 3145731;BA.debugLine="End Sub";
 return "";
 }
 public static String  _updateorderdatabase() throws Exception{
 RDebugUtils.currentModule="storepurchase";
-RDebugUtils.currentLine=3211264;
- //BA.debugLineNum = 3211264;BA.debugLine="Sub UpdateOrderDatabase";
-RDebugUtils.currentLine=3211266;
- //BA.debugLineNum = 3211266;BA.debugLine="csrStoreCart=SQLstoreCart.ExecQuery(\"INSERT INTO";
+RDebugUtils.currentLine=3276800;
+ //BA.debugLineNum = 3276800;BA.debugLine="Sub UpdateOrderDatabase";
+RDebugUtils.currentLine=3276802;
+ //BA.debugLineNum = 3276802;BA.debugLine="csrStoreCart=SQLstoreCart.ExecQuery(\"INSERT INTO";
 _csrstorecart.setObject((android.database.Cursor)(_sqlstorecart.ExecQuery("INSERT INTO CoffeePurchases (CustomerID,Picture,Description,Qty,Cost,PickUpTime)"+"VALUES (@CustID,@picture,@name,@desc,@Qty@,@Cost,@PickUp")));
-RDebugUtils.currentLine=3211267;
- //BA.debugLineNum = 3211267;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3276803;
+ //BA.debugLineNum = 3276803;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnremove_click() throws Exception{
 RDebugUtils.currentModule="storepurchase";
-RDebugUtils.currentLine=3080192;
- //BA.debugLineNum = 3080192;BA.debugLine="Sub btnRemove_Click";
-RDebugUtils.currentLine=3080193;
- //BA.debugLineNum = 3080193;BA.debugLine="scvMain.Panel.RemoveView";
+RDebugUtils.currentLine=3211264;
+ //BA.debugLineNum = 3211264;BA.debugLine="Sub btnRemove_Click";
+RDebugUtils.currentLine=3211265;
+ //BA.debugLineNum = 3211265;BA.debugLine="scvMain.Panel.RemoveView";
 mostCurrent._scvmain.getPanel().RemoveView();
-RDebugUtils.currentLine=3080194;
- //BA.debugLineNum = 3080194;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3211266;
+ //BA.debugLineNum = 3211266;BA.debugLine="End Sub";
 return "";
 }
 public static String  _coffeepurchasesdb() throws Exception{
 RDebugUtils.currentModule="storepurchase";
-RDebugUtils.currentLine=5963776;
- //BA.debugLineNum = 5963776;BA.debugLine="Sub CoffeePurchasesDB";
-RDebugUtils.currentLine=5963778;
- //BA.debugLineNum = 5963778;BA.debugLine="csrStoreCart=SQLstoreCart.ExecQuery(\"SELECT ID,Nam";
+RDebugUtils.currentLine=2949120;
+ //BA.debugLineNum = 2949120;BA.debugLine="Sub CoffeePurchasesDB";
+RDebugUtils.currentLine=2949122;
+ //BA.debugLineNum = 2949122;BA.debugLine="csrStoreCart=SQLstoreCart.ExecQuery(\"SELECT ID,Nam";
 _csrstorecart.setObject((android.database.Cursor)(_sqlstorecart.ExecQuery("SELECT ID,Name,Description,Cost,picture FROM CoffeeMenu INNER JOIN SELECT ID, CompanyName FROM themes ON CoffeeMenu.ID=themes.ID")));
-RDebugUtils.currentLine=5963780;
- //BA.debugLineNum = 5963780;BA.debugLine="csrStoreCart=SQLstoreCart.ExecQuery(\"SELECT ID,Nam";
+RDebugUtils.currentLine=2949124;
+ //BA.debugLineNum = 2949124;BA.debugLine="csrStoreCart=SQLstoreCart.ExecQuery(\"SELECT ID,Nam";
 _csrstorecart.setObject((android.database.Cursor)(_sqlstorecart.ExecQuery("SELECT ID,Name,Description,Cost,picture FROM CoffeeExtra INNER JOIN SELECT ID, CompanyName FROM themes ON CoffeeExtras.ID=themes.ID")));
-RDebugUtils.currentLine=5963781;
- //BA.debugLineNum = 5963781;BA.debugLine="End Sub";
+RDebugUtils.currentLine=2949125;
+ //BA.debugLineNum = 2949125;BA.debugLine="End Sub";
+return "";
+}
+public static String  _costcalc() throws Exception{
+RDebugUtils.currentModule="storepurchase";
+RDebugUtils.currentLine=3866624;
+ //BA.debugLineNum = 3866624;BA.debugLine="Sub costCalc";
+RDebugUtils.currentLine=3866626;
+ //BA.debugLineNum = 3866626;BA.debugLine="If edtItemQty.Text >1 Then";
+if ((double)(Double.parseDouble(mostCurrent._edtitemqty.getText()))>1) { 
+RDebugUtils.currentLine=3866627;
+ //BA.debugLineNum = 3866627;BA.debugLine="lblItemsCostSubtotal.Text = edtItemQty.Text * lblI";
+mostCurrent._lblitemscostsubtotal.setText((Object)((double)(Double.parseDouble(mostCurrent._edtitemqty.getText()))*(double)(Double.parseDouble(mostCurrent._lblitemcost.getText()))));
+ };
+RDebugUtils.currentLine=3866629;
+ //BA.debugLineNum = 3866629;BA.debugLine="End Sub";
 return "";
 }
 public static anywheresoftware.b4a.sql.SQL.CursorWrapper  _loadpanelcolours() throws Exception{
@@ -609,7 +628,7 @@ RDebugUtils.currentLine=2883592;
  //BA.debugLineNum = 2883592;BA.debugLine="gd1.Initialize(\"TOP_BOTTOM\",colours)";
 _gd1.Initialize(BA.getEnumFromString(android.graphics.drawable.GradientDrawable.Orientation.class,"TOP_BOTTOM"),_colours);
 RDebugUtils.currentLine=2883593;
- //BA.debugLineNum = 2883593;BA.debugLine="PnlItem.background=gd1";
+ //BA.debugLineNum = 2883593;BA.debugLine="pnlItem.background=gd1";
 mostCurrent._pnlitem.setBackground((android.graphics.drawable.Drawable)(_gd1.getObject()));
  }
 };

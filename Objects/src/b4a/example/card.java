@@ -41,48 +41,48 @@ public b4a.example.storepurchase _storepurchase = null;
 public int  _coffeestamp(b4a.example.card __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="card";
-RDebugUtils.currentLine=917504;
- //BA.debugLineNum = 917504;BA.debugLine="Sub CoffeeStamp As Int";
-RDebugUtils.currentLine=917505;
- //BA.debugLineNum = 917505;BA.debugLine="CoffeeCount = CoffeeCount + 1 'Adds 1 stamp to cof";
+RDebugUtils.currentLine=1703936;
+ //BA.debugLineNum = 1703936;BA.debugLine="Sub CoffeeStamp As Int";
+RDebugUtils.currentLine=1703937;
+ //BA.debugLineNum = 1703937;BA.debugLine="CoffeeCount = CoffeeCount + 1 'Adds 1 stamp to cof";
 __ref._coffeecount = (int) (__ref._coffeecount+1);
-RDebugUtils.currentLine=917506;
- //BA.debugLineNum = 917506;BA.debugLine="Return CoffeeCount ' and returns the new number of";
+RDebugUtils.currentLine=1703938;
+ //BA.debugLineNum = 1703938;BA.debugLine="Return CoffeeCount ' and returns the new number of";
 if (true) return __ref._coffeecount;
-RDebugUtils.currentLine=917507;
- //BA.debugLineNum = 917507;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1703939;
+ //BA.debugLineNum = 1703939;BA.debugLine="End Sub";
 return 0;
 }
 public String  _initialize(b4a.example.card __ref,anywheresoftware.b4a.BA _ba) throws Exception{
 __ref = this;
 innerInitialize(_ba);
 RDebugUtils.currentModule="card";
-RDebugUtils.currentLine=851968;
- //BA.debugLineNum = 851968;BA.debugLine="Public Sub Initialize";
-RDebugUtils.currentLine=851970;
- //BA.debugLineNum = 851970;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1638400;
+ //BA.debugLineNum = 1638400;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=1638402;
+ //BA.debugLineNum = 1638402;BA.debugLine="End Sub";
 return "";
 }
 public boolean  _redeem(b4a.example.card __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="card";
-RDebugUtils.currentLine=983040;
- //BA.debugLineNum = 983040;BA.debugLine="Sub Redeem As Boolean  'this part of code will hol";
-RDebugUtils.currentLine=983041;
- //BA.debugLineNum = 983041;BA.debugLine="If CoffeeCount = 6 Then ' if the person got 6 stam";
+RDebugUtils.currentLine=1769472;
+ //BA.debugLineNum = 1769472;BA.debugLine="Sub Redeem As Boolean  'this part of code will hol";
+RDebugUtils.currentLine=1769473;
+ //BA.debugLineNum = 1769473;BA.debugLine="If CoffeeCount = 6 Then ' if the person got 6 stam";
 if (__ref._coffeecount==6) { 
-RDebugUtils.currentLine=983042;
- //BA.debugLineNum = 983042;BA.debugLine="img7.Initialize(File.DirAssets,\"free-coffee-1-2.jp";
+RDebugUtils.currentLine=1769474;
+ //BA.debugLineNum = 1769474;BA.debugLine="img7.Initialize(File.DirAssets,\"free-coffee-1-2.jp";
 __ref._img7.Initialize(__c.File.getDirAssets(),"free-coffee-1-2.jpg");
-RDebugUtils.currentLine=983044;
- //BA.debugLineNum = 983044;BA.debugLine="Return True";
+RDebugUtils.currentLine=1769476;
+ //BA.debugLineNum = 1769476;BA.debugLine="Return True";
 if (true) return __c.True;
  };
-RDebugUtils.currentLine=983046;
- //BA.debugLineNum = 983046;BA.debugLine="Return False";
+RDebugUtils.currentLine=1769478;
+ //BA.debugLineNum = 1769478;BA.debugLine="Return False";
 if (true) return __c.False;
-RDebugUtils.currentLine=983047;
- //BA.debugLineNum = 983047;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1769479;
+ //BA.debugLineNum = 1769479;BA.debugLine="End Sub";
 return false;
 }
 }

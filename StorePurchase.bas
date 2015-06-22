@@ -14,8 +14,7 @@ Sub Process_Globals
 	Private SQLstoreCart As SQL
 	Private csrStoreCart As Cursor
 	Dim alarmHours, alarmMinutes As Int
-'	Dim myCoffeeMenu As CoffeeMenu
-'   Dim myCoffeeMenuExtra as CoffeeMenuExtras
+
 End Sub
 
 Sub Globals
@@ -25,12 +24,12 @@ Sub Globals
 	Private btnPlaceOrder,btnRemove,btnPickUp As Button
 	Private imgBasket, imgLogo, imgItem As ImageView
 	Private edtQtyTotal, edtCostTotal As EditText
-	Private pnlCart, pnlItem As Panel
+	Dim pnlCart, pnlItem As Panel
 	Dim myTheme As CoffeeTheme
-'	Dim myDrinkMenu As DrinkMenu
-'   Dim myDrinkExtra As DrinkExtras
+	Dim myDrinkMenu As DrinkMenu
+    Dim myDrinkExtra As DrinkExtras
 	Dim scvMain As ScrollView 'the scrollview for the shopping cart
-	Dim lblCompliment, lblItemName, lblItemDesc, lblItemCost As Label
+	Dim lblCompliment, lblItemName, lblItemDesc, lblItemCost, lblItemsCostSubtotal As Label
 	Dim edtItemQty As EditText
 		
 End Sub
@@ -74,21 +73,6 @@ Sub loadDBlogo 'Assign Logo as string from database to Logo Image
 End Sub
 
 
-Sub RunningTotals
-
-
-Dim edtItemQty As EditText
-Dim lblItemCost As Label
-
-For i = 1 To 99
-	If edtItemQty.Text <> "0" Or lblItemCost.Text <> "0" Then
-		edtQtyTotal.Text=edtItemQty+1
-		edtCostTotal.Text=lblItemCost+1
-	End If
-	Next
-
-End Sub
-
 'pulls theme colours in from SQL database for the Scroll View panels
 Sub loadPanelColours As Cursor
 csrStoreCart=SQLstoreCart.ExecQuery("SELECT BG1Red, BG1Blue, BG1Green, BG2Red, BG2Blue, BG2Green FROM themes")
@@ -99,7 +83,7 @@ csrStoreCart=SQLstoreCart.ExecQuery("SELECT BG1Red, BG1Blue, BG1Green, BG2Red, B
 		colours(0) = Colors.RGB(csrStoreCart.GetInt("BG1Red"),csrStoreCart.GetInt("BG1Blue"),csrStoreCart.GetInt("BG1Green"))
 		colours(1) = Colors.RGB(csrStoreCart.GetInt("BG2Red"),csrStoreCart.GetInt("BG2Blue"),csrStoreCart.GetInt("BG2Green"))
 		gd1.Initialize("TOP_BOTTOM",colours)
-		PnlItem.background=gd1		
+		pnlItem.background=gd1		
 	Next
 	Return loadPanelColours
 	End Sub
@@ -121,7 +105,7 @@ Sub FillScrollView 'fills the scroll view which contains a panel for each item p
 	'check through coffee menu spinner index to assign items
 	Next		
 	
-'	If myDrinkMenu.Drink_Selector.Selectdrink.SelectedIndex=True And myDrinkExtras.Drink_Extra_Selector.SelectExtra.SelectedIndex=True	Then
+	If myDrinkMenu.spinner1.SelectedIndex=True And myDrinkExtras.spinner1.SelectedIndex=True	Then
 		
 	'assign NAME, DESCRIPTION, PIC, QTY, COST to each panel
 	Dim bitmap As Bitmap
@@ -131,12 +115,37 @@ Sub FillScrollView 'fills the scroll view which contains a panel for each item p
 	lblItemDesc.Text=csrStoreCart.GetString("Description")'DESCRIPTION - add description of item purchased to panel
 	edtItemQty.Text=csrStoreCart.GetString("Qty")'QTY - add qty of item purchased to panel
 	lblItemCost.Text=csrStoreCart.GetString("Cost")'COST - add cost of item purchased to panel
-'	End If
-
-'	PanelBlue.Height=ItemPnlTop
+	lblItemsCostSubtotal.Text=costCalc
+	End If
 	
 	csrStoreCart.Close
 End Sub
+
+Sub RunningTotals
+
+Dim quantity As String
+Dim cost As String
+
+	For Each myDrinkMenu.spinner1.SelectedIndex And myDrinkExtras.spinner1.SelectedIndex
+	
+	If edtItemQty.Text <> "0" Or lblItemCost.Text <> "0" Then
+	quantity=edtItemQty.Text
+	cost=lblItemsCostSubtotal.Text
+	
+	edtQtyTotal.Text=quantity
+	edtCostTotal.Text=cost
+		
+	End If
+	Next
+	
+End Sub
+
+Sub costCalc
+If edtItemQty.Text >1 Then
+lblItemsCostSubtotal.Text = edtItemQty.Text * lblItemCost.Text
+End If
+End Sub
+
 
 Sub btnPickUp_Click
 Dim td As TimeDialog 'the dialog from the dialog library
