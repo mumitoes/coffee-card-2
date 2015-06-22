@@ -1,0 +1,75 @@
+﻿Type=Class
+Version=5.02
+ModulesStructureVersion=1
+B4A=true
+@EndOfDesignText@
+'Class module
+'DATAMANAGER
+'create a default theme (stamps images, logo image, company name as label, button properties) send to coffee activity
+'If website/url is available grab colours logo and button colours.
+'theme manager
+Sub Class_Globals
+Private SQL1 As SQL
+Private cursor1 As Cursor
+End Sub
+
+'Initializes the object. You can add parameters to this method if needed.
+Public Sub Initialize
+	
+	'  Removed below line as after we made changes to our database they weren't initialised
+	
+	'If File.Exists(File.DirInternal, "customerthemes.sqlite")=False Then
+	File.Copy(File.DirAssets, "customerthemes.sqlite",File.DirInternal,"customerthemes.sqlite")
+	'End If
+	
+	'if not already initialised then action.
+	If SQL1.IsInitialized=False Then
+	SQL1.Initialize(File.DirInternal, "customerthemes.sqlite", False)
+	End If
+End Sub
+
+Sub loadColours As Cursor
+cursor1=SQL1.ExecQuery("SELECT BG1Red, BG1Blue, BG1Green, BG2Red, BG2Blue, BG2Green FROM themes")
+Return cursor1
+End Sub
+
+Sub loadLogo As Cursor
+cursor1=SQL1.ExecQuery("SELECT Logo FROM themes")
+Return cursor1
+End Sub
+
+Sub loadStampIcon As Cursor
+cursor1=SQL1.ExecQuery("SELECT StampIcon FROM themes")
+Return cursor1
+End Sub
+
+'pulls in colour RBG from database
+Sub loadBtnColours As Cursor
+cursor1=SQL1.ExecQuery("SELECT BtnRed, BtnBlue, BtnGreen FROM themes")
+Return cursor1
+End Sub
+
+Sub loadCompanyDetails As Cursor 'load company info
+	cursor1=SQL1.ExecQuery("SELECT Name, Address1 , Address2 , Suburb , City , PhoneCode , PhoneNo FROM CompanyDetails")
+	Return cursor1
+End Sub
+Sub loadCoffeeMenu As Cursor
+cursor1=SQL1.ExecQuery("SELECT ID, Name, Description, Cost FROM CoffeeMenu")
+Return cursor1
+End Sub
+
+Sub SelectDrink As Cursor
+cursor1=SQL1.ExecQuery("SELECT Name FROM CoffeeMenu")
+Return cursor1
+End Sub
+
+Sub LoadDrinkExtras As Cursor
+cursor1=SQL1.ExecQuery("SELECT ID, Description , Cost FROM CoffeeExtras")
+Return cursor1
+End Sub
+
+Sub LoadExtraSelect As Cursor
+cursor1=SQL1.ExecQuery("SELECT Description FROM CoffeeExtras")
+Return cursor1
+End Sub
+

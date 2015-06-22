@@ -1,21 +1,39 @@
-﻿Version=4.3
-IconFile=
-NumberOfModules=5
-Module1=CoffeeTheme
-Module2=Card
-Module3=CoffeeStamp
-Module4=ThemeCalc
-Module5=Data
+﻿Version=5.02
+NumberOfModules=11
+Module1=Card
+Module2=Data
+Module3=DrinkMenu
+Module4=DrinkExtras
+Module5=MapLocator
+Module6=ThemeManager
+Module7=DatabaseManager
+Module8=CoffeeTheme
+Module9=Address
+Module10=CoffeeStamp
+Module11=ThemeCalc
 Build1=Default,b4a.example
-DoNotOverwriteManifest=False
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~AddApplicationText(~\n~<activity android:name="ice.zxing.CaptureActivity"~\n~					android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"~\n~					android:theme="@android:style/Theme.NoTitleBar.Fullscreen"~\n~					android:windowSoftInputMode="stateAlwaysHidden">~\n~				</activity>)~\n~'End of default text.~\n~
-NumberOfFiles=6
-File1=coffee_stamp.png
-File2=customerthemes.sqlite
-File3=freecoffee.bal
-File4=free-coffee-1-2.jpg
-File5=logoSample.png
-File6=main.bal
+IconFile=
+NumberOfFiles=19
+File1=coffee_americano.png
+File2=coffee_cuppuchino.png
+File3=coffee_espresso.png
+File4=coffee_flatwhite.png
+File5=coffee_latte.png
+File6=coffee_machiatto.png
+File7=coffee_mochachino.png
+File8=coffee_stamp.png
+File9=customerthemes.sqlite
+File10=drinksmenu.bal
+File11=Extras.bal
+File12=freecoffee.bal
+File13=free-coffee-1-2.jpg
+File14=logoSample.png
+File15=main.bal
+File16=maplocation.bal
+File17=maplocation2.bal
+File18=mergetest.jpeg
+File19=Thumbs.db
 NumberOfLibraries=3
 Library1=core
 Library2=sql
@@ -23,7 +41,6 @@ Library3=jhsicezxing1
 @EndOfDesignText@
 'Coffee Card App
 'By the Vision College Software Development Class of 2015
-'Daniel
 #Region  Project Attributes 
 	#ApplicationLabel: Coff E Card
 	#VersionCode: 1
@@ -41,13 +58,8 @@ Library3=jhsicezxing1
 Sub Process_Globals
 	'These global variables will be declared once when the application starts.
 	'These variables can be accessed from all modules.
-Dim myColors As Cursor
-Dim myLogo As Cursor
-Dim myCoName As Cursor
-Dim myStamp As Cursor
 Dim Card As Card
 Dim CoffeeCount As Int
-Dim myButtonColours As Cursor
 
 End Sub
 
@@ -69,78 +81,47 @@ Sub Globals
 	Dim qrscanner As JhsIceZxing1
 	Private No As Button
 	Private Yes As Button
+	Private btnBack As Button
+	Private btnOrder As Button
+	Private pgBackGround As Panel
+	Private Spinner1 As Spinner
+	Private WebView1 As WebView
+	Private btnExtras As Button
+	Private ListView1 As ListView
+	Dim companyDetails As Address
+	Dim myTheme As CoffeeTheme
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("main")
 
-	myTheme.Initialize ' initialise theme database on load
-	loadDBcolours
-	loadDBlogo
-	loadDBname
-	loadStamp
-	loadDBbuttonColours
 	
-	CoffeeCount=5
-	
+	myTheme.Initialize ' initialise theme database on load	
+	companyDetails.Initialize 'initialise methods to set layout
+	loadLayout
+
 	
 End Sub
 
 '===========================================Layout========================================
 #Region Layout design
-Sub loadDBcolours 'Assign background colours from database to Background Panel
-	myColors = myTheme.loadColours
-	For i = 0 To myColors.RowCount - 1 '
-		myColors.Position = i 
-		Dim bgGradient As GradientDrawable
-		Dim colours(2) As Int
-		colours(0) = Colors.RGB(myColors.GetInt("BG1Red"),myColors.GetInt("BG1Blue"),myColors.GetInt("BG1Green"))
-		colours(1) = Colors.RGB(myColors.GetInt("BG2Red"),myColors.GetInt("BG2Blue"),myColors.GetInt("BG2Green"))
-		bgGradient.Initialize("TR_BL", colours)
-		pnlBG.Background=bgGradient
-	Next
+
+Sub loadLayout
+ 	'=========================set default layout and details==========================
+	pnlBG.Background = companyDetails.LoadBGColours() 'Background
+	lblCompanyName.Text = companyDetails.loadName() 'Company name
+	imgLogo.Bitmap = companyDetails.loadDBlogo() 'Logo
+	btnScan.Background = companyDetails.loadDBbuttonColours() 'Button colors
+	imgStamp1.Bitmap = companyDetails.loadStamp()'load stamp
+	imgStamp2.Bitmap = companyDetails.loadStamp()'load stamp
+	imgStamp3.Bitmap = companyDetails.loadStamp()'load stamp
+	imgStamp4.Bitmap = companyDetails.loadStamp()'load stamp
+	imgStamp5.Bitmap = companyDetails.loadStamp()'load stamp
+	imgStamp6.Bitmap = companyDetails.loadStamp()'load stamp
 End Sub
 
-Sub loadDBlogo 'Assign Logo as string from database to Logo Image
-	myLogo=myTheme.loadLogo
-	For i = 0 To myLogo.RowCount - 1
-		myLogo.Position=i
-		Dim image As Bitmap
-		image.Initialize(File.DirAssets, myLogo.GetString("Logo"))
-		imgLogo.Bitmap=image
-	Next
-End Sub
 
-Sub loadDBname ' method to assign Company Name to Company Name label
-	myCoName=myTheme.loadCompanyName
-	For i = 0 To myCoName.RowCount - 1
-		myCoName.Position=i	
-		lblCompanyName.Text  =myCoName.GetString("CompanyName")
-	Next
-End Sub
-
-Sub loadStamp ' method to assign stamp image to Stamp Images
-	myStamp=myTheme.loadStampIcon
-	For i = 0 To myStamp.RowCount - 1
-		myStamp.Position=i
-		Dim image As Bitmap
-		image.Initialize(File.DirAssets, myLogo.GetString("StampIcon"))
-		imgStamp1.Bitmap=image
-	Next
-End Sub
-
-Sub loadDBbuttonColours ' method to assign colours to Scan Button
-	myButtonColours =myTheme.loadBtnColours
-	For i = 0 To myButtonColours.RowCount - 1 
-		myButtonColours.Position = i 
-		Dim btnRBG As ColorDrawable
-		Dim colours As Int
-		colours = Colors.RGB(myButtonColours.GetInt("BtnRed"),myButtonColours.GetInt("BtnBlue"),myButtonColours.GetInt("BtnGreen"))
-		btnRBG.Initialize(colours, 5)
-		btnScan.background=btnRBG
-	Next
-End Sub
 #End Region
 
 Sub Activity_Resume
@@ -221,7 +202,11 @@ If CoffeeCount = 6 Then
 	End If 
 End Sub
 Sub btnScan_Click 'in order to bring information about free coffee just press once 
-	updateStamps	
+	'updateStamps
+	StartActivity(DrinkExtras)
+
+	'StartActivity(MapLocator)
+	
 End Sub
 Sub btnyes_Click 'to redeem your free coffee press Yes 
 	CoffeeCount = 0
@@ -230,7 +215,7 @@ Sub btnyes_Click 'to redeem your free coffee press Yes
 	
 End Sub
 Sub btnno_Click ' you can also save and redeem later press No
-	activity.LoadLayout("main") 'will return to main layout
+	Activity.LoadLayout("main") 'will return to main layout
 End Sub
 
 Sub btnScan_LongClick ' in order to scan the barcode or bring the barcode scanner long press btnScan
@@ -276,4 +261,3 @@ Sub scanner_noscan(atype As String,Values As String)
 	Msgbox(Values,"Scan Failed")
 
 End Sub
-
