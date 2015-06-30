@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	package="b4a.example"
+	package="b4a.CoffeeCard"
 	android:versionCode="1"
 	android:versionName=""
 	android:installLocation="internalOnly">
@@ -18,6 +18,8 @@
 	<uses-permission android:name="android.permission.VIBRATE"/>
 	<uses-permission android:name="android.permission.FLASHLIGHT"/>
 	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.BLUETOOTH"/>
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 	<application
 		android:icon="@drawable/icon"
 		android:label="Coff E Card">
@@ -42,6 +44,13 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
+			android:name=".drinkextras"
+			android:label="Coff E Card"
+			android:screenOrientation="portrait">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
 			android:name=".drinkmenu"
 			android:label="Coff E Card"
 			android:screenOrientation="portrait">
@@ -49,7 +58,7 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".drinkextras"
+			android:name=".storepurchase"
 			android:label="Coff E Card"
 			android:screenOrientation="portrait">
 		</activity>

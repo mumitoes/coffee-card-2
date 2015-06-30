@@ -12,7 +12,7 @@ B4A=true
 Sub Process_Globals
 Dim myDrinkMenu As Cursor
 Dim DrinkSelect As Cursor
-
+Dim selecteddrink As String
 
 End Sub
 
@@ -25,7 +25,8 @@ Sub Globals
 	Dim companyDetails As ThemeManager
 	'Dim myTheme As DatabaseManager
 	Dim myDB As DatabaseManager
-	Private Spinner1 As Spinner
+	Dim Spinner1 As Spinner
+	
 	
 End Sub
 
@@ -36,7 +37,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	companyDetails.Initialize
 	Menu_Layout
 	Drink_Menu
-	Drink_Selector
+	Drink_Spinner_Load
 End Sub
 
 Sub Activity_Resume
@@ -50,7 +51,7 @@ End Sub
 '========================================================= DRINK MENU Layout =================================================================================
 
 Sub Menu_Layout
-pgBackGround.Background = companyDetails.LoadBGColours() 'Background
+	pgBackGround.Background = companyDetails.LoadBGColours() 'Background
 	btnExtras.Background = companyDetails.loadDBbuttonColours() 'Button colors
 	btnOrder.Background = companyDetails.loadDBbuttonColours() 'Button colors
 	
@@ -63,7 +64,7 @@ ListView1.Clear
 myDrinkMenu = myDB.loadCoffeeMenu
 For i = 0 To myDrinkMenu.RowCount -1
 myDrinkMenu.Position = i
-ListView1.AddSingleLine(myDrinkMenu.GetString("ID") & " : " & myDrinkMenu.GetString("Name") & CRLF & myDrinkMenu.GetString("Description") & CRLF & "$" & myDrinkMenu.GetDouble("Cost"))
+ListView1.AddSingleLine(myDrinkMenu.GetString("ID") & " : " & myDrinkMenu.GetString("CoffeeName") & CRLF & myDrinkMenu.GetString("Description") & CRLF & "$" & myDrinkMenu.GetDouble("Cost"))
 'Logcolor("Name",Colors.Red)
 ListView1.SingleLineLayout.ItemHeight = 150
 ListView1.SingleLineLayout.Label.TextSize = 15
@@ -74,12 +75,13 @@ myDrinkMenu.Close
 End Sub
 
 'shows a list of only drink names so they can be selected and added to the cart database
-Sub Drink_Selector
+Sub Drink_Spinner_Load()
+
 Spinner1.Clear
 DrinkSelect = myDB.SelectDrink
 For i = 0 To DrinkSelect.RowCount -1
 DrinkSelect.Position = i
-Spinner1.Add(DrinkSelect.GetString("Name"))
+Spinner1.Add(DrinkSelect.GetString("CoffeeName"))
 If File.Exists(File.DirInternal, "customerthemes.sqlite") Then
 Spinner1.SelectedIndex = Spinner1.IndexOf (File.ReadString(File.DirInternal,"customerthemes.sqlite"))
 Else
@@ -87,14 +89,17 @@ Spinner1.SelectedIndex = 1
 End If
 
 Next
-	
+
 End Sub
 
 Sub btnOrder_Click
-
+	StartActivity(StorePurchase)
 End Sub
 
-Sub btnDrinkExtras_Click
-	Activity.LoadLayout("Extras")
+Sub btnExtras_Click
+	StartActivity(DrinkExtras)
 End Sub
 
+Sub Spinner1_ItemClick (Position As Int, Value As Object)
+	selecteddrink = Value
+End Sub

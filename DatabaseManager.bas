@@ -50,16 +50,17 @@ Return cursor1
 End Sub
 
 Sub loadCompanyDetails As Cursor 'load company info
-	cursor1=SQL1.ExecQuery("SELECT Name, Address1 , Address2 , Suburb , City , PhoneCode , PhoneNo FROM CompanyDetails")
+	cursor1=SQL1.ExecQuery("SELECT CompanyName, Address1 , Address2 , Suburb , City , PhoneCode , PhoneNo FROM CompanyDetails")
 	Return cursor1
 End Sub
+
 Sub loadCoffeeMenu As Cursor
-cursor1=SQL1.ExecQuery("SELECT ID, Name, Description, Cost FROM CoffeeMenu")
+cursor1=SQL1.ExecQuery("SELECT ID, CoffeeName, Description, Cost FROM CoffeeMenu")
 Return cursor1
 End Sub
 
 Sub SelectDrink As Cursor
-cursor1=SQL1.ExecQuery("SELECT Name FROM CoffeeMenu")
+cursor1=SQL1.ExecQuery("SELECT CoffeeName FROM CoffeeMenu")
 Return cursor1
 End Sub
 
@@ -73,3 +74,30 @@ cursor1=SQL1.ExecQuery("SELECT Description FROM CoffeeExtras")
 Return cursor1
 End Sub
 
+Sub SelectDrinkValue As Cursor
+cursor1=SQL1.ExecQuery("SELECT ID, CoffeeName, Cost, picture FROM CoffeeMenu WHERE CoffeeName= '" & DrinkMenu.selecteddrink &"'")
+'cursor1=SQL1.ExecQuery("SELECT ID, CoffeeName, Cost, picture FROM CoffeeMenu WHERE CoffeeName='Mochachino'")
+Return cursor1
+End Sub
+
+Sub SelectExtrasValue As Cursor
+cursor1=SQL1.ExecQuery("SELECT ID, Description, Cost FROM CoffeeExtras WHERE Description= '" & DrinkExtras.selectedextras &"'")
+Return cursor1
+End Sub
+
+'Sub CoffeeMenuPurchasesDB As Cursor	
+'	'pulls in database items for purchases from the Coffee Menu
+'cursor1=SQL1.ExecQuery("SELECT ID,CoffeeName,Description,Cost,picture,CompFKID FROM CoffeeMenu INNER JOIN CompanyDetails ON CoffeeMenu.CompFKID=CompanyDetails.CompID")
+'Return cursor1
+'End Sub
+
+'Sub CoffeeExtrasPurchaseDB As Cursor
+''pulls in database items for purchases from the Extra Menu
+'cursor1=SQL1.ExecQuery("SELECT CoffeeExtras.ID,CoffeeExtras.Description,CoffeeExtras.Cost,CoffeeExtras.CompFKID FROM CoffeeExtras INNER JOIN CompanyDetails ON CoffeeExtras.CompFKID=CompanyDetails.CompID")
+'Return cursor1
+'End Sub
+
+Sub UpdateOrderDatabase As Cursor
+	'Inserts new order into database
+cursor1=SQL1.ExecQuery("INSERT INTO CoffeePurchases (CustomerID,Picture,Description,Qty,Cost,PickUpTime,CompFKID)" & "VALUES (@CustomerID,@picture,@name,@desc,@Qty@,@Cost,@PickUp,@CompFKID")
+End Sub

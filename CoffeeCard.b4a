@@ -1,43 +1,46 @@
 ﻿Version=5.02
-NumberOfModules=11
-Module1=Card
-Module2=Data
-Module3=DrinkMenu
-Module4=DrinkExtras
-Module5=MapLocator
-Module6=ThemeManager
-Module7=DatabaseManager
-Module8=CoffeeTheme
-Module9=Address
+NumberOfModules=12
+Module1=ThemeManager
+Module2=DatabaseManager
+Module3=DrinkExtras
+Module4=DrinkMenu
+Module5=StorePurchase
+Module6=Card
+Module7=Data
+Module8=MapLocator
+Module9=CoffeeTheme
 Module10=CoffeeStamp
-Module11=ThemeCalc
-Build1=Default,b4a.example
+Module11=Address
+Module12=ThemeCalc
+Build1=Default,b4a.CoffeeCard
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~AddApplicationText(~\n~<activity android:name="ice.zxing.CaptureActivity"~\n~					android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"~\n~					android:theme="@android:style/Theme.NoTitleBar.Fullscreen"~\n~					android:windowSoftInputMode="stateAlwaysHidden">~\n~				</activity>)~\n~'End of default text.~\n~
 IconFile=
-NumberOfFiles=19
-File1=coffee_americano.png
-File2=coffee_cuppuchino.png
-File3=coffee_espresso.png
-File4=coffee_flatwhite.png
-File5=coffee_latte.png
-File6=coffee_machiatto.png
-File7=coffee_mochachino.png
-File8=coffee_stamp.png
-File9=customerthemes.sqlite
-File10=drinksmenu.bal
-File11=Extras.bal
-File12=freecoffee.bal
-File13=free-coffee-1-2.jpg
-File14=logoSample.png
-File15=main.bal
-File16=maplocation.bal
-File17=maplocation2.bal
-File18=mergetest.jpeg
-File19=Thumbs.db
-NumberOfLibraries=3
+NumberOfFiles=20
+File1=basket.png
+File2=cart.bal
+File3=coffee_americano.png
+File4=coffee_cuppuchino.png
+File5=coffee_espresso.png
+File6=coffee_flatwhite.png
+File7=coffee_latte.png
+File8=coffee_machiatto.png
+File9=coffee_mochachino.png
+File10=coffee_stamp.png
+File11=customerthemes.sqlite
+File12=drinksmenu.bal
+File13=Extras.bal
+File14=freecoffee.bal
+File15=free-coffee-1-2.jpg
+File16=logosample.png
+File17=main.bal
+File18=maplocation.bal
+File19=maplocation2.bal
+File20=mergetest.jpeg
+NumberOfLibraries=4
 Library1=core
 Library2=sql
 Library3=jhsicezxing1
+Library4=dialogs
 @EndOfDesignText@
 'Coffee Card App
 'By the Vision College Software Development Class of 2015
@@ -76,7 +79,6 @@ Sub Globals
 	Private pnlBG As Panel
 	Private pnlStamp1, pnlStamp2, pnlStamp3, pnlStamp4, pnlStamp5, pnlStamp6 As Panel
 	
-	Dim myTheme As CoffeeTheme
 	Dim scanSuccess As Boolean
 	Dim qrscanner As JhsIceZxing1
 	Private No As Button
@@ -95,8 +97,6 @@ End Sub
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("main")
-
-	
 	myTheme.Initialize ' initialise theme database on load	
 	companyDetails.Initialize 'initialise methods to set layout
 	loadLayout
@@ -202,25 +202,28 @@ If CoffeeCount = 6 Then
 	End If 
 End Sub
 Sub btnScan_Click 'in order to bring information about free coffee just press once 
-<<<<<<< HEAD
-	updateStamps
-	'StartActivity(DrinkExtras)
-=======
 	'updateStamps
-	StartActivity(DrinkExtras)
->>>>>>> origin/Layout-to-merge-back-to-layout
-
+	StartActivity(DrinkMenu)
+	'StartActivity(StorePurchase)
+	'StartActivity(DrinkExtras)
 	'StartActivity(MapLocator)
+	'StartActivity(StorePurchase)
 	
 End Sub
 Sub btnyes_Click 'to redeem your free coffee press Yes 
 	CoffeeCount = 0
 	updateStamps
 	Activity.LoadLayout("main")
+	myTheme.Initialize ' initialise theme database on load	
+	companyDetails.Initialize 'initialise methods to set layout
+	loadLayout
 	
 End Sub
 Sub btnno_Click ' you can also save and redeem later press No
 	Activity.LoadLayout("main") 'will return to main layout
+	myTheme.Initialize ' initialise theme database on load	
+	companyDetails.Initialize 'initialise methods to set layout
+	loadLayout
 End Sub
 
 Sub btnScan_LongClick ' in order to scan the barcode or bring the barcode scanner long press btnScan

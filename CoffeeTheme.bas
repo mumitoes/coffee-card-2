@@ -39,7 +39,7 @@ Return cursor1
 End Sub
 
 Sub loadCompanyName As Cursor
-cursor1=SQL1.ExecQuery("SELECT Name FROM CompanyDetails")
+cursor1=SQL1.ExecQuery("SELECT CompanyName FROM CompanyDetails")
 Return cursor1
 End Sub
 
@@ -55,17 +55,17 @@ Return cursor1
 End Sub
 
 Sub loadCompanyDetails As Cursor 'load company info
-	cursor1=SQL1.ExecQuery("SELECT Name, Address1 , Address2 , Suburb , City , PhoneCode , PhoneNo FROM CompanyDetails")
+	cursor1=SQL1.ExecQuery("SELECT CompanyName, Address1 , Address2 , Suburb , City , PhoneCode , PhoneNo FROM CompanyDetails")
 	Return cursor1
 End Sub
 
 Sub loadCoffeeMenu As Cursor
-cursor1=SQL1.ExecQuery("SELECT ID, Name, Description, Cost FROM CoffeeMenu")
+cursor1=SQL1.ExecQuery("SELECT ID, CoffeeName, Description, Cost FROM CoffeeMenu")
 Return cursor1
 End Sub
 
 Sub SelectDrink As Cursor
-cursor1=SQL1.ExecQuery("SELECT Name FROM CoffeeMenu")
+cursor1=SQL1.ExecQuery("SELECT CoffeeName FROM CoffeeMenu")
 Return cursor1
 End Sub
 

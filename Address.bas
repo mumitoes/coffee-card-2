@@ -44,7 +44,7 @@ Sub loadName() As String ' method to assign company name
 	Dim name As String
 	For i = 0 To myContactDeets.RowCount - 1
 		myContactDeets.Position=i	
-		name  = myContactDeets.GetString("Name")
+		name  = myContactDeets.GetString("CompanyName")
 	Next
 		Return name 
 End Sub

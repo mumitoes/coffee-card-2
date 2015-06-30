@@ -11,6 +11,7 @@ B4A=true
 Sub Process_Globals
 Dim myDrinkExtras As Cursor
 Dim ExtraSelect As Cursor
+Dim selectedextras As String
 End Sub
 
 Sub Globals
@@ -78,16 +79,17 @@ Spinner2.SelectedIndex = Spinner2.IndexOf (File.ReadString(File.DirInternal,"cus
 Else
 Spinner2.SelectedIndex = 1
 End If
-
 Next
-	
 End Sub
 
 Sub btnOrder_Click
-
+	StartActivity(StorePurchase)
 End Sub
 
 Sub btnDrinkMenu_Click
-	Activity.LoadLayout("DrinksMenu")
+	StartActivity(DrinkMenu)
 End Sub
 
+Sub Spinner2_ItemClick (Position As Int, Value As Object)
+	selectedextras = Value
+End Sub
